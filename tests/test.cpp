@@ -8,7 +8,7 @@ int main(int argc, char** argv) {
     logger->addAppender(rainbow::LogAppender::ptr(new rainbow::StdoutLogAppender));
 
     rainbow::LogFormatter::ptr fmt(new rainbow::LogFormatter("%d%T%p%T%m%n"));
-    rainbow::FileLogAppender::ptr file_appender(new rainbow::FileLogAppender("./log.txt"));
+    rainbow::FileLogAppender::ptr file_appender(new rainbow::FileLogAppender("bin/log.txt"));
     file_appender->setFormatter(fmt);
     file_appender->setLevel(rainbow::LogLevel::ERROR);
 

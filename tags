@@ -4,318 +4,397 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-DEBUG	log.h	/^        DEBUG = 1,$/;"	e	enum:rainbow::LogLevel::Level
-DateTimeFormatItem	log.cpp	/^    DateTimeFormatItem(const std::string& format = "%Y-%m-%d %H:%M:%s")$/;"	f	class:rainbow::DateTimeFormatItem	access:public	signature:(const std::string& format = �)
-DateTimeFormatItem	log.cpp	/^class DateTimeFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-ERROR	log.h	/^        ERROR = 4,$/;"	e	enum:rainbow::LogLevel::Level
-ElapseFormatItem	log.cpp	/^    ElapseFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ElapseFormatItem	access:public	signature:(const std::string str = �)
-ElapseFormatItem	log.cpp	/^class ElapseFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-FATAL	log.h	/^        FATAL = 5$/;"	e	enum:rainbow::LogLevel::Level
-FiberIdFormatItem	log.cpp	/^    FiberIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::FiberIdFormatItem	access:public	signature:(const std::string str = �)
-FiberIdFormatItem	log.cpp	/^class FiberIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-FileLogAppender	log.cpp	/^FileLogAppender::FileLogAppender(const std::string& name) : m_filename(name) {}$/;"	f	class:rainbow::FileLogAppender	signature:(const std::string& name)
-FileLogAppender	log.h	/^    FileLogAppender(const std::string& filename);$/;"	p	class:rainbow::FileLogAppender	access:public	signature:(const std::string& filename)
-FileLogAppender	log.h	/^class FileLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
-FileNameFormatItem	log.cpp	/^    FileNameFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::FileNameFormatItem	access:public	signature:(const std::string str = �)
-FileNameFormatItem	log.cpp	/^class FileNameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-FormatItem	log.h	/^        FormatItem(const std::string& fmt = ""){};$/;"	f	class:rainbow::LogFormatter::FormatItem	access:public	signature:(const std::string& fmt = �)
-FormatItem	log.h	/^    class FormatItem {$/;"	c	class:rainbow::LogFormatter	access:public
-GetFiberId	util.cpp	/^uint32_t GetFiberId() {$/;"	f	namespace:rainbow	signature:()
-GetFiberId	util.h	/^uint32_t GetFiberId();$/;"	p	namespace:rainbow	signature:()
-GetThreadId	util.cpp	/^pid_t GetThreadId() {$/;"	f	namespace:rainbow	signature:()
-GetThreadId	util.h	/^pid_t GetThreadId();$/;"	p	namespace:rainbow	signature:()
-INFO	log.h	/^        INFO = 2,$/;"	e	enum:rainbow::LogLevel::Level
-Level	log.h	/^    enum Level {$/;"	g	class:rainbow::LogLevel	access:public
-LevelFormatItem	log.cpp	/^    LevelFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LevelFormatItem	access:public	signature:(const std::string str = �)
-LevelFormatItem	log.cpp	/^class LevelFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-LineFormatItem	log.cpp	/^    LineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LineFormatItem	access:public	signature:(const std::string str = �)
-LineFormatItem	log.cpp	/^class LineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-LogAppender	log.cpp	/^LogAppender::LogAppender() {$/;"	f	class:rainbow::LogAppender	signature:()
-LogAppender	log.h	/^    LogAppender();$/;"	p	class:rainbow::LogAppender	access:public	signature:()
-LogAppender	log.h	/^class LogAppender {$/;"	c	namespace:rainbow
-LogEvent	log.cpp	/^LogEvent::LogEvent(const std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, $/;"	f	class:rainbow::LogEvent	signature:(const std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time)
-LogEvent	log.h	/^    LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, $/;"	p	class:rainbow::LogEvent	access:public	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t m_line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time)
-LogEvent	log.h	/^class LogEvent {$/;"	c	namespace:rainbow
-LogEventWrap	log.cpp	/^LogEventWrap::LogEventWrap(LogEvent::ptr e) : m_event(e) {$/;"	f	class:rainbow::LogEventWrap	signature:(LogEvent::ptr e)
-LogEventWrap	log.h	/^    LogEventWrap(LogEvent::ptr e);$/;"	p	class:rainbow::LogEventWrap	access:public	signature:(LogEvent::ptr e)
-LogEventWrap	log.h	/^class LogEventWrap {$/;"	c	namespace:rainbow
-LogFormatter	log.cpp	/^LogFormatter::LogFormatter(const std::string& pattern) : m_pattern(pattern) {$/;"	f	class:rainbow::LogFormatter	signature:(const std::string& pattern)
-LogFormatter	log.h	/^    LogFormatter(const std::string& pattern);$/;"	p	class:rainbow::LogFormatter	access:public	signature:(const std::string& pattern)
-LogFormatter	log.h	/^class LogFormatter {$/;"	c	namespace:rainbow
-LogLevel	log.h	/^class LogLevel {$/;"	c	namespace:rainbow
-Logger	log.cpp	/^Logger::Logger(const std::string& name)$/;"	f	class:rainbow::Logger	signature:(const std::string& name)
-Logger	log.h	/^    Logger(const std::string& name = "root");$/;"	p	class:rainbow::Logger	access:public	signature:(const std::string& name = �)
-Logger	log.h	/^class Logger : public std::enable_shared_from_this<Logger> {$/;"	c	namespace:rainbow	inherits:std::enable_shared_from_this
-MessageFormatItem	log.cpp	/^    MessageFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::MessageFormatItem	access:public	signature:(const std::string& str = �)
-MessageFormatItem	log.cpp	/^class MessageFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-NameFormatItem	log.cpp	/^    NameFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NameFormatItem	access:public	signature:(const std::string str = �)
-NameFormatItem	log.cpp	/^class NameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-NewLineFormatItem	log.cpp	/^    NewLineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NewLineFormatItem	access:public	signature:(const std::string str = �)
-NewLineFormatItem	log.cpp	/^class NewLineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-RAINBOW_LOG_DEBUG	log.h	20;"	d
-RAINBOW_LOG_ERROR	log.h	23;"	d
-RAINBOW_LOG_FATAL	log.h	24;"	d
-RAINBOW_LOG_FMT_DEBUG	log.h	32;"	d
-RAINBOW_LOG_FMT_ERROR	log.h	35;"	d
-RAINBOW_LOG_FMT_FATAL	log.h	36;"	d
-RAINBOW_LOG_FMT_INFO	log.h	33;"	d
-RAINBOW_LOG_FMT_LEVEL	log.h	26;"	d
-RAINBOW_LOG_FMT_WARN	log.h	34;"	d
-RAINBOW_LOG_INFO	log.h	21;"	d
-RAINBOW_LOG_LEVEL	log.h	16;"	d
-RAINBOW_LOG_WARN	log.h	22;"	d
-StdoutLogAppender	log.h	/^class StdoutLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
-StringFormatItem	log.cpp	/^    StringFormatItem(const std::string& str) : m_string(str) {}$/;"	f	class:rainbow::StringFormatItem	access:public	signature:(const std::string& str)
-StringFormatItem	log.cpp	/^class StringFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-TabFormatItem	log.cpp	/^     TabFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::TabFormatItem	access:public	signature:(const std::string& str = �)
-TabFormatItem	log.cpp	/^class TabFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-ThreadIdFormatItem	log.cpp	/^    ThreadIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ThreadIdFormatItem	access:public	signature:(const std::string str = �)
-ThreadIdFormatItem	log.cpp	/^class ThreadIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-ToString	log.cpp	/^const char* LogLevel::ToString(LogLevel::Level level) {$/;"	f	class:rainbow::LogLevel	signature:(LogLevel::Level level)
-ToString	log.h	/^    static const char* ToString(LogLevel::Level level);$/;"	p	class:rainbow::LogLevel	access:public	signature:(LogLevel::Level level)
-UNKNOW	log.h	/^        UNKNOW = 0,$/;"	e	enum:rainbow::LogLevel::Level
-WARN	log.h	/^        WARN = 3,$/;"	e	enum:rainbow::LogLevel::Level
-XX	log.cpp	138;"	d	file:
-XX	log.cpp	148;"	d	file:
-XX	log.cpp	309;"	d	file:
-XX	log.cpp	323;"	d	file:
-__RAINBOW_LOG_H	log.h	2;"	d
-__RAINBOW_UTIL_H_	util.h	2;"	d
-addAppender	log.cpp	/^void Logger::addAppender(LogAppender::ptr appender) {$/;"	f	class:rainbow::Logger	signature:(LogAppender::ptr appender)
-addAppender	log.h	/^    void addAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
-debug	log.cpp	/^void Logger::debug(LogEvent::ptr event) { log(LogLevel::DEBUG, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-debug	log.h	/^    void debug(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-delAppender	log.cpp	/^void Logger::delAppender(LogAppender::ptr appender) {$/;"	f	class:rainbow::Logger	signature:(LogAppender::ptr appender)
-delAppender	log.h	/^    void delAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
-error	log.cpp	/^void Logger::error(LogEvent::ptr event) { log(LogLevel::ERROR, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-error	log.h	/^    void error(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-fatal	log.cpp	/^void Logger::fatal(LogEvent::ptr event) { log(LogLevel::FATAL, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-fatal	log.h	/^    void fatal(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-format	log.cpp	/^std::string LogFormatter::format(std::shared_ptr<Logger> logger,$/;"	f	class:rainbow::LogFormatter	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-format	log.cpp	/^void LogEvent::format(const char* fmt, ...) {$/;"	f	class:rainbow::LogEvent	signature:(const char* fmt, ...)
-format	log.cpp	/^void LogEvent::format(const char* fmt, va_list al) {$/;"	f	class:rainbow::LogEvent	signature:(const char* fmt, va_list al)
-format	log.cpp	/^void LogFormatter::FormatItem::format(std::ostream& os,$/;"	f	class:rainbow::LogFormatter::FormatItem	signature:(std::ostream& os, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-format	log.h	/^        virtual void format(std::ostream& os, std::shared_ptr<Logger> logger,$/;"	p	class:rainbow::LogFormatter::FormatItem	access:public	signature:(std::ostream& os, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-format	log.h	/^    std::ostream& format(std::ostream& ofs, std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event);$/;"	p	class:rainbow::LogFormatter	access:public	signature:(std::ostream& ofs, std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event)
-format	log.h	/^    std::string format(std::shared_ptr<Logger> ptr, LogLevel::Level level,$/;"	p	class:rainbow::LogFormatter	access:public	signature:(std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event)
-format	log.h	/^    void format(const char* fmt, ...);$/;"	p	class:rainbow::LogEvent	access:public	signature:(const char* fmt, ...)
-format	log.h	/^    void format(const char* fmt, va_list al);$/;"	p	class:rainbow::LogEvent	access:public	signature:(const char* fmt, va_list al)
-getContent	log.h	/^    std::string getContent() const { return m_ss.str(); }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-getElapse	log.h	/^    uint32_t getElapse() const { return m_elapse; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-getEvent	log.h	/^    LogEvent::ptr getEvent() const { return m_event; }$/;"	f	class:rainbow::LogEventWrap	access:public	signature:() const
-getFiberId	log.h	/^    uint32_t getFiberId() const { return m_fiberId; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-getFileName	log.h	/^    const char* getFileName() const { return m_file; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-getFormatter	log.h	/^    LogFormatter::ptr getFormatter() const { return m_formatter; }$/;"	f	class:rainbow::LogAppender	access:public	signature:() const
-getLevel	log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-getLevel	log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::Logger	access:public	signature:() const
-getLine	log.h	/^    int32_t getLine() const { return m_line; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-getLogger	log.h	/^    std::shared_ptr<Logger> getLogger() const {  return m_logger; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-getName	log.h	/^    const std::string getName() const { return this->m_name; }$/;"	f	class:rainbow::Logger	access:public	signature:() const
-getSS	log.cpp	/^std::stringstream& LogEventWrap::getSS() {$/;"	f	class:rainbow::LogEventWrap	signature:()
-getSS	log.h	/^    std::stringstream& getSS() { return m_ss; }$/;"	f	class:rainbow::LogEvent	access:public	signature:()
-getSS	log.h	/^    std::stringstream& getSS();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
-getString	log.cpp	/^    std::string getString() const { return m_string; }$/;"	f	class:rainbow::StringFormatItem	access:public	signature:() const
-getThreadId	log.h	/^    uint32_t getThreadId() const { return m_threadId; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-getTime	log.h	/^    uint32_t getTime() const { return m_time; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-info	log.cpp	/^void Logger::info(LogEvent::ptr event) { log(LogLevel::INFO, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-info	log.h	/^    void info(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-init	log.cpp	/^void LogFormatter::init() {$/;"	f	class:rainbow::LogFormatter	signature:()
-init	log.h	/^    void init();$/;"	p	class:rainbow::LogFormatter	access:public	signature:()
-log	log.cpp	/^void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level,$/;"	f	class:rainbow::FileLogAppender	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-log	log.cpp	/^void Logger::log(LogLevel::Level level, LogEvent::ptr event) {$/;"	f	class:rainbow::Logger	signature:(LogLevel::Level level, LogEvent::ptr event)
-log	log.cpp	/^void StdoutLogAppender::log(std::shared_ptr<Logger> logger,$/;"	f	class:rainbow::StdoutLogAppender	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-log	log.h	/^    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level,$/;"	p	class:rainbow::LogAppender	access:public	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-log	log.h	/^    void log(LogLevel::Level level, LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogLevel::Level level, LogEvent::ptr event)
-m_appenders	log.h	/^    std::list<LogAppender::ptr> m_appenders;  \/\/ Appender集合$/;"	m	class:rainbow::Logger	access:private
-m_elapse	log.h	/^    uint32_t m_elapse = 0;         \/\/ 程序启动开始到现在的毫秒数$/;"	m	class:rainbow::LogEvent	access:private
-m_event	log.h	/^    LogEvent::ptr m_event;$/;"	m	class:rainbow::LogEventWrap	access:private
-m_fiberId	log.h	/^    uint32_t m_fiberId = 0;        \/\/ 协程id$/;"	m	class:rainbow::LogEvent	access:private
-m_file	log.h	/^    const char* m_file = nullptr;  \/\/ 文件名$/;"	m	class:rainbow::LogEvent	access:private
-m_filename	log.h	/^    std::string m_filename;$/;"	m	class:rainbow::FileLogAppender	access:private
-m_filestream	log.h	/^    std::ofstream m_filestream;$/;"	m	class:rainbow::FileLogAppender	access:private
-m_format	log.cpp	/^    std::string m_format;$/;"	m	class:rainbow::DateTimeFormatItem	file:	access:private
-m_formatter	log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainbow::LogAppender	access:protected
-m_formatter	log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainbow::Logger	access:private
-m_items	log.h	/^    std::vector<FormatItem::ptr> m_items;$/;"	m	class:rainbow::LogFormatter	access:private
-m_level	log.h	/^    LogLevel::Level m_level;  \/\/ 满足日志级别的日志才会被输出$/;"	m	class:rainbow::Logger	access:private
-m_level	log.h	/^    LogLevel::Level m_level;$/;"	m	class:rainbow::LogAppender	access:protected
-m_level	log.h	/^    LogLevel::Level m_level;$/;"	m	class:rainbow::LogEvent	access:private
-m_line	log.h	/^    int32_t m_line = 0;            \/\/ 行号$/;"	m	class:rainbow::LogEvent	access:private
-m_logger	log.h	/^    std::shared_ptr<Logger> m_logger;$/;"	m	class:rainbow::LogEvent	access:private
-m_name	log.h	/^    std::string m_name = "root";       \/\/ 日志名称$/;"	m	class:rainbow::Logger	access:private
-m_pattern	log.h	/^    std::string m_pattern;$/;"	m	class:rainbow::LogFormatter	access:private
-m_ss	log.h	/^    std::stringstream m_ss;$/;"	m	class:rainbow::LogEvent	access:private
-m_string	log.cpp	/^    std::string m_string;$/;"	m	class:rainbow::StringFormatItem	file:	access:private
-m_threadId	log.h	/^    uint32_t m_threadId = 0;       \/\/ 线程id$/;"	m	class:rainbow::LogEvent	access:private
-m_time	log.h	/^    uint64_t m_time;               \/\/ 时间戳$/;"	m	class:rainbow::LogEvent	access:private
-main	test.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
-override	log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::FileLogAppender	access:public
-override	log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::StdoutLogAppender	access:public
-ptr	log.h	/^        typedef std::shared_ptr<FormatItem> ptr;$/;"	t	class:rainbow::LogFormatter::FormatItem	access:public
-ptr	log.h	/^    typedef std::shared_ptr<FileLogAppender> ptr;$/;"	t	class:rainbow::FileLogAppender	access:public
-ptr	log.h	/^    typedef std::shared_ptr<LogAppender> ptr;$/;"	t	class:rainbow::LogAppender	access:public
-ptr	log.h	/^    typedef std::shared_ptr<LogEvent> ptr;$/;"	t	class:rainbow::LogEvent	access:public
-ptr	log.h	/^    typedef std::shared_ptr<LogFormatter> ptr;$/;"	t	class:rainbow::LogFormatter	access:public
-ptr	log.h	/^    typedef std::shared_ptr<Logger> ptr;$/;"	t	class:rainbow::Logger	access:public
-ptr	log.h	/^    typedef std::shared_ptr<StdoutLogAppender> ptr;$/;"	t	class:rainbow::StdoutLogAppender	access:public
-rainbow	log.cpp	/^namespace rainbow {$/;"	n	file:
-rainbow	log.h	/^namespace rainbow {$/;"	n
-rainbow	util.cpp	/^namespace rainbow {$/;"	n	file:
-rainbow	util.h	/^namespace rainbow {$/;"	n
-rainbow::DateTimeFormatItem	log.cpp	/^class DateTimeFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::DateTimeFormatItem::DateTimeFormatItem	log.cpp	/^    DateTimeFormatItem(const std::string& format = "%Y-%m-%d %H:%M:%s")$/;"	f	class:rainbow::DateTimeFormatItem	access:public	signature:(const std::string& format = �)
-rainbow::DateTimeFormatItem::m_format	log.cpp	/^    std::string m_format;$/;"	m	class:rainbow::DateTimeFormatItem	file:	access:private
-rainbow::ElapseFormatItem	log.cpp	/^class ElapseFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::ElapseFormatItem::ElapseFormatItem	log.cpp	/^    ElapseFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ElapseFormatItem	access:public	signature:(const std::string str = �)
-rainbow::FiberIdFormatItem	log.cpp	/^class FiberIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::FiberIdFormatItem::FiberIdFormatItem	log.cpp	/^    FiberIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::FiberIdFormatItem	access:public	signature:(const std::string str = �)
-rainbow::FileLogAppender	log.h	/^class FileLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
-rainbow::FileLogAppender::FileLogAppender	log.cpp	/^FileLogAppender::FileLogAppender(const std::string& name) : m_filename(name) {}$/;"	f	class:rainbow::FileLogAppender	signature:(const std::string& name)
-rainbow::FileLogAppender::FileLogAppender	log.h	/^    FileLogAppender(const std::string& filename);$/;"	p	class:rainbow::FileLogAppender	access:public	signature:(const std::string& filename)
-rainbow::FileLogAppender::log	log.cpp	/^void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level,$/;"	f	class:rainbow::FileLogAppender	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-rainbow::FileLogAppender::m_filename	log.h	/^    std::string m_filename;$/;"	m	class:rainbow::FileLogAppender	access:private
-rainbow::FileLogAppender::m_filestream	log.h	/^    std::ofstream m_filestream;$/;"	m	class:rainbow::FileLogAppender	access:private
-rainbow::FileLogAppender::override	log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::FileLogAppender	access:public
-rainbow::FileLogAppender::ptr	log.h	/^    typedef std::shared_ptr<FileLogAppender> ptr;$/;"	t	class:rainbow::FileLogAppender	access:public
-rainbow::FileLogAppender::reopen	log.cpp	/^bool FileLogAppender::reopen() {$/;"	f	class:rainbow::FileLogAppender	signature:()
-rainbow::FileLogAppender::reopen	log.h	/^    bool reopen();$/;"	p	class:rainbow::FileLogAppender	access:public	signature:()
-rainbow::FileNameFormatItem	log.cpp	/^class FileNameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::FileNameFormatItem::FileNameFormatItem	log.cpp	/^    FileNameFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::FileNameFormatItem	access:public	signature:(const std::string str = �)
-rainbow::GetFiberId	util.cpp	/^uint32_t GetFiberId() {$/;"	f	namespace:rainbow	signature:()
-rainbow::GetFiberId	util.h	/^uint32_t GetFiberId();$/;"	p	namespace:rainbow	signature:()
-rainbow::GetThreadId	util.cpp	/^pid_t GetThreadId() {$/;"	f	namespace:rainbow	signature:()
-rainbow::GetThreadId	util.h	/^pid_t GetThreadId();$/;"	p	namespace:rainbow	signature:()
-rainbow::LevelFormatItem	log.cpp	/^class LevelFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::LevelFormatItem::LevelFormatItem	log.cpp	/^    LevelFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LevelFormatItem	access:public	signature:(const std::string str = �)
-rainbow::LineFormatItem	log.cpp	/^class LineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::LineFormatItem::LineFormatItem	log.cpp	/^    LineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LineFormatItem	access:public	signature:(const std::string str = �)
-rainbow::LogAppender	log.h	/^class LogAppender {$/;"	c	namespace:rainbow
-rainbow::LogAppender::LogAppender	log.cpp	/^LogAppender::LogAppender() {$/;"	f	class:rainbow::LogAppender	signature:()
-rainbow::LogAppender::LogAppender	log.h	/^    LogAppender();$/;"	p	class:rainbow::LogAppender	access:public	signature:()
-rainbow::LogAppender::getFormatter	log.h	/^    LogFormatter::ptr getFormatter() const { return m_formatter; }$/;"	f	class:rainbow::LogAppender	access:public	signature:() const
-rainbow::LogAppender::log	log.h	/^    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level,$/;"	p	class:rainbow::LogAppender	access:public	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-rainbow::LogAppender::m_formatter	log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainbow::LogAppender	access:protected
-rainbow::LogAppender::m_level	log.h	/^    LogLevel::Level m_level;$/;"	m	class:rainbow::LogAppender	access:protected
-rainbow::LogAppender::ptr	log.h	/^    typedef std::shared_ptr<LogAppender> ptr;$/;"	t	class:rainbow::LogAppender	access:public
-rainbow::LogAppender::setFormatter	log.h	/^    void setFormatter(LogFormatter::ptr val) { m_formatter = val; }$/;"	f	class:rainbow::LogAppender	access:public	signature:(LogFormatter::ptr val)
-rainbow::LogAppender::~LogAppender	log.h	/^    virtual ~LogAppender() {}$/;"	f	class:rainbow::LogAppender	access:public	signature:()
-rainbow::LogEvent	log.h	/^class LogEvent {$/;"	c	namespace:rainbow
-rainbow::LogEvent::LogEvent	log.cpp	/^LogEvent::LogEvent(const std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, $/;"	f	class:rainbow::LogEvent	signature:(const std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time)
-rainbow::LogEvent::LogEvent	log.h	/^    LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, $/;"	p	class:rainbow::LogEvent	access:public	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t m_line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time)
-rainbow::LogEvent::format	log.cpp	/^void LogEvent::format(const char* fmt, ...) {$/;"	f	class:rainbow::LogEvent	signature:(const char* fmt, ...)
-rainbow::LogEvent::format	log.cpp	/^void LogEvent::format(const char* fmt, va_list al) {$/;"	f	class:rainbow::LogEvent	signature:(const char* fmt, va_list al)
-rainbow::LogEvent::format	log.h	/^    void format(const char* fmt, ...);$/;"	p	class:rainbow::LogEvent	access:public	signature:(const char* fmt, ...)
-rainbow::LogEvent::format	log.h	/^    void format(const char* fmt, va_list al);$/;"	p	class:rainbow::LogEvent	access:public	signature:(const char* fmt, va_list al)
-rainbow::LogEvent::getContent	log.h	/^    std::string getContent() const { return m_ss.str(); }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-rainbow::LogEvent::getElapse	log.h	/^    uint32_t getElapse() const { return m_elapse; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-rainbow::LogEvent::getFiberId	log.h	/^    uint32_t getFiberId() const { return m_fiberId; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-rainbow::LogEvent::getFileName	log.h	/^    const char* getFileName() const { return m_file; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-rainbow::LogEvent::getLevel	log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-rainbow::LogEvent::getLine	log.h	/^    int32_t getLine() const { return m_line; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-rainbow::LogEvent::getLogger	log.h	/^    std::shared_ptr<Logger> getLogger() const {  return m_logger; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-rainbow::LogEvent::getSS	log.h	/^    std::stringstream& getSS() { return m_ss; }$/;"	f	class:rainbow::LogEvent	access:public	signature:()
-rainbow::LogEvent::getThreadId	log.h	/^    uint32_t getThreadId() const { return m_threadId; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-rainbow::LogEvent::getTime	log.h	/^    uint32_t getTime() const { return m_time; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-rainbow::LogEvent::m_elapse	log.h	/^    uint32_t m_elapse = 0;         \/\/ 程序启动开始到现在的毫秒数$/;"	m	class:rainbow::LogEvent	access:private
-rainbow::LogEvent::m_fiberId	log.h	/^    uint32_t m_fiberId = 0;        \/\/ 协程id$/;"	m	class:rainbow::LogEvent	access:private
-rainbow::LogEvent::m_file	log.h	/^    const char* m_file = nullptr;  \/\/ 文件名$/;"	m	class:rainbow::LogEvent	access:private
-rainbow::LogEvent::m_level	log.h	/^    LogLevel::Level m_level;$/;"	m	class:rainbow::LogEvent	access:private
-rainbow::LogEvent::m_line	log.h	/^    int32_t m_line = 0;            \/\/ 行号$/;"	m	class:rainbow::LogEvent	access:private
-rainbow::LogEvent::m_logger	log.h	/^    std::shared_ptr<Logger> m_logger;$/;"	m	class:rainbow::LogEvent	access:private
-rainbow::LogEvent::m_ss	log.h	/^    std::stringstream m_ss;$/;"	m	class:rainbow::LogEvent	access:private
-rainbow::LogEvent::m_threadId	log.h	/^    uint32_t m_threadId = 0;       \/\/ 线程id$/;"	m	class:rainbow::LogEvent	access:private
-rainbow::LogEvent::m_time	log.h	/^    uint64_t m_time;               \/\/ 时间戳$/;"	m	class:rainbow::LogEvent	access:private
-rainbow::LogEvent::ptr	log.h	/^    typedef std::shared_ptr<LogEvent> ptr;$/;"	t	class:rainbow::LogEvent	access:public
-rainbow::LogEvent::~LogEvent	log.h	/^    ~LogEvent() {}$/;"	f	class:rainbow::LogEvent	access:public	signature:()
-rainbow::LogEventWrap	log.h	/^class LogEventWrap {$/;"	c	namespace:rainbow
-rainbow::LogEventWrap::LogEventWrap	log.cpp	/^LogEventWrap::LogEventWrap(LogEvent::ptr e) : m_event(e) {$/;"	f	class:rainbow::LogEventWrap	signature:(LogEvent::ptr e)
-rainbow::LogEventWrap::LogEventWrap	log.h	/^    LogEventWrap(LogEvent::ptr e);$/;"	p	class:rainbow::LogEventWrap	access:public	signature:(LogEvent::ptr e)
-rainbow::LogEventWrap::getEvent	log.h	/^    LogEvent::ptr getEvent() const { return m_event; }$/;"	f	class:rainbow::LogEventWrap	access:public	signature:() const
-rainbow::LogEventWrap::getSS	log.cpp	/^std::stringstream& LogEventWrap::getSS() {$/;"	f	class:rainbow::LogEventWrap	signature:()
-rainbow::LogEventWrap::getSS	log.h	/^    std::stringstream& getSS();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
-rainbow::LogEventWrap::m_event	log.h	/^    LogEvent::ptr m_event;$/;"	m	class:rainbow::LogEventWrap	access:private
-rainbow::LogEventWrap::~LogEventWrap	log.cpp	/^LogEventWrap::~LogEventWrap() {$/;"	f	class:rainbow::LogEventWrap	signature:()
-rainbow::LogEventWrap::~LogEventWrap	log.h	/^    ~LogEventWrap();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
-rainbow::LogFormatter	log.h	/^class LogFormatter {$/;"	c	namespace:rainbow
-rainbow::LogFormatter::FormatItem	log.h	/^    class FormatItem {$/;"	c	class:rainbow::LogFormatter	access:public
-rainbow::LogFormatter::FormatItem::FormatItem	log.h	/^        FormatItem(const std::string& fmt = ""){};$/;"	f	class:rainbow::LogFormatter::FormatItem	access:public	signature:(const std::string& fmt = �)
-rainbow::LogFormatter::FormatItem::format	log.cpp	/^void LogFormatter::FormatItem::format(std::ostream& os,$/;"	f	class:rainbow::LogFormatter::FormatItem	signature:(std::ostream& os, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-rainbow::LogFormatter::FormatItem::format	log.h	/^        virtual void format(std::ostream& os, std::shared_ptr<Logger> logger,$/;"	p	class:rainbow::LogFormatter::FormatItem	access:public	signature:(std::ostream& os, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-rainbow::LogFormatter::FormatItem::ptr	log.h	/^        typedef std::shared_ptr<FormatItem> ptr;$/;"	t	class:rainbow::LogFormatter::FormatItem	access:public
-rainbow::LogFormatter::FormatItem::~FormatItem	log.h	/^        virtual ~FormatItem() {}$/;"	f	class:rainbow::LogFormatter::FormatItem	access:public	signature:()
-rainbow::LogFormatter::LogFormatter	log.cpp	/^LogFormatter::LogFormatter(const std::string& pattern) : m_pattern(pattern) {$/;"	f	class:rainbow::LogFormatter	signature:(const std::string& pattern)
-rainbow::LogFormatter::LogFormatter	log.h	/^    LogFormatter(const std::string& pattern);$/;"	p	class:rainbow::LogFormatter	access:public	signature:(const std::string& pattern)
-rainbow::LogFormatter::format	log.cpp	/^std::string LogFormatter::format(std::shared_ptr<Logger> logger,$/;"	f	class:rainbow::LogFormatter	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-rainbow::LogFormatter::format	log.h	/^    std::ostream& format(std::ostream& ofs, std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event);$/;"	p	class:rainbow::LogFormatter	access:public	signature:(std::ostream& ofs, std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event)
-rainbow::LogFormatter::format	log.h	/^    std::string format(std::shared_ptr<Logger> ptr, LogLevel::Level level,$/;"	p	class:rainbow::LogFormatter	access:public	signature:(std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event)
-rainbow::LogFormatter::init	log.cpp	/^void LogFormatter::init() {$/;"	f	class:rainbow::LogFormatter	signature:()
-rainbow::LogFormatter::init	log.h	/^    void init();$/;"	p	class:rainbow::LogFormatter	access:public	signature:()
-rainbow::LogFormatter::m_items	log.h	/^    std::vector<FormatItem::ptr> m_items;$/;"	m	class:rainbow::LogFormatter	access:private
-rainbow::LogFormatter::m_pattern	log.h	/^    std::string m_pattern;$/;"	m	class:rainbow::LogFormatter	access:private
-rainbow::LogFormatter::ptr	log.h	/^    typedef std::shared_ptr<LogFormatter> ptr;$/;"	t	class:rainbow::LogFormatter	access:public
-rainbow::LogLevel	log.h	/^class LogLevel {$/;"	c	namespace:rainbow
-rainbow::LogLevel::DEBUG	log.h	/^        DEBUG = 1,$/;"	e	enum:rainbow::LogLevel::Level
-rainbow::LogLevel::ERROR	log.h	/^        ERROR = 4,$/;"	e	enum:rainbow::LogLevel::Level
-rainbow::LogLevel::FATAL	log.h	/^        FATAL = 5$/;"	e	enum:rainbow::LogLevel::Level
-rainbow::LogLevel::INFO	log.h	/^        INFO = 2,$/;"	e	enum:rainbow::LogLevel::Level
-rainbow::LogLevel::Level	log.h	/^    enum Level {$/;"	g	class:rainbow::LogLevel	access:public
-rainbow::LogLevel::ToString	log.cpp	/^const char* LogLevel::ToString(LogLevel::Level level) {$/;"	f	class:rainbow::LogLevel	signature:(LogLevel::Level level)
-rainbow::LogLevel::ToString	log.h	/^    static const char* ToString(LogLevel::Level level);$/;"	p	class:rainbow::LogLevel	access:public	signature:(LogLevel::Level level)
-rainbow::LogLevel::UNKNOW	log.h	/^        UNKNOW = 0,$/;"	e	enum:rainbow::LogLevel::Level
-rainbow::LogLevel::WARN	log.h	/^        WARN = 3,$/;"	e	enum:rainbow::LogLevel::Level
-rainbow::Logger	log.h	/^class Logger : public std::enable_shared_from_this<Logger> {$/;"	c	namespace:rainbow	inherits:std::enable_shared_from_this
-rainbow::Logger::Logger	log.cpp	/^Logger::Logger(const std::string& name)$/;"	f	class:rainbow::Logger	signature:(const std::string& name)
-rainbow::Logger::Logger	log.h	/^    Logger(const std::string& name = "root");$/;"	p	class:rainbow::Logger	access:public	signature:(const std::string& name = �)
-rainbow::Logger::addAppender	log.cpp	/^void Logger::addAppender(LogAppender::ptr appender) {$/;"	f	class:rainbow::Logger	signature:(LogAppender::ptr appender)
-rainbow::Logger::addAppender	log.h	/^    void addAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
-rainbow::Logger::debug	log.cpp	/^void Logger::debug(LogEvent::ptr event) { log(LogLevel::DEBUG, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-rainbow::Logger::debug	log.h	/^    void debug(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-rainbow::Logger::delAppender	log.cpp	/^void Logger::delAppender(LogAppender::ptr appender) {$/;"	f	class:rainbow::Logger	signature:(LogAppender::ptr appender)
-rainbow::Logger::delAppender	log.h	/^    void delAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
-rainbow::Logger::error	log.cpp	/^void Logger::error(LogEvent::ptr event) { log(LogLevel::ERROR, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-rainbow::Logger::error	log.h	/^    void error(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-rainbow::Logger::fatal	log.cpp	/^void Logger::fatal(LogEvent::ptr event) { log(LogLevel::FATAL, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-rainbow::Logger::fatal	log.h	/^    void fatal(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-rainbow::Logger::getLevel	log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::Logger	access:public	signature:() const
-rainbow::Logger::getName	log.h	/^    const std::string getName() const { return this->m_name; }$/;"	f	class:rainbow::Logger	access:public	signature:() const
-rainbow::Logger::info	log.cpp	/^void Logger::info(LogEvent::ptr event) { log(LogLevel::INFO, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-rainbow::Logger::info	log.h	/^    void info(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-rainbow::Logger::log	log.cpp	/^void Logger::log(LogLevel::Level level, LogEvent::ptr event) {$/;"	f	class:rainbow::Logger	signature:(LogLevel::Level level, LogEvent::ptr event)
-rainbow::Logger::log	log.h	/^    void log(LogLevel::Level level, LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogLevel::Level level, LogEvent::ptr event)
-rainbow::Logger::m_appenders	log.h	/^    std::list<LogAppender::ptr> m_appenders;  \/\/ Appender集合$/;"	m	class:rainbow::Logger	access:private
-rainbow::Logger::m_formatter	log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainbow::Logger	access:private
-rainbow::Logger::m_level	log.h	/^    LogLevel::Level m_level;  \/\/ 满足日志级别的日志才会被输出$/;"	m	class:rainbow::Logger	access:private
-rainbow::Logger::m_name	log.h	/^    std::string m_name = "root";       \/\/ 日志名称$/;"	m	class:rainbow::Logger	access:private
-rainbow::Logger::ptr	log.h	/^    typedef std::shared_ptr<Logger> ptr;$/;"	t	class:rainbow::Logger	access:public
-rainbow::Logger::setAppender	log.h	/^    void setAppender(LogLevel::Level val) { m_level = val; }$/;"	f	class:rainbow::Logger	access:public	signature:(LogLevel::Level val)
-rainbow::Logger::warn	log.cpp	/^void Logger::warn(LogEvent::ptr event) { log(LogLevel::WARN, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-rainbow::Logger::warn	log.h	/^    void warn(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-rainbow::MessageFormatItem	log.cpp	/^class MessageFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::MessageFormatItem::MessageFormatItem	log.cpp	/^    MessageFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::MessageFormatItem	access:public	signature:(const std::string& str = �)
-rainbow::NameFormatItem	log.cpp	/^class NameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::NameFormatItem::NameFormatItem	log.cpp	/^    NameFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NameFormatItem	access:public	signature:(const std::string str = �)
-rainbow::NewLineFormatItem	log.cpp	/^class NewLineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::NewLineFormatItem::NewLineFormatItem	log.cpp	/^    NewLineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NewLineFormatItem	access:public	signature:(const std::string str = �)
-rainbow::StdoutLogAppender	log.h	/^class StdoutLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
-rainbow::StdoutLogAppender::log	log.cpp	/^void StdoutLogAppender::log(std::shared_ptr<Logger> logger,$/;"	f	class:rainbow::StdoutLogAppender	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
-rainbow::StdoutLogAppender::override	log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::StdoutLogAppender	access:public
-rainbow::StdoutLogAppender::ptr	log.h	/^    typedef std::shared_ptr<StdoutLogAppender> ptr;$/;"	t	class:rainbow::StdoutLogAppender	access:public
-rainbow::StringFormatItem	log.cpp	/^class StringFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::StringFormatItem::StringFormatItem	log.cpp	/^    StringFormatItem(const std::string& str) : m_string(str) {}$/;"	f	class:rainbow::StringFormatItem	access:public	signature:(const std::string& str)
-rainbow::StringFormatItem::getString	log.cpp	/^    std::string getString() const { return m_string; }$/;"	f	class:rainbow::StringFormatItem	access:public	signature:() const
-rainbow::StringFormatItem::m_string	log.cpp	/^    std::string m_string;$/;"	m	class:rainbow::StringFormatItem	file:	access:private
-rainbow::TabFormatItem	log.cpp	/^class TabFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::TabFormatItem::TabFormatItem	log.cpp	/^     TabFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::TabFormatItem	access:public	signature:(const std::string& str = �)
-rainbow::ThreadIdFormatItem	log.cpp	/^class ThreadIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-rainbow::ThreadIdFormatItem::ThreadIdFormatItem	log.cpp	/^    ThreadIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ThreadIdFormatItem	access:public	signature:(const std::string str = �)
-reopen	log.cpp	/^bool FileLogAppender::reopen() {$/;"	f	class:rainbow::FileLogAppender	signature:()
-reopen	log.h	/^    bool reopen();$/;"	p	class:rainbow::FileLogAppender	access:public	signature:()
-setAppender	log.h	/^    void setAppender(LogLevel::Level val) { m_level = val; }$/;"	f	class:rainbow::Logger	access:public	signature:(LogLevel::Level val)
-setFormatter	log.h	/^    void setFormatter(LogFormatter::ptr val) { m_formatter = val; }$/;"	f	class:rainbow::LogAppender	access:public	signature:(LogFormatter::ptr val)
-warn	log.cpp	/^void Logger::warn(LogEvent::ptr event) { log(LogLevel::WARN, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
-warn	log.h	/^    void warn(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
-~FormatItem	log.h	/^        virtual ~FormatItem() {}$/;"	f	class:rainbow::LogFormatter::FormatItem	access:public	signature:()
-~LogAppender	log.h	/^    virtual ~LogAppender() {}$/;"	f	class:rainbow::LogAppender	access:public	signature:()
-~LogEvent	log.h	/^    ~LogEvent() {}$/;"	f	class:rainbow::LogEvent	access:public	signature:()
-~LogEventWrap	log.cpp	/^LogEventWrap::~LogEventWrap() {$/;"	f	class:rainbow::LogEventWrap	signature:()
-~LogEventWrap	log.h	/^    ~LogEventWrap();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
+Config	rainbow/config.h	/^class Config {$/;"	c	namespace:rainbow
+ConfigVar	rainbow/config.h	/^    ConfigVar(const std::string& name$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const std::string& name , const T& default_value , const std::string& description = �)
+ConfigVar	rainbow/config.h	/^class ConfigVar : public ConfigVarBase {$/;"	c	namespace:rainbow	inherits:ConfigVarBase
+ConfigVarBase	rainbow/config.h	/^    ConfigVarBase(const std::string& name, const std::string& description = "") $/;"	f	class:rainbow::ConfigVarBase	access:public	signature:(const std::string& name, const std::string& description = �)
+ConfigVarBase	rainbow/config.h	/^class ConfigVarBase {$/;"	c	namespace:rainbow
+ConfigVarMap	rainbow/config.h	/^    typedef std::map<std::string, ConfigVarBase::ptr> ConfigVarMap;$/;"	t	class:rainbow::Config	access:public
+DEBUG	rainbow/log.h	/^        DEBUG = 1,$/;"	e	enum:rainbow::LogLevel::Level
+DateTimeFormatItem	rainbow/log.cpp	/^    DateTimeFormatItem(const std::string& format = "%Y-%m-%d %H:%M:%s")$/;"	f	class:rainbow::DateTimeFormatItem	access:public	signature:(const std::string& format = �)
+DateTimeFormatItem	rainbow/log.cpp	/^class DateTimeFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+ERROR	rainbow/log.h	/^        ERROR = 4,$/;"	e	enum:rainbow::LogLevel::Level
+ElapseFormatItem	rainbow/log.cpp	/^    ElapseFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ElapseFormatItem	access:public	signature:(const std::string str = �)
+ElapseFormatItem	rainbow/log.cpp	/^class ElapseFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+FATAL	rainbow/log.h	/^        FATAL = 5$/;"	e	enum:rainbow::LogLevel::Level
+FiberIdFormatItem	rainbow/log.cpp	/^    FiberIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::FiberIdFormatItem	access:public	signature:(const std::string str = �)
+FiberIdFormatItem	rainbow/log.cpp	/^class FiberIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+FileLogAppender	rainbow/log.cpp	/^FileLogAppender::FileLogAppender(const std::string& name) : m_filename(name) {}$/;"	f	class:rainbow::FileLogAppender	signature:(const std::string& name)
+FileLogAppender	rainbow/log.h	/^    FileLogAppender(const std::string& filename);$/;"	p	class:rainbow::FileLogAppender	access:public	signature:(const std::string& filename)
+FileLogAppender	rainbow/log.h	/^class FileLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
+FileNameFormatItem	rainbow/log.cpp	/^    FileNameFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::FileNameFormatItem	access:public	signature:(const std::string str = �)
+FileNameFormatItem	rainbow/log.cpp	/^class FileNameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+FormatItem	rainbow/log.h	/^        FormatItem(const std::string& fmt = ""){};$/;"	f	class:rainbow::LogFormatter::FormatItem	access:public	signature:(const std::string& fmt = �)
+FormatItem	rainbow/log.h	/^    class FormatItem {$/;"	c	class:rainbow::LogFormatter	access:public
+GetFiberId	rainbow/util.cpp	/^uint32_t GetFiberId() {$/;"	f	namespace:rainbow	signature:()
+GetFiberId	rainbow/util.h	/^uint32_t GetFiberId();$/;"	p	namespace:rainbow	signature:()
+GetInstance	rainbow/singleton.h	/^    static T* GetInstance() {$/;"	f	class:rainbow::Singleton	access:public	signature:()
+GetInstance	rainbow/singleton.h	/^    static std::shared_ptr<T> GetInstance() {$/;"	f	class:rainbow::Singletonptr	access:public	signature:()
+GetThreadId	rainbow/util.cpp	/^pid_t GetThreadId() {$/;"	f	namespace:rainbow	signature:()
+GetThreadId	rainbow/util.h	/^pid_t GetThreadId();$/;"	p	namespace:rainbow	signature:()
+INFO	rainbow/log.h	/^        INFO = 2,$/;"	e	enum:rainbow::LogLevel::Level
+Level	rainbow/log.h	/^    enum Level {$/;"	g	class:rainbow::LogLevel	access:public
+LevelFormatItem	rainbow/log.cpp	/^    LevelFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LevelFormatItem	access:public	signature:(const std::string str = �)
+LevelFormatItem	rainbow/log.cpp	/^class LevelFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+LineFormatItem	rainbow/log.cpp	/^    LineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LineFormatItem	access:public	signature:(const std::string str = �)
+LineFormatItem	rainbow/log.cpp	/^class LineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+LogAppender	rainbow/log.cpp	/^LogAppender::LogAppender() {$/;"	f	class:rainbow::LogAppender	signature:()
+LogAppender	rainbow/log.h	/^    LogAppender();$/;"	p	class:rainbow::LogAppender	access:public	signature:()
+LogAppender	rainbow/log.h	/^class LogAppender {$/;"	c	namespace:rainbow
+LogEvent	rainbow/log.cpp	/^LogEvent::LogEvent(const std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, $/;"	f	class:rainbow::LogEvent	signature:(const std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time)
+LogEvent	rainbow/log.h	/^    LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, $/;"	p	class:rainbow::LogEvent	access:public	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t m_line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time)
+LogEvent	rainbow/log.h	/^class LogEvent {$/;"	c	namespace:rainbow
+LogEventWrap	rainbow/log.cpp	/^LogEventWrap::LogEventWrap(LogEvent::ptr e) : m_event(e) {$/;"	f	class:rainbow::LogEventWrap	signature:(LogEvent::ptr e)
+LogEventWrap	rainbow/log.h	/^    LogEventWrap(LogEvent::ptr e);$/;"	p	class:rainbow::LogEventWrap	access:public	signature:(LogEvent::ptr e)
+LogEventWrap	rainbow/log.h	/^class LogEventWrap {$/;"	c	namespace:rainbow
+LogFormatter	rainbow/log.cpp	/^LogFormatter::LogFormatter(const std::string& pattern) : m_pattern(pattern) {$/;"	f	class:rainbow::LogFormatter	signature:(const std::string& pattern)
+LogFormatter	rainbow/log.h	/^    LogFormatter(const std::string& pattern);$/;"	p	class:rainbow::LogFormatter	access:public	signature:(const std::string& pattern)
+LogFormatter	rainbow/log.h	/^class LogFormatter {$/;"	c	namespace:rainbow
+LogLevel	rainbow/log.h	/^class LogLevel {$/;"	c	namespace:rainbow
+Logger	rainbow/log.cpp	/^Logger::Logger(const std::string& name)$/;"	f	class:rainbow::Logger	signature:(const std::string& name)
+Logger	rainbow/log.h	/^    Logger(const std::string& name = "root");$/;"	p	class:rainbow::Logger	access:public	signature:(const std::string& name = �)
+Logger	rainbow/log.h	/^class Logger : public std::enable_shared_from_this<Logger> {$/;"	c	namespace:rainbow	inherits:std::enable_shared_from_this
+LoggerManager	rainbow/log.cpp	/^LoggerManager::LoggerManager() {$/;"	f	class:rainbow::LoggerManager	signature:()
+LoggerManager	rainbow/log.h	/^    LoggerManager();$/;"	p	class:rainbow::LoggerManager	access:public	signature:()
+LoggerManager	rainbow/log.h	/^class LoggerManager {$/;"	c	namespace:rainbow
+LoggerMgr	rainbow/log.h	/^typedef rainbow::Singleton<LoggerManager> LoggerMgr;$/;"	t	namespace:rainbow
+Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name) {$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name)
+Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name,$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name, const T& default_value, const std::string& description = �)
+MessageFormatItem	rainbow/log.cpp	/^    MessageFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::MessageFormatItem	access:public	signature:(const std::string& str = �)
+MessageFormatItem	rainbow/log.cpp	/^class MessageFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+NameFormatItem	rainbow/log.cpp	/^    NameFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NameFormatItem	access:public	signature:(const std::string str = �)
+NameFormatItem	rainbow/log.cpp	/^class NameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+NewLineFormatItem	rainbow/log.cpp	/^    NewLineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NewLineFormatItem	access:public	signature:(const std::string str = �)
+NewLineFormatItem	rainbow/log.cpp	/^class NewLineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+RAINBOW_LOG_DEBUG	rainbow/log.h	23;"	d
+RAINBOW_LOG_ERROR	rainbow/log.h	26;"	d
+RAINBOW_LOG_FATAL	rainbow/log.h	27;"	d
+RAINBOW_LOG_FMT_DEBUG	rainbow/log.h	35;"	d
+RAINBOW_LOG_FMT_ERROR	rainbow/log.h	38;"	d
+RAINBOW_LOG_FMT_FATAL	rainbow/log.h	39;"	d
+RAINBOW_LOG_FMT_INFO	rainbow/log.h	36;"	d
+RAINBOW_LOG_FMT_LEVEL	rainbow/log.h	29;"	d
+RAINBOW_LOG_FMT_WARN	rainbow/log.h	37;"	d
+RAINBOW_LOG_INFO	rainbow/log.h	24;"	d
+RAINBOW_LOG_LEVEL	rainbow/log.h	19;"	d
+RAINBOW_LOG_ROOT	rainbow/log.h	41;"	d
+RAINBOW_LOG_WARN	rainbow/log.h	25;"	d
+Singleton	rainbow/singleton.h	/^class Singleton {$/;"	c	namespace:rainbow
+Singletonptr	rainbow/singleton.h	/^class Singletonptr {$/;"	c	namespace:rainbow
+StdoutLogAppender	rainbow/log.h	/^class StdoutLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
+StringFormatItem	rainbow/log.cpp	/^    StringFormatItem(const std::string& str) : m_string(str) {}$/;"	f	class:rainbow::StringFormatItem	access:public	signature:(const std::string& str)
+StringFormatItem	rainbow/log.cpp	/^class StringFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+TabFormatItem	rainbow/log.cpp	/^     TabFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::TabFormatItem	access:public	signature:(const std::string& str = �)
+TabFormatItem	rainbow/log.cpp	/^class TabFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+ThreadIdFormatItem	rainbow/log.cpp	/^    ThreadIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ThreadIdFormatItem	access:public	signature:(const std::string str = �)
+ThreadIdFormatItem	rainbow/log.cpp	/^class ThreadIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+ToString	rainbow/log.cpp	/^const char* LogLevel::ToString(LogLevel::Level level) {$/;"	f	class:rainbow::LogLevel	signature:(LogLevel::Level level)
+ToString	rainbow/log.h	/^    static const char* ToString(LogLevel::Level level);$/;"	p	class:rainbow::LogLevel	access:public	signature:(LogLevel::Level level)
+UNKNOW	rainbow/log.h	/^        UNKNOW = 0,$/;"	e	enum:rainbow::LogLevel::Level
+WARN	rainbow/log.h	/^        WARN = 3,$/;"	e	enum:rainbow::LogLevel::Level
+XX	rainbow/log.cpp	138;"	d	file:
+XX	rainbow/log.cpp	148;"	d	file:
+XX	rainbow/log.cpp	313;"	d	file:
+XX	rainbow/log.cpp	327;"	d	file:
+__RAINBOW_CONFIG_H__	rainbow/config.h	2;"	d
+__RAINBOW_LOG_H	rainbow/log.h	2;"	d
+__RAINBOW_SINGLETON_H_	rainbow/singleton.h	2;"	d
+__RAINBOW_UTIL_H_	rainbow/util.h	2;"	d
+addAppender	rainbow/log.cpp	/^void Logger::addAppender(LogAppender::ptr appender) {$/;"	f	class:rainbow::Logger	signature:(LogAppender::ptr appender)
+addAppender	rainbow/log.h	/^    void addAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
+debug	rainbow/log.cpp	/^void Logger::debug(LogEvent::ptr event) { log(LogLevel::DEBUG, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+debug	rainbow/log.h	/^    void debug(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+delAppender	rainbow/log.cpp	/^void Logger::delAppender(LogAppender::ptr appender) {$/;"	f	class:rainbow::Logger	signature:(LogAppender::ptr appender)
+delAppender	rainbow/log.h	/^    void delAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
+error	rainbow/log.cpp	/^void Logger::error(LogEvent::ptr event) { log(LogLevel::ERROR, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+error	rainbow/log.h	/^    void error(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+fatal	rainbow/log.cpp	/^void Logger::fatal(LogEvent::ptr event) { log(LogLevel::FATAL, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+fatal	rainbow/log.h	/^    void fatal(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+format	rainbow/log.cpp	/^std::string LogFormatter::format(std::shared_ptr<Logger> logger,$/;"	f	class:rainbow::LogFormatter	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+format	rainbow/log.cpp	/^void LogEvent::format(const char* fmt, ...) {$/;"	f	class:rainbow::LogEvent	signature:(const char* fmt, ...)
+format	rainbow/log.cpp	/^void LogEvent::format(const char* fmt, va_list al) {$/;"	f	class:rainbow::LogEvent	signature:(const char* fmt, va_list al)
+format	rainbow/log.cpp	/^void LogFormatter::FormatItem::format(std::ostream& os,$/;"	f	class:rainbow::LogFormatter::FormatItem	signature:(std::ostream& os, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+format	rainbow/log.h	/^        virtual void format(std::ostream& os, std::shared_ptr<Logger> logger,$/;"	p	class:rainbow::LogFormatter::FormatItem	access:public	signature:(std::ostream& os, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+format	rainbow/log.h	/^    std::ostream& format(std::ostream& ofs, std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event);$/;"	p	class:rainbow::LogFormatter	access:public	signature:(std::ostream& ofs, std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event)
+format	rainbow/log.h	/^    std::string format(std::shared_ptr<Logger> ptr, LogLevel::Level level,$/;"	p	class:rainbow::LogFormatter	access:public	signature:(std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event)
+format	rainbow/log.h	/^    void format(const char* fmt, ...);$/;"	p	class:rainbow::LogEvent	access:public	signature:(const char* fmt, ...)
+format	rainbow/log.h	/^    void format(const char* fmt, va_list al);$/;"	p	class:rainbow::LogEvent	access:public	signature:(const char* fmt, va_list al)
+fromString	rainbow/config.h	/^    bool fromString(const std::string& val) {$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const std::string& val)
+fromString	rainbow/config.h	/^    virtual bool fromString(const std::string& val) = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:(const std::string& val)
+getContent	rainbow/log.h	/^    std::string getContent() const { return m_ss.str(); }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+getDescription	rainbow/config.h	/^    const std::string& getDescription() const { return m_description; }$/;"	f	class:rainbow::ConfigVarBase	access:public	signature:() const
+getElapse	rainbow/log.h	/^    uint32_t getElapse() const { return m_elapse; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+getEvent	rainbow/log.h	/^    LogEvent::ptr getEvent() const { return m_event; }$/;"	f	class:rainbow::LogEventWrap	access:public	signature:() const
+getFiberId	rainbow/log.h	/^    uint32_t getFiberId() const { return m_fiberId; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+getFileName	rainbow/log.h	/^    const char* getFileName() const { return m_file; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+getFormatter	rainbow/log.h	/^    LogFormatter::ptr getFormatter() const { return m_formatter; }$/;"	f	class:rainbow::LogAppender	access:public	signature:() const
+getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::Logger	access:public	signature:() const
+getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() { return m_level; }$/;"	f	class:rainbow::LogAppender	access:public	signature:()
+getLine	rainbow/log.h	/^    int32_t getLine() const { return m_line; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+getLogger	rainbow/log.cpp	/^Logger::ptr LoggerManager::getLogger(const std::string& name) {$/;"	f	class:rainbow::LoggerManager	signature:(const std::string& name)
+getLogger	rainbow/log.h	/^    Logger::ptr getLogger(const std::string& name);$/;"	p	class:rainbow::LoggerManager	access:public	signature:(const std::string& name)
+getLogger	rainbow/log.h	/^    std::shared_ptr<Logger> getLogger() const {  return m_logger; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+getName	rainbow/config.h	/^    const std::string& getName() const { return m_name; }$/;"	f	class:rainbow::ConfigVarBase	access:public	signature:() const
+getName	rainbow/log.h	/^    const std::string getName() const { return this->m_name; }$/;"	f	class:rainbow::Logger	access:public	signature:() const
+getRoot	rainbow/log.h	/^    Logger::ptr getRoot() const { return m_root; }$/;"	f	class:rainbow::LoggerManager	access:public	signature:() const
+getSS	rainbow/log.cpp	/^std::stringstream& LogEventWrap::getSS() {$/;"	f	class:rainbow::LogEventWrap	signature:()
+getSS	rainbow/log.h	/^    std::stringstream& getSS() { return m_ss; }$/;"	f	class:rainbow::LogEvent	access:public	signature:()
+getSS	rainbow/log.h	/^    std::stringstream& getSS();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
+getString	rainbow/log.cpp	/^    std::string getString() const { return m_string; }$/;"	f	class:rainbow::StringFormatItem	access:public	signature:() const
+getThreadId	rainbow/log.h	/^    uint32_t getThreadId() const { return m_threadId; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+getTime	rainbow/log.h	/^    uint32_t getTime() const { return m_time; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+info	rainbow/log.cpp	/^void Logger::info(LogEvent::ptr event) { log(LogLevel::INFO, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+info	rainbow/log.h	/^    void info(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+init	rainbow/log.cpp	/^void LogFormatter::init() {$/;"	f	class:rainbow::LogFormatter	signature:()
+init	rainbow/log.h	/^    void init();$/;"	p	class:rainbow::LogFormatter	access:public	signature:()
+init	rainbow/log.h	/^    void init();$/;"	p	class:rainbow::LoggerManager	access:public	signature:()
+log	rainbow/log.cpp	/^void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level,$/;"	f	class:rainbow::FileLogAppender	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+log	rainbow/log.cpp	/^void Logger::log(LogLevel::Level level, LogEvent::ptr event) {$/;"	f	class:rainbow::Logger	signature:(LogLevel::Level level, LogEvent::ptr event)
+log	rainbow/log.cpp	/^void StdoutLogAppender::log(std::shared_ptr<Logger> logger,$/;"	f	class:rainbow::StdoutLogAppender	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+log	rainbow/log.h	/^    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level,$/;"	p	class:rainbow::LogAppender	access:public	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+log	rainbow/log.h	/^    void log(LogLevel::Level level, LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogLevel::Level level, LogEvent::ptr event)
+m_appenders	rainbow/log.h	/^    std::list<LogAppender::ptr> m_appenders;  \/\/ Appender集合$/;"	m	class:rainbow::Logger	access:private
+m_description	rainbow/config.h	/^    std::string m_description;$/;"	m	class:rainbow::ConfigVarBase	access:protected
+m_elapse	rainbow/log.h	/^    uint32_t m_elapse = 0;         \/\/ 程序启动开始到现在的毫秒数$/;"	m	class:rainbow::LogEvent	access:private
+m_event	rainbow/log.h	/^    LogEvent::ptr m_event;$/;"	m	class:rainbow::LogEventWrap	access:private
+m_fiberId	rainbow/log.h	/^    uint32_t m_fiberId = 0;        \/\/ 协程id$/;"	m	class:rainbow::LogEvent	access:private
+m_file	rainbow/log.h	/^    const char* m_file = nullptr;  \/\/ 文件名$/;"	m	class:rainbow::LogEvent	access:private
+m_filename	rainbow/log.h	/^    std::string m_filename;$/;"	m	class:rainbow::FileLogAppender	access:private
+m_filestream	rainbow/log.h	/^    std::ofstream m_filestream;$/;"	m	class:rainbow::FileLogAppender	access:private
+m_format	rainbow/log.cpp	/^    std::string m_format;$/;"	m	class:rainbow::DateTimeFormatItem	file:	access:private
+m_formatter	rainbow/log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainbow::LogAppender	access:protected
+m_formatter	rainbow/log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainbow::Logger	access:private
+m_items	rainbow/log.h	/^    std::vector<FormatItem::ptr> m_items;$/;"	m	class:rainbow::LogFormatter	access:private
+m_level	rainbow/log.h	/^    LogLevel::Level m_level;  \/\/ 满足日志级别的日志才会被输出$/;"	m	class:rainbow::Logger	access:private
+m_level	rainbow/log.h	/^    LogLevel::Level m_level;$/;"	m	class:rainbow::LogAppender	access:protected
+m_level	rainbow/log.h	/^    LogLevel::Level m_level;$/;"	m	class:rainbow::LogEvent	access:private
+m_line	rainbow/log.h	/^    int32_t m_line = 0;            \/\/ 行号$/;"	m	class:rainbow::LogEvent	access:private
+m_logger	rainbow/log.h	/^    std::shared_ptr<Logger> m_logger;$/;"	m	class:rainbow::LogEvent	access:private
+m_loggers	rainbow/log.h	/^    std::map<std::string, Logger::ptr> m_loggers;$/;"	m	class:rainbow::LoggerManager	access:private
+m_name	rainbow/config.h	/^    std::string m_name;$/;"	m	class:rainbow::ConfigVarBase	access:protected
+m_name	rainbow/log.h	/^    std::string m_name = "root";       \/\/ 日志名称$/;"	m	class:rainbow::Logger	access:private
+m_pattern	rainbow/log.h	/^    std::string m_pattern;$/;"	m	class:rainbow::LogFormatter	access:private
+m_root	rainbow/log.h	/^    Logger::ptr m_root;$/;"	m	class:rainbow::LoggerManager	access:private
+m_ss	rainbow/log.h	/^    std::stringstream m_ss;$/;"	m	class:rainbow::LogEvent	access:private
+m_string	rainbow/log.cpp	/^    std::string m_string;$/;"	m	class:rainbow::StringFormatItem	file:	access:private
+m_threadId	rainbow/log.h	/^    uint32_t m_threadId = 0;       \/\/ 线程id$/;"	m	class:rainbow::LogEvent	access:private
+m_time	rainbow/log.h	/^    uint64_t m_time;               \/\/ 时间戳$/;"	m	class:rainbow::LogEvent	access:private
+m_val	rainbow/config.h	/^    T m_val;$/;"	m	class:rainbow::ConfigVar	access:private
+main	tests/test.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
+override	rainbow/log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::FileLogAppender	access:public
+override	rainbow/log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::StdoutLogAppender	access:public
+ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVar> ptr;$/;"	t	class:rainbow::ConfigVar	access:public
+ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVarBase> ptr;$/;"	t	class:rainbow::ConfigVarBase	access:public
+ptr	rainbow/log.h	/^        typedef std::shared_ptr<FormatItem> ptr;$/;"	t	class:rainbow::LogFormatter::FormatItem	access:public
+ptr	rainbow/log.h	/^    typedef std::shared_ptr<FileLogAppender> ptr;$/;"	t	class:rainbow::FileLogAppender	access:public
+ptr	rainbow/log.h	/^    typedef std::shared_ptr<LogAppender> ptr;$/;"	t	class:rainbow::LogAppender	access:public
+ptr	rainbow/log.h	/^    typedef std::shared_ptr<LogEvent> ptr;$/;"	t	class:rainbow::LogEvent	access:public
+ptr	rainbow/log.h	/^    typedef std::shared_ptr<LogFormatter> ptr;$/;"	t	class:rainbow::LogFormatter	access:public
+ptr	rainbow/log.h	/^    typedef std::shared_ptr<Logger> ptr;$/;"	t	class:rainbow::Logger	access:public
+ptr	rainbow/log.h	/^    typedef std::shared_ptr<StdoutLogAppender> ptr;$/;"	t	class:rainbow::StdoutLogAppender	access:public
+rainbow	rainbow/config.h	/^namespace rainbow {$/;"	n
+rainbow	rainbow/log.cpp	/^namespace rainbow {$/;"	n	file:
+rainbow	rainbow/log.h	/^namespace rainbow {$/;"	n
+rainbow	rainbow/singleton.h	/^namespace rainbow {$/;"	n
+rainbow	rainbow/util.cpp	/^namespace rainbow {$/;"	n	file:
+rainbow	rainbow/util.h	/^namespace rainbow {$/;"	n
+rainbow::Config	rainbow/config.h	/^class Config {$/;"	c	namespace:rainbow
+rainbow::Config::ConfigVarMap	rainbow/config.h	/^    typedef std::map<std::string, ConfigVarBase::ptr> ConfigVarMap;$/;"	t	class:rainbow::Config	access:public
+rainbow::Config::Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name) {$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name)
+rainbow::Config::Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name,$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name, const T& default_value, const std::string& description = �)
+rainbow::Config::s_datas	rainbow/config.h	/^    static ConfigMap s_datas;$/;"	m	class:rainbow::Config	access:private
+rainbow::ConfigVar	rainbow/config.h	/^class ConfigVar : public ConfigVarBase {$/;"	c	namespace:rainbow	inherits:ConfigVarBase
+rainbow::ConfigVar::ConfigVar	rainbow/config.h	/^    ConfigVar(const std::string& name$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const std::string& name , const T& default_value , const std::string& description = �)
+rainbow::ConfigVar::fromString	rainbow/config.h	/^    bool fromString(const std::string& val) {$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const std::string& val)
+rainbow::ConfigVar::m_val	rainbow/config.h	/^    T m_val;$/;"	m	class:rainbow::ConfigVar	access:private
+rainbow::ConfigVar::ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVar> ptr;$/;"	t	class:rainbow::ConfigVar	access:public
+rainbow::ConfigVarBase	rainbow/config.h	/^class ConfigVarBase {$/;"	c	namespace:rainbow
+rainbow::ConfigVarBase::ConfigVarBase	rainbow/config.h	/^    ConfigVarBase(const std::string& name, const std::string& description = "") $/;"	f	class:rainbow::ConfigVarBase	access:public	signature:(const std::string& name, const std::string& description = �)
+rainbow::ConfigVarBase::fromString	rainbow/config.h	/^    virtual bool fromString(const std::string& val) = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:(const std::string& val)
+rainbow::ConfigVarBase::getDescription	rainbow/config.h	/^    const std::string& getDescription() const { return m_description; }$/;"	f	class:rainbow::ConfigVarBase	access:public	signature:() const
+rainbow::ConfigVarBase::getName	rainbow/config.h	/^    const std::string& getName() const { return m_name; }$/;"	f	class:rainbow::ConfigVarBase	access:public	signature:() const
+rainbow::ConfigVarBase::m_description	rainbow/config.h	/^    std::string m_description;$/;"	m	class:rainbow::ConfigVarBase	access:protected
+rainbow::ConfigVarBase::m_name	rainbow/config.h	/^    std::string m_name;$/;"	m	class:rainbow::ConfigVarBase	access:protected
+rainbow::ConfigVarBase::ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVarBase> ptr;$/;"	t	class:rainbow::ConfigVarBase	access:public
+rainbow::ConfigVarBase::toString	rainbow/config.h	/^    virtual std::string toString() = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:()
+rainbow::ConfigVarBase::~ConfigVarBase	rainbow/config.h	/^    virtual ~ConfigVarBase() {}$/;"	f	class:rainbow::ConfigVarBase	access:public	signature:()
+rainbow::DateTimeFormatItem	rainbow/log.cpp	/^class DateTimeFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::DateTimeFormatItem::DateTimeFormatItem	rainbow/log.cpp	/^    DateTimeFormatItem(const std::string& format = "%Y-%m-%d %H:%M:%s")$/;"	f	class:rainbow::DateTimeFormatItem	access:public	signature:(const std::string& format = �)
+rainbow::DateTimeFormatItem::m_format	rainbow/log.cpp	/^    std::string m_format;$/;"	m	class:rainbow::DateTimeFormatItem	file:	access:private
+rainbow::ElapseFormatItem	rainbow/log.cpp	/^class ElapseFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::ElapseFormatItem::ElapseFormatItem	rainbow/log.cpp	/^    ElapseFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ElapseFormatItem	access:public	signature:(const std::string str = �)
+rainbow::FiberIdFormatItem	rainbow/log.cpp	/^class FiberIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::FiberIdFormatItem::FiberIdFormatItem	rainbow/log.cpp	/^    FiberIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::FiberIdFormatItem	access:public	signature:(const std::string str = �)
+rainbow::FileLogAppender	rainbow/log.h	/^class FileLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
+rainbow::FileLogAppender::FileLogAppender	rainbow/log.cpp	/^FileLogAppender::FileLogAppender(const std::string& name) : m_filename(name) {}$/;"	f	class:rainbow::FileLogAppender	signature:(const std::string& name)
+rainbow::FileLogAppender::FileLogAppender	rainbow/log.h	/^    FileLogAppender(const std::string& filename);$/;"	p	class:rainbow::FileLogAppender	access:public	signature:(const std::string& filename)
+rainbow::FileLogAppender::log	rainbow/log.cpp	/^void FileLogAppender::log(std::shared_ptr<Logger> logger, LogLevel::Level level,$/;"	f	class:rainbow::FileLogAppender	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+rainbow::FileLogAppender::m_filename	rainbow/log.h	/^    std::string m_filename;$/;"	m	class:rainbow::FileLogAppender	access:private
+rainbow::FileLogAppender::m_filestream	rainbow/log.h	/^    std::ofstream m_filestream;$/;"	m	class:rainbow::FileLogAppender	access:private
+rainbow::FileLogAppender::override	rainbow/log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::FileLogAppender	access:public
+rainbow::FileLogAppender::ptr	rainbow/log.h	/^    typedef std::shared_ptr<FileLogAppender> ptr;$/;"	t	class:rainbow::FileLogAppender	access:public
+rainbow::FileLogAppender::reopen	rainbow/log.cpp	/^bool FileLogAppender::reopen() {$/;"	f	class:rainbow::FileLogAppender	signature:()
+rainbow::FileLogAppender::reopen	rainbow/log.h	/^    bool reopen();$/;"	p	class:rainbow::FileLogAppender	access:public	signature:()
+rainbow::FileNameFormatItem	rainbow/log.cpp	/^class FileNameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::FileNameFormatItem::FileNameFormatItem	rainbow/log.cpp	/^    FileNameFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::FileNameFormatItem	access:public	signature:(const std::string str = �)
+rainbow::GetFiberId	rainbow/util.cpp	/^uint32_t GetFiberId() {$/;"	f	namespace:rainbow	signature:()
+rainbow::GetFiberId	rainbow/util.h	/^uint32_t GetFiberId();$/;"	p	namespace:rainbow	signature:()
+rainbow::GetThreadId	rainbow/util.cpp	/^pid_t GetThreadId() {$/;"	f	namespace:rainbow	signature:()
+rainbow::GetThreadId	rainbow/util.h	/^pid_t GetThreadId();$/;"	p	namespace:rainbow	signature:()
+rainbow::LevelFormatItem	rainbow/log.cpp	/^class LevelFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::LevelFormatItem::LevelFormatItem	rainbow/log.cpp	/^    LevelFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LevelFormatItem	access:public	signature:(const std::string str = �)
+rainbow::LineFormatItem	rainbow/log.cpp	/^class LineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::LineFormatItem::LineFormatItem	rainbow/log.cpp	/^    LineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LineFormatItem	access:public	signature:(const std::string str = �)
+rainbow::LogAppender	rainbow/log.h	/^class LogAppender {$/;"	c	namespace:rainbow
+rainbow::LogAppender::LogAppender	rainbow/log.cpp	/^LogAppender::LogAppender() {$/;"	f	class:rainbow::LogAppender	signature:()
+rainbow::LogAppender::LogAppender	rainbow/log.h	/^    LogAppender();$/;"	p	class:rainbow::LogAppender	access:public	signature:()
+rainbow::LogAppender::getFormatter	rainbow/log.h	/^    LogFormatter::ptr getFormatter() const { return m_formatter; }$/;"	f	class:rainbow::LogAppender	access:public	signature:() const
+rainbow::LogAppender::getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() { return m_level; }$/;"	f	class:rainbow::LogAppender	access:public	signature:()
+rainbow::LogAppender::log	rainbow/log.h	/^    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level,$/;"	p	class:rainbow::LogAppender	access:public	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+rainbow::LogAppender::m_formatter	rainbow/log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainbow::LogAppender	access:protected
+rainbow::LogAppender::m_level	rainbow/log.h	/^    LogLevel::Level m_level;$/;"	m	class:rainbow::LogAppender	access:protected
+rainbow::LogAppender::ptr	rainbow/log.h	/^    typedef std::shared_ptr<LogAppender> ptr;$/;"	t	class:rainbow::LogAppender	access:public
+rainbow::LogAppender::setFormatter	rainbow/log.h	/^    void setFormatter(LogFormatter::ptr val) { m_formatter = val; }$/;"	f	class:rainbow::LogAppender	access:public	signature:(LogFormatter::ptr val)
+rainbow::LogAppender::setLevel	rainbow/log.cpp	/^void LogAppender::setLevel(const LogLevel::Level& level) {$/;"	f	class:rainbow::LogAppender	signature:(const LogLevel::Level& level)
+rainbow::LogAppender::setLevel	rainbow/log.h	/^    void setLevel(const LogLevel::Level& level);$/;"	p	class:rainbow::LogAppender	access:public	signature:(const LogLevel::Level& level)
+rainbow::LogAppender::~LogAppender	rainbow/log.h	/^    virtual ~LogAppender() {}$/;"	f	class:rainbow::LogAppender	access:public	signature:()
+rainbow::LogEvent	rainbow/log.h	/^class LogEvent {$/;"	c	namespace:rainbow
+rainbow::LogEvent::LogEvent	rainbow/log.cpp	/^LogEvent::LogEvent(const std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, $/;"	f	class:rainbow::LogEvent	signature:(const std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time)
+rainbow::LogEvent::LogEvent	rainbow/log.h	/^    LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, $/;"	p	class:rainbow::LogEvent	access:public	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, int32_t m_line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time)
+rainbow::LogEvent::format	rainbow/log.cpp	/^void LogEvent::format(const char* fmt, ...) {$/;"	f	class:rainbow::LogEvent	signature:(const char* fmt, ...)
+rainbow::LogEvent::format	rainbow/log.cpp	/^void LogEvent::format(const char* fmt, va_list al) {$/;"	f	class:rainbow::LogEvent	signature:(const char* fmt, va_list al)
+rainbow::LogEvent::format	rainbow/log.h	/^    void format(const char* fmt, ...);$/;"	p	class:rainbow::LogEvent	access:public	signature:(const char* fmt, ...)
+rainbow::LogEvent::format	rainbow/log.h	/^    void format(const char* fmt, va_list al);$/;"	p	class:rainbow::LogEvent	access:public	signature:(const char* fmt, va_list al)
+rainbow::LogEvent::getContent	rainbow/log.h	/^    std::string getContent() const { return m_ss.str(); }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+rainbow::LogEvent::getElapse	rainbow/log.h	/^    uint32_t getElapse() const { return m_elapse; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+rainbow::LogEvent::getFiberId	rainbow/log.h	/^    uint32_t getFiberId() const { return m_fiberId; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+rainbow::LogEvent::getFileName	rainbow/log.h	/^    const char* getFileName() const { return m_file; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+rainbow::LogEvent::getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+rainbow::LogEvent::getLine	rainbow/log.h	/^    int32_t getLine() const { return m_line; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+rainbow::LogEvent::getLogger	rainbow/log.h	/^    std::shared_ptr<Logger> getLogger() const {  return m_logger; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+rainbow::LogEvent::getSS	rainbow/log.h	/^    std::stringstream& getSS() { return m_ss; }$/;"	f	class:rainbow::LogEvent	access:public	signature:()
+rainbow::LogEvent::getThreadId	rainbow/log.h	/^    uint32_t getThreadId() const { return m_threadId; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+rainbow::LogEvent::getTime	rainbow/log.h	/^    uint32_t getTime() const { return m_time; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+rainbow::LogEvent::m_elapse	rainbow/log.h	/^    uint32_t m_elapse = 0;         \/\/ 程序启动开始到现在的毫秒数$/;"	m	class:rainbow::LogEvent	access:private
+rainbow::LogEvent::m_fiberId	rainbow/log.h	/^    uint32_t m_fiberId = 0;        \/\/ 协程id$/;"	m	class:rainbow::LogEvent	access:private
+rainbow::LogEvent::m_file	rainbow/log.h	/^    const char* m_file = nullptr;  \/\/ 文件名$/;"	m	class:rainbow::LogEvent	access:private
+rainbow::LogEvent::m_level	rainbow/log.h	/^    LogLevel::Level m_level;$/;"	m	class:rainbow::LogEvent	access:private
+rainbow::LogEvent::m_line	rainbow/log.h	/^    int32_t m_line = 0;            \/\/ 行号$/;"	m	class:rainbow::LogEvent	access:private
+rainbow::LogEvent::m_logger	rainbow/log.h	/^    std::shared_ptr<Logger> m_logger;$/;"	m	class:rainbow::LogEvent	access:private
+rainbow::LogEvent::m_ss	rainbow/log.h	/^    std::stringstream m_ss;$/;"	m	class:rainbow::LogEvent	access:private
+rainbow::LogEvent::m_threadId	rainbow/log.h	/^    uint32_t m_threadId = 0;       \/\/ 线程id$/;"	m	class:rainbow::LogEvent	access:private
+rainbow::LogEvent::m_time	rainbow/log.h	/^    uint64_t m_time;               \/\/ 时间戳$/;"	m	class:rainbow::LogEvent	access:private
+rainbow::LogEvent::ptr	rainbow/log.h	/^    typedef std::shared_ptr<LogEvent> ptr;$/;"	t	class:rainbow::LogEvent	access:public
+rainbow::LogEvent::~LogEvent	rainbow/log.h	/^    ~LogEvent() {}$/;"	f	class:rainbow::LogEvent	access:public	signature:()
+rainbow::LogEventWrap	rainbow/log.h	/^class LogEventWrap {$/;"	c	namespace:rainbow
+rainbow::LogEventWrap::LogEventWrap	rainbow/log.cpp	/^LogEventWrap::LogEventWrap(LogEvent::ptr e) : m_event(e) {$/;"	f	class:rainbow::LogEventWrap	signature:(LogEvent::ptr e)
+rainbow::LogEventWrap::LogEventWrap	rainbow/log.h	/^    LogEventWrap(LogEvent::ptr e);$/;"	p	class:rainbow::LogEventWrap	access:public	signature:(LogEvent::ptr e)
+rainbow::LogEventWrap::getEvent	rainbow/log.h	/^    LogEvent::ptr getEvent() const { return m_event; }$/;"	f	class:rainbow::LogEventWrap	access:public	signature:() const
+rainbow::LogEventWrap::getSS	rainbow/log.cpp	/^std::stringstream& LogEventWrap::getSS() {$/;"	f	class:rainbow::LogEventWrap	signature:()
+rainbow::LogEventWrap::getSS	rainbow/log.h	/^    std::stringstream& getSS();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
+rainbow::LogEventWrap::m_event	rainbow/log.h	/^    LogEvent::ptr m_event;$/;"	m	class:rainbow::LogEventWrap	access:private
+rainbow::LogEventWrap::~LogEventWrap	rainbow/log.cpp	/^LogEventWrap::~LogEventWrap() {$/;"	f	class:rainbow::LogEventWrap	signature:()
+rainbow::LogEventWrap::~LogEventWrap	rainbow/log.h	/^    ~LogEventWrap();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
+rainbow::LogFormatter	rainbow/log.h	/^class LogFormatter {$/;"	c	namespace:rainbow
+rainbow::LogFormatter::FormatItem	rainbow/log.h	/^    class FormatItem {$/;"	c	class:rainbow::LogFormatter	access:public
+rainbow::LogFormatter::FormatItem::FormatItem	rainbow/log.h	/^        FormatItem(const std::string& fmt = ""){};$/;"	f	class:rainbow::LogFormatter::FormatItem	access:public	signature:(const std::string& fmt = �)
+rainbow::LogFormatter::FormatItem::format	rainbow/log.cpp	/^void LogFormatter::FormatItem::format(std::ostream& os,$/;"	f	class:rainbow::LogFormatter::FormatItem	signature:(std::ostream& os, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+rainbow::LogFormatter::FormatItem::format	rainbow/log.h	/^        virtual void format(std::ostream& os, std::shared_ptr<Logger> logger,$/;"	p	class:rainbow::LogFormatter::FormatItem	access:public	signature:(std::ostream& os, std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+rainbow::LogFormatter::FormatItem::ptr	rainbow/log.h	/^        typedef std::shared_ptr<FormatItem> ptr;$/;"	t	class:rainbow::LogFormatter::FormatItem	access:public
+rainbow::LogFormatter::FormatItem::~FormatItem	rainbow/log.h	/^        virtual ~FormatItem() {}$/;"	f	class:rainbow::LogFormatter::FormatItem	access:public	signature:()
+rainbow::LogFormatter::LogFormatter	rainbow/log.cpp	/^LogFormatter::LogFormatter(const std::string& pattern) : m_pattern(pattern) {$/;"	f	class:rainbow::LogFormatter	signature:(const std::string& pattern)
+rainbow::LogFormatter::LogFormatter	rainbow/log.h	/^    LogFormatter(const std::string& pattern);$/;"	p	class:rainbow::LogFormatter	access:public	signature:(const std::string& pattern)
+rainbow::LogFormatter::format	rainbow/log.cpp	/^std::string LogFormatter::format(std::shared_ptr<Logger> logger,$/;"	f	class:rainbow::LogFormatter	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+rainbow::LogFormatter::format	rainbow/log.h	/^    std::ostream& format(std::ostream& ofs, std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event);$/;"	p	class:rainbow::LogFormatter	access:public	signature:(std::ostream& ofs, std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event)
+rainbow::LogFormatter::format	rainbow/log.h	/^    std::string format(std::shared_ptr<Logger> ptr, LogLevel::Level level,$/;"	p	class:rainbow::LogFormatter	access:public	signature:(std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event)
+rainbow::LogFormatter::init	rainbow/log.cpp	/^void LogFormatter::init() {$/;"	f	class:rainbow::LogFormatter	signature:()
+rainbow::LogFormatter::init	rainbow/log.h	/^    void init();$/;"	p	class:rainbow::LogFormatter	access:public	signature:()
+rainbow::LogFormatter::m_items	rainbow/log.h	/^    std::vector<FormatItem::ptr> m_items;$/;"	m	class:rainbow::LogFormatter	access:private
+rainbow::LogFormatter::m_pattern	rainbow/log.h	/^    std::string m_pattern;$/;"	m	class:rainbow::LogFormatter	access:private
+rainbow::LogFormatter::ptr	rainbow/log.h	/^    typedef std::shared_ptr<LogFormatter> ptr;$/;"	t	class:rainbow::LogFormatter	access:public
+rainbow::LogLevel	rainbow/log.h	/^class LogLevel {$/;"	c	namespace:rainbow
+rainbow::LogLevel::DEBUG	rainbow/log.h	/^        DEBUG = 1,$/;"	e	enum:rainbow::LogLevel::Level
+rainbow::LogLevel::ERROR	rainbow/log.h	/^        ERROR = 4,$/;"	e	enum:rainbow::LogLevel::Level
+rainbow::LogLevel::FATAL	rainbow/log.h	/^        FATAL = 5$/;"	e	enum:rainbow::LogLevel::Level
+rainbow::LogLevel::INFO	rainbow/log.h	/^        INFO = 2,$/;"	e	enum:rainbow::LogLevel::Level
+rainbow::LogLevel::Level	rainbow/log.h	/^    enum Level {$/;"	g	class:rainbow::LogLevel	access:public
+rainbow::LogLevel::ToString	rainbow/log.cpp	/^const char* LogLevel::ToString(LogLevel::Level level) {$/;"	f	class:rainbow::LogLevel	signature:(LogLevel::Level level)
+rainbow::LogLevel::ToString	rainbow/log.h	/^    static const char* ToString(LogLevel::Level level);$/;"	p	class:rainbow::LogLevel	access:public	signature:(LogLevel::Level level)
+rainbow::LogLevel::UNKNOW	rainbow/log.h	/^        UNKNOW = 0,$/;"	e	enum:rainbow::LogLevel::Level
+rainbow::LogLevel::WARN	rainbow/log.h	/^        WARN = 3,$/;"	e	enum:rainbow::LogLevel::Level
+rainbow::Logger	rainbow/log.h	/^class Logger : public std::enable_shared_from_this<Logger> {$/;"	c	namespace:rainbow	inherits:std::enable_shared_from_this
+rainbow::Logger::Logger	rainbow/log.cpp	/^Logger::Logger(const std::string& name)$/;"	f	class:rainbow::Logger	signature:(const std::string& name)
+rainbow::Logger::Logger	rainbow/log.h	/^    Logger(const std::string& name = "root");$/;"	p	class:rainbow::Logger	access:public	signature:(const std::string& name = �)
+rainbow::Logger::addAppender	rainbow/log.cpp	/^void Logger::addAppender(LogAppender::ptr appender) {$/;"	f	class:rainbow::Logger	signature:(LogAppender::ptr appender)
+rainbow::Logger::addAppender	rainbow/log.h	/^    void addAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
+rainbow::Logger::debug	rainbow/log.cpp	/^void Logger::debug(LogEvent::ptr event) { log(LogLevel::DEBUG, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+rainbow::Logger::debug	rainbow/log.h	/^    void debug(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+rainbow::Logger::delAppender	rainbow/log.cpp	/^void Logger::delAppender(LogAppender::ptr appender) {$/;"	f	class:rainbow::Logger	signature:(LogAppender::ptr appender)
+rainbow::Logger::delAppender	rainbow/log.h	/^    void delAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
+rainbow::Logger::error	rainbow/log.cpp	/^void Logger::error(LogEvent::ptr event) { log(LogLevel::ERROR, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+rainbow::Logger::error	rainbow/log.h	/^    void error(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+rainbow::Logger::fatal	rainbow/log.cpp	/^void Logger::fatal(LogEvent::ptr event) { log(LogLevel::FATAL, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+rainbow::Logger::fatal	rainbow/log.h	/^    void fatal(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+rainbow::Logger::getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::Logger	access:public	signature:() const
+rainbow::Logger::getName	rainbow/log.h	/^    const std::string getName() const { return this->m_name; }$/;"	f	class:rainbow::Logger	access:public	signature:() const
+rainbow::Logger::info	rainbow/log.cpp	/^void Logger::info(LogEvent::ptr event) { log(LogLevel::INFO, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+rainbow::Logger::info	rainbow/log.h	/^    void info(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+rainbow::Logger::log	rainbow/log.cpp	/^void Logger::log(LogLevel::Level level, LogEvent::ptr event) {$/;"	f	class:rainbow::Logger	signature:(LogLevel::Level level, LogEvent::ptr event)
+rainbow::Logger::log	rainbow/log.h	/^    void log(LogLevel::Level level, LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogLevel::Level level, LogEvent::ptr event)
+rainbow::Logger::m_appenders	rainbow/log.h	/^    std::list<LogAppender::ptr> m_appenders;  \/\/ Appender集合$/;"	m	class:rainbow::Logger	access:private
+rainbow::Logger::m_formatter	rainbow/log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainbow::Logger	access:private
+rainbow::Logger::m_level	rainbow/log.h	/^    LogLevel::Level m_level;  \/\/ 满足日志级别的日志才会被输出$/;"	m	class:rainbow::Logger	access:private
+rainbow::Logger::m_name	rainbow/log.h	/^    std::string m_name = "root";       \/\/ 日志名称$/;"	m	class:rainbow::Logger	access:private
+rainbow::Logger::ptr	rainbow/log.h	/^    typedef std::shared_ptr<Logger> ptr;$/;"	t	class:rainbow::Logger	access:public
+rainbow::Logger::setAppender	rainbow/log.h	/^    void setAppender(LogLevel::Level val) { m_level = val; }$/;"	f	class:rainbow::Logger	access:public	signature:(LogLevel::Level val)
+rainbow::Logger::warn	rainbow/log.cpp	/^void Logger::warn(LogEvent::ptr event) { log(LogLevel::WARN, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+rainbow::Logger::warn	rainbow/log.h	/^    void warn(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+rainbow::LoggerManager	rainbow/log.h	/^class LoggerManager {$/;"	c	namespace:rainbow
+rainbow::LoggerManager::LoggerManager	rainbow/log.cpp	/^LoggerManager::LoggerManager() {$/;"	f	class:rainbow::LoggerManager	signature:()
+rainbow::LoggerManager::LoggerManager	rainbow/log.h	/^    LoggerManager();$/;"	p	class:rainbow::LoggerManager	access:public	signature:()
+rainbow::LoggerManager::getLogger	rainbow/log.cpp	/^Logger::ptr LoggerManager::getLogger(const std::string& name) {$/;"	f	class:rainbow::LoggerManager	signature:(const std::string& name)
+rainbow::LoggerManager::getLogger	rainbow/log.h	/^    Logger::ptr getLogger(const std::string& name);$/;"	p	class:rainbow::LoggerManager	access:public	signature:(const std::string& name)
+rainbow::LoggerManager::getRoot	rainbow/log.h	/^    Logger::ptr getRoot() const { return m_root; }$/;"	f	class:rainbow::LoggerManager	access:public	signature:() const
+rainbow::LoggerManager::init	rainbow/log.h	/^    void init();$/;"	p	class:rainbow::LoggerManager	access:public	signature:()
+rainbow::LoggerManager::m_loggers	rainbow/log.h	/^    std::map<std::string, Logger::ptr> m_loggers;$/;"	m	class:rainbow::LoggerManager	access:private
+rainbow::LoggerManager::m_root	rainbow/log.h	/^    Logger::ptr m_root;$/;"	m	class:rainbow::LoggerManager	access:private
+rainbow::LoggerMgr	rainbow/log.h	/^typedef rainbow::Singleton<LoggerManager> LoggerMgr;$/;"	t	namespace:rainbow
+rainbow::MessageFormatItem	rainbow/log.cpp	/^class MessageFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::MessageFormatItem::MessageFormatItem	rainbow/log.cpp	/^    MessageFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::MessageFormatItem	access:public	signature:(const std::string& str = �)
+rainbow::NameFormatItem	rainbow/log.cpp	/^class NameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::NameFormatItem::NameFormatItem	rainbow/log.cpp	/^    NameFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NameFormatItem	access:public	signature:(const std::string str = �)
+rainbow::NewLineFormatItem	rainbow/log.cpp	/^class NewLineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::NewLineFormatItem::NewLineFormatItem	rainbow/log.cpp	/^    NewLineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NewLineFormatItem	access:public	signature:(const std::string str = �)
+rainbow::Singleton	rainbow/singleton.h	/^class Singleton {$/;"	c	namespace:rainbow
+rainbow::Singleton::GetInstance	rainbow/singleton.h	/^    static T* GetInstance() {$/;"	f	class:rainbow::Singleton	access:public	signature:()
+rainbow::Singletonptr	rainbow/singleton.h	/^class Singletonptr {$/;"	c	namespace:rainbow
+rainbow::Singletonptr::GetInstance	rainbow/singleton.h	/^    static std::shared_ptr<T> GetInstance() {$/;"	f	class:rainbow::Singletonptr	access:public	signature:()
+rainbow::StdoutLogAppender	rainbow/log.h	/^class StdoutLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
+rainbow::StdoutLogAppender::log	rainbow/log.cpp	/^void StdoutLogAppender::log(std::shared_ptr<Logger> logger,$/;"	f	class:rainbow::StdoutLogAppender	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
+rainbow::StdoutLogAppender::override	rainbow/log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::StdoutLogAppender	access:public
+rainbow::StdoutLogAppender::ptr	rainbow/log.h	/^    typedef std::shared_ptr<StdoutLogAppender> ptr;$/;"	t	class:rainbow::StdoutLogAppender	access:public
+rainbow::StringFormatItem	rainbow/log.cpp	/^class StringFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::StringFormatItem::StringFormatItem	rainbow/log.cpp	/^    StringFormatItem(const std::string& str) : m_string(str) {}$/;"	f	class:rainbow::StringFormatItem	access:public	signature:(const std::string& str)
+rainbow::StringFormatItem::getString	rainbow/log.cpp	/^    std::string getString() const { return m_string; }$/;"	f	class:rainbow::StringFormatItem	access:public	signature:() const
+rainbow::StringFormatItem::m_string	rainbow/log.cpp	/^    std::string m_string;$/;"	m	class:rainbow::StringFormatItem	file:	access:private
+rainbow::TabFormatItem	rainbow/log.cpp	/^class TabFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::TabFormatItem::TabFormatItem	rainbow/log.cpp	/^     TabFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::TabFormatItem	access:public	signature:(const std::string& str = �)
+rainbow::ThreadIdFormatItem	rainbow/log.cpp	/^class ThreadIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+rainbow::ThreadIdFormatItem::ThreadIdFormatItem	rainbow/log.cpp	/^    ThreadIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ThreadIdFormatItem	access:public	signature:(const std::string str = �)
+reopen	rainbow/log.cpp	/^bool FileLogAppender::reopen() {$/;"	f	class:rainbow::FileLogAppender	signature:()
+reopen	rainbow/log.h	/^    bool reopen();$/;"	p	class:rainbow::FileLogAppender	access:public	signature:()
+s_datas	rainbow/config.h	/^    static ConfigMap s_datas;$/;"	m	class:rainbow::Config	access:private
+setAppender	rainbow/log.h	/^    void setAppender(LogLevel::Level val) { m_level = val; }$/;"	f	class:rainbow::Logger	access:public	signature:(LogLevel::Level val)
+setFormatter	rainbow/log.h	/^    void setFormatter(LogFormatter::ptr val) { m_formatter = val; }$/;"	f	class:rainbow::LogAppender	access:public	signature:(LogFormatter::ptr val)
+setLevel	rainbow/log.cpp	/^void LogAppender::setLevel(const LogLevel::Level& level) {$/;"	f	class:rainbow::LogAppender	signature:(const LogLevel::Level& level)
+setLevel	rainbow/log.h	/^    void setLevel(const LogLevel::Level& level);$/;"	p	class:rainbow::LogAppender	access:public	signature:(const LogLevel::Level& level)
+toString	rainbow/config.h	/^    virtual std::string toString() = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:()
+warn	rainbow/log.cpp	/^void Logger::warn(LogEvent::ptr event) { log(LogLevel::WARN, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
+warn	rainbow/log.h	/^    void warn(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
+~ConfigVarBase	rainbow/config.h	/^    virtual ~ConfigVarBase() {}$/;"	f	class:rainbow::ConfigVarBase	access:public	signature:()
+~FormatItem	rainbow/log.h	/^        virtual ~FormatItem() {}$/;"	f	class:rainbow::LogFormatter::FormatItem	access:public	signature:()
+~LogAppender	rainbow/log.h	/^    virtual ~LogAppender() {}$/;"	f	class:rainbow::LogAppender	access:public	signature:()
+~LogEvent	rainbow/log.h	/^    ~LogEvent() {}$/;"	f	class:rainbow::LogEvent	access:public	signature:()
+~LogEventWrap	rainbow/log.cpp	/^LogEventWrap::~LogEventWrap() {$/;"	f	class:rainbow::LogEventWrap	signature:()
+~LogEventWrap	rainbow/log.h	/^    ~LogEventWrap();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
