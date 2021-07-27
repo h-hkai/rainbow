@@ -4,6 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC		:= g++ -std=c++11$/;"	m
 Config	rainbow/config.h	/^class Config {$/;"	c	namespace:rainbow
 ConfigVar	rainbow/config.h	/^    ConfigVar(const std::string& name$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const std::string& name , const T& default_value , const std::string& description = Ó)
 ConfigVar	rainbow/config.h	/^class ConfigVar : public ConfigVarBase {$/;"	c	namespace:rainbow	inherits:ConfigVarBase
@@ -11,6 +12,7 @@ ConfigVarBase	rainbow/config.h	/^    ConfigVarBase(const std::string& name, cons
 ConfigVarBase	rainbow/config.h	/^class ConfigVarBase {$/;"	c	namespace:rainbow
 ConfigVarMap	rainbow/config.h	/^    typedef std::map<std::string, ConfigVarBase::ptr> ConfigVarMap;$/;"	t	class:rainbow::Config	access:public
 DEBUG	rainbow/log.h	/^        DEBUG = 1,$/;"	e	enum:rainbow::LogLevel::Level
+DEFINES	Makefile	/^DEFINES := -lyaml-cpp$/;"	m
 DateTimeFormatItem	rainbow/log.cpp	/^    DateTimeFormatItem(const std::string& format = "%Y-%m-%d %H:%M:%s")$/;"	f	class:rainbow::DateTimeFormatItem	access:public	signature:(const std::string& format = Ó)
 DateTimeFormatItem	rainbow/log.cpp	/^class DateTimeFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 ERROR	rainbow/log.h	/^        ERROR = 4,$/;"	e	enum:rainbow::LogLevel::Level
@@ -32,7 +34,10 @@ GetInstance	rainbow/singleton.h	/^    static T* GetInstance() {$/;"	f	class:rain
 GetInstance	rainbow/singleton.h	/^    static std::shared_ptr<T> GetInstance() {$/;"	f	class:rainbow::Singletonptr	access:public	signature:()
 GetThreadId	rainbow/util.cpp	/^pid_t GetThreadId() {$/;"	f	namespace:rainbow	signature:()
 GetThreadId	rainbow/util.h	/^pid_t GetThreadId();$/;"	p	namespace:rainbow	signature:()
+INCDIR	Makefile	/^INCDIR := $(patsubst %, -I %, $(incdirs))$/;"	m
+INCLUDE	Makefile	/^INCLUDE := -I\/usr\/local\/include$/;"	m
 INFO	rainbow/log.h	/^        INFO = 2,$/;"	e	enum:rainbow::LogLevel::Level
+LIBS	Makefile	/^LIBS	:= -L\/usr\/local\/lib$/;"	m
 Level	rainbow/log.h	/^    enum Level {$/;"	g	class:rainbow::LogLevel	access:public
 LevelFormatItem	rainbow/log.cpp	/^    LevelFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LevelFormatItem	access:public	signature:(const std::string str = Ó)
 LevelFormatItem	rainbow/log.cpp	/^class LevelFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
@@ -66,19 +71,19 @@ NameFormatItem	rainbow/log.cpp	/^    NameFormatItem(const std::string str = "") 
 NameFormatItem	rainbow/log.cpp	/^class NameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 NewLineFormatItem	rainbow/log.cpp	/^    NewLineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NewLineFormatItem	access:public	signature:(const std::string str = Ó)
 NewLineFormatItem	rainbow/log.cpp	/^class NewLineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
-RAINBOW_LOG_DEBUG	rainbow/log.h	23;"	d
-RAINBOW_LOG_ERROR	rainbow/log.h	26;"	d
-RAINBOW_LOG_FATAL	rainbow/log.h	27;"	d
-RAINBOW_LOG_FMT_DEBUG	rainbow/log.h	35;"	d
-RAINBOW_LOG_FMT_ERROR	rainbow/log.h	38;"	d
-RAINBOW_LOG_FMT_FATAL	rainbow/log.h	39;"	d
-RAINBOW_LOG_FMT_INFO	rainbow/log.h	36;"	d
-RAINBOW_LOG_FMT_LEVEL	rainbow/log.h	29;"	d
-RAINBOW_LOG_FMT_WARN	rainbow/log.h	37;"	d
-RAINBOW_LOG_INFO	rainbow/log.h	24;"	d
-RAINBOW_LOG_LEVEL	rainbow/log.h	19;"	d
-RAINBOW_LOG_ROOT	rainbow/log.h	41;"	d
-RAINBOW_LOG_WARN	rainbow/log.h	25;"	d
+RAINBOW_LOG_DEBUG	rainbow/log.h	24;"	d
+RAINBOW_LOG_ERROR	rainbow/log.h	27;"	d
+RAINBOW_LOG_FATAL	rainbow/log.h	28;"	d
+RAINBOW_LOG_FMT_DEBUG	rainbow/log.h	36;"	d
+RAINBOW_LOG_FMT_ERROR	rainbow/log.h	39;"	d
+RAINBOW_LOG_FMT_FATAL	rainbow/log.h	40;"	d
+RAINBOW_LOG_FMT_INFO	rainbow/log.h	37;"	d
+RAINBOW_LOG_FMT_LEVEL	rainbow/log.h	30;"	d
+RAINBOW_LOG_FMT_WARN	rainbow/log.h	38;"	d
+RAINBOW_LOG_INFO	rainbow/log.h	25;"	d
+RAINBOW_LOG_LEVEL	rainbow/log.h	20;"	d
+RAINBOW_LOG_ROOT	rainbow/log.h	42;"	d
+RAINBOW_LOG_WARN	rainbow/log.h	26;"	d
 Singleton	rainbow/singleton.h	/^class Singleton {$/;"	c	namespace:rainbow
 Singletonptr	rainbow/singleton.h	/^class Singletonptr {$/;"	c	namespace:rainbow
 StdoutLogAppender	rainbow/log.h	/^class StdoutLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
@@ -121,6 +126,8 @@ format	rainbow/log.h	/^    void format(const char* fmt, ...);$/;"	p	class:rainbo
 format	rainbow/log.h	/^    void format(const char* fmt, va_list al);$/;"	p	class:rainbow::LogEvent	access:public	signature:(const char* fmt, va_list al)
 fromString	rainbow/config.h	/^    bool fromString(const std::string& val) {$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const std::string& val)
 fromString	rainbow/config.h	/^    virtual bool fromString(const std::string& val) = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:(const std::string& val)
+g_float_value_config	tests/configTest.cpp	/^rainbow::ConfigVar<float>::ptr g_float_value_config = $/;"	v
+g_int_value_config	tests/configTest.cpp	/^rainbow::ConfigVar<int>::ptr g_int_value_config = $/;"	v
 getContent	rainbow/log.h	/^    std::string getContent() const { return m_ss.str(); }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
 getDescription	rainbow/config.h	/^    const std::string& getDescription() const { return m_description; }$/;"	f	class:rainbow::ConfigVarBase	access:public	signature:() const
 getElapse	rainbow/log.h	/^    uint32_t getElapse() const { return m_elapse; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
@@ -144,6 +151,8 @@ getSS	rainbow/log.h	/^    std::stringstream& getSS();$/;"	p	class:rainbow::LogEv
 getString	rainbow/log.cpp	/^    std::string getString() const { return m_string; }$/;"	f	class:rainbow::StringFormatItem	access:public	signature:() const
 getThreadId	rainbow/log.h	/^    uint32_t getThreadId() const { return m_threadId; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
 getTime	rainbow/log.h	/^    uint32_t getTime() const { return m_time; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
+getValue	rainbow/config.h	/^    const T getValue() const { return m_val; }$/;"	f	class:rainbow::ConfigVar	access:public	signature:() const
+incdirs	Makefile	/^incdirs := rainbow$/;"	m
 info	rainbow/log.cpp	/^void Logger::info(LogEvent::ptr event) { log(LogLevel::INFO, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
 info	rainbow/log.h	/^    void info(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
 init	rainbow/log.cpp	/^void LogFormatter::init() {$/;"	f	class:rainbow::LogFormatter	signature:()
@@ -181,9 +190,14 @@ m_string	rainbow/log.cpp	/^    std::string m_string;$/;"	m	class:rainbow::String
 m_threadId	rainbow/log.h	/^    uint32_t m_threadId = 0;       \/\/ çº¿ç¨‹id$/;"	m	class:rainbow::LogEvent	access:private
 m_time	rainbow/log.h	/^    uint64_t m_time;               \/\/ æ—¶é—´æˆ³$/;"	m	class:rainbow::LogEvent	access:private
 m_val	rainbow/config.h	/^    T m_val;$/;"	m	class:rainbow::ConfigVar	access:private
+main	boost/test.cpp	/^int main()$/;"	f	signature:()
+main	tests/configTest.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
 main	tests/test.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
+objdir	Makefile	/^objdir := obj$/;"	m
+objlist	Makefile	/^objlist := $(patsubst %.cpp, $(objdir)\/%.o, $(srcs))$/;"	m
 override	rainbow/log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::FileLogAppender	access:public
 override	rainbow/log.h	/^                     LogEvent::ptr event) override;$/;"	m	class:rainbow::StdoutLogAppender	access:public
+print_yaml	tests/configTest.cpp	/^void print_yaml(const YAML::Node& node, int level) {$/;"	f	signature:(const YAML::Node& node, int level)
 ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVar> ptr;$/;"	t	class:rainbow::ConfigVar	access:public
 ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVarBase> ptr;$/;"	t	class:rainbow::ConfigVarBase	access:public
 ptr	rainbow/log.h	/^        typedef std::shared_ptr<FormatItem> ptr;$/;"	t	class:rainbow::LogFormatter::FormatItem	access:public
@@ -193,6 +207,7 @@ ptr	rainbow/log.h	/^    typedef std::shared_ptr<LogEvent> ptr;$/;"	t	class:rainb
 ptr	rainbow/log.h	/^    typedef std::shared_ptr<LogFormatter> ptr;$/;"	t	class:rainbow::LogFormatter	access:public
 ptr	rainbow/log.h	/^    typedef std::shared_ptr<Logger> ptr;$/;"	t	class:rainbow::Logger	access:public
 ptr	rainbow/log.h	/^    typedef std::shared_ptr<StdoutLogAppender> ptr;$/;"	t	class:rainbow::StdoutLogAppender	access:public
+rainbow	rainbow/config.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/config.h	/^namespace rainbow {$/;"	n
 rainbow	rainbow/log.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/log.h	/^namespace rainbow {$/;"	n
@@ -203,12 +218,15 @@ rainbow::Config	rainbow/config.h	/^class Config {$/;"	c	namespace:rainbow
 rainbow::Config::ConfigVarMap	rainbow/config.h	/^    typedef std::map<std::string, ConfigVarBase::ptr> ConfigVarMap;$/;"	t	class:rainbow::Config	access:public
 rainbow::Config::Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name) {$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name)
 rainbow::Config::Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name,$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name, const T& default_value, const std::string& description = Ó)
-rainbow::Config::s_datas	rainbow/config.h	/^    static ConfigMap s_datas;$/;"	m	class:rainbow::Config	access:private
+rainbow::Config::s_datas	rainbow/config.cpp	/^Config::ConfigVarMap Config::s_datas;$/;"	m	class:rainbow::Config	file:
+rainbow::Config::s_datas	rainbow/config.h	/^    static ConfigVarMap s_datas;$/;"	m	class:rainbow::Config	access:private
 rainbow::ConfigVar	rainbow/config.h	/^class ConfigVar : public ConfigVarBase {$/;"	c	namespace:rainbow	inherits:ConfigVarBase
 rainbow::ConfigVar::ConfigVar	rainbow/config.h	/^    ConfigVar(const std::string& name$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const std::string& name , const T& default_value , const std::string& description = Ó)
 rainbow::ConfigVar::fromString	rainbow/config.h	/^    bool fromString(const std::string& val) {$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const std::string& val)
+rainbow::ConfigVar::getValue	rainbow/config.h	/^    const T getValue() const { return m_val; }$/;"	f	class:rainbow::ConfigVar	access:public	signature:() const
 rainbow::ConfigVar::m_val	rainbow/config.h	/^    T m_val;$/;"	m	class:rainbow::ConfigVar	access:private
 rainbow::ConfigVar::ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVar> ptr;$/;"	t	class:rainbow::ConfigVar	access:public
+rainbow::ConfigVar::setValue	rainbow/config.h	/^    void setValue(const T& v) { m_val = v; }$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const T& v)
 rainbow::ConfigVarBase	rainbow/config.h	/^class ConfigVarBase {$/;"	c	namespace:rainbow
 rainbow::ConfigVarBase::ConfigVarBase	rainbow/config.h	/^    ConfigVarBase(const std::string& name, const std::string& description = "") $/;"	f	class:rainbow::ConfigVarBase	access:public	signature:(const std::string& name, const std::string& description = Ó)
 rainbow::ConfigVarBase::fromString	rainbow/config.h	/^    virtual bool fromString(const std::string& val) = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:(const std::string& val)
@@ -384,11 +402,17 @@ rainbow::ThreadIdFormatItem	rainbow/log.cpp	/^class ThreadIdFormatItem : public 
 rainbow::ThreadIdFormatItem::ThreadIdFormatItem	rainbow/log.cpp	/^    ThreadIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ThreadIdFormatItem	access:public	signature:(const std::string str = Ó)
 reopen	rainbow/log.cpp	/^bool FileLogAppender::reopen() {$/;"	f	class:rainbow::FileLogAppender	signature:()
 reopen	rainbow/log.h	/^    bool reopen();$/;"	p	class:rainbow::FileLogAppender	access:public	signature:()
-s_datas	rainbow/config.h	/^    static ConfigMap s_datas;$/;"	m	class:rainbow::Config	access:private
+s_datas	rainbow/config.cpp	/^Config::ConfigVarMap Config::s_datas;$/;"	m	class:rainbow::Config	file:
+s_datas	rainbow/config.h	/^    static ConfigVarMap s_datas;$/;"	m	class:rainbow::Config	access:private
 setAppender	rainbow/log.h	/^    void setAppender(LogLevel::Level val) { m_level = val; }$/;"	f	class:rainbow::Logger	access:public	signature:(LogLevel::Level val)
 setFormatter	rainbow/log.h	/^    void setFormatter(LogFormatter::ptr val) { m_formatter = val; }$/;"	f	class:rainbow::LogAppender	access:public	signature:(LogFormatter::ptr val)
 setLevel	rainbow/log.cpp	/^void LogAppender::setLevel(const LogLevel::Level& level) {$/;"	f	class:rainbow::LogAppender	signature:(const LogLevel::Level& level)
 setLevel	rainbow/log.h	/^    void setLevel(const LogLevel::Level& level);$/;"	p	class:rainbow::LogAppender	access:public	signature:(const LogLevel::Level& level)
+setValue	rainbow/config.h	/^    void setValue(const T& v) { m_val = v; }$/;"	f	class:rainbow::ConfigVar	access:public	signature:(const T& v)
+srcdirs	Makefile	/^srcdirs := rainbow tests$/;"	m
+srcs	Makefile	/^srcs := config.cpp log.cpp util.cpp configTest.cpp$/;"	m
+target	Makefile	/^target := bin\/configTest$/;"	m
+test_yaml	tests/configTest.cpp	/^void test_yaml() {$/;"	f	signature:()
 toString	rainbow/config.h	/^    virtual std::string toString() = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:()
 warn	rainbow/log.cpp	/^void Logger::warn(LogEvent::ptr event) { log(LogLevel::WARN, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
 warn	rainbow/log.h	/^    void warn(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)

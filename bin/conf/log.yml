@@ -1,0 +1,15 @@
+logs:
+    - name: root
+      level: info
+      formatter: '%d%T%m%n'
+      appenders:
+          - type: FileLogAppender
+            file: /apps/logs/sylar/root.txt
+          - type: StdoutLogAppender
+    - name: system
+      level: info
+      formatter: '%d%T%m%n'
+      appenders:
+          - type: FileLogAppender
+            file: /apps/logs/sylar/system.txt
+          - type: StdoutLogAppender

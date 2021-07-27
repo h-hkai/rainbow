@@ -1,6 +1,6 @@
 #include <iostream>
-#include "log.h"
-#include "util.h"
+#include "../rainbow/log.h"
+#include "../rainbow/util.h"
 
 int main(int argc, char** argv) {
 

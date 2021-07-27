@@ -98,8 +98,9 @@ obj/test.o: tests/test.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/locale_facets.tcc \
  /usr/include/c++/5/bits/basic_ios.tcc \
  /usr/include/c++/5/bits/ostream.tcc /usr/include/c++/5/istream \
- /usr/include/c++/5/bits/istream.tcc rainbow/log.h rainbow/singleton.h \
- /usr/include/c++/5/memory /usr/include/c++/5/bits/stl_construct.h \
+ /usr/include/c++/5/bits/istream.tcc tests/../rainbow/log.h \
+ tests/../rainbow/singleton.h /usr/include/c++/5/memory \
+ /usr/include/c++/5/bits/stl_construct.h \
  /usr/include/c++/5/bits/stl_uninitialized.h \
  /usr/include/c++/5/bits/stl_tempbuf.h \
  /usr/include/c++/5/bits/stl_raw_storage_iter.h \
@@ -114,7 +115,17 @@ obj/test.o: tests/test.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/ext/aligned_buffer.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h /usr/include/c++/5/fstream \
+ /usr/include/c++/5/backward/auto_ptr.h tests/../rainbow/util.h \
+ /usr/include/c++/5/thread /usr/include/c++/5/chrono \
+ /usr/include/c++/5/ratio /usr/include/c++/5/limits \
+ /usr/include/c++/5/ctime /usr/include/c++/5/bits/parse_numbers.h \
+ /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/x86_64-linux-gnu/sys/syscall.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+ /usr/include/x86_64-linux-gnu/bits/syscall.h /usr/include/c++/5/fstream \
  /usr/include/c++/5/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
@@ -125,13 +136,4 @@ obj/test.o: tests/test.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
  /usr/include/c++/5/map /usr/include/c++/5/bits/stl_tree.h \
  /usr/include/c++/5/bits/stl_map.h /usr/include/c++/5/bits/stl_multimap.h \
- rainbow/util.h /usr/include/c++/5/thread /usr/include/c++/5/chrono \
- /usr/include/c++/5/ratio /usr/include/c++/5/limits \
- /usr/include/c++/5/ctime /usr/include/c++/5/bits/parse_numbers.h \
- /usr/include/unistd.h /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
- /usr/include/x86_64-linux-gnu/bits/environments.h \
- /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
- /usr/include/x86_64-linux-gnu/sys/syscall.h \
- /usr/include/x86_64-linux-gnu/asm/unistd.h \
- /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
- /usr/include/x86_64-linux-gnu/bits/syscall.h
+ tests/../rainbow/util.h

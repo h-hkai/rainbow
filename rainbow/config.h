@@ -29,7 +29,7 @@ protected:
     std::string m_description;
 };
 
-template<calss T>
+template<class T>
 class ConfigVar : public ConfigVarBase {
 public:
     typedef std::shared_ptr<ConfigVar> ptr;
@@ -59,6 +59,9 @@ public:
         }
         return false;
     }
+
+    const T getValue() const { return m_val; }
+    void setValue(const T& v) { m_val = v; }
 private:
     T m_val;
 };
@@ -81,8 +84,9 @@ public:
             throw std::invalid_argument(name);
         }
 
-        typename ConfigVar<T>::ptr v(nae ConfigVar<T>(name, default_value, descripton));
+        typename ConfigVar<T>::ptr v(new ConfigVar<T>(name, default_value, description));
         s_datas[name] = v;
+        return v;
     }
 
     template<class T>
@@ -95,7 +99,7 @@ public:
     }
 
 private:
-    static ConfigMap s_datas;
+    static ConfigVarMap s_datas;
 
 
 };

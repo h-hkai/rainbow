@@ -99,9 +99,12 @@ obj/log.o: rainbow/log.cpp /usr/include/stdc-predef.h rainbow/log.h \
  /usr/include/c++/5/ext/aligned_buffer.h \
  /usr/include/c++/5/bits/shared_ptr_atomic.h \
  /usr/include/c++/5/bits/atomic_base.h \
- /usr/include/c++/5/backward/auto_ptr.h /usr/include/c++/5/fstream \
- /usr/include/c++/5/istream /usr/include/c++/5/ios \
- /usr/include/c++/5/bits/ios_base.h \
+ /usr/include/c++/5/backward/auto_ptr.h rainbow/util.h \
+ /usr/include/c++/5/thread /usr/include/c++/5/chrono \
+ /usr/include/c++/5/ratio /usr/include/c++/5/limits \
+ /usr/include/c++/5/ctime /usr/include/c++/5/bits/parse_numbers.h \
+ /usr/include/c++/5/iostream /usr/include/c++/5/ostream \
+ /usr/include/c++/5/ios /usr/include/c++/5/bits/ios_base.h \
  /usr/include/c++/5/bits/locale_classes.h \
  /usr/include/c++/5/bits/locale_classes.tcc \
  /usr/include/c++/5/system_error \
@@ -114,16 +117,23 @@ obj/log.o: rainbow/log.cpp /usr/include/stdc-predef.h rainbow/log.h \
  /usr/include/c++/5/bits/streambuf_iterator.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/ctype_inline.h \
  /usr/include/c++/5/bits/locale_facets.tcc \
- /usr/include/c++/5/bits/basic_ios.tcc /usr/include/c++/5/ostream \
- /usr/include/c++/5/bits/ostream.tcc /usr/include/c++/5/bits/istream.tcc \
+ /usr/include/c++/5/bits/basic_ios.tcc \
+ /usr/include/c++/5/bits/ostream.tcc /usr/include/c++/5/istream \
+ /usr/include/c++/5/bits/istream.tcc /usr/include/unistd.h \
+ /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+ /usr/include/x86_64-linux-gnu/bits/environments.h \
+ /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/x86_64-linux-gnu/sys/syscall.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+ /usr/include/x86_64-linux-gnu/bits/syscall.h /usr/include/c++/5/fstream \
  /usr/include/c++/5/bits/codecvt.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
- /usr/include/c++/5/bits/fstream.tcc /usr/include/c++/5/iostream \
- /usr/include/c++/5/list /usr/include/c++/5/bits/stl_list.h \
- /usr/include/c++/5/bits/list.tcc /usr/include/c++/5/sstream \
- /usr/include/c++/5/bits/sstream.tcc /usr/include/c++/5/vector \
- /usr/include/c++/5/bits/stl_vector.h \
+ /usr/include/c++/5/bits/fstream.tcc /usr/include/c++/5/list \
+ /usr/include/c++/5/bits/stl_list.h /usr/include/c++/5/bits/list.tcc \
+ /usr/include/c++/5/sstream /usr/include/c++/5/bits/sstream.tcc \
+ /usr/include/c++/5/vector /usr/include/c++/5/bits/stl_vector.h \
  /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
  /usr/include/c++/5/map /usr/include/c++/5/bits/stl_tree.h \
  /usr/include/c++/5/bits/stl_map.h /usr/include/c++/5/bits/stl_multimap.h

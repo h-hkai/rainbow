@@ -2,6 +2,7 @@
 #define __RAINBOW_LOG_H
 
 #include "singleton.h"
+#include "util.h"
 
 #include <stdio.h>
 #include <stdint.h>
@@ -38,7 +39,8 @@
 #define RAINBOW_LOG_FMT_ERROR(logger, fmt, ...) RAINBOW_LOG_FMT_LEVEL(logger, rainbow::LogLevel::ERROR, fmt, __VA_ARGS__)
 #define RAINBOW_LOG_FMT_FATAL(logger, fmt, ...) RAINBOW_LOG_FMT_LEVEL(logger, rainbow::LogLevel::FATAL, fmt, __VA_ARGS__)
 
-#define RAINBOW_LOG_ROOT() rainbow::LoggerMgr::GetInstance()->getRoot();
+// 采用宏定义的方式获取日志器（root）
+#define RAINBOW_LOG_ROOT() rainbow::LoggerMgr::GetInstance()->getRoot()
 
 namespace rainbow {
 
@@ -63,23 +65,47 @@ class LogLevel {
 // 日志事件
 class LogEvent {
    public:
+    // 指向日志事件的指针
     typedef std::shared_ptr<LogEvent> ptr;
+    /*
+     * 构造函数
+     * 传入 Logger 指针，可以将该日志事件写入到对应的 Logger 中
+     */
     LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, 
             int32_t m_line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time);
     ~LogEvent() {}
 
+    // 获取该日志事件所对应的 Logger 类
     std::shared_ptr<Logger> getLogger() const {  return m_logger; }
+    
+    // 获取日志级别
     LogLevel::Level getLevel() const { return m_level; }
-
+    
+    // 获取文件名
     const char* getFileName() const { return m_file; }
+    
+    // 获取行号
     int32_t getLine() const { return m_line; }
+    
+    // 获取运行的时间
     uint32_t getElapse() const { return m_elapse; }
+    
+    // 获取线程 id
     uint32_t getThreadId() const { return m_threadId; }
+    
+    // 获取协程 id
     uint32_t getFiberId() const { return m_fiberId; }
+    
+    // 获取当前时间
     uint32_t getTime() const { return m_time; }
+    
+    // 获取日志内容
     std::string getContent() const { return m_ss.str(); }
     
+    // 以 stringstream 的形式获取日志内容
     std::stringstream& getSS() { return m_ss; }
+    
+    // 将日志内容进行格式化
     void format(const char* fmt, ...);
     void format(const char* fmt, va_list al);
    
@@ -90,9 +116,9 @@ class LogEvent {
     uint32_t m_threadId = 0;       // 线程id
     uint32_t m_fiberId = 0;        // 协程id
     uint64_t m_time;               // 时间戳
-    std::stringstream m_ss;
-    std::shared_ptr<Logger> m_logger;
-    LogLevel::Level m_level;
+    std::stringstream m_ss;             // 日志流
+    std::shared_ptr<Logger> m_logger;   // 指向 Logger 类的指针
+    LogLevel::Level m_level;            // 该日志事件的级别
 };
 
 class LogEventWrap {
@@ -109,18 +135,24 @@ private:
 // 日志格式器
 class LogFormatter {
    public:
+    // 指向该类的指针
     typedef std::shared_ptr<LogFormatter> ptr;
+    
+    // 日志格式
     LogFormatter(const std::string& pattern);
-
+    
+    // 对日志进行解析，并返回格式化之后的string
     std::string format(std::shared_ptr<Logger> ptr, LogLevel::Level level,
                        LogEvent::ptr event);
     std::ostream& format(std::ostream& ofs, std::shared_ptr<Logger> ptr, LogLevel::Level level, LogEvent::ptr event);
 
    public:
+    // 日志格式解析单元类
     class FormatItem {
        public:
         FormatItem(const std::string& fmt = ""){};
         virtual ~FormatItem() {}
+        // 将解析后的日志输出到 os 流中
         virtual void format(std::ostream& os, std::shared_ptr<Logger> logger,
                             LogLevel::Level level, LogEvent::ptr event) = 0;
         // 注意这里的指针类型是FormatItem类型的指针
@@ -130,7 +162,9 @@ class LogFormatter {
     void init();
 
    private:
+    // 日志格式
     std::string m_pattern;
+    // 根据日志格式将对应的解析器指针存放在该数组中
     std::vector<FormatItem::ptr> m_items;
 };
 
@@ -145,13 +179,17 @@ class LogAppender {
                      LogEvent::ptr event) = 0;
     // 按照给定的格式序列化输出
     void setFormatter(LogFormatter::ptr val) { m_formatter = val; }
+    
+    // 获取日志格式
     LogFormatter::ptr getFormatter() const { return m_formatter; }
 
     LogLevel::Level getLevel() { return m_level; }
     void setLevel(const LogLevel::Level& level);
 
    protected:
+    // LogAppender 的日志级别
     LogLevel::Level m_level;
+    // LoggerAppender 的日志格式
     LogFormatter::ptr m_formatter;
 };
 
@@ -161,7 +199,8 @@ class Logger : public std::enable_shared_from_this<Logger> {
     typedef std::shared_ptr<Logger> ptr;
 
     Logger(const std::string& name = "root");
-
+    
+    // 只有满足日直级别的日志才会被输出
     void log(LogLevel::Level level, LogEvent::ptr event);
 
     void debug(LogEvent::ptr event);
@@ -180,9 +219,9 @@ class Logger : public std::enable_shared_from_this<Logger> {
 
    private:
     std::string m_name = "root";       // 日志名称
-    LogLevel::Level m_level;  // 满足日志级别的日志才会被输出
+    LogLevel::Level m_level;  // 日志器的级别
     std::list<LogAppender::ptr> m_appenders;  // Appender集合
-    LogFormatter::ptr m_formatter;
+    LogFormatter::ptr m_formatter;            // 日志格式
 };
 
 // 输出到控制台的Appender
@@ -208,6 +247,7 @@ class FileLogAppender : public LogAppender {
     std::ofstream m_filestream;
 };
 
+// 管理所有的日志器
 class LoggerManager {
 public:
     LoggerManager();
@@ -217,10 +257,14 @@ public:
     Logger::ptr getRoot() const { return m_root; }
 
 private:
+    // 通过日志器的名字获取日志器
     std::map<std::string, Logger::ptr> m_loggers;
     Logger::ptr m_root;
 };
 
+/**
+ * 日志器管理类，单例模式
+ */
 typedef rainbow::Singleton<LoggerManager> LoggerMgr;
 
 }  // namespace rainbow

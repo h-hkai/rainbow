@@ -163,6 +163,9 @@ LogEvent::LogEvent(const std::shared_ptr<Logger> logger, LogLevel::Level level, 
       m_logger(logger),
       m_level(level) {}
 
+/**
+ * 获取省略号指定的参数
+ */
 void LogEvent::format(const char* fmt, ...) {
     va_list al;
     va_start(al, fmt);
@@ -170,9 +173,20 @@ void LogEvent::format(const char* fmt, ...) {
     va_end(al);
 }
 
+/**
+ * 将参数输出到m_ss中（格式化写入）
+ */
 void LogEvent::format(const char* fmt, va_list al) {
     char* buf = nullptr;
     int len = vasprintf(&buf, fmt, al);
+    
+    /*
+     * (gdb) p fmt
+     * $3 = 0x414228 "test macro fmt error %s"
+     * 从这个结果中可以看出 fmt 在原有字符串的基础上加入了
+     * 对变长参数的格式化输出，从而能够像使用 printf 函数那样
+     * 对参数进行输出
+     */
     if (len != -1) {
         m_ss << std::string(buf, len);
         free(buf);
@@ -184,16 +198,23 @@ LogEventWrap::LogEventWrap(LogEvent::ptr e) : m_event(e) {
 
 }
 
+/**
+ * 析构函数触发 LogEvent 将日志信息写入到 LogAppender中
+ */
 LogEventWrap::~LogEventWrap() {
     m_event->getLogger()->log(m_event->getLevel(), m_event);
 }
 
+/*
+ * 获取日志信息
+ */
 std::stringstream& LogEventWrap::getSS() {
     return m_event->getSS();
 }
 
-
-
+/*
+ * 设置日志名称，日志级别以及日志格式
+ */
 Logger::Logger(const std::string& name)
     : m_name(name), m_level(LogLevel::DEBUG) {
     m_formatter.reset(new LogFormatter("%d%T%t%T%F%T[%p]%T%c%T%f:%l%T%m%n"));
