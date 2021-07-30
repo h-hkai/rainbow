@@ -720,7 +720,45 @@ obj/config.o: rainbow/config.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/math/special_functions/fpclassify.hpp \
  /usr/include/boost/math/tools/real_cast.hpp \
  /usr/include/boost/integer.hpp /usr/include/boost/integer_fwd.hpp \
- /usr/include/boost/detail/basic_pointerbuf.hpp rainbow/../rainbow/log.h \
+ /usr/include/boost/detail/basic_pointerbuf.hpp \
+ /usr/local/include/yaml-cpp/yaml.h /usr/local/include/yaml-cpp/parser.h \
+ /usr/local/include/yaml-cpp/dll.h /usr/local/include/yaml-cpp/emitter.h \
+ /usr/local/include/yaml-cpp/binary.h \
+ /usr/local/include/yaml-cpp/emitterdef.h \
+ /usr/local/include/yaml-cpp/emittermanip.h \
+ /usr/local/include/yaml-cpp/null.h \
+ /usr/local/include/yaml-cpp/ostream_wrapper.h \
+ /usr/local/include/yaml-cpp/emitterstyle.h \
+ /usr/local/include/yaml-cpp/stlemitter.h /usr/include/c++/5/list \
+ /usr/include/c++/5/bits/stl_list.h /usr/include/c++/5/bits/list.tcc \
+ /usr/include/c++/5/set /usr/include/c++/5/bits/stl_tree.h \
+ /usr/include/c++/5/bits/stl_set.h /usr/include/c++/5/bits/stl_multiset.h \
+ /usr/include/c++/5/map /usr/include/c++/5/bits/stl_map.h \
+ /usr/include/c++/5/bits/stl_multimap.h \
+ /usr/local/include/yaml-cpp/exceptions.h \
+ /usr/local/include/yaml-cpp/mark.h \
+ /usr/local/include/yaml-cpp/noexcept.h \
+ /usr/local/include/yaml-cpp/traits.h \
+ /usr/local/include/yaml-cpp/node/node.h \
+ /usr/local/include/yaml-cpp/node/detail/iterator_fwd.h \
+ /usr/local/include/yaml-cpp/node/ptr.h \
+ /usr/local/include/yaml-cpp/node/type.h \
+ /usr/local/include/yaml-cpp/node/impl.h \
+ /usr/local/include/yaml-cpp/node/detail/memory.h \
+ /usr/local/include/yaml-cpp/node/detail/node.h \
+ /usr/local/include/yaml-cpp/node/detail/node_ref.h \
+ /usr/local/include/yaml-cpp/node/detail/node_data.h \
+ /usr/local/include/yaml-cpp/node/detail/node_iterator.h \
+ /usr/local/include/yaml-cpp/node/iterator.h \
+ /usr/local/include/yaml-cpp/node/detail/iterator.h \
+ /usr/include/c++/5/atomic /usr/local/include/yaml-cpp/node/convert.h \
+ /usr/local/include/yaml-cpp/node/detail/impl.h \
+ /usr/local/include/yaml-cpp/node/parse.h \
+ /usr/local/include/yaml-cpp/node/emit.h /usr/include/c++/5/unordered_map \
+ /usr/include/c++/5/bits/hashtable.h \
+ /usr/include/c++/5/bits/hashtable_policy.h \
+ /usr/include/c++/5/bits/unordered_map.h /usr/include/c++/5/unordered_set \
+ /usr/include/c++/5/bits/unordered_set.h rainbow/../rainbow/log.h \
  rainbow/../rainbow/singleton.h rainbow/../rainbow/util.h \
  /usr/include/c++/5/thread /usr/include/c++/5/chrono \
  /usr/include/c++/5/ratio /usr/include/c++/5/bits/parse_numbers.h \
@@ -730,7 +768,4 @@ obj/config.o: rainbow/config.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/bits/syscall.h /usr/include/c++/5/fstream \
  /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
- /usr/include/c++/5/bits/fstream.tcc /usr/include/c++/5/list \
- /usr/include/c++/5/bits/stl_list.h /usr/include/c++/5/bits/list.tcc \
- /usr/include/c++/5/map /usr/include/c++/5/bits/stl_tree.h \
- /usr/include/c++/5/bits/stl_map.h /usr/include/c++/5/bits/stl_multimap.h
+ /usr/include/c++/5/bits/fstream.tcc

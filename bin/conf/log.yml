@@ -13,3 +13,41 @@ logs:
           - type: FileLogAppender
             file: /apps/logs/sylar/system.txt
           - type: StdoutLogAppender
+
+system:
+    port: 9900
+    value: 15
+    int_vec:
+        - 10
+        - 30
+    int_list: [20, 30, 45]
+    int_set: [15, 25]
+    int_uset: [12, 12, 14]
+    str_int_map:
+        kk: 10
+        jj: 30
+        ii: 20
+    str_int_umap:
+        oo: 101
+        nn: 301
+        tt: 201
+
+class:
+    person:
+        name: rainbow
+        age: 24
+        sex: true
+    map:
+        person:
+            name: rainbow2
+            age: 23
+            sex: true
+    map_vec:
+        p1:
+            - name: vec1
+              age: 33
+              sex: false
+        p2:
+            - name: vec2
+              age: 32
+              sex: true

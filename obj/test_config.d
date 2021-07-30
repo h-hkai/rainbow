@@ -1,4 +1,4 @@
-obj/configTest.o: tests/configTest.cpp /usr/include/stdc-predef.h \
+obj/test_config.o: tests/test_config.cpp /usr/include/stdc-predef.h \
  tests/../rainbow/config.h /usr/include/c++/5/memory \
  /usr/include/c++/5/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++config.h \
@@ -720,31 +720,21 @@ obj/configTest.o: tests/configTest.cpp /usr/include/stdc-predef.h \
  /usr/include/boost/math/special_functions/fpclassify.hpp \
  /usr/include/boost/math/tools/real_cast.hpp \
  /usr/include/boost/integer.hpp /usr/include/boost/integer_fwd.hpp \
- /usr/include/boost/detail/basic_pointerbuf.hpp tests/../rainbow/log.h \
- tests/../rainbow/singleton.h tests/../rainbow/util.h \
- /usr/include/c++/5/thread /usr/include/c++/5/chrono \
- /usr/include/c++/5/ratio /usr/include/c++/5/bits/parse_numbers.h \
- /usr/include/c++/5/iostream /usr/include/x86_64-linux-gnu/sys/syscall.h \
- /usr/include/x86_64-linux-gnu/asm/unistd.h \
- /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
- /usr/include/x86_64-linux-gnu/bits/syscall.h /usr/include/c++/5/fstream \
- /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
- /usr/include/c++/5/bits/fstream.tcc /usr/include/c++/5/list \
- /usr/include/c++/5/bits/stl_list.h /usr/include/c++/5/bits/list.tcc \
- /usr/include/c++/5/map /usr/include/c++/5/bits/stl_tree.h \
- /usr/include/c++/5/bits/stl_map.h /usr/include/c++/5/bits/stl_multimap.h \
- tests/../rainbow/log.h /usr/local/include/yaml-cpp/yaml.h \
- /usr/local/include/yaml-cpp/parser.h /usr/local/include/yaml-cpp/dll.h \
- /usr/local/include/yaml-cpp/emitter.h \
+ /usr/include/boost/detail/basic_pointerbuf.hpp \
+ /usr/local/include/yaml-cpp/yaml.h /usr/local/include/yaml-cpp/parser.h \
+ /usr/local/include/yaml-cpp/dll.h /usr/local/include/yaml-cpp/emitter.h \
  /usr/local/include/yaml-cpp/binary.h \
  /usr/local/include/yaml-cpp/emitterdef.h \
  /usr/local/include/yaml-cpp/emittermanip.h \
  /usr/local/include/yaml-cpp/null.h \
  /usr/local/include/yaml-cpp/ostream_wrapper.h \
  /usr/local/include/yaml-cpp/emitterstyle.h \
- /usr/local/include/yaml-cpp/stlemitter.h /usr/include/c++/5/set \
+ /usr/local/include/yaml-cpp/stlemitter.h /usr/include/c++/5/list \
+ /usr/include/c++/5/bits/stl_list.h /usr/include/c++/5/bits/list.tcc \
+ /usr/include/c++/5/set /usr/include/c++/5/bits/stl_tree.h \
  /usr/include/c++/5/bits/stl_set.h /usr/include/c++/5/bits/stl_multiset.h \
+ /usr/include/c++/5/map /usr/include/c++/5/bits/stl_map.h \
+ /usr/include/c++/5/bits/stl_multimap.h \
  /usr/local/include/yaml-cpp/exceptions.h \
  /usr/local/include/yaml-cpp/mark.h \
  /usr/local/include/yaml-cpp/noexcept.h \
@@ -764,4 +754,18 @@ obj/configTest.o: tests/configTest.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/atomic /usr/local/include/yaml-cpp/node/convert.h \
  /usr/local/include/yaml-cpp/node/detail/impl.h \
  /usr/local/include/yaml-cpp/node/parse.h \
- /usr/local/include/yaml-cpp/node/emit.h
+ /usr/local/include/yaml-cpp/node/emit.h /usr/include/c++/5/unordered_map \
+ /usr/include/c++/5/bits/hashtable.h \
+ /usr/include/c++/5/bits/hashtable_policy.h \
+ /usr/include/c++/5/bits/unordered_map.h /usr/include/c++/5/unordered_set \
+ /usr/include/c++/5/bits/unordered_set.h tests/../rainbow/log.h \
+ tests/../rainbow/singleton.h tests/../rainbow/util.h \
+ /usr/include/c++/5/thread /usr/include/c++/5/chrono \
+ /usr/include/c++/5/ratio /usr/include/c++/5/bits/parse_numbers.h \
+ /usr/include/c++/5/iostream /usr/include/x86_64-linux-gnu/sys/syscall.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd.h \
+ /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
+ /usr/include/x86_64-linux-gnu/bits/syscall.h /usr/include/c++/5/fstream \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
+ /usr/include/c++/5/bits/fstream.tcc tests/../rainbow/log.h
