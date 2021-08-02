@@ -2,7 +2,7 @@
 target := bin/test_config
 
 # compile and lib parameter
-CC		:= g++ -std=c++11 -g
+CC		:= g++ -std=c++11 -g3 -Wall
 LIBS	:= -L/usr/local/lib
 INCLUDE := -I/usr/local/include
 DEFINES := -lyaml-cpp
@@ -32,7 +32,7 @@ obj_dir := ./obj
 $(shell if [ ! -e $(obj_dir) ];then mkdir -p $(obj_dir); fi)
 
 $(target):$(objlist)
-	$(CC) -o $@ $^ $(LIBS) $(INCLUDE) $(DEFINES) -gdwarf-2 -g3
+	$(CC) -o $@ $^ $(LIBS) $(INCLUDE) $(DEFINES)
 
 $(objdir)/%.o: %.cpp
 	$(CC) -MD $(INCDIR) -c $< -o $@ 

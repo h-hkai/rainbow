@@ -2,11 +2,11 @@
 
 namespace rainbow {
 
-Config::ConfigVarMap Config::s_datas;
+static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");
 
-ConfigVarBase::ptr Config:: LookUpBase(const std::string& name) {
-    auto it = s_datas.find(name);
-    return it == s_datas.end() ? nullptr : it->second;
+ConfigVarBase::ptr Config::LookUpBase(const std::string& name) {
+    auto it = GetDatas().find(name);
+    return it == GetDatas().end() ? nullptr : it->second;
 }
 
 /**
@@ -21,15 +21,14 @@ static void ListAllMember(const std::string& prefix,
 
     if (prefix.find_first_not_of("abcdefghijklmnopqrstuvwxyz._0123456789") 
                 != std::string::npos) {
-        RAINBOW_LOG_ERROR(RAINBOW_LOG_ROOT()) << "Config invalid name: " << prefix << " : " << node;
+        RAINBOW_LOG_ERROR(g_logger) << "Config invalid name: " << prefix << " : " << node;
         return;
-    } else {
-        output.push_back(std::make_pair(prefix, node));
-        if (node.IsMap()) {
-            for (auto it = node.begin();
-                    it != node.end(); ++it) {
-                ListAllMember(prefix.empty() ? it->first.Scalar() : prefix + "." + it->first.Scalar(), it->second, output);
-            }
+    } 
+    output.push_back(std::make_pair(prefix, node));
+    if (node.IsMap()) {
+        for (auto it = node.begin(); it != node.end(); ++it) {
+            ListAllMember(prefix.empty() ? it->first.Scalar() : 
+                    prefix + "." + it->first.Scalar(), it->second, output);
         }
     }
 }
@@ -59,3 +58,4 @@ void Config::LoadFromYaml(const YAML::Node& root) {
 }
 
 }
+

@@ -3,7 +3,7 @@
 
 #include <yaml-cpp/yaml.h>
 
-#if 0 
+#if 1 
 rainbow::ConfigVar<int>::ptr g_int_value_config = 
     rainbow::Config::Lookup("system.port", (int)8080, "system port");
 
@@ -40,6 +40,7 @@ void print_yaml(const YAML::Node& node, int level) {
             << "NULL - " << node.Type() << " - " << level; 
     } else if (node.IsMap()) {
         for (auto it = node.begin(); it != node.end(); ++it) {
+            RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "test" << std::endl; 
             RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << std::string(level * 4, ' ')
                 << it->first << " - " << it->second.Type() << " - " << level;
             print_yaml(it->second, level+1);
@@ -57,7 +58,7 @@ void print_yaml(const YAML::Node& node, int level) {
 }
 
 void test_yaml() {
-    YAML::Node root = YAML::LoadFile("/home/zhangyu/rainbow/bin/conf/log.yml");
+    YAML::Node root = YAML::LoadFile("/home/zhangyu/rainbow/bin/conf/test.yml");
     print_yaml(root, 0);
     //RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << root;
 
@@ -92,7 +93,7 @@ void test_config() {
     XX_M(g_str_int_map_value_config, int_map, before);
     XX_M(g_str_int_umap_value_config, int_umap, before);
 
-    YAML::Node root = YAML::LoadFile("/home/zhangyu/rainbow/bin/conf/log.yml");
+    YAML::Node root = YAML::LoadFile("/home/zhangyu/rainbow/bin/conf/test.yml");
     rainbow::Config::LoadFromYaml(root);
 
     RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "after: "  << g_int_value_config->toString();
@@ -122,6 +123,12 @@ public:
            <<"]";
         return ss.str();
     } 
+
+    bool operator==(const Person& oth) const {
+        return m_name == oth.m_name 
+            && m_age == oth.m_age
+            && m_sex == oth.m_sex;
+    }
 };
 
 namespace rainbow {
@@ -178,23 +185,40 @@ void test_class() {
         } \
         RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << prefix << ": size = " << m.size(); \
     } 
-
     //XX_PM(g_person_map, "class.map before");
     
-    RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "before: " << g_person_map_vec->toString();
+    //RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "before: " << g_person_map_vec->toString();
+    RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "before: " << g_person->toString();
 
-    YAML::Node root = YAML::LoadFile("/home/zhangyu/rainbow/bin/conf/log.yml");
+    YAML::Node root = YAML::LoadFile("/home/zhangyu/rainbow/bin/conf/test.yml");
     rainbow::Config::LoadFromYaml(root);
-    
+ 
+    g_person->addListener(10, [](const Person& old_value, const Person& new_value) {
+        RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "old_value = " << old_value.toString()
+            << " new_value = " << new_value.toString();
+    });
+
     //RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "after " <<  g_person->getValue().toString() << " - " << g_person->toString();
 
-    RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "after: " << g_person_map_vec->toString();
+    //RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "after: " << g_person_map_vec->toString();
+    RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "after: " << g_person->toString();
     //XX_PM(g_person_map, "class.map after");
+}
+
+void test_log() {
+    YAML::Node root = YAML::LoadFile("/home/zhangyu/rainbow/bin/conf/log.yml");
+
+    //print_yaml(root, 0);
+    rainbow::Config::LoadFromYaml(root);
+    //std::cout << "in test_log" << std::endl; 
+    //static rainbow::Logger::ptr system_log = RAINBOW_LOG_NAME("system");
+    //RAINBOW_LOG_INFO(system_log) << "hello system" << std::endl;
 }
 
 int main(int argc, char** argv) {
     //test_yaml();
     //test_config();
-    test_class();        
+    //test_class();        
+    test_log();
     return 0;
 }

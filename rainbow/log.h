@@ -41,11 +41,12 @@
 
 // 采用宏定义的方式获取日志器（root）
 #define RAINBOW_LOG_ROOT() rainbow::LoggerMgr::GetInstance()->getRoot()
+#define RAINBOW_LOG_NAME(name) rainbow::LoggerMgr::GetInstance()->getLogger(name)
 
 namespace rainbow {
 
 class Logger;
-
+class LoggerManager;
 
 // 日志级别
 class LogLevel {
@@ -60,6 +61,7 @@ class LogLevel {
     };
 
     static const char* ToString(LogLevel::Level level);
+    static LogLevel::Level FromString(const std::string& str);
 };
 
 // 日志事件
@@ -159,13 +161,21 @@ class LogFormatter {
         typedef std::shared_ptr<FormatItem> ptr;
     };
 
+    /**
+     * @brief 初始化，解析日志模板
+     */
     void init();
+
+    bool isError() const {
+        return m_error;
+    }
 
    private:
     // 日志格式
     std::string m_pattern;
     // 根据日志格式将对应的解析器指针存放在该数组中
     std::vector<FormatItem::ptr> m_items;
+    bool m_error = false;
 };
 
 // 日志输出到目的地（控制台、文件）
@@ -177,6 +187,9 @@ class LogAppender {
     // 纯虚函数，子类必须实现该方法
     virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level,
                      LogEvent::ptr event) = 0;
+
+    virtual std::string toYamlString() = 0;
+
     // 按照给定的格式序列化输出
     void setFormatter(LogFormatter::ptr val) { m_formatter = val; }
     
@@ -195,7 +208,9 @@ class LogAppender {
 
 // 日志器
 class Logger : public std::enable_shared_from_this<Logger> {
-   public:
+friend class LoggerManager;
+
+public:
     typedef std::shared_ptr<Logger> ptr;
 
     Logger(const std::string& name = "root");
@@ -211,17 +226,28 @@ class Logger : public std::enable_shared_from_this<Logger> {
 
     void addAppender(LogAppender::ptr appender);
     void delAppender(LogAppender::ptr appender);
+    void clearAppenders();
 
     LogLevel::Level getLevel() const { return m_level; }
+    void setLevel(LogLevel::Level level) { m_level = level; }
+
     void setAppender(LogLevel::Level val) { m_level = val; }
 
     const std::string getName() const { return this->m_name; }
+    
+    void setFormatter(LogFormatter::ptr val);
+    void setFormatter(const std::string& val);
+
+    LogFormatter::ptr getFormatter() const;
+
+    std::string toYamlString();
 
    private:
     std::string m_name = "root";       // 日志名称
     LogLevel::Level m_level;  // 日志器的级别
     std::list<LogAppender::ptr> m_appenders;  // Appender集合
     LogFormatter::ptr m_formatter;            // 日志格式
+    Logger::ptr m_root;
 };
 
 // 输出到控制台的Appender
@@ -230,6 +256,8 @@ class StdoutLogAppender : public LogAppender {
     typedef std::shared_ptr<StdoutLogAppender> ptr;
     virtual void log(Logger::ptr logger, LogLevel::Level level,
                      LogEvent::ptr event) override;
+
+    std::string toYamlString() override;
 };
 
 // 定义输出到文件的Appender
