@@ -3,7 +3,7 @@
 
 #include <yaml-cpp/yaml.h>
 
-#if 1 
+#if 0 
 rainbow::ConfigVar<int>::ptr g_int_value_config = 
     rainbow::Config::Lookup("system.port", (int)8080, "system port");
 
@@ -206,13 +206,16 @@ void test_class() {
 }
 
 void test_log() {
+    static rainbow::Logger::ptr system_log = RAINBOW_LOG_NAME("system");
+    RAINBOW_LOG_INFO(system_log) << "hello system" << std::endl;
+    std::cout << rainbow::LoggerMgr::GetInstance()->toYamlString() << std::endl;
     YAML::Node root = YAML::LoadFile("/home/zhangyu/rainbow/bin/conf/log.yml");
-
-    //print_yaml(root, 0);
+    std::cout << "=========" << std::endl;
+	std::cout << root << std::endl;
+	std::cout << "*********" << std::endl;
     rainbow::Config::LoadFromYaml(root);
-    //std::cout << "in test_log" << std::endl; 
-    //static rainbow::Logger::ptr system_log = RAINBOW_LOG_NAME("system");
-    //RAINBOW_LOG_INFO(system_log) << "hello system" << std::endl;
+    std::cout << rainbow::LoggerMgr::GetInstance()->toYamlString() << std::endl;
+    RAINBOW_LOG_INFO(system_log) << "hello system" << std::endl;
 }
 
 int main(int argc, char** argv) {

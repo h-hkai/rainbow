@@ -9,17 +9,42 @@
 
 namespace rainbow {
 
-LogLevel::Level LogLevel::FromString(const std::string& str) {
-#define XX(name) \
-    if (str == #name) { \
-        return LogLevel::name; \
+const char* LogLevel::ToString(LogLevel::Level level) {
+    switch (level) {
+#define XX(name)         \
+    case LogLevel::name: \
+        return #name;    \
+        break;
+        XX(UNKNOW);
+        XX(DEBUG);
+        XX(INFO);
+        XX(WARN);
+        XX(ERROR);
+        XX(FATAL);
+#undef XX
+        default:
+            return "UNKNOW";
+            break;
     }
-    XX(UNKNOW);
-    XX(DEBUG);
-    XX(INFO);
-    XX(WARN);
-    XX(ERROR);
-    XX(FATAL);
+}
+
+LogLevel::Level LogLevel::FromString(const std::string& str) {
+#define XX(level, v) \
+    if (str == #v) { \
+        return LogLevel::level; \
+    }
+    XX(DEBUG, debug);
+    XX(INFO, info);
+    XX(WARN, warn);
+    XX(ERROR, error);
+    XX(FATAL, fatal);
+
+    XX(DEBUG, DEBUG);
+    XX(INFO, INFO);
+    XX(WARN, WARN);
+    XX(ERROR, ERROR);
+    XX(FATAL, FATAL);
+
     return LogLevel::UNKNOW;
 #undef XX
 
@@ -149,25 +174,6 @@ class NameFormatItem : public LogFormatter::FormatItem {
         os << event->getLogger()->getName();
     }
 };
-
-const char* LogLevel::ToString(LogLevel::Level level) {
-    switch (level) {
-#define XX(name)         \
-    case LogLevel::name: \
-        return #name;    \
-        break;
-        XX(UNKNOW);
-        XX(DEBUG);
-        XX(INFO);
-        XX(WARN);
-        XX(ERROR);
-        XX(FATAL);
-#undef XX
-        default:
-            return "UNKNOW";
-            break;
-    }
-}
 
 LogEvent::LogEvent(const std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, 
         int32_t line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time)
@@ -300,6 +306,24 @@ void Logger::error(LogEvent::ptr event) { log(LogLevel::ERROR, event); }
 
 void Logger::fatal(LogEvent::ptr event) { log(LogLevel::FATAL, event); }
 
+std::string Logger::toYamlString() {
+    YAML::Node node;
+    node["name"] = m_name;
+    if (m_level != LogLevel::UNKNOW) {
+        node["level"] = LogLevel::ToString(m_level);
+    }
+    if (m_formatter) {
+        node["formatter"] = m_formatter->getPattern();
+    }
+
+    for (auto& i : m_appenders) {
+        node["appenders"].push_back(YAML::Load(i->toYamlString()));
+    }
+    std::stringstream ss;
+    ss << node;
+    return ss.str();
+}
+
 LogAppender::LogAppender() {
     m_level = LogLevel::DEBUG;
 }
@@ -331,6 +355,12 @@ std::string FileLogAppender::toYamlString() {
     YAML::Node node;
     node["type"] = "FileLogAppender";
     node["file"] = m_filename;
+    if (m_level != LogLevel::UNKNOW) {
+        node["level"] = LogLevel::ToString(m_level);
+    }
+    if (m_formatter) {
+        node["formatter"] = m_formatter->getPattern();
+    }
     std::stringstream ss;
     ss << node;
     return  ss.str();
@@ -347,6 +377,12 @@ void StdoutLogAppender::log(std::shared_ptr<Logger> logger,
 std::string StdoutLogAppender::toYamlString() {
     YAML::Node node;
     node["type"] = "StdoutLogAppender";
+    if (m_level != LogLevel::UNKNOW) {
+        node["level"] = LogLevel::ToString(m_level);
+    }
+    if (m_formatter) {
+        node["formatter"] = m_formatter->getPattern();
+    }
     std::stringstream ss;
     ss << node;
     return  ss.str();
@@ -441,19 +477,10 @@ LoggerManager::LoggerManager() {
     m_root.reset(new Logger);
     m_root->addAppender(LogAppender::ptr(new StdoutLogAppender));
     m_loggers[m_root->m_name] = m_root;
-    init();
-}
 
-std::string FileLogAppender::toYamlString() override {
-    YAML::Node node;
-    node["name"] = m_name;
-    node["level"] = LogLevel::ToString(m_level);
-    if (!m_formatter.empty()) {
-        node["formatter"] = m_formatter;
-    }
-    std::stringstream ss;
-    ss << node;
-    return  ss.str();
+    m_loggers[m_root->m_name] = m_root;
+
+    init();
 }
 
 Logger::ptr LoggerManager::getLogger(const std::string& name) {
@@ -569,13 +596,15 @@ template<>
 class LexicalCast<std::set<LogDefine>, std::string> {
 public:
     std::string operator()(const std::set<LogDefine>& v) {
-        YAML::Node node(YAML::NodeType::Sequence);
+        YAML::Node node;
         for (auto& i : v) {
             YAML::Node n;
             n["name"] = i.name;
-            n["level"] = LogLevel::ToString(i.level);
+			if (i.level != LogLevel::UNKNOW) {
+				n["level"] = LogLevel::ToString(i.level);
+			}
             if (i.formatter.empty()) {
-                n["level"] = i.formatter;
+                n["formatter"] = i.formatter;
             }
 
             for (auto& a : i.appenders) {
@@ -586,7 +615,9 @@ public:
                 } else if (a.type == 2) {
                     na["type"] = "StdoutLogAppender";
                 }
-                na["level"] = LogLevel::ToString(a.level);
+                if (a.level != LogLevel::UNKNOW) {
+                    na["level"] = LogLevel::ToString(a.level);
+                }
 
                 if (!a.formatter.empty()) {
                     na["formatter"] = a.formatter; 
@@ -616,7 +647,7 @@ struct LogIniter {
                 rainbow::Logger::ptr logger;
                 if (it == old_value.end()) {
                     // 新增logger
-                    logger.reset(new rainbow::Logger(i.name));
+                    logger = RAINBOW_LOG_NAME(i.name);
                 } else {
                     if (!(i == *it)) {
                         // 修改的 logger
@@ -647,7 +678,7 @@ struct LogIniter {
                 if (it == new_value.end()) {
                     // 删除 logger
                     auto logger = RAINBOW_LOG_NAME(i.name);
-                    logger->setLevel((LogLevel::Level)0);
+                    logger->setLevel((LogLevel::Level)100);
                     logger->clearAppenders();
                 }
             }
@@ -656,6 +687,16 @@ struct LogIniter {
 };
 
 static LogIniter __log_init;
+
+std::string LoggerManager::toYamlString() {
+    YAML::Node node;
+    for (auto& i : m_loggers) {
+        node.push_back(YAML::Load(i.second->toYamlString()));
+    }
+    std::stringstream ss;
+    ss << node;
+    return  ss.str();
+}
 
 void LoggerManager::init() {
 

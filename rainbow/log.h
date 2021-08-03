@@ -170,6 +170,8 @@ class LogFormatter {
         return m_error;
     }
 
+    const std::string getPattern() const { return m_pattern; }
+
    private:
     // 日志格式
     std::string m_pattern;
@@ -243,7 +245,7 @@ public:
     std::string toYamlString();
 
    private:
-    std::string m_name = "root";       // 日志名称
+    std::string m_name;       // 日志名称
     LogLevel::Level m_level;  // 日志器的级别
     std::list<LogAppender::ptr> m_appenders;  // Appender集合
     LogFormatter::ptr m_formatter;            // 日志格式
@@ -254,7 +256,7 @@ public:
 class StdoutLogAppender : public LogAppender {
    public:
     typedef std::shared_ptr<StdoutLogAppender> ptr;
-    virtual void log(Logger::ptr logger, LogLevel::Level level,
+    void log(Logger::ptr logger, LogLevel::Level level,
                      LogEvent::ptr event) override;
 
     std::string toYamlString() override;
@@ -264,11 +266,13 @@ class StdoutLogAppender : public LogAppender {
 class FileLogAppender : public LogAppender {
    public:
     typedef std::shared_ptr<FileLogAppender> ptr;
-    virtual void log(Logger::ptr logger, LogLevel::Level level,
+    void log(Logger::ptr logger, LogLevel::Level level,
                      LogEvent::ptr event) override;
     FileLogAppender(const std::string& filename);
     // 重新打开文件，如果文件打开成功则返回true
     bool reopen();
+
+    std::string toYamlString() override;
 
    private:
     std::string m_filename;
@@ -283,6 +287,8 @@ public:
 
     void init();
     Logger::ptr getRoot() const { return m_root; }
+
+    std::string toYamlString();
 
 private:
     // 通过日志器的名字获取日志器
