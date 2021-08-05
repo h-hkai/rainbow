@@ -3,6 +3,7 @@
 
 #include "singleton.h"
 #include "util.h"
+#include "thread.h"
 
 #include <stdio.h>
 #include <stdint.h>
@@ -182,8 +183,10 @@ class LogFormatter {
 
 // 日志输出到目的地（控制台、文件）
 class LogAppender {
-   public:
+friend class Logger;
+public:
     typedef std::shared_ptr<LogAppender> ptr;
+    typedef Spinlock MutexType;
     LogAppender();
     virtual ~LogAppender() {}
     // 纯虚函数，子类必须实现该方法
@@ -193,19 +196,22 @@ class LogAppender {
     virtual std::string toYamlString() = 0;
 
     // 按照给定的格式序列化输出
-    void setFormatter(LogFormatter::ptr val) { m_formatter = val; }
+    void setFormatter(LogFormatter::ptr val);
     
     // 获取日志格式
-    LogFormatter::ptr getFormatter() const { return m_formatter; }
+    LogFormatter::ptr getFormatter(); 
 
-    LogLevel::Level getLevel() { return m_level; }
+    LogLevel::Level getLevel() const { return m_level; }
     void setLevel(const LogLevel::Level& level);
 
    protected:
     // LogAppender 的日志级别
-    LogLevel::Level m_level;
+    LogLevel::Level m_level = LogLevel::DEBUG;
+    bool m_hasFormatter = false;
     // LoggerAppender 的日志格式
     LogFormatter::ptr m_formatter;
+
+    MutexType m_mutex;
 };
 
 // 日志器
@@ -214,6 +220,7 @@ friend class LoggerManager;
 
 public:
     typedef std::shared_ptr<Logger> ptr;
+    typedef Spinlock MutexType;
 
     Logger(const std::string& name = "root");
     
@@ -240,13 +247,14 @@ public:
     void setFormatter(LogFormatter::ptr val);
     void setFormatter(const std::string& val);
 
-    LogFormatter::ptr getFormatter() const;
+    LogFormatter::ptr getFormatter();
 
     std::string toYamlString();
 
    private:
     std::string m_name;       // 日志名称
     LogLevel::Level m_level;  // 日志器的级别
+    MutexType m_mutex;
     std::list<LogAppender::ptr> m_appenders;  // Appender集合
     LogFormatter::ptr m_formatter;            // 日志格式
     Logger::ptr m_root;
@@ -277,11 +285,13 @@ class FileLogAppender : public LogAppender {
    private:
     std::string m_filename;
     std::ofstream m_filestream;
+    uint64_t m_lastTime = 0;
 };
 
 // 管理所有的日志器
 class LoggerManager {
 public:
+    typedef Spinlock MutexType;
     LoggerManager();
     Logger::ptr getLogger(const std::string& name);
 
@@ -291,6 +301,7 @@ public:
     std::string toYamlString();
 
 private:
+    MutexType m_mutex;
     // 通过日志器的名字获取日志器
     std::map<std::string, Logger::ptr> m_loggers;
     Logger::ptr m_root;

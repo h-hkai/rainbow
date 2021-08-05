@@ -193,7 +193,7 @@ void test_class() {
     YAML::Node root = YAML::LoadFile("/home/zhangyu/rainbow/bin/conf/test.yml");
     rainbow::Config::LoadFromYaml(root);
  
-    g_person->addListener(10, [](const Person& old_value, const Person& new_value) {
+    g_person->addListener([](const Person& old_value, const Person& new_value) {
         RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "old_value = " << old_value.toString()
             << " new_value = " << new_value.toString();
     });
@@ -216,6 +216,9 @@ void test_log() {
     rainbow::Config::LoadFromYaml(root);
     std::cout << rainbow::LoggerMgr::GetInstance()->toYamlString() << std::endl;
     RAINBOW_LOG_INFO(system_log) << "hello system" << std::endl;
+
+    system_log->setFormatter("%d - %m%n");
+    RAINBOW_LOG_INFO(system_log) << "hello system" << std::endl;
 }
 
 int main(int argc, char** argv) {
@@ -223,5 +226,15 @@ int main(int argc, char** argv) {
     //test_config();
     //test_class();        
     test_log();
+
+    std::cout << "before visit" << std::endl;
+    rainbow::Config::Visit([](rainbow::ConfigVarBase::ptr var) {
+        RAINBOW_LOG_INFO(RAINBOW_LOG_ROOT()) << "name = " << var->getName()
+                    << " description = " << var->getDescription()
+                    << " typename = " << var->getTypeName()
+                    << " value = " << var->toString();
+    });
+    std::cout << "after visit" << std::endl;
+
     return 0;
 }

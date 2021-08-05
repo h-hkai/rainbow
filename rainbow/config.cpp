@@ -5,6 +5,7 @@ namespace rainbow {
 static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");
 
 ConfigVarBase::ptr Config::LookUpBase(const std::string& name) {
+    RWMutexType::ReadLock lock(GetMutex());
     auto it = GetDatas().find(name);
     return it == GetDatas().end() ? nullptr : it->second;
 }
@@ -55,6 +56,14 @@ void Config::LoadFromYaml(const YAML::Node& root) {
             }
         }
     }   
+}
+
+void Config::Visit(std::function<void(ConfigVarBase::ptr)> cb) {
+    RWMutexType::ReadLock lock(GetMutex());
+    ConfigVarMap& m = GetDatas();
+    for (auto it = m.begin(); it != m.end(); ++it) {
+        cb(it->second);
+    }
 }
 
 }

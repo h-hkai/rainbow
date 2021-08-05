@@ -104,3 +104,23 @@ static Logger::ptr g_log = RAINBOW_LOG_NAME("system");
 // 实现日志配置解析
 ```
 
+## 线程库
+
+Thread, Mutex
+
+互斥量 mutex
+
+信号量 semaphore
+
+> 为什么不使用C++提供的信号量而选择自己来实现？
+> 在实际的应用中（大并发的情况下），大部分操作都会涉及到读操作，只有少部分会涉及到写操作。
+> 如果能够把读写分离的话那么性能就会提高很多。
+
+和 log 整合
+Logger, Appender
+
+Spinlock, 替换Mutex
+
+写文件，周期性，reopen
+
+Config,

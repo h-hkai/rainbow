@@ -1,0 +1,18 @@
+2021-08-05 16:50:24	name = class.map description = system person typename = St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE6PersonSt4lessIS5_ESaISt4pairIKS5_S6_EEE value = {}
+2021-08-05 16:50:24	name = class.map_vec description = system vector person typename = St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorI6PersonSaIS7_EESt4lessIS5_ESaISt4pairIKS5_S9_EEE value = {}
+2021-08-05 16:50:24	name = class.person description = system person typename = 6Person value = name: ""
+age: 0
+sex: false
+2021-08-05 16:50:24	name = logs description = logs config typename = St3setIN7rainbow9LogDefineESt4lessIS1_ESaIS1_EE value = - name: root
+  level: INFO
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  appenders:
+    - type: FileLogAppender
+      file: system.txt
+      formatter: "%d%T[%p]%T%m%n"
+    - type: StdoutLogAppender

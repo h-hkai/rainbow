@@ -2,7 +2,7 @@
 target := bin/test_config
 
 # compile and lib parameter
-CC		:= g++ -std=c++11 -g3 -Wall
+CC		:= g++ -std=c++11 -g3 -Wall -pthread
 LIBS	:= -L/usr/local/lib
 INCLUDE := -I/usr/local/include
 DEFINES := -lyaml-cpp
@@ -11,7 +11,7 @@ incdirs := rainbow
 srcdirs := rainbow tests
 
 #指定源文件列表(由vpath处理路径问题)
-srcs := config.cpp log.cpp util.cpp test_config.cpp
+srcs := thread.cpp config.cpp log.cpp util.cpp test_config.cpp
 
 #指定中间文件目录
 objdir := obj

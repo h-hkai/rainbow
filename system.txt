@@ -1,2 +1,6 @@
-2021-08-03 19:57:04	hello system
+2021-08-05 16:48:12	[INFO]	hello system
+
+2021-08-05 16:50:24	[INFO]	hello system
+
+2021-08-05 16:50:24	[INFO]	hello system
 

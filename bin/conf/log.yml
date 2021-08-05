@@ -12,4 +12,5 @@ logs:
       appenders:
           - type: FileLogAppender
             file: system.txt
+            formatter: "%d%T[%p]%T%m%n"
           - type: StdoutLogAppender

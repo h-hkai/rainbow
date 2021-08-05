@@ -765,7 +765,9 @@ obj/config.o: rainbow/config.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/5/iostream /usr/include/x86_64-linux-gnu/sys/syscall.h \
  /usr/include/x86_64-linux-gnu/asm/unistd.h \
  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
- /usr/include/x86_64-linux-gnu/bits/syscall.h /usr/include/c++/5/fstream \
+ /usr/include/x86_64-linux-gnu/bits/syscall.h rainbow/../rainbow/thread.h \
+ /usr/include/semaphore.h /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /usr/include/c++/5/fstream \
  /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
  /usr/include/c++/5/bits/fstream.tcc
