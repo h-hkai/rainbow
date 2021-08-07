@@ -123,4 +123,27 @@ Spinlock, 替换Mutex
 
 写文件，周期性，reopen
 
-Config,
+Config, RMutex
+
+## 协程库的封装
+
+定义协程接口
+
+ucontext_t的主要用法
+
+macro
+
+```
+Thread->main_fiber <-----> sub_fiber
+            |
+            |
+            |
+        sub_fiber
+```
+主协程可以创建协程并且可以调度协程
+
+子协程只能执行完之后，让出执行权回到主协程，然后再由主协程调度其他的子协程
+
+子协程不能够再次创建子协程（简单模型，为什么？）
+
+

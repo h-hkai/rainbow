@@ -5,5 +5,6 @@
 #include "../rainbow/log.h"
 #include "../rainbow/util.h"
 #include "../rainbow/thread.h"
+#include "../rainbow/macro.h"
 
 #endif

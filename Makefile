@@ -1,5 +1,5 @@
 # target
-target := bin/test_config
+target := bin/test_util
 
 # compile and lib parameter
 CC		:= g++ -std=c++11 -g3 -Wall -pthread
@@ -11,7 +11,7 @@ incdirs := rainbow
 srcdirs := rainbow tests
 
 #指定源文件列表(由vpath处理路径问题)
-srcs := thread.cpp config.cpp log.cpp util.cpp test_config.cpp
+srcs := thread.cpp config.cpp log.cpp util.cpp test_util.cpp
 
 #指定中间文件目录
 objdir := obj

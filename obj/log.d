@@ -123,6 +123,8 @@ obj/log.o: rainbow/log.cpp /usr/include/stdc-predef.h rainbow/log.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/c++/5/vector /usr/include/c++/5/bits/stl_vector.h \
+ /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
  /usr/include/x86_64-linux-gnu/sys/syscall.h \
  /usr/include/x86_64-linux-gnu/asm/unistd.h \
  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
@@ -135,8 +137,6 @@ obj/log.o: rainbow/log.cpp /usr/include/stdc-predef.h rainbow/log.h \
  /usr/include/c++/5/bits/fstream.tcc /usr/include/c++/5/list \
  /usr/include/c++/5/bits/stl_list.h /usr/include/c++/5/bits/list.tcc \
  /usr/include/c++/5/sstream /usr/include/c++/5/bits/sstream.tcc \
- /usr/include/c++/5/vector /usr/include/c++/5/bits/stl_vector.h \
- /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
  /usr/include/c++/5/map /usr/include/c++/5/bits/stl_tree.h \
  /usr/include/c++/5/bits/stl_map.h /usr/include/c++/5/bits/stl_multimap.h \
  rainbow/config.h /usr/include/boost/lexical_cast.hpp \

@@ -122,7 +122,20 @@ obj/util.o: rainbow/util.cpp /usr/include/stdc-predef.h rainbow/util.h \
  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
  /usr/include/x86_64-linux-gnu/bits/environments.h \
  /usr/include/x86_64-linux-gnu/bits/confname.h /usr/include/getopt.h \
+ /usr/include/c++/5/vector /usr/include/c++/5/bits/stl_vector.h \
+ /usr/include/c++/5/bits/stl_bvector.h /usr/include/c++/5/bits/vector.tcc \
  /usr/include/x86_64-linux-gnu/sys/syscall.h \
  /usr/include/x86_64-linux-gnu/asm/unistd.h \
  /usr/include/x86_64-linux-gnu/asm/unistd_64.h \
- /usr/include/x86_64-linux-gnu/bits/syscall.h
+ /usr/include/x86_64-linux-gnu/bits/syscall.h rainbow/log.h \
+ rainbow/singleton.h rainbow/thread.h /usr/include/semaphore.h \
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h /usr/include/c++/5/atomic \
+ /usr/include/c++/5/fstream /usr/include/c++/5/bits/codecvt.h \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/5/bits/c++io.h \
+ /usr/include/c++/5/bits/fstream.tcc /usr/include/c++/5/list \
+ /usr/include/c++/5/bits/stl_list.h /usr/include/c++/5/bits/list.tcc \
+ /usr/include/c++/5/sstream /usr/include/c++/5/bits/sstream.tcc \
+ /usr/include/c++/5/map /usr/include/c++/5/bits/stl_tree.h \
+ /usr/include/c++/5/bits/stl_map.h /usr/include/c++/5/bits/stl_multimap.h \
+ /usr/include/execinfo.h
