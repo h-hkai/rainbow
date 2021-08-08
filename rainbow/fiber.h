@@ -10,14 +10,15 @@ namespace rainbow {
 
 class Fiber : public std::enable_shared_from_this<Fiber> {
 public:
-    std::shared_ptr<Fiber> ptr;
+    typedef std::shared_ptr<Fiber> ptr;
 
     enum State {
         INIT,
         HOLD,
         EXEC,
         TERM,
-        READY
+        READY,
+        EXCEPT
     };
     
 private:
@@ -35,6 +36,8 @@ public:
     // 切换到后台
     void swapOut();
 
+    uint64_t GetId() const { return m_id; }
+
 public:
     // set current fiber
     static void SetThis(Fiber* f);
@@ -47,7 +50,8 @@ public:
     // 总协程
     static uint64_t TotalFibers();
 
-    static MainFunc();
+    static void MainFunc();
+    static uint64_t GetFiberId();
 
 private:
     uint64_t m_id = 0;

@@ -372,7 +372,7 @@ public:
      * @brief 从 YAML string 转换成参数的值
      * @exception 当转换失败抛出异常
      */
-    bool fromString(const std::string& val) {
+    bool fromString(const std::string& val) override {
         try {
             //m_val = boost::lexical_cast<T>(val);
             setValue(FromStr()(val));

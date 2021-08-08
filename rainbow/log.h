@@ -20,7 +20,7 @@
 
 #define RAINBOW_LOG_LEVEL(logger, level) \
     if (logger->getLevel() <= level) \
-        rainbow::LogEventWrap(rainbow::LogEvent::ptr(new rainbow::LogEvent(logger, level, __FILE__, __LINE__, 0, rainbow::GetThreadId(), rainbow::GetFiberId(), time(0)))).getSS()
+        rainbow::LogEventWrap(rainbow::LogEvent::ptr(new rainbow::LogEvent(logger, level, __FILE__, __LINE__, 0, rainbow::GetThreadId(), rainbow::GetFiberId(), time(0), rainbow::Thread::GetName()))).getSS()
 
 #define RAINBOW_LOG_DEBUG(logger) RAINBOW_LOG_LEVEL(logger, rainbow::LogLevel::DEBUG)
 #define RAINBOW_LOG_INFO(logger) RAINBOW_LOG_LEVEL(logger, rainbow::LogLevel::INFO)
@@ -32,7 +32,7 @@
     if (logger->getLevel() <= level) \
         rainbow::LogEventWrap(rainbow::LogEvent::ptr(new rainbow::LogEvent(logger, level, \
                         __FILE__, __LINE__, 0, rainbow::GetThreadId(), \
-                        rainbow::GetFiberId(), time(0)))).getEvent()->format(fmt, __VA_ARGS__)
+                        rainbow::GetFiberId(), time(0), rainbow::Thread::GetName()))).getEvent()->format(fmt, __VA_ARGS__)
 
 #define RAINBOW_LOG_FMT_DEBUG(logger, fmt, ...) RAINBOW_LOG_FMT_LEVEL(logger, rainbow::LogLevel::DEBUG, fmt, __VA_ARGS__)
 #define RAINBOW_LOG_FMT_INFO(logger, fmt, ...) RAINBOW_LOG_FMT_LEVEL(logger, rainbow::LogLevel::INFO, fmt, __VA_ARGS__)
@@ -75,7 +75,8 @@ class LogEvent {
      * 传入 Logger 指针，可以将该日志事件写入到对应的 Logger 中
      */
     LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char* file, 
-            int32_t m_line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, uint64_t time);
+            int32_t m_line, uint32_t elapse, uint32_t thread_id, uint32_t fiber_id, 
+            uint64_t time, const std::string& thread_name);
     ~LogEvent() {}
 
     // 获取该日志事件所对应的 Logger 类
@@ -101,6 +102,8 @@ class LogEvent {
     
     // 获取当前时间
     uint32_t getTime() const { return m_time; }
+
+    const std::string& getThreadName() { return m_threadName; }
     
     // 获取日志内容
     std::string getContent() const { return m_ss.str(); }
@@ -119,6 +122,7 @@ class LogEvent {
     uint32_t m_threadId = 0;       // 线程id
     uint32_t m_fiberId = 0;        // 协程id
     uint64_t m_time;               // 时间戳
+    std::string m_threadName;
     std::stringstream m_ss;             // 日志流
     std::shared_ptr<Logger> m_logger;   // 指向 Logger 类的指针
     LogLevel::Level m_level;            // 该日志事件的级别

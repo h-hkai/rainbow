@@ -6,5 +6,7 @@
 #include "../rainbow/util.h"
 #include "../rainbow/thread.h"
 #include "../rainbow/macro.h"
+#include "../rainbow/fiber.h"
+#include "../rainbow/singleton.h"
 
 #endif

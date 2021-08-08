@@ -1,4 +1,4 @@
-#ifndef __RAINBOW_SINGLETON_H__
+#ifndef __RAINBOW_SINGLETON_H_
 #define __RAINBOW_SINGLETON_H_
 
 #include <memory>

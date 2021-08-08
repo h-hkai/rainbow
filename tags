@@ -24,6 +24,7 @@ DateTimeFormatItem	rainbow/log.cpp	/^    DateTimeFormatItem(const std::string& f
 DateTimeFormatItem	rainbow/log.cpp	/^class DateTimeFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 Dealloc	rainbow/fiber.cpp	/^    static void Dealloc(void* vp, size_t size) {$/;"	f	class:rainbow::MallocStackAllocator	access:public	signature:(void* vp, size_t size)
 ERROR	rainbow/log.h	/^        ERROR = 4,$/;"	e	enum:rainbow::LogLevel::Level
+EXCEPT	rainbow/fiber.h	/^        EXCEPT$/;"	e	enum:rainbow::Fiber::State
 EXEC	rainbow/fiber.h	/^        EXEC,$/;"	e	enum:rainbow::Fiber::State
 ElapseFormatItem	rainbow/log.cpp	/^    ElapseFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ElapseFormatItem	access:public	signature:(const std::string str = Ó)
 ElapseFormatItem	rainbow/log.cpp	/^class ElapseFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
@@ -52,7 +53,7 @@ GetInstance	rainbow/singleton.h	/^    static std::shared_ptr<T> GetInstance() {$
 GetMutex	rainbow/config.h	/^    static RWMutexType& GetMutex() {$/;"	f	class:rainbow::Config	access:private	signature:()
 GetName	rainbow/thread.cpp	/^const std::string& Thread::GetName() {$/;"	f	class:rainbow::Thread	signature:()
 GetName	rainbow/thread.h	/^    static const std::string& GetName();$/;"	p	class:rainbow::Thread	access:public	signature:()
-GetThis	rainbow/fiber.cpp	/^static Fiber::ptr GetThis();$/;"	p	namespace:rainbow	file:	signature:()
+GetThis	rainbow/fiber.cpp	/^Fiber::ptr Fiber::GetThis() {$/;"	f	class:rainbow::Fiber	signature:()
 GetThis	rainbow/fiber.h	/^    static Fiber::ptr GetThis();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 GetThis	rainbow/thread.cpp	/^Thread* Thread::GetThis() {$/;"	f	class:rainbow::Thread	signature:()
 GetThis	rainbow/thread.h	/^    static Thread* GetThis();$/;"	p	class:rainbow::Thread	access:public	signature:()
@@ -121,8 +122,8 @@ LookUpBase	rainbow/config.cpp	/^ConfigVarBase::ptr Config::LookUpBase(const std:
 LookUpBase	rainbow/config.h	/^    static ConfigVarBase::ptr LookUpBase(const std::string& name);$/;"	p	class:rainbow::Config	access:public	signature:(const std::string& name)
 Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name) {$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name)
 Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name,$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name, const T& default_value, const std::string& description = Ó)
-MainFunc	rainbow/fiber.cpp	/^static MainFunc();$/;"	p	namespace:rainbow	file:	signature:()
-MainFunc	rainbow/fiber.h	/^    static MainFunc();$/;"	p	class:rainbow::Fiber	access:public	signature:()
+MainFunc	rainbow/fiber.cpp	/^void Fiber::MainFunc() {$/;"	f	class:rainbow::Fiber	signature:()
+MainFunc	rainbow/fiber.h	/^    static void MainFunc();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 MallocStackAllocator	rainbow/fiber.cpp	/^class MallocStackAllocator {$/;"	c	namespace:rainbow	file:
 MessageFormatItem	rainbow/log.cpp	/^    MessageFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::MessageFormatItem	access:public	signature:(const std::string& str = Ó)
 MessageFormatItem	rainbow/log.cpp	/^class MessageFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
@@ -163,7 +164,7 @@ RAINBOW_LOG_LEVEL	rainbow/log.h	21;"	d
 RAINBOW_LOG_NAME	rainbow/log.h	45;"	d
 RAINBOW_LOG_ROOT	rainbow/log.h	44;"	d
 RAINBOW_LOG_WARN	rainbow/log.h	27;"	d
-READY	rainbow/fiber.h	/^        READY$/;"	e	enum:rainbow::Fiber::State
+READY	rainbow/fiber.h	/^        READY,$/;"	e	enum:rainbow::Fiber::State
 RWMutex	rainbow/thread.h	/^    RWMutex() {$/;"	f	class:rainbow::RWMutex	access:public	signature:()
 RWMutex	rainbow/thread.h	/^class RWMutex {$/;"	c	namespace:rainbow
 RWMutexType	rainbow/config.h	/^    typedef RWMutex RWMutexType;$/;"	t	class:rainbow::Config	access:public
@@ -181,7 +182,7 @@ Semaphore	rainbow/thread.h	/^    Semaphore(uint32_t count = 0);$/;"	p	class:rain
 Semaphore	rainbow/thread.h	/^class Semaphore {$/;"	c	namespace:rainbow
 SetName	rainbow/thread.cpp	/^void Thread::SetName(const std::string& name) {$/;"	f	class:rainbow::Thread	signature:(const std::string& name)
 SetName	rainbow/thread.h	/^    static void SetName(const std::string& name);$/;"	p	class:rainbow::Thread	access:public	signature:(const std::string& name)
-SetThis	rainbow/fiber.cpp	/^static void SetThis(Fiber* f);$/;"	p	namespace:rainbow	file:	signature:(Fiber* f)
+SetThis	rainbow/fiber.cpp	/^void SetThis(Fiber* f) {$/;"	f	namespace:rainbow	signature:(Fiber* f)
 SetThis	rainbow/fiber.h	/^    static void SetThis(Fiber* f);$/;"	p	class:rainbow::Fiber	access:public	signature:(Fiber* f)
 Singleton	rainbow/singleton.h	/^class Singleton {$/;"	c	namespace:rainbow
 Singletonptr	rainbow/singleton.h	/^class Singletonptr {$/;"	c	namespace:rainbow
@@ -203,7 +204,7 @@ ThreadIdFormatItem	rainbow/log.cpp	/^    ThreadIdFormatItem(const std::string st
 ThreadIdFormatItem	rainbow/log.cpp	/^class ThreadIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 ToString	rainbow/log.cpp	/^const char* LogLevel::ToString(LogLevel::Level level) {$/;"	f	class:rainbow::LogLevel	signature:(LogLevel::Level level)
 ToString	rainbow/log.h	/^    static const char* ToString(LogLevel::Level level);$/;"	p	class:rainbow::LogLevel	access:public	signature:(LogLevel::Level level)
-TotalFibers	rainbow/fiber.cpp	/^static uint64_t TotalFibers();$/;"	p	namespace:rainbow	file:	signature:()
+TotalFibers	rainbow/fiber.cpp	/^static uint64_t TotalFibers() {$/;"	f	namespace:rainbow	signature:()
 TotalFibers	rainbow/fiber.h	/^    static uint64_t TotalFibers();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 UNKNOW	rainbow/log.h	/^        UNKNOW = 0,$/;"	e	enum:rainbow::LogLevel::Level
 Visit	rainbow/config.cpp	/^void Config::Visit(std::function<void(ConfigVarBase::ptr)> cb) {$/;"	f	class:rainbow::Config	signature:(std::function<void(ConfigVarBase::ptr)> cb)
@@ -220,9 +221,9 @@ XX	rainbow/log.cpp	476;"	d	file:
 XX	rainbow/log.cpp	490;"	d	file:
 XX	rainbow/log.cpp	50;"	d	file:
 XX_PM	tests/test_config.cpp	180;"	d	file:
-YieldToHold	rainbow/fiber.cpp	/^static void YieldToHold();$/;"	p	namespace:rainbow	file:	signature:()
+YieldToHold	rainbow/fiber.cpp	/^void YieldToHold() {$/;"	f	namespace:rainbow	signature:()
 YieldToHold	rainbow/fiber.h	/^    static void YieldToHold();$/;"	p	class:rainbow::Fiber	access:public	signature:()
-YieldToReady	rainbow/fiber.cpp	/^static void YieldToReady();$/;"	p	namespace:rainbow	file:	signature:()
+YieldToReady	rainbow/fiber.cpp	/^void Fiber::YieldToReady() {$/;"	f	class:rainbow::Fiber	signature:()
 YieldToReady	rainbow/fiber.h	/^    static void YieldToReady();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 __FIBER_H__	rainbow/fiber.h	2;"	d
 __RAINBOW_CONFIG_H__	rainbow/config.h	2;"	d
@@ -270,6 +271,7 @@ fun3	tests/test_thread.cpp	/^void fun3() {$/;"	f	signature:()
 g_fiber_stack_size	rainbow/fiber.cpp	/^static ConfigVar<uint32_t>::ptr g_fiber_stack_size = $/;"	m	namespace:rainbow	file:
 g_log_define	rainbow/log.cpp	/^rainbow::ConfigVar<std::set<LogDefine>>::ptr g_log_define = $/;"	m	namespace:rainbow	file:
 g_logger	rainbow/config.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
+g_logger	rainbow/fiber.cpp	/^static Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	rainbow/thread.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	rainbow/util.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	tests/test_thread.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
@@ -433,7 +435,7 @@ override	rainbow/log.h	/^    std::string toYamlString() override;$/;"	m	class:ra
 override	rainbow/log.h	/^    std::string toYamlString() override;$/;"	m	class:rainbow::StdoutLogAppender	access:public
 ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVar> ptr;$/;"	t	class:rainbow::ConfigVar	access:public
 ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVarBase> ptr;$/;"	t	class:rainbow::ConfigVarBase	access:public
-ptr	rainbow/fiber.h	/^    std::shared_ptr<Fiber> ptr;$/;"	m	class:rainbow::Fiber	access:public
+ptr	rainbow/fiber.h	/^    typedef std::shared_ptr<Fiber> ptr;$/;"	t	class:rainbow::Fiber	access:public
 ptr	rainbow/log.h	/^        typedef std::shared_ptr<FormatItem> ptr;$/;"	t	class:rainbow::LogFormatter::FormatItem	access:public
 ptr	rainbow/log.h	/^    typedef std::shared_ptr<FileLogAppender> ptr;$/;"	t	class:rainbow::FileLogAppender	access:public
 ptr	rainbow/log.h	/^    typedef std::shared_ptr<LogAppender> ptr;$/;"	t	class:rainbow::LogAppender	access:public
@@ -510,21 +512,25 @@ rainbow::DateTimeFormatItem::m_format	rainbow/log.cpp	/^    std::string m_format
 rainbow::ElapseFormatItem	rainbow/log.cpp	/^class ElapseFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 rainbow::ElapseFormatItem::ElapseFormatItem	rainbow/log.cpp	/^    ElapseFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ElapseFormatItem	access:public	signature:(const std::string str = Ó)
 rainbow::Fiber	rainbow/fiber.h	/^class Fiber : public std::enable_shared_from_this<Fiber> {$/;"	c	namespace:rainbow	inherits:std::enable_shared_from_this
+rainbow::Fiber::EXCEPT	rainbow/fiber.h	/^        EXCEPT$/;"	e	enum:rainbow::Fiber::State
 rainbow::Fiber::EXEC	rainbow/fiber.h	/^        EXEC,$/;"	e	enum:rainbow::Fiber::State
 rainbow::Fiber::Fiber	rainbow/fiber.cpp	/^Fiber::Fiber() {$/;"	f	class:rainbow::Fiber	signature:()
 rainbow::Fiber::Fiber	rainbow/fiber.cpp	/^Fiber::Fiber(std::function<void()> cb, size_t stacksize) $/;"	f	class:rainbow::Fiber	signature:(std::function<void()> cb, size_t stacksize)
 rainbow::Fiber::Fiber	rainbow/fiber.h	/^    Fiber();$/;"	p	class:rainbow::Fiber	access:private	signature:()
 rainbow::Fiber::Fiber	rainbow/fiber.h	/^    Fiber(std::function<void()> cb, size_t stacksize = 0);$/;"	p	class:rainbow::Fiber	access:public	signature:(std::function<void()> cb, size_t stacksize = 0)
+rainbow::Fiber::GetThis	rainbow/fiber.cpp	/^Fiber::ptr Fiber::GetThis() {$/;"	f	class:rainbow::Fiber	signature:()
 rainbow::Fiber::GetThis	rainbow/fiber.h	/^    static Fiber::ptr GetThis();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 rainbow::Fiber::HOLD	rainbow/fiber.h	/^        HOLD,$/;"	e	enum:rainbow::Fiber::State
 rainbow::Fiber::INIT	rainbow/fiber.h	/^        INIT,$/;"	e	enum:rainbow::Fiber::State
-rainbow::Fiber::MainFunc	rainbow/fiber.h	/^    static MainFunc();$/;"	p	class:rainbow::Fiber	access:public	signature:()
-rainbow::Fiber::READY	rainbow/fiber.h	/^        READY$/;"	e	enum:rainbow::Fiber::State
+rainbow::Fiber::MainFunc	rainbow/fiber.cpp	/^void Fiber::MainFunc() {$/;"	f	class:rainbow::Fiber	signature:()
+rainbow::Fiber::MainFunc	rainbow/fiber.h	/^    static void MainFunc();$/;"	p	class:rainbow::Fiber	access:public	signature:()
+rainbow::Fiber::READY	rainbow/fiber.h	/^        READY,$/;"	e	enum:rainbow::Fiber::State
 rainbow::Fiber::SetThis	rainbow/fiber.h	/^    static void SetThis(Fiber* f);$/;"	p	class:rainbow::Fiber	access:public	signature:(Fiber* f)
 rainbow::Fiber::State	rainbow/fiber.h	/^    enum State {$/;"	g	class:rainbow::Fiber	access:public
 rainbow::Fiber::TERM	rainbow/fiber.h	/^        TERM,$/;"	e	enum:rainbow::Fiber::State
 rainbow::Fiber::TotalFibers	rainbow/fiber.h	/^    static uint64_t TotalFibers();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 rainbow::Fiber::YieldToHold	rainbow/fiber.h	/^    static void YieldToHold();$/;"	p	class:rainbow::Fiber	access:public	signature:()
+rainbow::Fiber::YieldToReady	rainbow/fiber.cpp	/^void Fiber::YieldToReady() {$/;"	f	class:rainbow::Fiber	signature:()
 rainbow::Fiber::YieldToReady	rainbow/fiber.h	/^    static void YieldToReady();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 rainbow::Fiber::m_cb	rainbow/fiber.h	/^    std::function<void()> m_cb;$/;"	m	class:rainbow::Fiber	access:private
 rainbow::Fiber::m_ctx	rainbow/fiber.h	/^    ucontext_t m_ctx;$/;"	m	class:rainbow::Fiber	access:private
@@ -532,9 +538,12 @@ rainbow::Fiber::m_id	rainbow/fiber.h	/^    uint64_t m_id = 0;$/;"	m	class:rainbo
 rainbow::Fiber::m_stack	rainbow/fiber.h	/^    void* m_stack = nullptr;$/;"	m	class:rainbow::Fiber	access:private
 rainbow::Fiber::m_stacksize	rainbow/fiber.h	/^    uint32_t m_stacksize = 0;$/;"	m	class:rainbow::Fiber	access:private
 rainbow::Fiber::m_state	rainbow/fiber.h	/^    State m_state = INIT;$/;"	m	class:rainbow::Fiber	access:private
-rainbow::Fiber::ptr	rainbow/fiber.h	/^    std::shared_ptr<Fiber> ptr;$/;"	m	class:rainbow::Fiber	access:public
+rainbow::Fiber::ptr	rainbow/fiber.h	/^    typedef std::shared_ptr<Fiber> ptr;$/;"	t	class:rainbow::Fiber	access:public
+rainbow::Fiber::reset	rainbow/fiber.cpp	/^void Fiber::reset(std::function<void()> cb) {$/;"	f	class:rainbow::Fiber	signature:(std::function<void()> cb)
 rainbow::Fiber::reset	rainbow/fiber.h	/^    void reset(std::function<void()> cb);$/;"	p	class:rainbow::Fiber	access:public	signature:(std::function<void()> cb)
+rainbow::Fiber::swapIn	rainbow/fiber.cpp	/^void Fiber::swapIn() {$/;"	f	class:rainbow::Fiber	signature:()
 rainbow::Fiber::swapIn	rainbow/fiber.h	/^    void swapIn();$/;"	p	class:rainbow::Fiber	access:public	signature:()
+rainbow::Fiber::swapOut	rainbow/fiber.cpp	/^void Fiber::swapOut() {$/;"	f	class:rainbow::Fiber	signature:()
 rainbow::Fiber::swapOut	rainbow/fiber.h	/^    void swapOut();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 rainbow::Fiber::~Fiber	rainbow/fiber.cpp	/^Fiber::~Fiber() {$/;"	f	class:rainbow::Fiber	signature:()
 rainbow::Fiber::~Fiber	rainbow/fiber.h	/^    ~Fiber();$/;"	p	class:rainbow::Fiber	access:public	signature:()
@@ -557,7 +566,6 @@ rainbow::FileNameFormatItem	rainbow/log.cpp	/^class FileNameFormatItem : public 
 rainbow::FileNameFormatItem::FileNameFormatItem	rainbow/log.cpp	/^    FileNameFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::FileNameFormatItem	access:public	signature:(const std::string str = Ó)
 rainbow::GetFiberId	rainbow/util.cpp	/^uint32_t GetFiberId() {$/;"	f	namespace:rainbow	signature:()
 rainbow::GetFiberId	rainbow/util.h	/^uint32_t GetFiberId();$/;"	p	namespace:rainbow	signature:()
-rainbow::GetThis	rainbow/fiber.cpp	/^static Fiber::ptr GetThis();$/;"	p	namespace:rainbow	file:	signature:()
 rainbow::GetThreadId	rainbow/util.cpp	/^pid_t GetThreadId() {$/;"	f	namespace:rainbow	signature:()
 rainbow::GetThreadId	rainbow/util.h	/^pid_t GetThreadId();$/;"	p	namespace:rainbow	signature:()
 rainbow::LevelFormatItem	rainbow/log.cpp	/^class LevelFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
@@ -758,7 +766,6 @@ rainbow::LoggerManager::m_root	rainbow/log.h	/^    Logger::ptr m_root;$/;"	m	cla
 rainbow::LoggerManager::toYamlString	rainbow/log.cpp	/^std::string LoggerManager::toYamlString() {$/;"	f	class:rainbow::LoggerManager	signature:()
 rainbow::LoggerManager::toYamlString	rainbow/log.h	/^    std::string toYamlString();$/;"	p	class:rainbow::LoggerManager	access:public	signature:()
 rainbow::LoggerMgr	rainbow/log.h	/^typedef rainbow::Singleton<LoggerManager> LoggerMgr;$/;"	t	namespace:rainbow
-rainbow::MainFunc	rainbow/fiber.cpp	/^static MainFunc();$/;"	p	namespace:rainbow	file:	signature:()
 rainbow::MallocStackAllocator	rainbow/fiber.cpp	/^class MallocStackAllocator {$/;"	c	namespace:rainbow	file:
 rainbow::MallocStackAllocator::Alloc	rainbow/fiber.cpp	/^    static void* Alloc(size_t size) {$/;"	f	class:rainbow::MallocStackAllocator	access:public	signature:(size_t size)
 rainbow::MallocStackAllocator::Dealloc	rainbow/fiber.cpp	/^    static void Dealloc(void* vp, size_t size) {$/;"	f	class:rainbow::MallocStackAllocator	access:public	signature:(void* vp, size_t size)
@@ -824,7 +831,7 @@ rainbow::Semaphore::wait	rainbow/thread.cpp	/^void Semaphore::wait() {$/;"	f	cla
 rainbow::Semaphore::wait	rainbow/thread.h	/^    void wait();$/;"	p	class:rainbow::Semaphore	access:public	signature:()
 rainbow::Semaphore::~Semaphore	rainbow/thread.cpp	/^Semaphore::~Semaphore() {$/;"	f	class:rainbow::Semaphore	signature:()
 rainbow::Semaphore::~Semaphore	rainbow/thread.h	/^    ~Semaphore();$/;"	p	class:rainbow::Semaphore	access:public	signature:()
-rainbow::SetThis	rainbow/fiber.cpp	/^static void SetThis(Fiber* f);$/;"	p	namespace:rainbow	file:	signature:(Fiber* f)
+rainbow::SetThis	rainbow/fiber.cpp	/^void SetThis(Fiber* f) {$/;"	f	namespace:rainbow	signature:(Fiber* f)
 rainbow::Singleton	rainbow/singleton.h	/^class Singleton {$/;"	c	namespace:rainbow
 rainbow::Singleton::GetInstance	rainbow/singleton.h	/^    static T* GetInstance() {$/;"	f	class:rainbow::Singleton	access:public	signature:()
 rainbow::Singletonptr	rainbow/singleton.h	/^class Singletonptr {$/;"	c	namespace:rainbow
@@ -876,7 +883,7 @@ rainbow::Thread::~Thread	rainbow/thread.cpp	/^Thread::~Thread() {$/;"	f	class:ra
 rainbow::Thread::~Thread	rainbow/thread.h	/^    ~Thread();$/;"	p	class:rainbow::Thread	access:public	signature:()
 rainbow::ThreadIdFormatItem	rainbow/log.cpp	/^class ThreadIdFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 rainbow::ThreadIdFormatItem::ThreadIdFormatItem	rainbow/log.cpp	/^    ThreadIdFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::ThreadIdFormatItem	access:public	signature:(const std::string str = Ó)
-rainbow::TotalFibers	rainbow/fiber.cpp	/^static uint64_t TotalFibers();$/;"	p	namespace:rainbow	file:	signature:()
+rainbow::TotalFibers	rainbow/fiber.cpp	/^static uint64_t TotalFibers() {$/;"	f	namespace:rainbow	signature:()
 rainbow::WriteScopedLockImpl	rainbow/thread.h	/^struct WriteScopedLockImpl {$/;"	s	namespace:rainbow
 rainbow::WriteScopedLockImpl::WriteScopedLockImpl	rainbow/thread.h	/^    WriteScopedLockImpl(T& mutex)$/;"	f	struct:rainbow::WriteScopedLockImpl	access:public	signature:(T& mutex)
 rainbow::WriteScopedLockImpl::lock	rainbow/thread.h	/^    void lock() {$/;"	f	struct:rainbow::WriteScopedLockImpl	access:public	signature:()
@@ -884,26 +891,23 @@ rainbow::WriteScopedLockImpl::m_locked	rainbow/thread.h	/^    bool m_locked;$/;"
 rainbow::WriteScopedLockImpl::m_mutex	rainbow/thread.h	/^    T& m_mutex;$/;"	m	struct:rainbow::WriteScopedLockImpl	access:private
 rainbow::WriteScopedLockImpl::unlock	rainbow/thread.h	/^    void unlock() {$/;"	f	struct:rainbow::WriteScopedLockImpl	access:public	signature:()
 rainbow::WriteScopedLockImpl::~WriteScopedLockImpl	rainbow/thread.h	/^    ~WriteScopedLockImpl() {$/;"	f	struct:rainbow::WriteScopedLockImpl	access:public	signature:()
-rainbow::YieldToHold	rainbow/fiber.cpp	/^static void YieldToHold();$/;"	p	namespace:rainbow	file:	signature:()
-rainbow::YieldToReady	rainbow/fiber.cpp	/^static void YieldToReady();$/;"	p	namespace:rainbow	file:	signature:()
+rainbow::YieldToHold	rainbow/fiber.cpp	/^void YieldToHold() {$/;"	f	namespace:rainbow	signature:()
 rainbow::__log_init	rainbow/log.cpp	/^static LogIniter __log_init;$/;"	m	namespace:rainbow	file:
 rainbow::g_fiber_stack_size	rainbow/fiber.cpp	/^static ConfigVar<uint32_t>::ptr g_fiber_stack_size = $/;"	m	namespace:rainbow	file:
 rainbow::g_log_define	rainbow/log.cpp	/^rainbow::ConfigVar<std::set<LogDefine>>::ptr g_log_define = $/;"	m	namespace:rainbow	file:
 rainbow::g_logger	rainbow/config.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
+rainbow::g_logger	rainbow/fiber.cpp	/^static Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 rainbow::g_logger	rainbow/thread.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 rainbow::g_logger	rainbow/util.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
-rainbow::reset	rainbow/fiber.cpp	/^void reset(std::function<void()> cb);$/;"	p	namespace:rainbow	file:	signature:(std::function<void()> cb)
-rainbow::swapIn	rainbow/fiber.cpp	/^void swapIn();$/;"	p	namespace:rainbow	file:	signature:()
-rainbow::swapOut	rainbow/fiber.cpp	/^void swapOut();$/;"	p	namespace:rainbow	file:	signature:()
 rainbow::t_fiber	rainbow/fiber.cpp	/^static thread_local Fiber* t_fiber = nullptr;$/;"	m	namespace:rainbow	file:
 rainbow::t_thread	rainbow/thread.cpp	/^static thread_local Thread* t_thread = nullptr;$/;"	m	namespace:rainbow	file:
-rainbow::t_threadFiber	rainbow/fiber.cpp	/^static thread_local std::shared_ptr<Fiber::ptr> t_threadFiber = nullptr;$/;"	m	namespace:rainbow	file:
+rainbow::t_threadFiber	rainbow/fiber.cpp	/^static thread_local Fiber::ptr t_threadFiber = nullptr;$/;"	m	namespace:rainbow	file:
 rainbow::t_thread_name	rainbow/thread.cpp	/^static thread_local std::string t_thread_name = "UNKNOW";$/;"	m	namespace:rainbow	file:
 rdlock	rainbow/thread.h	/^    void rdlock() {$/;"	f	class:rainbow::RWMutex	access:public	signature:()
 rdlock	rainbow/thread.h	/^    void rdlock() {}$/;"	f	class:rainbow::NullRWMutex	access:public	signature:()
 reopen	rainbow/log.cpp	/^bool FileLogAppender::reopen() {$/;"	f	class:rainbow::FileLogAppender	signature:()
 reopen	rainbow/log.h	/^    bool reopen();$/;"	p	class:rainbow::FileLogAppender	access:public	signature:()
-reset	rainbow/fiber.cpp	/^void reset(std::function<void()> cb);$/;"	p	namespace:rainbow	file:	signature:(std::function<void()> cb)
+reset	rainbow/fiber.cpp	/^void Fiber::reset(std::function<void()> cb) {$/;"	f	class:rainbow::Fiber	signature:(std::function<void()> cb)
 reset	rainbow/fiber.h	/^    void reset(std::function<void()> cb);$/;"	p	class:rainbow::Fiber	access:public	signature:(std::function<void()> cb)
 run	rainbow/thread.cpp	/^void* Thread::run(void* arg) {$/;"	f	class:rainbow::Thread	signature:(void* arg)
 run	rainbow/thread.h	/^    static void* run(void* arg);$/;"	p	class:rainbow::Thread	access:private	signature:(void* arg)
@@ -920,14 +924,14 @@ setLevel	rainbow/log.h	/^    void setLevel(LogLevel::Level level) { m_level = le
 setLevel	rainbow/log.h	/^    void setLevel(const LogLevel::Level& level);$/;"	p	class:rainbow::LogAppender	access:public	signature:(const LogLevel::Level& level)
 setValue	rainbow/config.h	/^    void setValue(const T& v) { $/;"	f	class:rainbow::ConfigVar	access:public	signature:(const T& v)
 srcdirs	Makefile	/^srcdirs := rainbow tests$/;"	m
-srcs	Makefile	/^srcs := thread.cpp config.cpp log.cpp util.cpp test_util.cpp$/;"	m
-swapIn	rainbow/fiber.cpp	/^void swapIn();$/;"	p	namespace:rainbow	file:	signature:()
+srcs	Makefile	/^srcs := fiber.cpp thread.cpp config.cpp log.cpp util.cpp test_util.cpp$/;"	m
+swapIn	rainbow/fiber.cpp	/^void Fiber::swapIn() {$/;"	f	class:rainbow::Fiber	signature:()
 swapIn	rainbow/fiber.h	/^    void swapIn();$/;"	p	class:rainbow::Fiber	access:public	signature:()
-swapOut	rainbow/fiber.cpp	/^void swapOut();$/;"	p	namespace:rainbow	file:	signature:()
+swapOut	rainbow/fiber.cpp	/^void Fiber::swapOut() {$/;"	f	class:rainbow::Fiber	signature:()
 swapOut	rainbow/fiber.h	/^    void swapOut();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 t_fiber	rainbow/fiber.cpp	/^static thread_local Fiber* t_fiber = nullptr;$/;"	m	namespace:rainbow	file:
 t_thread	rainbow/thread.cpp	/^static thread_local Thread* t_thread = nullptr;$/;"	m	namespace:rainbow	file:
-t_threadFiber	rainbow/fiber.cpp	/^static thread_local std::shared_ptr<Fiber::ptr> t_threadFiber = nullptr;$/;"	m	namespace:rainbow	file:
+t_threadFiber	rainbow/fiber.cpp	/^static thread_local Fiber::ptr t_threadFiber = nullptr;$/;"	m	namespace:rainbow	file:
 t_thread_name	rainbow/thread.cpp	/^static thread_local std::string t_thread_name = "UNKNOW";$/;"	m	namespace:rainbow	file:
 target	Makefile	/^target := bin\/test_util$/;"	m
 test_assert	tests/test_util.cpp	/^void test_assert() {$/;"	f	signature:()

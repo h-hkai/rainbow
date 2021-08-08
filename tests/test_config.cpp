@@ -1,5 +1,5 @@
-#include "../rainbow/config.h"
 #include "../rainbow/log.h"
+#include "../rainbow/config.h"
 
 #include <yaml-cpp/yaml.h>
 

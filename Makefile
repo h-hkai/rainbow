@@ -1,17 +1,17 @@
 # target
-target := bin/test_util
+target := bin/test_fiber
 
 # compile and lib parameter
 CC		:= g++ -std=c++11 -g3 -Wall -pthread
-LIBS	:= -L/usr/local/lib
-INCLUDE := -I/usr/local/include
+# LIBS	:= -L/usr/local/lib
+# INCLUDE := -I/usr/local/include
 DEFINES := -lyaml-cpp
 
 incdirs := rainbow
 srcdirs := rainbow tests
 
 #指定源文件列表(由vpath处理路径问题)
-srcs := thread.cpp config.cpp log.cpp util.cpp test_util.cpp
+srcs := fiber.cpp thread.cpp config.cpp log.cpp util.cpp test_fiber.cpp
 
 #指定中间文件目录
 objdir := obj
@@ -32,7 +32,7 @@ obj_dir := ./obj
 $(shell if [ ! -e $(obj_dir) ];then mkdir -p $(obj_dir); fi)
 
 $(target):$(objlist)
-	$(CC) -o $@ $^ $(LIBS) $(INCLUDE) $(DEFINES)
+	$(CC) -o $@ $^ $(DEFINES) 
 
 $(objdir)/%.o: %.cpp
 	$(CC) -MD $(INCDIR) -c $< -o $@ 
