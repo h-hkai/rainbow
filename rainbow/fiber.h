@@ -38,6 +38,10 @@ public:
 
     uint64_t GetId() const { return m_id; }
 
+    uint64_t getState() const { return m_state; }
+
+    void setState(const State state) { m_state = state; }
+
 public:
     // set current fiber
     static void SetThis(Fiber* f);

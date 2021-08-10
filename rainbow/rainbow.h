@@ -8,5 +8,6 @@
 #include "../rainbow/macro.h"
 #include "../rainbow/fiber.h"
 #include "../rainbow/singleton.h"
+#include "../rainbow/scheduler.h"
 
 #endif

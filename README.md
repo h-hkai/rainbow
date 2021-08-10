@@ -161,3 +161,44 @@ yield 可以唤醒主协程
 
 下一章将介绍，使用调度器来控制要执行的协程————协程的调度
 
+## 协程调度模块 Scheduler
+
+通过之前的几次课程，已经完成了一个服务器的一些基本的功能，但是这些功能还达不到一个高性能服务器的要求
+
+接下来需要实现协程在不同的线程之间切换
+
+```
+        1 --> N    1 --> M
+scheduler --> thread --> fiber
+
+N : M
+
+1. scheduler 是一个线程池，分配一组线程
+2. 协程调度器，将线程，指定到相应的线程上去执行
+
+```
+实现一个子类来支持epoll
+
+m_thread
+
+<function<void()>, fiber, threadid> m_fibers;
+
+schedule(func/fiber)
+
+start()
+
+stop()
+ 
+run()
+
+2021-08-10 10:16:39
+
+```
+1. 设置当前线程的scheduler
+2. 设置当前线程的run，fiber
+3. 协程调度循环 while(true)
+    1. 协程消息队列里面是否有任务
+    2. 无任务，执行idle
+```
+
+
