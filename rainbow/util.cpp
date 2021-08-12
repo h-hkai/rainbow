@@ -40,7 +40,7 @@ void Backtrace(std::vector<std::string>& bt, int size, int skip) {
  * 将栈中的内容序列化输出到 stringstream 中
  * prefix 支持在每一个栈的前面加入换行、空格等
  */
-std::string BacktraceToString(int size, const std::string& prefix, int skip) {
+std::string BacktraceToString(const std::string& prefix, int size, int skip) {
     std::vector<std::string> bt;
     Backtrace(bt, size, skip);
     std::stringstream ss;

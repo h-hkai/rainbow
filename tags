@@ -6,9 +6,9 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 Alloc	rainbow/fiber.cpp	/^    static void* Alloc(size_t size) {$/;"	f	class:rainbow::MallocStackAllocator	access:public	signature:(size_t size)
 Backtrace	rainbow/util.cpp	/^void Backtrace(std::vector<std::string>& bt, int size, int skip) {$/;"	f	namespace:rainbow	signature:(std::vector<std::string>& bt, int size, int skip)
-Backtrace	rainbow/util.h	/^void Backtrace(std::vector<std::string>& bt, int size, int skip = 1);$/;"	p	namespace:rainbow	signature:(std::vector<std::string>& bt, int size, int skip = 1)
-BacktraceToString	rainbow/util.cpp	/^std::string BacktraceToString(int size, const std::string& prefix, int skip) {$/;"	f	namespace:rainbow	signature:(int size, const std::string& prefix, int skip)
-BacktraceToString	rainbow/util.h	/^std::string BacktraceToString(int size, const std::string& prefix, int skip = 2);$/;"	p	namespace:rainbow	signature:(int size, const std::string& prefix, int skip = 2)
+Backtrace	rainbow/util.h	/^void Backtrace(std::vector<std::string>& bt, int size = 64, int skip = 1);$/;"	p	namespace:rainbow	signature:(std::vector<std::string>& bt, int size = 64, int skip = 1)
+BacktraceToString	rainbow/util.cpp	/^std::string BacktraceToString(const std::string& prefix, int size, int skip) {$/;"	f	namespace:rainbow	signature:(const std::string& prefix, int size, int skip)
+BacktraceToString	rainbow/util.h	/^std::string BacktraceToString(const std::string& prefix = "", int size = 64, int skip = 2);$/;"	p	namespace:rainbow	signature:(const std::string& prefix = ”, int size = 64, int skip = 2)
 CASLock	rainbow/thread.h	/^    CASLock() {$/;"	f	class:rainbow::CASLock	access:public	signature:()
 CASLock	rainbow/thread.h	/^class CASLock {$/;"	c	namespace:rainbow
 CC	Makefile	/^CC		:= g++ -std=c++11 -g3 -Wall -pthread$/;"	m
@@ -256,6 +256,8 @@ addAppender	rainbow/log.cpp	/^void Logger::addAppender(LogAppender::ptr appender
 addAppender	rainbow/log.h	/^    void addAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
 addListener	rainbow/config.h	/^    uint64_t addListener(on_change_cb cb) {$/;"	f	class:rainbow::ConfigVar	access:public	signature:(on_change_cb cb)
 appenders	rainbow/log.cpp	/^    std::vector<LogAppenderDefine> appenders;$/;"	m	struct:rainbow::LogDefine	file:	access:public
+call	rainbow/fiber.cpp	/^void Fiber::call() {$/;"	f	class:rainbow::Fiber	signature:()
+call	rainbow/fiber.h	/^    void call();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 cb	rainbow/scheduler.h	/^        std::function<void()> cb;$/;"	m	struct:rainbow::Scheduler::FiberAndThread	access:public
 clearAppenders	rainbow/log.cpp	/^void Logger::clearAppenders() {$/;"	f	class:rainbow::Logger	signature:()
 clearAppenders	rainbow/log.h	/^    void clearAppenders();$/;"	p	class:rainbow::Logger	access:public	signature:()
@@ -294,6 +296,7 @@ g_logger	rainbow/fiber.cpp	/^static Logger::ptr g_logger = RAINBOW_LOG_NAME("sys
 g_logger	rainbow/scheduler.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	rainbow/thread.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	rainbow/util.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
+g_logger	test_scheduler.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
 g_logger	tests/test_fiber.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
 g_logger	tests/test_thread.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
 g_logger	tests/test_util.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
@@ -334,6 +337,7 @@ getThreadName	rainbow/log.h	/^    const std::string& getThreadName() { return m_
 getTime	rainbow/log.h	/^    uint32_t getTime() const { return m_time; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
 getTypeName	rainbow/config.h	/^    virtual std::string getTypeName() const = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:() const
 getValue	rainbow/config.h	/^    const T getValue() { $/;"	f	class:rainbow::ConfigVar	access:public	signature:()
+idle	rainbow/scheduler.cpp	/^void Scheduler::idle() {$/;"	f	class:rainbow::Scheduler	signature:()
 idle	rainbow/scheduler.h	/^    virtual void idle();$/;"	p	class:rainbow::Scheduler	access:protected	signature:()
 incdirs	Makefile	/^incdirs := rainbow$/;"	m
 info	rainbow/log.cpp	/^void Logger::info(LogEvent::ptr event) { log(LogLevel::INFO, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
@@ -359,7 +363,7 @@ log	rainbow/log.cpp	/^void Logger::log(LogLevel::Level level, LogEvent::ptr even
 log	rainbow/log.cpp	/^void StdoutLogAppender::log(std::shared_ptr<Logger> logger,$/;"	f	class:rainbow::StdoutLogAppender	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
 log	rainbow/log.h	/^    virtual void log(std::shared_ptr<Logger> logger, LogLevel::Level level,$/;"	p	class:rainbow::LogAppender	access:public	signature:(std::shared_ptr<Logger> logger, LogLevel::Level level, LogEvent::ptr event)
 log	rainbow/log.h	/^    void log(LogLevel::Level level, LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogLevel::Level level, LogEvent::ptr event)
-m_activeThreadCount	rainbow/scheduler.h	/^    size_t m_activeThreadCount = 0;$/;"	m	class:rainbow::Scheduler	access:protected
+m_activeThreadCount	rainbow/scheduler.h	/^    std::atomic<size_t> m_activeThreadCount = {0};$/;"	m	class:rainbow::Scheduler	access:protected
 m_age	tests/test_config.cpp	/^    int m_age = 0;$/;"	m	class:Person	file:	access:public
 m_appenders	rainbow/log.h	/^    std::list<LogAppender::ptr> m_appenders;  \/\/ AppenderÈõÜÂêà$/;"	m	class:rainbow::Logger	access:private
 m_autoStop	rainbow/scheduler.h	/^    bool m_autoStop = false;$/;"	m	class:rainbow::Scheduler	access:protected
@@ -382,7 +386,7 @@ m_formatter	rainbow/log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainb
 m_hasFormatter	rainbow/log.h	/^    bool m_hasFormatter = false;$/;"	m	class:rainbow::LogAppender	access:protected
 m_id	rainbow/fiber.h	/^    uint64_t m_id = 0;$/;"	m	class:rainbow::Fiber	access:private
 m_id	rainbow/thread.h	/^    pid_t m_id;$/;"	m	class:rainbow::Thread	access:private
-m_idleThreadCount	rainbow/scheduler.h	/^    size_t m_idleThreadCount = 0;$/;"	m	class:rainbow::Scheduler	access:protected
+m_idleThreadCount	rainbow/scheduler.h	/^    std::atomic<size_t> m_idleThreadCount = {0};$/;"	m	class:rainbow::Scheduler	access:protected
 m_items	rainbow/log.h	/^    std::vector<FormatItem::ptr> m_items;$/;"	m	class:rainbow::LogFormatter	access:private
 m_lastTime	rainbow/log.h	/^    uint64_t m_lastTime = 0;$/;"	m	class:rainbow::FileLogAppender	access:private
 m_level	rainbow/log.h	/^    LogLevel::Level m_level = LogLevel::DEBUG;$/;"	m	class:rainbow::LogAppender	access:protected
@@ -433,6 +437,7 @@ m_threadName	rainbow/log.h	/^    std::string m_threadName;$/;"	m	class:rainbow::
 m_threads	rainbow/scheduler.h	/^    std::vector<Thread::ptr> m_threads;$/;"	m	class:rainbow::Scheduler	access:private
 m_time	rainbow/log.h	/^    uint64_t m_time;               \/\/ Êó∂Èó¥Êà≥$/;"	m	class:rainbow::LogEvent	access:private
 m_val	rainbow/config.h	/^    T m_val;$/;"	m	class:rainbow::ConfigVar	access:private
+main	test_scheduler.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
 main	tests/test_config.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
 main	tests/test_fiber.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
@@ -499,9 +504,9 @@ rainbow	rainbow/util.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/util.h	/^namespace rainbow {$/;"	n
 rainbow	tests/test_config.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow::Backtrace	rainbow/util.cpp	/^void Backtrace(std::vector<std::string>& bt, int size, int skip) {$/;"	f	namespace:rainbow	signature:(std::vector<std::string>& bt, int size, int skip)
-rainbow::Backtrace	rainbow/util.h	/^void Backtrace(std::vector<std::string>& bt, int size, int skip = 1);$/;"	p	namespace:rainbow	signature:(std::vector<std::string>& bt, int size, int skip = 1)
-rainbow::BacktraceToString	rainbow/util.cpp	/^std::string BacktraceToString(int size, const std::string& prefix, int skip) {$/;"	f	namespace:rainbow	signature:(int size, const std::string& prefix, int skip)
-rainbow::BacktraceToString	rainbow/util.h	/^std::string BacktraceToString(int size, const std::string& prefix, int skip = 2);$/;"	p	namespace:rainbow	signature:(int size, const std::string& prefix, int skip = 2)
+rainbow::Backtrace	rainbow/util.h	/^void Backtrace(std::vector<std::string>& bt, int size = 64, int skip = 1);$/;"	p	namespace:rainbow	signature:(std::vector<std::string>& bt, int size = 64, int skip = 1)
+rainbow::BacktraceToString	rainbow/util.cpp	/^std::string BacktraceToString(const std::string& prefix, int size, int skip) {$/;"	f	namespace:rainbow	signature:(const std::string& prefix, int size, int skip)
+rainbow::BacktraceToString	rainbow/util.h	/^std::string BacktraceToString(const std::string& prefix = "", int size = 64, int skip = 2);$/;"	p	namespace:rainbow	signature:(const std::string& prefix = ”, int size = 64, int skip = 2)
 rainbow::CASLock	rainbow/thread.h	/^class CASLock {$/;"	c	namespace:rainbow
 rainbow::CASLock::CASLock	rainbow/thread.h	/^    CASLock() {$/;"	f	class:rainbow::CASLock	access:public	signature:()
 rainbow::CASLock::Lock	rainbow/thread.h	/^    typedef ScopedLockImpl<CASLock> Lock;$/;"	t	class:rainbow::CASLock	access:public
@@ -579,6 +584,8 @@ rainbow::Fiber::YieldToHold	rainbow/fiber.cpp	/^void Fiber::YieldToHold() {$/;"	
 rainbow::Fiber::YieldToHold	rainbow/fiber.h	/^    static void YieldToHold();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 rainbow::Fiber::YieldToReady	rainbow/fiber.cpp	/^void Fiber::YieldToReady() {$/;"	f	class:rainbow::Fiber	signature:()
 rainbow::Fiber::YieldToReady	rainbow/fiber.h	/^    static void YieldToReady();$/;"	p	class:rainbow::Fiber	access:public	signature:()
+rainbow::Fiber::call	rainbow/fiber.cpp	/^void Fiber::call() {$/;"	f	class:rainbow::Fiber	signature:()
+rainbow::Fiber::call	rainbow/fiber.h	/^    void call();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 rainbow::Fiber::getState	rainbow/fiber.h	/^    uint64_t getState() const { return m_state; }$/;"	f	class:rainbow::Fiber	access:public	signature:() const
 rainbow::Fiber::m_cb	rainbow/fiber.h	/^    std::function<void()> m_cb;$/;"	m	class:rainbow::Fiber	access:private
 rainbow::Fiber::m_ctx	rainbow/fiber.h	/^    ucontext_t m_ctx;$/;"	m	class:rainbow::Fiber	access:private
@@ -589,6 +596,7 @@ rainbow::Fiber::m_state	rainbow/fiber.h	/^    State m_state = INIT;$/;"	m	class:
 rainbow::Fiber::ptr	rainbow/fiber.h	/^    typedef std::shared_ptr<Fiber> ptr;$/;"	t	class:rainbow::Fiber	access:public
 rainbow::Fiber::reset	rainbow/fiber.cpp	/^void Fiber::reset(std::function<void()> cb) {$/;"	f	class:rainbow::Fiber	signature:(std::function<void()> cb)
 rainbow::Fiber::reset	rainbow/fiber.h	/^    void reset(std::function<void()> cb);$/;"	p	class:rainbow::Fiber	access:public	signature:(std::function<void()> cb)
+rainbow::Fiber::setState	rainbow/fiber.h	/^    void setState(const State state) { m_state = state; }$/;"	f	class:rainbow::Fiber	access:public	signature:(const State state)
 rainbow::Fiber::swapIn	rainbow/fiber.cpp	/^void Fiber::swapIn() {$/;"	f	class:rainbow::Fiber	signature:()
 rainbow::Fiber::swapIn	rainbow/fiber.h	/^    void swapIn();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 rainbow::Fiber::swapOut	rainbow/fiber.cpp	/^void Fiber::swapOut() {$/;"	f	class:rainbow::Fiber	signature:()
@@ -880,11 +888,12 @@ rainbow::Scheduler::MutexType	rainbow/scheduler.h	/^    typedef Mutex MutexType;
 rainbow::Scheduler::Scheduler	rainbow/scheduler.cpp	/^Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)$/;"	f	class:rainbow::Scheduler	signature:(size_t threads, bool use_caller, const std::string& name)
 rainbow::Scheduler::Scheduler	rainbow/scheduler.h	/^    Scheduler(size_t threads = 1, bool use_caller = true, const std::string& name = "");$/;"	p	class:rainbow::Scheduler	access:public	signature:(size_t threads = 1, bool use_caller = true, const std::string& name = ”)
 rainbow::Scheduler::getName	rainbow/scheduler.h	/^    const std::string& getName() const { return m_name; }$/;"	f	class:rainbow::Scheduler	access:public	signature:() const
+rainbow::Scheduler::idle	rainbow/scheduler.cpp	/^void Scheduler::idle() {$/;"	f	class:rainbow::Scheduler	signature:()
 rainbow::Scheduler::idle	rainbow/scheduler.h	/^    virtual void idle();$/;"	p	class:rainbow::Scheduler	access:protected	signature:()
-rainbow::Scheduler::m_activeThreadCount	rainbow/scheduler.h	/^    size_t m_activeThreadCount = 0;$/;"	m	class:rainbow::Scheduler	access:protected
+rainbow::Scheduler::m_activeThreadCount	rainbow/scheduler.h	/^    std::atomic<size_t> m_activeThreadCount = {0};$/;"	m	class:rainbow::Scheduler	access:protected
 rainbow::Scheduler::m_autoStop	rainbow/scheduler.h	/^    bool m_autoStop = false;$/;"	m	class:rainbow::Scheduler	access:protected
 rainbow::Scheduler::m_fibers	rainbow/scheduler.h	/^    std::list<FiberAndThread> m_fibers;$/;"	m	class:rainbow::Scheduler	access:private
-rainbow::Scheduler::m_idleThreadCount	rainbow/scheduler.h	/^    size_t m_idleThreadCount = 0;$/;"	m	class:rainbow::Scheduler	access:protected
+rainbow::Scheduler::m_idleThreadCount	rainbow/scheduler.h	/^    std::atomic<size_t> m_idleThreadCount = {0};$/;"	m	class:rainbow::Scheduler	access:protected
 rainbow::Scheduler::m_mutex	rainbow/scheduler.h	/^    MutexType m_mutex;$/;"	m	class:rainbow::Scheduler	access:private
 rainbow::Scheduler::m_name	rainbow/scheduler.h	/^    std::string m_name;$/;"	m	class:rainbow::Scheduler	access:private
 rainbow::Scheduler::m_rootFiber	rainbow/scheduler.h	/^    Fiber::ptr m_rootFiber;$/;"	m	class:rainbow::Scheduler	access:private
@@ -905,7 +914,9 @@ rainbow::Scheduler::start	rainbow/scheduler.cpp	/^void Scheduler::start() {$/;"	
 rainbow::Scheduler::start	rainbow/scheduler.h	/^    void start();$/;"	p	class:rainbow::Scheduler	access:public	signature:()
 rainbow::Scheduler::stop	rainbow/scheduler.cpp	/^void Scheduler::stop() {$/;"	f	class:rainbow::Scheduler	signature:()
 rainbow::Scheduler::stop	rainbow/scheduler.h	/^    void stop();$/;"	p	class:rainbow::Scheduler	access:public	signature:()
+rainbow::Scheduler::stopping	rainbow/scheduler.cpp	/^bool Scheduler::stopping() {$/;"	f	class:rainbow::Scheduler	signature:()
 rainbow::Scheduler::stopping	rainbow/scheduler.h	/^    virtual bool stopping();$/;"	p	class:rainbow::Scheduler	access:protected	signature:()
+rainbow::Scheduler::tickle	rainbow/scheduler.cpp	/^void Scheduler::tickle() {$/;"	f	class:rainbow::Scheduler	signature:()
 rainbow::Scheduler::tickle	rainbow/scheduler.h	/^    virtual void tickle();$/;"	p	class:rainbow::Scheduler	access:protected	signature:()
 rainbow::Scheduler::~Scheduler	rainbow/scheduler.cpp	/^Scheduler::~Scheduler() {$/;"	f	class:rainbow::Scheduler	signature:()
 rainbow::Scheduler::~Scheduler	rainbow/scheduler.h	/^    virtual ~Scheduler();$/;"	p	class:rainbow::Scheduler	access:public	signature:()
@@ -1029,15 +1040,17 @@ setFormatter	rainbow/log.h	/^    void setFormatter(const std::string& val);$/;"	
 setLevel	rainbow/log.cpp	/^void LogAppender::setLevel(const LogLevel::Level& level) {$/;"	f	class:rainbow::LogAppender	signature:(const LogLevel::Level& level)
 setLevel	rainbow/log.h	/^    void setLevel(LogLevel::Level level) { m_level = level; }$/;"	f	class:rainbow::Logger	access:public	signature:(LogLevel::Level level)
 setLevel	rainbow/log.h	/^    void setLevel(const LogLevel::Level& level);$/;"	p	class:rainbow::LogAppender	access:public	signature:(const LogLevel::Level& level)
+setState	rainbow/fiber.h	/^    void setState(const State state) { m_state = state; }$/;"	f	class:rainbow::Fiber	access:public	signature:(const State state)
 setThis	rainbow/scheduler.cpp	/^void Scheduler::setThis() {$/;"	f	class:rainbow::Scheduler	signature:()
 setThis	rainbow/scheduler.h	/^    void setThis();$/;"	p	class:rainbow::Scheduler	access:protected	signature:()
 setValue	rainbow/config.h	/^    void setValue(const T& v) { $/;"	f	class:rainbow::ConfigVar	access:public	signature:(const T& v)
 srcdirs	Makefile	/^srcdirs := rainbow tests$/;"	m
-srcs	Makefile	/^srcs := fiber.cpp thread.cpp config.cpp log.cpp util.cpp test_fiber.cpp$/;"	m
+srcs	Makefile	/^srcs := scheduler.cpp fiber.cpp thread.cpp config.cpp log.cpp util.cpp test_scheduler.cpp$/;"	m
 start	rainbow/scheduler.cpp	/^void Scheduler::start() {$/;"	f	class:rainbow::Scheduler	signature:()
 start	rainbow/scheduler.h	/^    void start();$/;"	p	class:rainbow::Scheduler	access:public	signature:()
 stop	rainbow/scheduler.cpp	/^void Scheduler::stop() {$/;"	f	class:rainbow::Scheduler	signature:()
 stop	rainbow/scheduler.h	/^    void stop();$/;"	p	class:rainbow::Scheduler	access:public	signature:()
+stopping	rainbow/scheduler.cpp	/^bool Scheduler::stopping() {$/;"	f	class:rainbow::Scheduler	signature:()
 stopping	rainbow/scheduler.h	/^    virtual bool stopping();$/;"	p	class:rainbow::Scheduler	access:protected	signature:()
 swapIn	rainbow/fiber.cpp	/^void Fiber::swapIn() {$/;"	f	class:rainbow::Fiber	signature:()
 swapIn	rainbow/fiber.h	/^    void swapIn();$/;"	p	class:rainbow::Fiber	access:public	signature:()
@@ -1049,12 +1062,13 @@ t_scheduler	rainbow/scheduler.cpp	/^static thread_local Scheduler* t_scheduler =
 t_thread	rainbow/thread.cpp	/^static thread_local Thread* t_thread = nullptr;$/;"	m	namespace:rainbow	file:
 t_threadFiber	rainbow/fiber.cpp	/^static thread_local Fiber::ptr t_threadFiber = nullptr;$/;"	m	namespace:rainbow	file:
 t_thread_name	rainbow/thread.cpp	/^static thread_local std::string t_thread_name = "UNKNOW";$/;"	m	namespace:rainbow	file:
-target	Makefile	/^target := bin\/test_fiber$/;"	m
+target	Makefile	/^target := bin\/test_scheduler$/;"	m
 test_assert	tests/test_util.cpp	/^void test_assert() {$/;"	f	signature:()
 test_class	tests/test_config.cpp	/^void test_class() {$/;"	f	signature:()
 test_fiber	tests/test_fiber.cpp	/^void test_fiber() {$/;"	f	signature:()
 test_log	tests/test_config.cpp	/^void test_log() {$/;"	f	signature:()
 thread	rainbow/scheduler.h	/^        int thread;$/;"	m	struct:rainbow::Scheduler::FiberAndThread	access:public
+tickle	rainbow/scheduler.cpp	/^void Scheduler::tickle() {$/;"	f	class:rainbow::Scheduler	signature:()
 tickle	rainbow/scheduler.h	/^    virtual void tickle();$/;"	p	class:rainbow::Scheduler	access:protected	signature:()
 toString	rainbow/config.h	/^    virtual std::string toString() = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:()
 toString	tests/test_config.cpp	/^    std::string toString() const {$/;"	f	class:Person	access:public	signature:() const

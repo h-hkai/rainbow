@@ -838,4 +838,5 @@ obj/fiber.o: rainbow/fiber.cpp /usr/include/stdc-predef.h \
  /usr/include/x86_64-linux-gnu/c++/8/bits/c++io.h \
  /usr/include/c++/8/bits/fstream.tcc rainbow/fiber.h \
  /usr/include/ucontext.h /usr/include/x86_64-linux-gnu/sys/ucontext.h \
- /usr/include/x86_64-linux-gnu/bits/types/stack_t.h rainbow/macro.h
+ /usr/include/x86_64-linux-gnu/bits/types/stack_t.h rainbow/macro.h \
+ rainbow/scheduler.h

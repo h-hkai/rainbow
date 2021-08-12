@@ -10,7 +10,7 @@
     if (!(x)) { \
         RAINBOW_LOG_ERROR(RAINBOW_LOG_ROOT()) << "ASSERTION: " #x \
             << "\nbacktrace:\n" \
-            << rainbow::BacktraceToString(100, "    ", 2); \
+            << rainbow::BacktraceToString("    ", 100, 2); \
         assert(x); \
     }
 
@@ -18,7 +18,7 @@
     if (!(x)) { \
         RAINBOW_LOG_ERROR(RAINBOW_LOG_ROOT()) << "ASSERTION: " #x \
             << "\n" w \
-            << rainbow::BacktraceToString(100, "    ", 2); \
+            << rainbow::BacktraceToString("    ", 100, 2); \
         assert(x); \
     }
 
