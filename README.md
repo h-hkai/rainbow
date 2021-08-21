@@ -201,4 +201,57 @@ run()
     2. 无任务，执行idle
 ```
 
+## IO协程调度器
 
+根据之前的 Scheduler 实现异步调度,底层使用 epoll 来实现
+
+基于epoll的 IO 协程调度
+
+```
+IOManager(epoll) ---> Scheduler
+        |
+        |
+      idle(epoll_wait)
+
+
+      信号量
+PutMessage(msg, ) + 信号量 1, single()
+message_queue
+        |
+        |----- Thread
+        |----- Thread
+            wait() - 信号量1,RecvMessage(msg, )
+
+异步IO,等待数据返回.epoll_wait
+
+epoll_create, epoll_ctl, epoll_wait
+
+通过文件句柄可以得知是否有信号到来,如果有信号到来的话就会唤醒 epoll_wait
+```
+
+```
+Timer -> addTimer() --> cancel()
+获取当前定时器触发离现在的时间差
+返回当前需要触发的定时器
+```
+
+
+```
+            [Fiber]
+               ^
+               |
+               |
+            [Thread]
+               ^ M
+               |                    ^
+               |                    |
+               | 1                  |
+          [Scheduler] <---- [IOManager(epoll)]
+
+```
+
+## Socket IO Hook
+
+系统中的某些库是同步的，我们可以采用 Hook IO 的方式使其变为异步的
+
+Hook 的主要目的是为了让同步的 I/O 转变为异步的I/O
