@@ -847,7 +847,8 @@ obj/test_iomanager.o: tests/test_iomanager.cpp /usr/include/stdc-predef.h \
  tests/../rainbow/../rainbow/singleton.h \
  tests/../rainbow/../rainbow/scheduler.h \
  tests/../rainbow/../rainbow/fiber.h tests/../rainbow/iomanager.h \
- tests/../rainbow/scheduler.h /usr/include/x86_64-linux-gnu/sys/socket.h \
+ tests/../rainbow/scheduler.h tests/../rainbow/timer.h \
+ tests/../rainbow/thread.h /usr/include/x86_64-linux-gnu/sys/socket.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
  /usr/include/x86_64-linux-gnu/bits/socket.h \
  /usr/include/x86_64-linux-gnu/bits/socket_type.h \

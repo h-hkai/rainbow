@@ -2,6 +2,7 @@
 #define __RAINBOW_IOMANAGER_H__
 
 #include "scheduler.h"
+#include "timer.h"
 
 namespace rainbow {
 
@@ -10,7 +11,7 @@ namespace rainbow {
  *
  *  Detailed description
  */
-class IOManager : public Scheduler {
+class IOManager : public Scheduler, public TimerManager{
 public:
     typedef std::shared_ptr<IOManager> ptr;
     typedef RWMutex RWMutexType;
@@ -61,8 +62,10 @@ protected:
     bool stopping() override;
     // 没有事件要执行的话就会陷入到 epoll_wait 中
     void idle() override;
+    void onTimerInsertedAtFront() override;
 
     void contextResize(size_t size);
+    bool stopping(uint64_t& timeout);
 
 private:
     int m_epfd = 0;

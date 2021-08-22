@@ -20,6 +20,9 @@ std::string BacktraceToString(const std::string& prefix = "", int size = 64, int
 
 void Backtrace(std::vector<std::string>& bt, int size = 64, int skip = 1);
 
+uint64_t GetCurrentMS();
+uint64_t GetCurrentUS();
+
 } // namespace rainbow
 
 

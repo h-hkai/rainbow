@@ -233,6 +233,8 @@ epoll_create, epoll_ctl, epoll_wait
 Timer -> addTimer() --> cancel()
 获取当前定时器触发离现在的时间差
 返回当前需要触发的定时器
+
+循环定时, 间隔定时
 ```
 
 

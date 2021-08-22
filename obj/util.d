@@ -176,4 +176,4 @@ obj/util.o: rainbow/util.cpp /usr/include/stdc-predef.h rainbow/util.h \
  rainbow/fiber.h /usr/include/ucontext.h \
  /usr/include/x86_64-linux-gnu/sys/ucontext.h \
  /usr/include/x86_64-linux-gnu/bits/types/stack_t.h \
- /usr/include/execinfo.h
+ /usr/include/execinfo.h /usr/include/x86_64-linux-gnu/sys/time.h
