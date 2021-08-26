@@ -1,0 +1,7 @@
+/home/ubuntu/rainbow/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/rainbow/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/rainbow/build/CMakeFiles/test_socket.dir
+/home/ubuntu/rainbow/build/CMakeFiles/rainbow.dir
+/home/ubuntu/rainbow/build/CMakeFiles/test_hook.dir
+/home/ubuntu/rainbow/build/CMakeFiles/test_address.dir
+/home/ubuntu/rainbow/build/CMakeFiles/test.dir

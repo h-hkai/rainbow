@@ -7,7 +7,7 @@
 
 namespace rainbow {
 // 定义日志指针
-rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");
+static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");
 
 pid_t GetThreadId() {
     return syscall(SYS_gettid);

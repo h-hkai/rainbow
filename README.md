@@ -239,13 +239,13 @@ Timer -> addTimer() --> cancel()
 
 
 ```
-            [Fiber]
-               ^
-               |
-               |
-            [Thread]
-               ^ M
-               |                    ^
+            [Fiber]              [Timer]
+               ^                    ^ 
+               |                    |
+               |                    |
+            [Thread]         [TimerManager]
+               ^ M                  ^
+               |                    |
                |                    |
                | 1                  |
           [Scheduler] <---- [IOManager(epoll)]
@@ -257,3 +257,48 @@ Timer -> addTimer() --> cancel()
 系统中的某些库是同步的，我们可以采用 Hook IO 的方式使其变为异步的
 
 Hook 的主要目的是为了让同步的 I/O 转变为异步的I/O
+
+```
+sleep,
+
+usleep
+
+读操作
+
+写操作
+
+socket 相关的(socket, connect, accept)
+io 相关 (read, write, send, recv)
+fd 相关 (fcntl, ioctl, ...)
+
+```
+
+fd_manager 文件句柄识别类
+
+## socket 函数库
+
+            
+              [UnixAddress]
+                    |
+                ---------                     |---[IPv4Address]
+                |Address| --- [IPAddress] --- |
+                ---------                     |---[IPv6Address]
+                    |
+                ----------
+                | Socket |
+                ----------
+
+socket 封装
+
+connect, accept, read, write, close
+
+## 序列化 ByteArray
+
+网络编程会涉及到数据传递,数据传递会涉及到序列化和反序列化
+
+write(int, float, int64, ...)
+
+read(int, float, int64, ...)
+
+
+

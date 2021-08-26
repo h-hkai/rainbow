@@ -1,6 +1,7 @@
 #include "scheduler.h"
 #include "log.h"
 #include "macro.h"
+#include "hook.h"
 
 namespace rainbow {
 
@@ -137,6 +138,7 @@ void Scheduler::setThis() {
 
 void Scheduler::run() {
     RAINBOW_LOG_INFO(g_logger) << "run";
+    set_hook_enable(true);
     setThis();
     
     // 该线程id不等于主线程id
