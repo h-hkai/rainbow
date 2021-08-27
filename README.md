@@ -300,5 +300,9 @@ write(int, float, int64, ...)
 
 read(int, float, int64, ...)
 
+socket 封装的时候有 sendmsg 和 readmsg 用的是 iovec 结构体
 
+将 ByteArray 中的可读的数据转成 iovec 方式供 socket 使用
+
+将 ByteArray 中分配的内存也转成 iovec 方式供 socket 往里面填充
 

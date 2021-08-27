@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rainbow.dir/rainbow/address.cpp.o"
   "CMakeFiles/rainbow.dir/rainbow/address.cpp.o.d"
+  "CMakeFiles/rainbow.dir/rainbow/bytearray.cpp.o"
+  "CMakeFiles/rainbow.dir/rainbow/bytearray.cpp.o.d"
   "CMakeFiles/rainbow.dir/rainbow/config.cpp.o"
   "CMakeFiles/rainbow.dir/rainbow/config.cpp.o.d"
   "CMakeFiles/rainbow.dir/rainbow/fd_manager.cpp.o"

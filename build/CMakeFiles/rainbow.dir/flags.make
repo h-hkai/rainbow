@@ -10,6 +10,8 @@ CXX_FLAGS =  -rdynamic -O0 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror 
 
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/address.cpp.o_DEFINES = __FILE__="rainbow/address.cpp"
 
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/bytearray.cpp.o_DEFINES = __FILE__="rainbow/bytearray.cpp"
+
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/config.cpp.o_DEFINES = __FILE__="rainbow/config.cpp"
 
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/fd_manager.cpp.o_DEFINES = __FILE__="rainbow/fd_manager.cpp"

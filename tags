@@ -84,6 +84,8 @@ Backtrace	rainbow/util.cpp	/^void Backtrace(std::vector<std::string>& bt, int si
 Backtrace	rainbow/util.h	/^void Backtrace(std::vector<std::string>& bt, int size = 64, int skip = 1);$/;"	p	namespace:rainbow	signature:(std::vector<std::string>& bt, int size = 64, int skip = 1)
 BacktraceToString	rainbow/util.cpp	/^std::string BacktraceToString(const std::string& prefix, int size, int skip) {$/;"	f	namespace:rainbow	signature:(const std::string& prefix, int size, int skip)
 BacktraceToString	rainbow/util.h	/^std::string BacktraceToString(const std::string& prefix = "", int size = 64, int skip = 2);$/;"	p	namespace:rainbow	signature:(const std::string& prefix = �, int size = 64, int skip = 2)
+ByteArray	rainbow/bytearray.h	/^    ByteArray(size_t base_size = 4096);$/;"	p	class:rainbow::ByteArray	access:public	signature:(size_t base_size = 4096)
+ByteArray	rainbow/bytearray.h	/^class ByteArray {$/;"	c	namespace:rainbow
 CASLock	rainbow/thread.h	/^    CASLock() {$/;"	f	class:rainbow::CASLock	access:public	signature:()
 CASLock	rainbow/thread.h	/^class CASLock : Noncopyable {$/;"	c	namespace:rainbow	inherits:Noncopyable
 CMAKE_BINARY_DIR	build/Makefile	/^CMAKE_BINARY_DIR = \/home\/ubuntu\/rainbow\/build$/;"	m
@@ -423,14 +425,30 @@ ConfigVarBase	rainbow/config.h	/^class ConfigVarBase {$/;"	c	namespace:rainbow
 ConfigVarMap	rainbow/config.h	/^    typedef std::unordered_map<std::string, ConfigVarBase::ptr> ConfigVarMap;$/;"	t	class:rainbow::Config	access:public
 CountBytes	rainbow/address.cpp	/^static uint32_t CountBytes(T value) {$/;"	f	namespace:rainbow	signature:(T value)
 Create	rainbow/address.cpp	/^Address::ptr Address::Create(const sockaddr* addr, socklen_t addrlen) {$/;"	f	class:rainbow::Address	signature:(const sockaddr* addr, socklen_t addrlen)
-Create	rainbow/address.cpp	/^IPAddress::ptr IPAddress::Create(const char* address, uint32_t port) {$/;"	f	class:rainbow::IPAddress	signature:(const char* address, uint32_t port)
-Create	rainbow/address.cpp	/^IPv4Address::ptr IPv4Address::Create(const char* address, uint32_t port) {$/;"	f	class:rainbow::IPv4Address	signature:(const char* address, uint32_t port)
-Create	rainbow/address.cpp	/^IPv6Address::ptr IPv6Address::Create(const char* address, uint32_t port) {$/;"	f	class:rainbow::IPv6Address	signature:(const char* address, uint32_t port)
+Create	rainbow/address.cpp	/^IPAddress::ptr IPAddress::Create(const char* address, uint16_t port) {$/;"	f	class:rainbow::IPAddress	signature:(const char* address, uint16_t port)
+Create	rainbow/address.cpp	/^IPv4Address::ptr IPv4Address::Create(const char* address, uint16_t port) {$/;"	f	class:rainbow::IPv4Address	signature:(const char* address, uint16_t port)
+Create	rainbow/address.cpp	/^IPv6Address::ptr IPv6Address::Create(const char* address, uint16_t port) {$/;"	f	class:rainbow::IPv6Address	signature:(const char* address, uint16_t port)
 Create	rainbow/address.h	/^    static Address::ptr Create(const sockaddr* addr, socklen_t addrlen);$/;"	p	class:rainbow::Address	access:public	signature:(const sockaddr* addr, socklen_t addrlen)
-Create	rainbow/address.h	/^    static IPAddress::ptr Create(const char* address, uint32_t port = 0);$/;"	p	class:rainbow::IPAddress	access:public	signature:(const char* address, uint32_t port = 0)
-Create	rainbow/address.h	/^    static IPv4Address::ptr Create(const char* address, uint32_t port = 0);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(const char* address, uint32_t port = 0)
-Create	rainbow/address.h	/^    static IPv6Address::ptr Create(const char* address, uint32_t port = 0);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const char* address, uint32_t port = 0)
+Create	rainbow/address.h	/^    static IPAddress::ptr Create(const char* address, uint16_t port = 0);$/;"	p	class:rainbow::IPAddress	access:public	signature:(const char* address, uint16_t port = 0)
+Create	rainbow/address.h	/^    static IPv4Address::ptr Create(const char* address, uint16_t port = 0);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(const char* address, uint16_t port = 0)
+Create	rainbow/address.h	/^    static IPv6Address::ptr Create(const char* address, uint16_t port = 0);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const char* address, uint16_t port = 0)
 CreateMask	rainbow/address.cpp	/^static T CreateMask(uint32_t bits) {$/;"	f	namespace:rainbow	signature:(uint32_t bits)
+CreateTCP	rainbow/socket.cpp	/^Socket::ptr Socket::CreateTCP(rainbow::Address::ptr address) {$/;"	f	class:rainbow::Socket	signature:(rainbow::Address::ptr address)
+CreateTCP	rainbow/socket.h	/^    static Socket::ptr CreateTCP(rainbow::Address::ptr address);$/;"	p	class:rainbow::Socket	access:public	signature:(rainbow::Address::ptr address)
+CreateTCPSocket	rainbow/socket.cpp	/^Socket::ptr Socket::CreateTCPSocket() {$/;"	f	class:rainbow::Socket	signature:()
+CreateTCPSocket	rainbow/socket.h	/^    static Socket::ptr CreateTCPSocket();$/;"	p	class:rainbow::Socket	access:public	signature:()
+CreateTCPSocket6	rainbow/socket.cpp	/^Socket::ptr Socket::CreateTCPSocket6() {$/;"	f	class:rainbow::Socket	signature:()
+CreateTCPSocket6	rainbow/socket.h	/^    static Socket::ptr CreateTCPSocket6();$/;"	p	class:rainbow::Socket	access:public	signature:()
+CreateUDP	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUDP(rainbow::Address::ptr address) {$/;"	f	class:rainbow::Socket	signature:(rainbow::Address::ptr address)
+CreateUDP	rainbow/socket.h	/^    static Socket::ptr CreateUDP(rainbow::Address::ptr address);$/;"	p	class:rainbow::Socket	access:public	signature:(rainbow::Address::ptr address)
+CreateUDPSocket	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUDPSocket() {$/;"	f	class:rainbow::Socket	signature:()
+CreateUDPSocket	rainbow/socket.h	/^    static Socket::ptr CreateUDPSocket();$/;"	p	class:rainbow::Socket	access:public	signature:()
+CreateUDPSocket6	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUDPSocket6() {$/;"	f	class:rainbow::Socket	signature:()
+CreateUDPSocket6	rainbow/socket.h	/^    static Socket::ptr CreateUDPSocket6();$/;"	p	class:rainbow::Socket	access:public	signature:()
+CreateUnixTCPSocket	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUnixTCPSocket() {$/;"	f	class:rainbow::Socket	signature:()
+CreateUnixTCPSocket	rainbow/socket.h	/^    static Socket::ptr CreateUnixTCPSocket();$/;"	p	class:rainbow::Socket	access:public	signature:()
+CreateUnixUDPSocket	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUnixUDPSocket() {$/;"	f	class:rainbow::Socket	signature:()
+CreateUnixUDPSocket	rainbow/socket.h	/^    static Socket::ptr CreateUnixUDPSocket();$/;"	p	class:rainbow::Socket	access:public	signature:()
 DEBUG	rainbow/log.h	/^        DEBUG = 1,$/;"	e	enum:rainbow::LogLevel::Level
 DEC	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	672;"	d	file:
 DEC	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	657;"	d	file:
@@ -446,6 +464,7 @@ ElapseFormatItem	rainbow/log.cpp	/^class ElapseFormatItem : public LogFormatter:
 Event	rainbow/iomanager.h	/^    enum Event {$/;"	g	class:rainbow::IOManager	access:public
 EventContext	rainbow/iomanager.h	/^        struct EventContext {$/;"	s	struct:rainbow::IOManager::FdContext	access:public
 FATAL	rainbow/log.h	/^        FATAL = 5$/;"	e	enum:rainbow::LogLevel::Level
+Family	rainbow/socket.h	/^    enum Family {$/;"	g	class:rainbow::Socket	access:public
 FdContext	rainbow/iomanager.h	/^    struct FdContext {$/;"	s	class:rainbow::IOManager	access:private
 FdCtx	rainbow/fd_manager.cpp	/^FdCtx::FdCtx(int fd) $/;"	f	class:rainbow::FdCtx	signature:(int fd)
 FdCtx	rainbow/fd_manager.h	/^    FdCtx(int fd);$/;"	p	class:rainbow::FdCtx	access:public	signature:(int fd)
@@ -490,8 +509,8 @@ GetInstance	rainbow/singleton.h	/^    static T* GetInstance() {$/;"	f	class:rain
 GetInstance	rainbow/singleton.h	/^    static std::shared_ptr<T> GetInstance() {$/;"	f	class:rainbow::Singletonptr	access:public	signature:()
 GetInterfaceAddresses	rainbow/address.cpp	/^bool Address::GetInterfaceAddresses(std::multimap<std::string, $/;"	f	class:rainbow::Address	signature:(std::multimap<std::string, std::pair<Address::ptr, uint32_t>>& result, int family)
 GetInterfaceAddresses	rainbow/address.cpp	/^bool Address::GetInterfaceAddresses(std::vector<std::pair<Address::ptr, $/;"	f	class:rainbow::Address	signature:(std::vector<std::pair<Address::ptr, uint32_t>> &result, const std::string& iface, int family)
-GetInterfaceAddresses	rainbow/address.h	/^    static bool GetInterfaceAddresses(std::multimap<std::string, $/;"	p	class:rainbow::Address	access:public	signature:(std::multimap<std::string, std::pair<Address::ptr, uint32_t>>& result, int family = AF_UNSPEC)
-GetInterfaceAddresses	rainbow/address.h	/^    static bool GetInterfaceAddresses(std::vector<std::pair<Address::ptr, $/;"	p	class:rainbow::Address	access:public	signature:(std::vector<std::pair<Address::ptr, uint32_t>> &result, const std::string& iface, int family = AF_UNSPEC)
+GetInterfaceAddresses	rainbow/address.h	/^    static bool GetInterfaceAddresses(std::multimap<std::string, $/;"	p	class:rainbow::Address	access:public	signature:(std::multimap<std::string, std::pair<Address::ptr, uint32_t>>& result, int family = AF_INET)
+GetInterfaceAddresses	rainbow/address.h	/^    static bool GetInterfaceAddresses(std::vector<std::pair<Address::ptr, $/;"	p	class:rainbow::Address	access:public	signature:(std::vector<std::pair<Address::ptr, uint32_t>> &result, const std::string& iface, int family = AF_INET)
 GetMainFiber	rainbow/scheduler.cpp	/^Fiber* Scheduler::GetMainFiber() {$/;"	f	class:rainbow::Scheduler	signature:()
 GetMainFiber	rainbow/scheduler.h	/^    static Fiber* GetMainFiber();$/;"	p	class:rainbow::Scheduler	access:public	signature:()
 GetMutex	rainbow/config.h	/^    static RWMutexType& GetMutex() {$/;"	f	class:rainbow::Config	access:private	signature:()
@@ -518,17 +537,19 @@ IOManager	rainbow/iomanager.cpp	/^IOManager::IOManager(size_t threads, bool use_
 IOManager	rainbow/iomanager.h	/^    IOManager(size_t threads = 1, bool use_caller = true, const std::string& name = "");$/;"	p	class:rainbow::IOManager	access:public	signature:(size_t threads = 1, bool use_caller = true, const std::string& name = �)
 IOManager	rainbow/iomanager.h	/^class IOManager : public Scheduler, public TimerManager{$/;"	c	namespace:rainbow	inherits:Scheduler,TimerManager
 IPAddress	rainbow/address.h	/^class IPAddress : public Address {$/;"	c	namespace:rainbow	inherits:Address
+IPv4	rainbow/socket.h	/^        IPv4 = AF_INET,$/;"	e	enum:rainbow::Socket::Family
 IPv4Address	rainbow/address.cpp	/^IPv4Address::IPv4Address(const sockaddr_in& address) {$/;"	f	class:rainbow::IPv4Address	signature:(const sockaddr_in& address)
-IPv4Address	rainbow/address.cpp	/^IPv4Address::IPv4Address(uint32_t address, uint32_t port) {$/;"	f	class:rainbow::IPv4Address	signature:(uint32_t address, uint32_t port)
+IPv4Address	rainbow/address.cpp	/^IPv4Address::IPv4Address(uint32_t address, uint16_t port) {$/;"	f	class:rainbow::IPv4Address	signature:(uint32_t address, uint16_t port)
 IPv4Address	rainbow/address.h	/^    IPv4Address(const sockaddr_in& address);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(const sockaddr_in& address)
-IPv4Address	rainbow/address.h	/^    IPv4Address(uint32_t address = INADDR_ANY, uint32_t port = 0);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(uint32_t address = INADDR_ANY, uint32_t port = 0)
+IPv4Address	rainbow/address.h	/^    IPv4Address(uint32_t address = INADDR_ANY, uint16_t port = 0);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(uint32_t address = INADDR_ANY, uint16_t port = 0)
 IPv4Address	rainbow/address.h	/^class IPv4Address : public IPAddress {$/;"	c	namespace:rainbow	inherits:IPAddress
+IPv6	rainbow/socket.h	/^        IPv6 = AF_INET6,$/;"	e	enum:rainbow::Socket::Family
 IPv6Address	rainbow/address.cpp	/^IPv6Address::IPv6Address() {$/;"	f	class:rainbow::IPv6Address	signature:()
 IPv6Address	rainbow/address.cpp	/^IPv6Address::IPv6Address(const sockaddr_in6& address) {$/;"	f	class:rainbow::IPv6Address	signature:(const sockaddr_in6& address)
-IPv6Address	rainbow/address.cpp	/^IPv6Address::IPv6Address(const uint8_t address[16], uint32_t port) {$/;"	f	class:rainbow::IPv6Address	signature:(const uint8_t address[16], uint32_t port)
+IPv6Address	rainbow/address.cpp	/^IPv6Address::IPv6Address(const uint8_t address[16], uint16_t port) {$/;"	f	class:rainbow::IPv6Address	signature:(const uint8_t address[16], uint16_t port)
 IPv6Address	rainbow/address.h	/^    IPv6Address();$/;"	p	class:rainbow::IPv6Address	access:public	signature:()
 IPv6Address	rainbow/address.h	/^    IPv6Address(const sockaddr_in6& address);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const sockaddr_in6& address)
-IPv6Address	rainbow/address.h	/^    IPv6Address(const uint8_t address[16], uint32_t port = 0);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const uint8_t address[16], uint32_t port = 0)
+IPv6Address	rainbow/address.h	/^    IPv6Address(const uint8_t address[16], uint16_t port = 0);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const uint8_t address[16], uint16_t port = 0)
 IPv6Address	rainbow/address.h	/^class IPv6Address : public IPAddress {$/;"	c	namespace:rainbow	inherits:IPAddress
 Level	rainbow/log.h	/^    enum Level {$/;"	g	class:rainbow::LogLevel	access:public
 LevelFormatItem	rainbow/log.cpp	/^    LevelFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LevelFormatItem	access:public	signature:(const std::string str = �)
@@ -586,13 +607,13 @@ LoggerMgr	rainbow/log.h	/^typedef rainbow::Singleton<LoggerManager> LoggerMgr;$/
 LookUpBase	rainbow/config.cpp	/^ConfigVarBase::ptr Config::LookUpBase(const std::string& name) {$/;"	f	class:rainbow::Config	signature:(const std::string& name)
 LookUpBase	rainbow/config.h	/^    static ConfigVarBase::ptr LookUpBase(const std::string& name);$/;"	p	class:rainbow::Config	access:public	signature:(const std::string& name)
 Lookup	rainbow/address.cpp	/^bool Address::Lookup(std::vector<Address::ptr>& result, const std::string& host,$/;"	f	class:rainbow::Address	signature:(std::vector<Address::ptr>& result, const std::string& host, int family, int type, int protocol)
-Lookup	rainbow/address.h	/^    static bool Lookup(std::vector<Address::ptr>& result, const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(std::vector<Address::ptr>& result, const std::string& host, int family = AF_UNSPEC, int type = 0, int protocol = 0)
+Lookup	rainbow/address.h	/^    static bool Lookup(std::vector<Address::ptr>& result, const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(std::vector<Address::ptr>& result, const std::string& host, int family = AF_INET, int type = 0, int protocol = 0)
 Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name) {$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name)
 Lookup	rainbow/config.h	/^    static typename ConfigVar<T>::ptr Lookup(const std::string& name,$/;"	f	class:rainbow::Config	access:public	signature:(const std::string& name, const T& default_value, const std::string& description = �)
 LookupAny	rainbow/address.cpp	/^Address::ptr Address::LookupAny(const std::string& host, int family, int type, int protocol) {$/;"	f	class:rainbow::Address	signature:(const std::string& host, int family, int type, int protocol)
-LookupAny	rainbow/address.h	/^    static Address::ptr LookupAny(const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(const std::string& host, int family = AF_UNSPEC, int type = 0, int protocol = 0)
+LookupAny	rainbow/address.h	/^    static Address::ptr LookupAny(const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(const std::string& host, int family = AF_INET, int type = 0, int protocol = 0)
 LookupAnyIPAddress	rainbow/address.cpp	/^IPAddress::ptr Address::LookupAnyIPAddress(const std::string& host, int family, int type, int protocol) {$/;"	f	class:rainbow::Address	signature:(const std::string& host, int family, int type, int protocol)
-LookupAnyIPAddress	rainbow/address.h	/^    static std::shared_ptr<IPAddress> LookupAnyIPAddress(const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(const std::string& host, int family = AF_UNSPEC, int type = 0, int protocol = 0)
+LookupAnyIPAddress	rainbow/address.h	/^    static std::shared_ptr<IPAddress> LookupAnyIPAddress(const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(const std::string& host, int family = AF_INET, int type = 0, int protocol = 0)
 MAX_PATH_LEN	rainbow/address.cpp	/^static const size_t MAX_PATH_LEN = sizeof(((sockaddr_un*)0)->sun_path) - 1;$/;"	m	namespace:rainbow	file:
 MainFunc	rainbow/fiber.cpp	/^void Fiber::MainFunc() {$/;"	f	class:rainbow::Fiber	signature:()
 MainFunc	rainbow/fiber.h	/^    static void MainFunc();$/;"	p	class:rainbow::Fiber	access:public	signature:()
@@ -611,6 +632,11 @@ NameFormatItem	rainbow/log.cpp	/^    NameFormatItem(const std::string& str = "")
 NameFormatItem	rainbow/log.cpp	/^class NameFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 NewLineFormatItem	rainbow/log.cpp	/^    NewLineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NewLineFormatItem	access:public	signature:(const std::string str = �)
 NewLineFormatItem	rainbow/log.cpp	/^class NewLineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+Node	rainbow/bytearray.cpp	/^Node();$/;"	p	namespace:rainbow	file:	signature:()
+Node	rainbow/bytearray.cpp	/^Node::Node(size_t s) $/;"	f	class:rainbow::Node	signature:(size_t s)
+Node	rainbow/bytearray.h	/^        Node();$/;"	p	struct:rainbow::ByteArray::Node	access:public	signature:()
+Node	rainbow/bytearray.h	/^        Node(size_t s);$/;"	p	struct:rainbow::ByteArray::Node	access:public	signature:(size_t s)
+Node	rainbow/bytearray.h	/^    struct Node {$/;"	s	class:rainbow::ByteArray	access:public
 Noncopyable	rainbow/noncopyable.h	/^    Noncopyable() = default;$/;"	p	class:rainbow::Noncopyable	access:public	signature:()
 Noncopyable	rainbow/noncopyable.h	/^    Noncopyable(const Noncopyable&) = delete;$/;"	p	class:rainbow::Noncopyable	access:public	signature:(const Noncopyable&)
 Noncopyable	rainbow/noncopyable.h	/^class Noncopyable {$/;"	c	namespace:rainbow
@@ -811,6 +837,7 @@ State	rainbow/fiber.h	/^    enum State {$/;"	g	class:rainbow::Fiber	access:publi
 StdoutLogAppender	rainbow/log.h	/^class StdoutLogAppender : public LogAppender {$/;"	c	namespace:rainbow	inherits:LogAppender
 StringFormatItem	rainbow/log.cpp	/^    StringFormatItem(const std::string& str) : m_string(str) {}$/;"	f	class:rainbow::StringFormatItem	access:public	signature:(const std::string& str)
 StringFormatItem	rainbow/log.cpp	/^class StringFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
+TCP	rainbow/socket.h	/^        TCP = SOCK_STREAM,$/;"	e	enum:rainbow::Socket::Type
 TERM	rainbow/fiber.h	/^        TERM,$/;"	e	enum:rainbow::Fiber::State
 TabFormatItem	rainbow/log.cpp	/^     TabFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::TabFormatItem	access:public	signature:(const std::string& str = �)
 TabFormatItem	rainbow/log.cpp	/^class TabFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
@@ -835,6 +862,9 @@ ToString	rainbow/log.cpp	/^const char* LogLevel::ToString(LogLevel::Level level)
 ToString	rainbow/log.h	/^    static const char* ToString(LogLevel::Level level);$/;"	p	class:rainbow::LogLevel	access:public	signature:(LogLevel::Level level)
 TotalFibers	rainbow/fiber.cpp	/^uint64_t Fiber::TotalFibers() {$/;"	f	class:rainbow::Fiber	signature:()
 TotalFibers	rainbow/fiber.h	/^    static uint64_t TotalFibers();$/;"	p	class:rainbow::Fiber	access:public	signature:()
+Type	rainbow/socket.h	/^    enum Type {$/;"	g	class:rainbow::Socket	access:public
+UDP	rainbow/socket.h	/^        UDP = SOCK_DGRAM$/;"	e	enum:rainbow::Socket::Type
+UNIX	rainbow/socket.h	/^        UNIX = AF_UNIX,$/;"	e	enum:rainbow::Socket::Family
 UNKNOW	rainbow/log.h	/^        UNKNOW = 0,$/;"	e	enum:rainbow::LogLevel::Level
 UnixAddress	rainbow/address.cpp	/^UnixAddress::UnixAddress() {$/;"	f	class:rainbow::UnixAddress	signature:()
 UnixAddress	rainbow/address.cpp	/^UnixAddress::UnixAddress(const std::string& path) {$/;"	f	class:rainbow::UnixAddress	signature:(const std::string& path)
@@ -889,6 +919,7 @@ __RAINBOW_SOCKET_H__	rainbow/socket.h	2;"	d
 __RAINBOW_THREAD_H__	rainbow/thread.h	2;"	d
 __RAINBOW_TIMER_H__	rainbow/timer.h	2;"	d
 __RAINBOW_UTIL_H_	rainbow/util.h	2;"	d
+__RAINBOW__BYTEARRAY_H__	rainbow/bytearray.h	2;"	d
 __SCHEDULER_H__	rainbow/scheduler.h	2;"	d
 __has_include	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	17;"	d	file:
 __has_include	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	11;"	d	file:
@@ -899,6 +930,7 @@ accept	rainbow/socket.h	/^    Socket::ptr accept();$/;"	p	class:rainbow::Socket	
 accept_fun	rainbow/hook.h	/^typedef int (*accept_fun)(int sockfd, struct sockaddr *addr, socklen_t *addrlen);$/;"	t
 addAppender	rainbow/log.cpp	/^void Logger::addAppender(LogAppender::ptr appender) {$/;"	f	class:rainbow::Logger	signature:(LogAppender::ptr appender)
 addAppender	rainbow/log.h	/^    void addAppender(LogAppender::ptr appender);$/;"	p	class:rainbow::Logger	access:public	signature:(LogAppender::ptr appender)
+addCapacity	rainbow/bytearray.h	/^    void addCapacity(size_t size);$/;"	p	class:rainbow::ByteArray	access:private	signature:(size_t size)
 addConditionTimer	rainbow/timer.cpp	/^Timer::ptr TimerManager::addConditionTimer(uint64_t ms, std::function<void()> cb$/;"	f	class:rainbow::TimerManager	signature:(uint64_t ms, std::function<void()> cb ,std::weak_ptr<void> weak_cond ,bool recurring)
 addConditionTimer	rainbow/timer.h	/^    Timer::ptr addConditionTimer(uint64_t ms, std::function<void()> cb$/;"	p	class:rainbow::TimerManager	access:public	signature:(uint64_t ms, std::function<void()> cb ,std::weak_ptr<void> weak_cond ,bool recurring = false)
 addEvent	rainbow/iomanager.cpp	/^int IOManager::addEvent(int fd, Event event, std::function<void()> cb) {$/;"	f	class:rainbow::IOManager	signature:(int fd, Event event, std::function<void()> cb)
@@ -911,7 +943,7 @@ addTimer	rainbow/timer.h	/^    void addTimer(Timer::ptr val, RWMutexType::WriteL
 appenders	rainbow/log.cpp	/^    std::vector<LogAppenderDefine> appenders;$/;"	m	struct:rainbow::LogDefine	file:	access:public
 back	rainbow/fiber.cpp	/^void Fiber::back() {$/;"	f	class:rainbow::Fiber	signature:()
 back	rainbow/fiber.h	/^    void back();$/;"	p	class:rainbow::Fiber	access:public	signature:()
-bind	rainbow/socket.cpp	/^bool Socket::bind(const Address::ptr addr);$/;"	p	class:rainbow::Socket	file:	signature:(const Address::ptr addr)
+bind	rainbow/socket.cpp	/^bool Socket::bind(const Address::ptr addr) {$/;"	f	class:rainbow::Socket	signature:(const Address::ptr addr)
 bind	rainbow/socket.h	/^    bool bind(const Address::ptr addr);$/;"	p	class:rainbow::Socket	access:public	signature:(const Address::ptr addr)
 broadcastAddress	rainbow/address.cpp	/^IPAddress::ptr IPv4Address::broadcastAddress(uint32_t prefix_len) {$/;"	f	class:rainbow::IPv4Address	signature:(uint32_t prefix_len)
 broadcastAddress	rainbow/address.cpp	/^IPAddress::ptr IPv6Address::broadcastAddress(uint32_t prefix_len) {$/;"	f	class:rainbow::IPv6Address	signature:(uint32_t prefix_len)
@@ -923,34 +955,36 @@ call	rainbow/fiber.cpp	/^void Fiber::call() {$/;"	f	class:rainbow::Fiber	signatu
 call	rainbow/fiber.h	/^    void call();$/;"	p	class:rainbow::Fiber	access:public	signature:()
 cancel	rainbow/timer.cpp	/^bool Timer::cancel() {$/;"	f	class:rainbow::Timer	signature:()
 cancel	rainbow/timer.h	/^    bool cancel();$/;"	p	class:rainbow::Timer	access:public	signature:()
-cancelAccept	rainbow/socket.cpp	/^bool Socket::cancelAccept();$/;"	p	class:rainbow::Socket	file:	signature:()
+cancelAccept	rainbow/socket.cpp	/^bool Socket::cancelAccept() {$/;"	f	class:rainbow::Socket	signature:()
 cancelAccept	rainbow/socket.h	/^    bool cancelAccept();$/;"	p	class:rainbow::Socket	access:public	signature:()
 cancelAll	rainbow/iomanager.cpp	/^bool IOManager::cancelAll(int fd) {$/;"	f	class:rainbow::IOManager	signature:(int fd)
 cancelAll	rainbow/iomanager.h	/^    bool cancelAll(int fd);$/;"	p	class:rainbow::IOManager	access:public	signature:(int fd)
-cancelAll	rainbow/socket.cpp	/^bool Socket::cancelAll();$/;"	p	class:rainbow::Socket	file:	signature:()
+cancelAll	rainbow/socket.cpp	/^bool Socket::cancelAll() {$/;"	f	class:rainbow::Socket	signature:()
 cancelAll	rainbow/socket.h	/^    bool cancelAll();$/;"	p	class:rainbow::Socket	access:public	signature:()
 cancelEvent	rainbow/iomanager.cpp	/^bool IOManager::cancelEvent(int fd, Event event) {$/;"	f	class:rainbow::IOManager	signature:(int fd, Event event)
 cancelEvent	rainbow/iomanager.h	/^    bool cancelEvent(int fd, Event event);$/;"	p	class:rainbow::IOManager	access:public	signature:(int fd, Event event)
-cancelRead	rainbow/socket.cpp	/^bool Socket::cancelRead();$/;"	p	class:rainbow::Socket	file:	signature:()
+cancelRead	rainbow/socket.cpp	/^bool Socket::cancelRead() {$/;"	f	class:rainbow::Socket	signature:()
 cancelRead	rainbow/socket.h	/^    bool cancelRead();$/;"	p	class:rainbow::Socket	access:public	signature:()
-cancelWrite	rainbow/socket.cpp	/^bool Socket::cancelWrite();$/;"	p	class:rainbow::Socket	file:	signature:()
+cancelWrite	rainbow/socket.cpp	/^bool Socket::cancelWrite() {$/;"	f	class:rainbow::Socket	signature:()
 cancelWrite	rainbow/socket.h	/^    bool cancelWrite();$/;"	p	class:rainbow::Socket	access:public	signature:()
 cancelled	rainbow/hook.cpp	/^    int cancelled = 0;$/;"	m	struct:timer_info	file:	access:public
 cb	rainbow/iomanager.h	/^            std::function<void()> cb;       \/\/ 事件的回调函数$/;"	m	struct:rainbow::IOManager::FdContext::EventContext	access:public
 cb	rainbow/scheduler.h	/^        std::function<void()> cb;$/;"	m	struct:rainbow::Scheduler::FiberAndThread	access:public
+clear	rainbow/bytearray.h	/^    void clear();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
 clearAppenders	rainbow/log.cpp	/^void Logger::clearAppenders() {$/;"	f	class:rainbow::Logger	signature:()
 clearAppenders	rainbow/log.h	/^    void clearAppenders();$/;"	p	class:rainbow::Logger	access:public	signature:()
 clearListener	rainbow/config.h	/^    void clearListener() {$/;"	f	class:rainbow::ConfigVar	access:public	signature:()
 close	rainbow/fd_manager.h	/^    bool close();$/;"	p	class:rainbow::FdCtx	access:public	signature:()
 close	rainbow/hook.cpp	/^int close(int fd) {$/;"	f	signature:(int fd)
-close	rainbow/socket.cpp	/^bool Socket::close();$/;"	p	class:rainbow::Socket	file:	signature:()
+close	rainbow/socket.cpp	/^bool Socket::close() {$/;"	f	class:rainbow::Socket	signature:()
 close	rainbow/socket.h	/^    bool close();$/;"	p	class:rainbow::Socket	access:public	signature:()
 close_fun	rainbow/hook.h	/^typedef int (*close_fun)(int fd);$/;"	t
 connect	rainbow/hook.cpp	/^int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen) {$/;"	f	signature:(int sockfd, const struct sockaddr *addr, socklen_t addrlen)
-connect	rainbow/socket.cpp	/^bool Socket::connect(const Address::ptr addr, uint64_t timeout_ms = -1);$/;"	p	class:rainbow::Socket	file:	signature:(const Address::ptr addr, uint64_t timeout_ms = -1)
+connect	rainbow/socket.cpp	/^bool Socket::connect(const Address::ptr addr, uint64_t timeout_ms) {$/;"	f	class:rainbow::Socket	signature:(const Address::ptr addr, uint64_t timeout_ms)
 connect	rainbow/socket.h	/^    bool connect(const Address::ptr addr, uint64_t timeout_ms = -1);$/;"	p	class:rainbow::Socket	access:public	signature:(const Address::ptr addr, uint64_t timeout_ms = -1)
 connect_fun	rainbow/hook.h	/^typedef int (*connect_fun)(int sockfd, const struct sockaddr *addr, socklen_t addrlen);$/;"	t
 connect_with_timeout	rainbow/hook.cpp	/^int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen, uint64_t timeout_ms) {$/;"	f	signature:(int fd, const struct sockaddr* addr, socklen_t addrlen, uint64_t timeout_ms)
+connect_with_timeout	rainbow/hook.h	/^extern int connect_with_timeout(int fd, const struct sockaddr* addr, socklen_t addrlen, uint64_t timeout_ms);$/;"	p	signature:(int fd, const struct sockaddr* addr, socklen_t addrlen, uint64_t timeout_ms)
 const	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	10;"	d	file:
 contextResize	rainbow/iomanager.cpp	/^void IOManager::contextResize(size_t size) {$/;"	f	class:rainbow::IOManager	signature:(size_t size)
 contextResize	rainbow/iomanager.h	/^    void contextResize(size_t size);$/;"	p	class:rainbow::IOManager	access:protected	signature:(size_t size)
@@ -967,7 +1001,7 @@ delListener	rainbow/config.h	/^    void delListener(uint64_t key) {$/;"	f	class:
 detectClockRollover	rainbow/timer.cpp	/^bool TimerManager::detectClockRollover(uint64_t now_ms) {$/;"	f	class:rainbow::TimerManager	signature:(uint64_t now_ms)
 detectClockRollover	rainbow/timer.h	/^    bool detectClockRollover(uint64_t now_ms);$/;"	p	class:rainbow::TimerManager	access:private	signature:(uint64_t now_ms)
 do_io	rainbow/hook.cpp	/^static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,$/;"	f	file:	signature:(int fd, OriginFun fun, const char* hook_fun_name, uint32_t event, int timeout_so, Args&&... args)
-dump	rainbow/socket.cpp	/^std::ostream& Socket::dump(std::ostream& os) const;$/;"	p	class:rainbow::Socket	file:	signature:(std::ostream& os) const
+dump	rainbow/socket.cpp	/^std::ostream& Socket::dump(std::ostream& os) const {$/;"	f	class:rainbow::Socket	signature:(std::ostream& os) const
 dump	rainbow/socket.h	/^    std::ostream& dump(std::ostream& os) const;$/;"	p	class:rainbow::Socket	access:public	signature:(std::ostream& os) const
 error	rainbow/log.cpp	/^void Logger::error(LogEvent::ptr event) { log(LogLevel::ERROR, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
 error	rainbow/log.h	/^    void error(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
@@ -1003,13 +1037,14 @@ g_logger	rainbow/fiber.cpp	/^static Logger::ptr g_logger = RAINBOW_LOG_NAME("sys
 g_logger	rainbow/hook.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	v
 g_logger	rainbow/iomanager.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	rainbow/scheduler.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
-g_logger	rainbow/socket.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
+g_logger	rainbow/socket.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	rainbow/thread.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
-g_logger	rainbow/util.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
+g_logger	rainbow/util.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	tests/test_address.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
 g_logger	tests/test_fiber.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
 g_logger	tests/test_iomanager.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
 g_logger	tests/test_scheduler.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
+g_logger	tests/test_socket.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v	file:
 g_logger	tests/test_thread.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
 g_logger	tests/test_util.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
 g_logger2	tests/test_hook.cpp	/^rainbow::Logger::ptr g_logger2 = RAINBOW_LOG_ROOT();$/;"	v
@@ -1022,18 +1057,25 @@ getAddr	rainbow/address.cpp	/^const sockaddr* IPv4Address::getAddr() const {$/;"
 getAddr	rainbow/address.cpp	/^const sockaddr* IPv6Address::getAddr() const {$/;"	f	class:rainbow::IPv6Address	signature:() const
 getAddr	rainbow/address.cpp	/^const sockaddr* UnixAddress::getAddr() const {$/;"	f	class:rainbow::UnixAddress	signature:() const
 getAddr	rainbow/address.cpp	/^const sockaddr* UnknownAddress::getAddr() const {$/;"	f	class:rainbow::UnknownAddress	signature:() const
+getAddr	rainbow/address.cpp	/^sockaddr* IPv4Address::getAddr() {$/;"	f	class:rainbow::IPv4Address	signature:()
+getAddr	rainbow/address.cpp	/^sockaddr* IPv6Address::getAddr() {$/;"	f	class:rainbow::IPv6Address	signature:()
+getAddr	rainbow/address.cpp	/^sockaddr* UnixAddress::getAddr() {$/;"	f	class:rainbow::UnixAddress	signature:()
+getAddr	rainbow/address.cpp	/^sockaddr* UnknownAddress::getAddr() {$/;"	f	class:rainbow::UnknownAddress	signature:()
 getAddr	rainbow/address.h	/^    virtual const sockaddr* getAddr() const = 0;$/;"	p	class:rainbow::Address	access:public	signature:() const
+getAddr	rainbow/address.h	/^    virtual sockaddr* getAddr() = 0;$/;"	p	class:rainbow::Address	access:public	signature:()
 getAddrLen	rainbow/address.cpp	/^socklen_t IPv4Address::getAddrLen() const {$/;"	f	class:rainbow::IPv4Address	signature:() const
 getAddrLen	rainbow/address.cpp	/^socklen_t IPv6Address::getAddrLen() const {$/;"	f	class:rainbow::IPv6Address	signature:() const
 getAddrLen	rainbow/address.cpp	/^socklen_t UnixAddress::getAddrLen() const {$/;"	f	class:rainbow::UnixAddress	signature:() const
 getAddrLen	rainbow/address.cpp	/^socklen_t UnknownAddress::getAddrLen() const {$/;"	f	class:rainbow::UnknownAddress	signature:() const
 getAddrLen	rainbow/address.h	/^    virtual socklen_t getAddrLen() const = 0;$/;"	p	class:rainbow::Address	access:public	signature:() const
+getBaseSize	rainbow/bytearray.h	/^    size_t getBaseSize() const { return m_baseSize; }$/;"	f	class:rainbow::ByteArray	access:public	signature:() const
+getCapacity	rainbow/bytearray.h	/^    size_t getCapacity() const { return m_capacity - m_position; }$/;"	f	class:rainbow::ByteArray	access:private	signature:() const
 getContent	rainbow/log.h	/^    std::string getContent() const { return m_ss.str(); }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
 getContext	rainbow/iomanager.cpp	/^IOManager::FdContext::EventContext& IOManager::FdContext::getContext(IOManager::Event event) {$/;"	f	class:rainbow::IOManager::FdContext	signature:(IOManager::Event event)
 getContext	rainbow/iomanager.h	/^        EventContext& getContext(Event event);$/;"	p	struct:rainbow::IOManager::FdContext	access:public	signature:(Event event)
 getDescription	rainbow/config.h	/^    const std::string& getDescription() const { return m_description; }$/;"	f	class:rainbow::ConfigVarBase	access:public	signature:() const
 getElapse	rainbow/log.h	/^    uint32_t getElapse() const { return m_elapse; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
-getError	rainbow/socket.cpp	/^int Socket::getError();$/;"	p	class:rainbow::Socket	file:	signature:()
+getError	rainbow/socket.cpp	/^int Socket::getError() {$/;"	f	class:rainbow::Socket	signature:()
 getError	rainbow/socket.h	/^    int getError();$/;"	p	class:rainbow::Socket	access:public	signature:()
 getEvent	rainbow/log.h	/^    LogEvent::ptr getEvent() const { return m_event; }$/;"	f	class:rainbow::LogEventWrap	access:public	signature:() const
 getFamily	rainbow/address.cpp	/^int Address::getFamily() const {$/;"	f	class:rainbow::Address	signature:() const
@@ -1051,7 +1093,7 @@ getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() const { return m_level; 
 getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::Logger	access:public	signature:() const
 getLine	rainbow/log.h	/^    int32_t getLine() const { return m_line; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
 getListener	rainbow/config.h	/^    on_change_cb getListener(uint64_t key) {$/;"	f	class:rainbow::ConfigVar	access:public	signature:(uint64_t key)
-getLocalAddress	rainbow/socket.cpp	/^Address::ptr Socket::getLocalAddress();$/;"	p	class:rainbow::Socket	file:	signature:()
+getLocalAddress	rainbow/socket.cpp	/^Address::ptr Socket::getLocalAddress() {$/;"	f	class:rainbow::Socket	signature:()
 getLocalAddress	rainbow/socket.h	/^    Address::ptr getLocalAddress();$/;"	p	class:rainbow::Socket	access:public	signature:()
 getLogger	rainbow/log.cpp	/^Logger::ptr LoggerManager::getLogger(const std::string& name) {$/;"	f	class:rainbow::LoggerManager	signature:(const std::string& name)
 getLogger	rainbow/log.h	/^    Logger::ptr getLogger(const std::string& name);$/;"	p	class:rainbow::LoggerManager	access:public	signature:(const std::string& name)
@@ -1069,10 +1111,12 @@ getPattern	rainbow/log.h	/^    const std::string getPattern() const { return m_p
 getPort	rainbow/address.cpp	/^uint32_t IPv4Address::getPort() const {$/;"	f	class:rainbow::IPv4Address	signature:() const
 getPort	rainbow/address.cpp	/^uint32_t IPv6Address::getPort() const {$/;"	f	class:rainbow::IPv6Address	signature:() const
 getPort	rainbow/address.h	/^    virtual uint32_t getPort() const = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:() const
+getPosition	rainbow/bytearray.h	/^    size_t getPosition() const { return m_position; }$/;"	f	class:rainbow::ByteArray	access:public	signature:() const
 getProtocol	rainbow/socket.h	/^    int getProtocol() const { return m_protocol; }$/;"	f	class:rainbow::Socket	access:public	signature:() const
+getReadSize	rainbow/bytearray.h	/^    size_t getReadSize() const { return m_size - m_position; }$/;"	f	class:rainbow::ByteArray	access:public	signature:() const
 getRecvTimeout	rainbow/socket.cpp	/^int64_t Socket::getRecvTimeout() {$/;"	f	class:rainbow::Socket	signature:()
 getRecvTimeout	rainbow/socket.h	/^    int64_t getRecvTimeout();$/;"	p	class:rainbow::Socket	access:public	signature:()
-getRemoteAddress	rainbow/socket.cpp	/^Address::ptr Socket::getRemoteAddress();$/;"	p	class:rainbow::Socket	file:	signature:()
+getRemoteAddress	rainbow/socket.cpp	/^Address::ptr Socket::getRemoteAddress() {$/;"	f	class:rainbow::Socket	signature:()
 getRemoteAddress	rainbow/socket.h	/^    Address::ptr getRemoteAddress();$/;"	p	class:rainbow::Socket	access:public	signature:()
 getRoot	rainbow/log.h	/^    Logger::ptr getRoot() const { return m_root; }$/;"	f	class:rainbow::LoggerManager	access:public	signature:() const
 getSS	rainbow/log.cpp	/^std::stringstream& LogEventWrap::getSS() {$/;"	f	class:rainbow::LogEventWrap	signature:()
@@ -1148,7 +1192,7 @@ isConnected	rainbow/socket.h	/^    bool isConnected() const { return m_isConnect
 isError	rainbow/log.h	/^    bool isError() const {$/;"	f	class:rainbow::LogFormatter	access:public	signature:() const
 isInit	rainbow/fd_manager.h	/^    bool isInit() const { return m_isInit; }$/;"	f	class:rainbow::FdCtx	access:public	signature:() const
 isSocket	rainbow/fd_manager.h	/^    bool isSocket() const { return m_isSocket; }$/;"	f	class:rainbow::FdCtx	access:public	signature:() const
-isValid	rainbow/socket.cpp	/^bool Socket::isValid() const;$/;"	p	class:rainbow::Socket	file:	signature:() const
+isValid	rainbow/socket.cpp	/^bool Socket::isValid() const {$/;"	f	class:rainbow::Socket	signature:() const
 isValid	rainbow/socket.h	/^    bool isValid() const;$/;"	p	class:rainbow::Socket	access:public	signature:() const
 is_hook_enable	rainbow/hook.cpp	/^bool is_hook_enable() {$/;"	f	namespace:rainbow	signature:()
 is_hook_enable	rainbow/hook.h	/^    bool is_hook_enable();$/;"	p	namespace:rainbow	signature:()
@@ -1158,7 +1202,7 @@ level	rainbow/log.cpp	/^    LogLevel::Level level = LogLevel::UNKNOW;$/;"	m	stru
 level	rainbow/log.cpp	/^    LogLevel::Level level = LogLevel::UNKNOW;$/;"	m	struct:rainbow::LogDefine	file:	access:public
 listExpiredCb	rainbow/timer.cpp	/^void TimerManager::listExpiredCb(std::vector<std::function<void()>>& cbs) {$/;"	f	class:rainbow::TimerManager	signature:(std::vector<std::function<void()>>& cbs)
 listExpiredCb	rainbow/timer.h	/^    void listExpiredCb(std::vector<std::function<void()>>& cbs);$/;"	p	class:rainbow::TimerManager	access:public	signature:(std::vector<std::function<void()>>& cbs)
-listen	rainbow/socket.cpp	/^bool Socket::listen(int backlog = SOMAXCONN);$/;"	p	class:rainbow::Socket	file:	signature:(int backlog = SOMAXCONN)
+listen	rainbow/socket.cpp	/^bool Socket::listen(int backlog) {$/;"	f	class:rainbow::Socket	signature:(int backlog)
 listen	rainbow/socket.h	/^    bool listen(int backlog = SOMAXCONN);$/;"	p	class:rainbow::Socket	access:public	signature:(int backlog = SOMAXCONN)
 lock	rainbow/thread.h	/^    void lock() {$/;"	f	class:rainbow::CASLock	access:public	signature:()
 lock	rainbow/thread.h	/^    void lock() {$/;"	f	class:rainbow::Mutex	access:public	signature:()
@@ -1180,11 +1224,14 @@ m_addr	rainbow/address.h	/^    sockaddr_un m_addr;$/;"	m	class:rainbow::UnixAddr
 m_age	tests/test_config.cpp	/^    int m_age = 0;$/;"	m	class:Person	file:	access:public
 m_appenders	rainbow/log.h	/^    std::list<LogAppender::ptr> m_appenders;  \/\/ Appender集合$/;"	m	class:rainbow::Logger	access:private
 m_autoStop	rainbow/scheduler.h	/^    bool m_autoStop = false;$/;"	m	class:rainbow::Scheduler	access:protected
+m_baseSize	rainbow/bytearray.h	/^    size_t m_baseSize;$/;"	m	class:rainbow::ByteArray	access:private
+m_capacity	rainbow/bytearray.h	/^    size_t m_capacity;$/;"	m	class:rainbow::ByteArray	access:private
 m_cb	rainbow/fiber.h	/^    std::function<void()> m_cb;$/;"	m	class:rainbow::Fiber	access:private
 m_cb	rainbow/thread.h	/^    std::function<void()> m_cb;$/;"	m	class:rainbow::Thread	access:private
 m_cb	rainbow/timer.h	/^    std::function<void()> m_cb;$/;"	m	class:rainbow::Timer	access:private
 m_cbs	rainbow/config.h	/^    std::map<uint64_t, on_change_cb> m_cbs;$/;"	m	class:rainbow::ConfigVar	access:private
 m_ctx	rainbow/fiber.h	/^    ucontext_t m_ctx;$/;"	m	class:rainbow::Fiber	access:private
+m_cur	rainbow/bytearray.h	/^    Node* m_cur;$/;"	m	class:rainbow::ByteArray	access:private
 m_datas	rainbow/fd_manager.h	/^    std::vector<FdCtx::ptr> m_datas;$/;"	m	class:rainbow::FdManager	access:private
 m_description	rainbow/config.h	/^    std::string m_description;$/;"	m	class:rainbow::ConfigVarBase	access:protected
 m_elapse	rainbow/log.h	/^    uint32_t m_elapse = 0;         \/\/ 程序启动开始到现在的毫秒数$/;"	m	class:rainbow::LogEvent	access:private
@@ -1245,11 +1292,13 @@ m_name	tests/test_config.cpp	/^    std::string m_name;$/;"	m	class:Person	file:	
 m_next	rainbow/timer.h	/^    uint64_t m_next = 0;$/;"	m	class:rainbow::Timer	access:private
 m_pattern	rainbow/log.h	/^    std::string m_pattern;$/;"	m	class:rainbow::LogFormatter	access:private
 m_pendingEventCount	rainbow/iomanager.h	/^    std::atomic<size_t> m_pendingEventCount = {0};$/;"	m	class:rainbow::IOManager	access:private
+m_position	rainbow/bytearray.h	/^    size_t m_position;$/;"	m	class:rainbow::ByteArray	access:private
 m_previouseTime	rainbow/timer.h	/^    uint64_t m_previouseTime = 0;$/;"	m	class:rainbow::TimerManager	access:private
 m_protocol	rainbow/socket.h	/^    int m_protocol;$/;"	m	class:rainbow::Socket	access:private
 m_recurring	rainbow/timer.h	/^    bool m_recurring = false;$/;"	m	class:rainbow::Timer	access:private
 m_recvTimeout	rainbow/fd_manager.h	/^    uint64_t m_recvTimeout;$/;"	m	class:rainbow::FdCtx	access:private
 m_remoteAddress	rainbow/socket.h	/^    Address::ptr m_remoteAddress;$/;"	m	class:rainbow::Socket	access:private
+m_root	rainbow/bytearray.h	/^    Node* m_root;$/;"	m	class:rainbow::ByteArray	access:private
 m_root	rainbow/log.h	/^    Logger::ptr m_root;$/;"	m	class:rainbow::Logger	access:private
 m_root	rainbow/log.h	/^    Logger::ptr m_root;$/;"	m	class:rainbow::LoggerManager	access:private
 m_rootFiber	rainbow/scheduler.h	/^    Fiber::ptr m_rootFiber;$/;"	m	class:rainbow::Scheduler	access:private
@@ -1258,6 +1307,7 @@ m_semaphore	rainbow/thread.h	/^    Semaphore m_semaphore;$/;"	m	class:rainbow::T
 m_semaphore	rainbow/thread.h	/^    sem_t m_semaphore;$/;"	m	class:rainbow::Semaphore	access:private
 m_sendTimeout	rainbow/fd_manager.h	/^    uint64_t m_sendTimeout;$/;"	m	class:rainbow::FdCtx	access:private
 m_sex	tests/test_config.cpp	/^    bool m_sex = 0;$/;"	m	class:Person	file:	access:public
+m_size	rainbow/bytearray.h	/^    size_t m_size;$/;"	m	class:rainbow::ByteArray	access:private
 m_sock	rainbow/socket.h	/^    int m_sock;$/;"	m	class:rainbow::Socket	access:private
 m_ss	rainbow/log.h	/^    std::stringstream m_ss;             \/\/ 日志流$/;"	m	class:rainbow::LogEvent	access:private
 m_stack	rainbow/fiber.h	/^    void* m_stack = nullptr;$/;"	m	class:rainbow::Fiber	access:private
@@ -1287,6 +1337,7 @@ main	tests/test_fiber.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(
 main	tests/test_hook.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_iomanager.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_scheduler.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
+main	tests/test_socket.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_thread.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
 main	tests/test_util.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 mutex	rainbow/iomanager.h	/^        MutexType mutex;$/;"	m	struct:rainbow::IOManager::FdContext	access:public
@@ -1298,6 +1349,7 @@ networdAddress	rainbow/address.cpp	/^IPAddress::ptr IPv6Address::networdAddress(
 networdAddress	rainbow/address.h	/^    virtual IPAddress::ptr networdAddress(uint32_t prefix_len) = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:(uint32_t prefix_len)
 newSock	rainbow/socket.cpp	/^void Socket::newSock() {$/;"	f	class:rainbow::Socket	signature:()
 newSock	rainbow/socket.h	/^    void newSock();$/;"	p	class:rainbow::Socket	access:private	signature:()
+next	rainbow/bytearray.h	/^        Node* next;$/;"	m	struct:rainbow::ByteArray::Node	access:public
 notify	rainbow/thread.cpp	/^void Semaphore::notify() {$/;"	f	class:rainbow::Semaphore	signature:()
 notify	rainbow/thread.h	/^    void notify();$/;"	p	class:rainbow::Semaphore	access:public	signature:()
 onTimerInsertedAtFront	rainbow/iomanager.cpp	/^void IOManager::onTimerInsertedAtFront() {$/;"	f	class:rainbow::IOManager	signature:()
@@ -1344,6 +1396,10 @@ override	rainbow/address.h	/^    const sockaddr* getAddr() const override;$/;"	m
 override	rainbow/address.h	/^    const sockaddr* getAddr() const override;$/;"	m	class:rainbow::IPv6Address	access:public
 override	rainbow/address.h	/^    const sockaddr* getAddr() const override;$/;"	m	class:rainbow::UnixAddress	access:public
 override	rainbow/address.h	/^    const sockaddr* getAddr() const override;$/;"	m	class:rainbow::UnknownAddress	access:public
+override	rainbow/address.h	/^    sockaddr* getAddr() override;$/;"	m	class:rainbow::IPv4Address	access:public
+override	rainbow/address.h	/^    sockaddr* getAddr() override;$/;"	m	class:rainbow::IPv6Address	access:public
+override	rainbow/address.h	/^    sockaddr* getAddr() override;$/;"	m	class:rainbow::UnixAddress	access:public
+override	rainbow/address.h	/^    sockaddr* getAddr() override;$/;"	m	class:rainbow::UnknownAddress	access:public
 override	rainbow/address.h	/^    socklen_t getAddrLen() const override;$/;"	m	class:rainbow::IPv4Address	access:public
 override	rainbow/address.h	/^    socklen_t getAddrLen() const override;$/;"	m	class:rainbow::IPv6Address	access:public
 override	rainbow/address.h	/^    socklen_t getAddrLen() const override;$/;"	m	class:rainbow::UnixAddress	access:public
@@ -1354,8 +1410,8 @@ override	rainbow/address.h	/^    std::ostream& insert(std::ostream& os) const ov
 override	rainbow/address.h	/^    std::ostream& insert(std::ostream& os) const override;$/;"	m	class:rainbow::UnknownAddress	access:public
 override	rainbow/address.h	/^    uint32_t getPort() const override;$/;"	m	class:rainbow::IPv4Address	access:public
 override	rainbow/address.h	/^    uint32_t getPort() const override;$/;"	m	class:rainbow::IPv6Address	access:public
-override	rainbow/address.h	/^    void setPort(uint32_t v) override;$/;"	m	class:rainbow::IPv4Address	access:public
-override	rainbow/address.h	/^    void setPort(uint32_t v) override;$/;"	m	class:rainbow::IPv6Address	access:public
+override	rainbow/address.h	/^    void setPort(uint16_t v) override;$/;"	m	class:rainbow::IPv4Address	access:public
+override	rainbow/address.h	/^    void setPort(uint16_t v) override;$/;"	m	class:rainbow::IPv6Address	access:public
 override	rainbow/iomanager.h	/^    bool stopping() override;$/;"	m	class:rainbow::IOManager	access:protected
 override	rainbow/iomanager.h	/^    void idle() override;$/;"	m	class:rainbow::IOManager	access:protected
 override	rainbow/iomanager.h	/^    void onTimerInsertedAtFront() override;$/;"	m	class:rainbow::IOManager	access:protected
@@ -1370,6 +1426,8 @@ ptr	rainbow/address.h	/^    typedef std::shared_ptr<IPv4Address> ptr;$/;"	t	clas
 ptr	rainbow/address.h	/^    typedef std::shared_ptr<IPv6Address> ptr;$/;"	t	class:rainbow::IPv6Address	access:public
 ptr	rainbow/address.h	/^    typedef std::shared_ptr<UnixAddress> ptr;$/;"	t	class:rainbow::UnixAddress	access:public
 ptr	rainbow/address.h	/^    typedef std::shared_ptr<UnknownAddress> ptr;$/;"	t	class:rainbow::UnknownAddress	access:public
+ptr	rainbow/bytearray.h	/^        char* ptr;$/;"	m	struct:rainbow::ByteArray::Node	access:public
+ptr	rainbow/bytearray.h	/^    typedef std::shared_ptr<ByteArray> ptr;$/;"	t	class:rainbow::ByteArray	access:public
 ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVar> ptr;$/;"	t	class:rainbow::ConfigVar	access:public
 ptr	rainbow/config.h	/^    typedef std::shared_ptr<ConfigVarBase> ptr;$/;"	t	class:rainbow::ConfigVarBase	access:public
 ptr	rainbow/fd_manager.h	/^    typedef std::shared_ptr<FdCtx> ptr;$/;"	t	class:rainbow::FdCtx	access:public
@@ -1390,6 +1448,8 @@ qnxnto	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxn
 qnxnto	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
 rainbow	rainbow/address.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/address.h	/^namespace rainbow {$/;"	n
+rainbow	rainbow/bytearray.cpp	/^namespace rainbow {$/;"	n	file:
+rainbow	rainbow/bytearray.h	/^namespace rainbow {$/;"	n
 rainbow	rainbow/config.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/config.h	/^namespace rainbow {$/;"	n
 rainbow	rainbow/endian.h	/^namespace rainbow {$/;"	n
@@ -1421,15 +1481,16 @@ rainbow::Address::Create	rainbow/address.cpp	/^Address::ptr Address::Create(cons
 rainbow::Address::Create	rainbow/address.h	/^    static Address::ptr Create(const sockaddr* addr, socklen_t addrlen);$/;"	p	class:rainbow::Address	access:public	signature:(const sockaddr* addr, socklen_t addrlen)
 rainbow::Address::GetInterfaceAddresses	rainbow/address.cpp	/^bool Address::GetInterfaceAddresses(std::multimap<std::string, $/;"	f	class:rainbow::Address	signature:(std::multimap<std::string, std::pair<Address::ptr, uint32_t>>& result, int family)
 rainbow::Address::GetInterfaceAddresses	rainbow/address.cpp	/^bool Address::GetInterfaceAddresses(std::vector<std::pair<Address::ptr, $/;"	f	class:rainbow::Address	signature:(std::vector<std::pair<Address::ptr, uint32_t>> &result, const std::string& iface, int family)
-rainbow::Address::GetInterfaceAddresses	rainbow/address.h	/^    static bool GetInterfaceAddresses(std::multimap<std::string, $/;"	p	class:rainbow::Address	access:public	signature:(std::multimap<std::string, std::pair<Address::ptr, uint32_t>>& result, int family = AF_UNSPEC)
-rainbow::Address::GetInterfaceAddresses	rainbow/address.h	/^    static bool GetInterfaceAddresses(std::vector<std::pair<Address::ptr, $/;"	p	class:rainbow::Address	access:public	signature:(std::vector<std::pair<Address::ptr, uint32_t>> &result, const std::string& iface, int family = AF_UNSPEC)
+rainbow::Address::GetInterfaceAddresses	rainbow/address.h	/^    static bool GetInterfaceAddresses(std::multimap<std::string, $/;"	p	class:rainbow::Address	access:public	signature:(std::multimap<std::string, std::pair<Address::ptr, uint32_t>>& result, int family = AF_INET)
+rainbow::Address::GetInterfaceAddresses	rainbow/address.h	/^    static bool GetInterfaceAddresses(std::vector<std::pair<Address::ptr, $/;"	p	class:rainbow::Address	access:public	signature:(std::vector<std::pair<Address::ptr, uint32_t>> &result, const std::string& iface, int family = AF_INET)
 rainbow::Address::Lookup	rainbow/address.cpp	/^bool Address::Lookup(std::vector<Address::ptr>& result, const std::string& host,$/;"	f	class:rainbow::Address	signature:(std::vector<Address::ptr>& result, const std::string& host, int family, int type, int protocol)
-rainbow::Address::Lookup	rainbow/address.h	/^    static bool Lookup(std::vector<Address::ptr>& result, const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(std::vector<Address::ptr>& result, const std::string& host, int family = AF_UNSPEC, int type = 0, int protocol = 0)
+rainbow::Address::Lookup	rainbow/address.h	/^    static bool Lookup(std::vector<Address::ptr>& result, const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(std::vector<Address::ptr>& result, const std::string& host, int family = AF_INET, int type = 0, int protocol = 0)
 rainbow::Address::LookupAny	rainbow/address.cpp	/^Address::ptr Address::LookupAny(const std::string& host, int family, int type, int protocol) {$/;"	f	class:rainbow::Address	signature:(const std::string& host, int family, int type, int protocol)
-rainbow::Address::LookupAny	rainbow/address.h	/^    static Address::ptr LookupAny(const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(const std::string& host, int family = AF_UNSPEC, int type = 0, int protocol = 0)
+rainbow::Address::LookupAny	rainbow/address.h	/^    static Address::ptr LookupAny(const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(const std::string& host, int family = AF_INET, int type = 0, int protocol = 0)
 rainbow::Address::LookupAnyIPAddress	rainbow/address.cpp	/^IPAddress::ptr Address::LookupAnyIPAddress(const std::string& host, int family, int type, int protocol) {$/;"	f	class:rainbow::Address	signature:(const std::string& host, int family, int type, int protocol)
-rainbow::Address::LookupAnyIPAddress	rainbow/address.h	/^    static std::shared_ptr<IPAddress> LookupAnyIPAddress(const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(const std::string& host, int family = AF_UNSPEC, int type = 0, int protocol = 0)
+rainbow::Address::LookupAnyIPAddress	rainbow/address.h	/^    static std::shared_ptr<IPAddress> LookupAnyIPAddress(const std::string& host,$/;"	p	class:rainbow::Address	access:public	signature:(const std::string& host, int family = AF_INET, int type = 0, int protocol = 0)
 rainbow::Address::getAddr	rainbow/address.h	/^    virtual const sockaddr* getAddr() const = 0;$/;"	p	class:rainbow::Address	access:public	signature:() const
+rainbow::Address::getAddr	rainbow/address.h	/^    virtual sockaddr* getAddr() = 0;$/;"	p	class:rainbow::Address	access:public	signature:()
 rainbow::Address::getAddrLen	rainbow/address.h	/^    virtual socklen_t getAddrLen() const = 0;$/;"	p	class:rainbow::Address	access:public	signature:() const
 rainbow::Address::getFamily	rainbow/address.cpp	/^int Address::getFamily() const {$/;"	f	class:rainbow::Address	signature:() const
 rainbow::Address::getFamily	rainbow/address.h	/^    int getFamily() const;$/;"	p	class:rainbow::Address	access:public	signature:() const
@@ -1448,6 +1509,71 @@ rainbow::Backtrace	rainbow/util.cpp	/^void Backtrace(std::vector<std::string>& b
 rainbow::Backtrace	rainbow/util.h	/^void Backtrace(std::vector<std::string>& bt, int size = 64, int skip = 1);$/;"	p	namespace:rainbow	signature:(std::vector<std::string>& bt, int size = 64, int skip = 1)
 rainbow::BacktraceToString	rainbow/util.cpp	/^std::string BacktraceToString(const std::string& prefix, int size, int skip) {$/;"	f	namespace:rainbow	signature:(const std::string& prefix, int size, int skip)
 rainbow::BacktraceToString	rainbow/util.h	/^std::string BacktraceToString(const std::string& prefix = "", int size = 64, int skip = 2);$/;"	p	namespace:rainbow	signature:(const std::string& prefix = �, int size = 64, int skip = 2)
+rainbow::ByteArray	rainbow/bytearray.h	/^class ByteArray {$/;"	c	namespace:rainbow
+rainbow::ByteArray::ByteArray	rainbow/bytearray.h	/^    ByteArray(size_t base_size = 4096);$/;"	p	class:rainbow::ByteArray	access:public	signature:(size_t base_size = 4096)
+rainbow::ByteArray::Node	rainbow/bytearray.h	/^    struct Node {$/;"	s	class:rainbow::ByteArray	access:public
+rainbow::ByteArray::Node::Node	rainbow/bytearray.h	/^        Node();$/;"	p	struct:rainbow::ByteArray::Node	access:public	signature:()
+rainbow::ByteArray::Node::Node	rainbow/bytearray.h	/^        Node(size_t s);$/;"	p	struct:rainbow::ByteArray::Node	access:public	signature:(size_t s)
+rainbow::ByteArray::Node::next	rainbow/bytearray.h	/^        Node* next;$/;"	m	struct:rainbow::ByteArray::Node	access:public
+rainbow::ByteArray::Node::ptr	rainbow/bytearray.h	/^        char* ptr;$/;"	m	struct:rainbow::ByteArray::Node	access:public
+rainbow::ByteArray::Node::size	rainbow/bytearray.h	/^        size_t size;$/;"	m	struct:rainbow::ByteArray::Node	access:public
+rainbow::ByteArray::Node::~Node	rainbow/bytearray.h	/^        ~Node();$/;"	p	struct:rainbow::ByteArray::Node	access:public	signature:()
+rainbow::ByteArray::addCapacity	rainbow/bytearray.h	/^    void addCapacity(size_t size);$/;"	p	class:rainbow::ByteArray	access:private	signature:(size_t size)
+rainbow::ByteArray::clear	rainbow/bytearray.h	/^    void clear();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::getBaseSize	rainbow/bytearray.h	/^    size_t getBaseSize() const { return m_baseSize; }$/;"	f	class:rainbow::ByteArray	access:public	signature:() const
+rainbow::ByteArray::getCapacity	rainbow/bytearray.h	/^    size_t getCapacity() const { return m_capacity - m_position; }$/;"	f	class:rainbow::ByteArray	access:private	signature:() const
+rainbow::ByteArray::getPosition	rainbow/bytearray.h	/^    size_t getPosition() const { return m_position; }$/;"	f	class:rainbow::ByteArray	access:public	signature:() const
+rainbow::ByteArray::getReadSize	rainbow/bytearray.h	/^    size_t getReadSize() const { return m_size - m_position; }$/;"	f	class:rainbow::ByteArray	access:public	signature:() const
+rainbow::ByteArray::m_baseSize	rainbow/bytearray.h	/^    size_t m_baseSize;$/;"	m	class:rainbow::ByteArray	access:private
+rainbow::ByteArray::m_capacity	rainbow/bytearray.h	/^    size_t m_capacity;$/;"	m	class:rainbow::ByteArray	access:private
+rainbow::ByteArray::m_cur	rainbow/bytearray.h	/^    Node* m_cur;$/;"	m	class:rainbow::ByteArray	access:private
+rainbow::ByteArray::m_position	rainbow/bytearray.h	/^    size_t m_position;$/;"	m	class:rainbow::ByteArray	access:private
+rainbow::ByteArray::m_root	rainbow/bytearray.h	/^    Node* m_root;$/;"	m	class:rainbow::ByteArray	access:private
+rainbow::ByteArray::m_size	rainbow/bytearray.h	/^    size_t m_size;$/;"	m	class:rainbow::ByteArray	access:private
+rainbow::ByteArray::ptr	rainbow/bytearray.h	/^    typedef std::shared_ptr<ByteArray> ptr;$/;"	t	class:rainbow::ByteArray	access:public
+rainbow::ByteArray::read	rainbow/bytearray.h	/^    void read(char* buf, size_t size);$/;"	p	class:rainbow::ByteArray	access:public	signature:(char* buf, size_t size)
+rainbow::ByteArray::readDouble	rainbow/bytearray.h	/^    double   readDouble();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readFint16	rainbow/bytearray.h	/^    int16_t  readFint16();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readFint32	rainbow/bytearray.h	/^    int32_t  readFint32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readFint64	rainbow/bytearray.h	/^    int64_t  readFint64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readFint8	rainbow/bytearray.h	/^    int8_t   readFint8();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readFloat	rainbow/bytearray.h	/^    float    readFloat();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readFromFile	rainbow/bytearray.h	/^    void readFromFile(const std::string& name);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& name)
+rainbow::ByteArray::readFuint16	rainbow/bytearray.h	/^    uint16_t readFuint16();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readFuint32	rainbow/bytearray.h	/^    uint32_t readFuint32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readFuint64	rainbow/bytearray.h	/^    uint64_t readFuint64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readFuint8	rainbow/bytearray.h	/^    uint8_t  readFuint8();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readInt32	rainbow/bytearray.h	/^    int32_t  readInt32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readInt64	rainbow/bytearray.h	/^    int64_t  readInt64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readString16	rainbow/bytearray.h	/^    std::string readString16();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readString32	rainbow/bytearray.h	/^    std::string readString32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readString64	rainbow/bytearray.h	/^    std::string readString64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readStringVint	rainbow/bytearray.h	/^    std::string readStringVint();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readUint32	rainbow/bytearray.h	/^    uint32_t readUint32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::readUint64	rainbow/bytearray.h	/^    uint64_t readUint64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+rainbow::ByteArray::setPosition	rainbow/bytearray.h	/^    void setPosition(size_t v);$/;"	p	class:rainbow::ByteArray	access:public	signature:(size_t v)
+rainbow::ByteArray::write	rainbow/bytearray.h	/^    void write(const void* buf, size_t size);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const void* buf, size_t size)
+rainbow::ByteArray::writeDouble	rainbow/bytearray.h	/^    void writeDouble(const double& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const double& value)
+rainbow::ByteArray::writeFint16	rainbow/bytearray.h	/^    void writeFint16(const int16_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int16_t& value)
+rainbow::ByteArray::writeFint32	rainbow/bytearray.h	/^    void writeFint32(const int32_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int32_t& value)
+rainbow::ByteArray::writeFint64	rainbow/bytearray.h	/^    void writeFint64(const int64_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int64_t& value)
+rainbow::ByteArray::writeFint8	rainbow/bytearray.h	/^    void writeFint8(const int8_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int8_t& value)
+rainbow::ByteArray::writeFloat	rainbow/bytearray.h	/^    void writeFloat(const float& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const float& value)
+rainbow::ByteArray::writeFuint16	rainbow/bytearray.h	/^    void writeFuint16(const uint16_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint16_t& value)
+rainbow::ByteArray::writeFuint32	rainbow/bytearray.h	/^    void writeFuint32(const uint32_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint32_t& value)
+rainbow::ByteArray::writeFuint64	rainbow/bytearray.h	/^    void writeFuint64(const uint64_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint64_t& value)
+rainbow::ByteArray::writeFuint8	rainbow/bytearray.h	/^    void writeFuint8(const uint8_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint8_t& value)
+rainbow::ByteArray::writeInt32	rainbow/bytearray.h	/^    void writeInt32(const int32_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int32_t& value)
+rainbow::ByteArray::writeInt64	rainbow/bytearray.h	/^    void writeInt64(const int64_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int64_t& value)
+rainbow::ByteArray::writeStringF16	rainbow/bytearray.h	/^    void writeStringF16(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+rainbow::ByteArray::writeStringF32	rainbow/bytearray.h	/^    void writeStringF32(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+rainbow::ByteArray::writeStringF64	rainbow/bytearray.h	/^    void writeStringF64(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+rainbow::ByteArray::writeStringVint	rainbow/bytearray.h	/^    void writeStringVint(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+rainbow::ByteArray::writeStringWithoutLength	rainbow/bytearray.h	/^    void writeStringWithoutLength(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+rainbow::ByteArray::writeToFile	rainbow/bytearray.h	/^    bool writeToFile(const std::string& name) const;$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& name) const
+rainbow::ByteArray::writeUint32	rainbow/bytearray.h	/^    void writeUint32(const uint32_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint32_t& value)
+rainbow::ByteArray::writeUint64	rainbow/bytearray.h	/^    void writeUint64(const uint64_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint64_t& value)
+rainbow::ByteArray::~ByteArray	rainbow/bytearray.h	/^    ~ByteArray();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
 rainbow::CASLock	rainbow/thread.h	/^class CASLock : Noncopyable {$/;"	c	namespace:rainbow	inherits:Noncopyable
 rainbow::CASLock::CASLock	rainbow/thread.h	/^    CASLock() {$/;"	f	class:rainbow::CASLock	access:public	signature:()
 rainbow::CASLock::Lock	rainbow/thread.h	/^    typedef ScopedLockImpl<CASLock> Lock;$/;"	t	class:rainbow::CASLock	access:public
@@ -1665,23 +1791,24 @@ rainbow::IOManager::tickle	rainbow/iomanager.cpp	/^void IOManager::tickle() {$/;
 rainbow::IOManager::~IOManager	rainbow/iomanager.cpp	/^IOManager::~IOManager() {$/;"	f	class:rainbow::IOManager	signature:()
 rainbow::IOManager::~IOManager	rainbow/iomanager.h	/^    ~IOManager();$/;"	p	class:rainbow::IOManager	access:public	signature:()
 rainbow::IPAddress	rainbow/address.h	/^class IPAddress : public Address {$/;"	c	namespace:rainbow	inherits:Address
-rainbow::IPAddress::Create	rainbow/address.cpp	/^IPAddress::ptr IPAddress::Create(const char* address, uint32_t port) {$/;"	f	class:rainbow::IPAddress	signature:(const char* address, uint32_t port)
-rainbow::IPAddress::Create	rainbow/address.h	/^    static IPAddress::ptr Create(const char* address, uint32_t port = 0);$/;"	p	class:rainbow::IPAddress	access:public	signature:(const char* address, uint32_t port = 0)
+rainbow::IPAddress::Create	rainbow/address.cpp	/^IPAddress::ptr IPAddress::Create(const char* address, uint16_t port) {$/;"	f	class:rainbow::IPAddress	signature:(const char* address, uint16_t port)
+rainbow::IPAddress::Create	rainbow/address.h	/^    static IPAddress::ptr Create(const char* address, uint16_t port = 0);$/;"	p	class:rainbow::IPAddress	access:public	signature:(const char* address, uint16_t port = 0)
 rainbow::IPAddress::broadcastAddress	rainbow/address.h	/^    virtual IPAddress::ptr broadcastAddress(uint32_t prefix_len) = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:(uint32_t prefix_len)
 rainbow::IPAddress::getPort	rainbow/address.h	/^    virtual uint32_t getPort() const = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:() const
 rainbow::IPAddress::networdAddress	rainbow/address.h	/^    virtual IPAddress::ptr networdAddress(uint32_t prefix_len) = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:(uint32_t prefix_len)
 rainbow::IPAddress::ptr	rainbow/address.h	/^    typedef std::shared_ptr<IPAddress> ptr;$/;"	t	class:rainbow::IPAddress	access:public
-rainbow::IPAddress::setPort	rainbow/address.h	/^    virtual void setPort(uint32_t v) = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:(uint32_t v)
+rainbow::IPAddress::setPort	rainbow/address.h	/^    virtual void setPort(uint16_t v) = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:(uint16_t v)
 rainbow::IPAddress::subnetMask	rainbow/address.h	/^    virtual IPAddress::ptr subnetMask(uint32_t prefix_len) = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:(uint32_t prefix_len)
 rainbow::IPv4Address	rainbow/address.h	/^class IPv4Address : public IPAddress {$/;"	c	namespace:rainbow	inherits:IPAddress
-rainbow::IPv4Address::Create	rainbow/address.cpp	/^IPv4Address::ptr IPv4Address::Create(const char* address, uint32_t port) {$/;"	f	class:rainbow::IPv4Address	signature:(const char* address, uint32_t port)
-rainbow::IPv4Address::Create	rainbow/address.h	/^    static IPv4Address::ptr Create(const char* address, uint32_t port = 0);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(const char* address, uint32_t port = 0)
+rainbow::IPv4Address::Create	rainbow/address.cpp	/^IPv4Address::ptr IPv4Address::Create(const char* address, uint16_t port) {$/;"	f	class:rainbow::IPv4Address	signature:(const char* address, uint16_t port)
+rainbow::IPv4Address::Create	rainbow/address.h	/^    static IPv4Address::ptr Create(const char* address, uint16_t port = 0);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(const char* address, uint16_t port = 0)
 rainbow::IPv4Address::IPv4Address	rainbow/address.cpp	/^IPv4Address::IPv4Address(const sockaddr_in& address) {$/;"	f	class:rainbow::IPv4Address	signature:(const sockaddr_in& address)
-rainbow::IPv4Address::IPv4Address	rainbow/address.cpp	/^IPv4Address::IPv4Address(uint32_t address, uint32_t port) {$/;"	f	class:rainbow::IPv4Address	signature:(uint32_t address, uint32_t port)
+rainbow::IPv4Address::IPv4Address	rainbow/address.cpp	/^IPv4Address::IPv4Address(uint32_t address, uint16_t port) {$/;"	f	class:rainbow::IPv4Address	signature:(uint32_t address, uint16_t port)
 rainbow::IPv4Address::IPv4Address	rainbow/address.h	/^    IPv4Address(const sockaddr_in& address);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(const sockaddr_in& address)
-rainbow::IPv4Address::IPv4Address	rainbow/address.h	/^    IPv4Address(uint32_t address = INADDR_ANY, uint32_t port = 0);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(uint32_t address = INADDR_ANY, uint32_t port = 0)
+rainbow::IPv4Address::IPv4Address	rainbow/address.h	/^    IPv4Address(uint32_t address = INADDR_ANY, uint16_t port = 0);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(uint32_t address = INADDR_ANY, uint16_t port = 0)
 rainbow::IPv4Address::broadcastAddress	rainbow/address.cpp	/^IPAddress::ptr IPv4Address::broadcastAddress(uint32_t prefix_len) {$/;"	f	class:rainbow::IPv4Address	signature:(uint32_t prefix_len)
 rainbow::IPv4Address::getAddr	rainbow/address.cpp	/^const sockaddr* IPv4Address::getAddr() const {$/;"	f	class:rainbow::IPv4Address	signature:() const
+rainbow::IPv4Address::getAddr	rainbow/address.cpp	/^sockaddr* IPv4Address::getAddr() {$/;"	f	class:rainbow::IPv4Address	signature:()
 rainbow::IPv4Address::getAddrLen	rainbow/address.cpp	/^socklen_t IPv4Address::getAddrLen() const {$/;"	f	class:rainbow::IPv4Address	signature:() const
 rainbow::IPv4Address::getPort	rainbow/address.cpp	/^uint32_t IPv4Address::getPort() const {$/;"	f	class:rainbow::IPv4Address	signature:() const
 rainbow::IPv4Address::insert	rainbow/address.cpp	/^std::ostream& IPv4Address::insert(std::ostream& os) const {$/;"	f	class:rainbow::IPv4Address	signature:(std::ostream& os) const
@@ -1691,24 +1818,26 @@ rainbow::IPv4Address::override	rainbow/address.h	/^    IPAddress::ptr broadcastA
 rainbow::IPv4Address::override	rainbow/address.h	/^    IPAddress::ptr networdAddress(uint32_t prefix_len) override;$/;"	m	class:rainbow::IPv4Address	access:public
 rainbow::IPv4Address::override	rainbow/address.h	/^    IPAddress::ptr subnetMask(uint32_t prefix_len) override;$/;"	m	class:rainbow::IPv4Address	access:public
 rainbow::IPv4Address::override	rainbow/address.h	/^    const sockaddr* getAddr() const override;$/;"	m	class:rainbow::IPv4Address	access:public
+rainbow::IPv4Address::override	rainbow/address.h	/^    sockaddr* getAddr() override;$/;"	m	class:rainbow::IPv4Address	access:public
 rainbow::IPv4Address::override	rainbow/address.h	/^    socklen_t getAddrLen() const override;$/;"	m	class:rainbow::IPv4Address	access:public
 rainbow::IPv4Address::override	rainbow/address.h	/^    std::ostream& insert(std::ostream& os) const override;$/;"	m	class:rainbow::IPv4Address	access:public
 rainbow::IPv4Address::override	rainbow/address.h	/^    uint32_t getPort() const override;$/;"	m	class:rainbow::IPv4Address	access:public
-rainbow::IPv4Address::override	rainbow/address.h	/^    void setPort(uint32_t v) override;$/;"	m	class:rainbow::IPv4Address	access:public
+rainbow::IPv4Address::override	rainbow/address.h	/^    void setPort(uint16_t v) override;$/;"	m	class:rainbow::IPv4Address	access:public
 rainbow::IPv4Address::ptr	rainbow/address.h	/^    typedef std::shared_ptr<IPv4Address> ptr;$/;"	t	class:rainbow::IPv4Address	access:public
-rainbow::IPv4Address::setPort	rainbow/address.cpp	/^void IPv4Address::setPort(uint32_t v) {$/;"	f	class:rainbow::IPv4Address	signature:(uint32_t v)
+rainbow::IPv4Address::setPort	rainbow/address.cpp	/^void IPv4Address::setPort(uint16_t v) {$/;"	f	class:rainbow::IPv4Address	signature:(uint16_t v)
 rainbow::IPv4Address::subnetMask	rainbow/address.cpp	/^IPAddress::ptr IPv4Address::subnetMask(uint32_t prefix_len) {$/;"	f	class:rainbow::IPv4Address	signature:(uint32_t prefix_len)
 rainbow::IPv6Address	rainbow/address.h	/^class IPv6Address : public IPAddress {$/;"	c	namespace:rainbow	inherits:IPAddress
-rainbow::IPv6Address::Create	rainbow/address.cpp	/^IPv6Address::ptr IPv6Address::Create(const char* address, uint32_t port) {$/;"	f	class:rainbow::IPv6Address	signature:(const char* address, uint32_t port)
-rainbow::IPv6Address::Create	rainbow/address.h	/^    static IPv6Address::ptr Create(const char* address, uint32_t port = 0);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const char* address, uint32_t port = 0)
+rainbow::IPv6Address::Create	rainbow/address.cpp	/^IPv6Address::ptr IPv6Address::Create(const char* address, uint16_t port) {$/;"	f	class:rainbow::IPv6Address	signature:(const char* address, uint16_t port)
+rainbow::IPv6Address::Create	rainbow/address.h	/^    static IPv6Address::ptr Create(const char* address, uint16_t port = 0);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const char* address, uint16_t port = 0)
 rainbow::IPv6Address::IPv6Address	rainbow/address.cpp	/^IPv6Address::IPv6Address() {$/;"	f	class:rainbow::IPv6Address	signature:()
 rainbow::IPv6Address::IPv6Address	rainbow/address.cpp	/^IPv6Address::IPv6Address(const sockaddr_in6& address) {$/;"	f	class:rainbow::IPv6Address	signature:(const sockaddr_in6& address)
-rainbow::IPv6Address::IPv6Address	rainbow/address.cpp	/^IPv6Address::IPv6Address(const uint8_t address[16], uint32_t port) {$/;"	f	class:rainbow::IPv6Address	signature:(const uint8_t address[16], uint32_t port)
+rainbow::IPv6Address::IPv6Address	rainbow/address.cpp	/^IPv6Address::IPv6Address(const uint8_t address[16], uint16_t port) {$/;"	f	class:rainbow::IPv6Address	signature:(const uint8_t address[16], uint16_t port)
 rainbow::IPv6Address::IPv6Address	rainbow/address.h	/^    IPv6Address();$/;"	p	class:rainbow::IPv6Address	access:public	signature:()
 rainbow::IPv6Address::IPv6Address	rainbow/address.h	/^    IPv6Address(const sockaddr_in6& address);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const sockaddr_in6& address)
-rainbow::IPv6Address::IPv6Address	rainbow/address.h	/^    IPv6Address(const uint8_t address[16], uint32_t port = 0);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const uint8_t address[16], uint32_t port = 0)
+rainbow::IPv6Address::IPv6Address	rainbow/address.h	/^    IPv6Address(const uint8_t address[16], uint16_t port = 0);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const uint8_t address[16], uint16_t port = 0)
 rainbow::IPv6Address::broadcastAddress	rainbow/address.cpp	/^IPAddress::ptr IPv6Address::broadcastAddress(uint32_t prefix_len) {$/;"	f	class:rainbow::IPv6Address	signature:(uint32_t prefix_len)
 rainbow::IPv6Address::getAddr	rainbow/address.cpp	/^const sockaddr* IPv6Address::getAddr() const {$/;"	f	class:rainbow::IPv6Address	signature:() const
+rainbow::IPv6Address::getAddr	rainbow/address.cpp	/^sockaddr* IPv6Address::getAddr() {$/;"	f	class:rainbow::IPv6Address	signature:()
 rainbow::IPv6Address::getAddrLen	rainbow/address.cpp	/^socklen_t IPv6Address::getAddrLen() const {$/;"	f	class:rainbow::IPv6Address	signature:() const
 rainbow::IPv6Address::getPort	rainbow/address.cpp	/^uint32_t IPv6Address::getPort() const {$/;"	f	class:rainbow::IPv6Address	signature:() const
 rainbow::IPv6Address::insert	rainbow/address.cpp	/^std::ostream& IPv6Address::insert(std::ostream& os) const {$/;"	f	class:rainbow::IPv6Address	signature:(std::ostream& os) const
@@ -1718,12 +1847,13 @@ rainbow::IPv6Address::override	rainbow/address.h	/^    IPAddress::ptr broadcastA
 rainbow::IPv6Address::override	rainbow/address.h	/^    IPAddress::ptr networdAddress(uint32_t prefix_len) override;$/;"	m	class:rainbow::IPv6Address	access:public
 rainbow::IPv6Address::override	rainbow/address.h	/^    IPAddress::ptr subnetMask(uint32_t prefix_len) override;$/;"	m	class:rainbow::IPv6Address	access:public
 rainbow::IPv6Address::override	rainbow/address.h	/^    const sockaddr* getAddr() const override;$/;"	m	class:rainbow::IPv6Address	access:public
+rainbow::IPv6Address::override	rainbow/address.h	/^    sockaddr* getAddr() override;$/;"	m	class:rainbow::IPv6Address	access:public
 rainbow::IPv6Address::override	rainbow/address.h	/^    socklen_t getAddrLen() const override;$/;"	m	class:rainbow::IPv6Address	access:public
 rainbow::IPv6Address::override	rainbow/address.h	/^    std::ostream& insert(std::ostream& os) const override;$/;"	m	class:rainbow::IPv6Address	access:public
 rainbow::IPv6Address::override	rainbow/address.h	/^    uint32_t getPort() const override;$/;"	m	class:rainbow::IPv6Address	access:public
-rainbow::IPv6Address::override	rainbow/address.h	/^    void setPort(uint32_t v) override;$/;"	m	class:rainbow::IPv6Address	access:public
+rainbow::IPv6Address::override	rainbow/address.h	/^    void setPort(uint16_t v) override;$/;"	m	class:rainbow::IPv6Address	access:public
 rainbow::IPv6Address::ptr	rainbow/address.h	/^    typedef std::shared_ptr<IPv6Address> ptr;$/;"	t	class:rainbow::IPv6Address	access:public
-rainbow::IPv6Address::setPort	rainbow/address.cpp	/^void IPv6Address::setPort(uint32_t v) {$/;"	f	class:rainbow::IPv6Address	signature:(uint32_t v)
+rainbow::IPv6Address::setPort	rainbow/address.cpp	/^void IPv6Address::setPort(uint16_t v) {$/;"	f	class:rainbow::IPv6Address	signature:(uint16_t v)
 rainbow::IPv6Address::subnetMask	rainbow/address.cpp	/^IPAddress::ptr IPv6Address::subnetMask(uint32_t prefix_len) {$/;"	f	class:rainbow::IPv6Address	signature:(uint32_t prefix_len)
 rainbow::LevelFormatItem	rainbow/log.cpp	/^class LevelFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 rainbow::LevelFormatItem::LevelFormatItem	rainbow/log.cpp	/^    LevelFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::LevelFormatItem	access:public	signature:(const std::string str = �)
@@ -1942,6 +2072,8 @@ rainbow::NameFormatItem	rainbow/log.cpp	/^class NameFormatItem : public LogForma
 rainbow::NameFormatItem::NameFormatItem	rainbow/log.cpp	/^    NameFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::NameFormatItem	access:public	signature:(const std::string& str = �)
 rainbow::NewLineFormatItem	rainbow/log.cpp	/^class NewLineFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 rainbow::NewLineFormatItem::NewLineFormatItem	rainbow/log.cpp	/^    NewLineFormatItem(const std::string str = "") {}$/;"	f	class:rainbow::NewLineFormatItem	access:public	signature:(const std::string str = �)
+rainbow::Node	rainbow/bytearray.cpp	/^Node();$/;"	p	namespace:rainbow	file:	signature:()
+rainbow::Node::Node	rainbow/bytearray.cpp	/^Node::Node(size_t s) $/;"	f	class:rainbow::Node	signature:(size_t s)
 rainbow::Noncopyable	rainbow/noncopyable.h	/^class Noncopyable {$/;"	c	namespace:rainbow
 rainbow::Noncopyable::Noncopyable	rainbow/noncopyable.h	/^    Noncopyable() = default;$/;"	p	class:rainbow::Noncopyable	access:public	signature:()
 rainbow::Noncopyable::Noncopyable	rainbow/noncopyable.h	/^    Noncopyable(const Noncopyable&) = delete;$/;"	p	class:rainbow::Noncopyable	access:public	signature:(const Noncopyable&)
@@ -2051,30 +2183,53 @@ rainbow::Singleton::GetInstance	rainbow/singleton.h	/^    static T* GetInstance(
 rainbow::Singletonptr	rainbow/singleton.h	/^class Singletonptr {$/;"	c	namespace:rainbow
 rainbow::Singletonptr::GetInstance	rainbow/singleton.h	/^    static std::shared_ptr<T> GetInstance() {$/;"	f	class:rainbow::Singletonptr	access:public	signature:()
 rainbow::Socket	rainbow/socket.h	/^class Socket : public std::enable_shared_from_this<Socket>, Noncopyable {$/;"	c	namespace:rainbow	inherits:std::enable_shared_from_this,Noncopyable
+rainbow::Socket::CreateTCP	rainbow/socket.cpp	/^Socket::ptr Socket::CreateTCP(rainbow::Address::ptr address) {$/;"	f	class:rainbow::Socket	signature:(rainbow::Address::ptr address)
+rainbow::Socket::CreateTCP	rainbow/socket.h	/^    static Socket::ptr CreateTCP(rainbow::Address::ptr address);$/;"	p	class:rainbow::Socket	access:public	signature:(rainbow::Address::ptr address)
+rainbow::Socket::CreateTCPSocket	rainbow/socket.cpp	/^Socket::ptr Socket::CreateTCPSocket() {$/;"	f	class:rainbow::Socket	signature:()
+rainbow::Socket::CreateTCPSocket	rainbow/socket.h	/^    static Socket::ptr CreateTCPSocket();$/;"	p	class:rainbow::Socket	access:public	signature:()
+rainbow::Socket::CreateTCPSocket6	rainbow/socket.cpp	/^Socket::ptr Socket::CreateTCPSocket6() {$/;"	f	class:rainbow::Socket	signature:()
+rainbow::Socket::CreateTCPSocket6	rainbow/socket.h	/^    static Socket::ptr CreateTCPSocket6();$/;"	p	class:rainbow::Socket	access:public	signature:()
+rainbow::Socket::CreateUDP	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUDP(rainbow::Address::ptr address) {$/;"	f	class:rainbow::Socket	signature:(rainbow::Address::ptr address)
+rainbow::Socket::CreateUDP	rainbow/socket.h	/^    static Socket::ptr CreateUDP(rainbow::Address::ptr address);$/;"	p	class:rainbow::Socket	access:public	signature:(rainbow::Address::ptr address)
+rainbow::Socket::CreateUDPSocket	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUDPSocket() {$/;"	f	class:rainbow::Socket	signature:()
+rainbow::Socket::CreateUDPSocket	rainbow/socket.h	/^    static Socket::ptr CreateUDPSocket();$/;"	p	class:rainbow::Socket	access:public	signature:()
+rainbow::Socket::CreateUDPSocket6	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUDPSocket6() {$/;"	f	class:rainbow::Socket	signature:()
+rainbow::Socket::CreateUDPSocket6	rainbow/socket.h	/^    static Socket::ptr CreateUDPSocket6();$/;"	p	class:rainbow::Socket	access:public	signature:()
+rainbow::Socket::CreateUnixTCPSocket	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUnixTCPSocket() {$/;"	f	class:rainbow::Socket	signature:()
+rainbow::Socket::CreateUnixTCPSocket	rainbow/socket.h	/^    static Socket::ptr CreateUnixTCPSocket();$/;"	p	class:rainbow::Socket	access:public	signature:()
+rainbow::Socket::CreateUnixUDPSocket	rainbow/socket.cpp	/^Socket::ptr Socket::CreateUnixUDPSocket() {$/;"	f	class:rainbow::Socket	signature:()
+rainbow::Socket::CreateUnixUDPSocket	rainbow/socket.h	/^    static Socket::ptr CreateUnixUDPSocket();$/;"	p	class:rainbow::Socket	access:public	signature:()
+rainbow::Socket::Family	rainbow/socket.h	/^    enum Family {$/;"	g	class:rainbow::Socket	access:public
+rainbow::Socket::IPv4	rainbow/socket.h	/^        IPv4 = AF_INET,$/;"	e	enum:rainbow::Socket::Family
+rainbow::Socket::IPv6	rainbow/socket.h	/^        IPv6 = AF_INET6,$/;"	e	enum:rainbow::Socket::Family
 rainbow::Socket::Socket	rainbow/socket.cpp	/^Socket::Socket(int family, int type, int protocol) $/;"	f	class:rainbow::Socket	signature:(int family, int type, int protocol)
 rainbow::Socket::Socket	rainbow/socket.h	/^    Socket(int family, int type, int protocol = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(int family, int type, int protocol = 0)
+rainbow::Socket::TCP	rainbow/socket.h	/^        TCP = SOCK_STREAM,$/;"	e	enum:rainbow::Socket::Type
+rainbow::Socket::Type	rainbow/socket.h	/^    enum Type {$/;"	g	class:rainbow::Socket	access:public
+rainbow::Socket::UDP	rainbow/socket.h	/^        UDP = SOCK_DGRAM$/;"	e	enum:rainbow::Socket::Type
+rainbow::Socket::UNIX	rainbow/socket.h	/^        UNIX = AF_UNIX,$/;"	e	enum:rainbow::Socket::Family
 rainbow::Socket::accept	rainbow/socket.cpp	/^Socket::ptr Socket::accept() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::accept	rainbow/socket.h	/^    Socket::ptr accept();$/;"	p	class:rainbow::Socket	access:public	signature:()
-rainbow::Socket::bind	rainbow/socket.cpp	/^bool Socket::bind(const Address::ptr addr);$/;"	p	class:rainbow::Socket	file:	signature:(const Address::ptr addr)
+rainbow::Socket::bind	rainbow/socket.cpp	/^bool Socket::bind(const Address::ptr addr) {$/;"	f	class:rainbow::Socket	signature:(const Address::ptr addr)
 rainbow::Socket::bind	rainbow/socket.h	/^    bool bind(const Address::ptr addr);$/;"	p	class:rainbow::Socket	access:public	signature:(const Address::ptr addr)
-rainbow::Socket::cancelAccept	rainbow/socket.cpp	/^bool Socket::cancelAccept();$/;"	p	class:rainbow::Socket	file:	signature:()
+rainbow::Socket::cancelAccept	rainbow/socket.cpp	/^bool Socket::cancelAccept() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::cancelAccept	rainbow/socket.h	/^    bool cancelAccept();$/;"	p	class:rainbow::Socket	access:public	signature:()
-rainbow::Socket::cancelAll	rainbow/socket.cpp	/^bool Socket::cancelAll();$/;"	p	class:rainbow::Socket	file:	signature:()
+rainbow::Socket::cancelAll	rainbow/socket.cpp	/^bool Socket::cancelAll() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::cancelAll	rainbow/socket.h	/^    bool cancelAll();$/;"	p	class:rainbow::Socket	access:public	signature:()
-rainbow::Socket::cancelRead	rainbow/socket.cpp	/^bool Socket::cancelRead();$/;"	p	class:rainbow::Socket	file:	signature:()
+rainbow::Socket::cancelRead	rainbow/socket.cpp	/^bool Socket::cancelRead() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::cancelRead	rainbow/socket.h	/^    bool cancelRead();$/;"	p	class:rainbow::Socket	access:public	signature:()
-rainbow::Socket::cancelWrite	rainbow/socket.cpp	/^bool Socket::cancelWrite();$/;"	p	class:rainbow::Socket	file:	signature:()
+rainbow::Socket::cancelWrite	rainbow/socket.cpp	/^bool Socket::cancelWrite() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::cancelWrite	rainbow/socket.h	/^    bool cancelWrite();$/;"	p	class:rainbow::Socket	access:public	signature:()
-rainbow::Socket::close	rainbow/socket.cpp	/^bool Socket::close();$/;"	p	class:rainbow::Socket	file:	signature:()
+rainbow::Socket::close	rainbow/socket.cpp	/^bool Socket::close() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::close	rainbow/socket.h	/^    bool close();$/;"	p	class:rainbow::Socket	access:public	signature:()
-rainbow::Socket::connect	rainbow/socket.cpp	/^bool Socket::connect(const Address::ptr addr, uint64_t timeout_ms = -1);$/;"	p	class:rainbow::Socket	file:	signature:(const Address::ptr addr, uint64_t timeout_ms = -1)
+rainbow::Socket::connect	rainbow/socket.cpp	/^bool Socket::connect(const Address::ptr addr, uint64_t timeout_ms) {$/;"	f	class:rainbow::Socket	signature:(const Address::ptr addr, uint64_t timeout_ms)
 rainbow::Socket::connect	rainbow/socket.h	/^    bool connect(const Address::ptr addr, uint64_t timeout_ms = -1);$/;"	p	class:rainbow::Socket	access:public	signature:(const Address::ptr addr, uint64_t timeout_ms = -1)
-rainbow::Socket::dump	rainbow/socket.cpp	/^std::ostream& Socket::dump(std::ostream& os) const;$/;"	p	class:rainbow::Socket	file:	signature:(std::ostream& os) const
+rainbow::Socket::dump	rainbow/socket.cpp	/^std::ostream& Socket::dump(std::ostream& os) const {$/;"	f	class:rainbow::Socket	signature:(std::ostream& os) const
 rainbow::Socket::dump	rainbow/socket.h	/^    std::ostream& dump(std::ostream& os) const;$/;"	p	class:rainbow::Socket	access:public	signature:(std::ostream& os) const
-rainbow::Socket::getError	rainbow/socket.cpp	/^int Socket::getError();$/;"	p	class:rainbow::Socket	file:	signature:()
+rainbow::Socket::getError	rainbow/socket.cpp	/^int Socket::getError() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::getError	rainbow/socket.h	/^    int getError();$/;"	p	class:rainbow::Socket	access:public	signature:()
 rainbow::Socket::getFamily	rainbow/socket.h	/^    int getFamily() const { return m_family; }$/;"	f	class:rainbow::Socket	access:public	signature:() const
-rainbow::Socket::getLocalAddress	rainbow/socket.cpp	/^Address::ptr Socket::getLocalAddress();$/;"	p	class:rainbow::Socket	file:	signature:()
+rainbow::Socket::getLocalAddress	rainbow/socket.cpp	/^Address::ptr Socket::getLocalAddress() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::getLocalAddress	rainbow/socket.h	/^    Address::ptr getLocalAddress();$/;"	p	class:rainbow::Socket	access:public	signature:()
 rainbow::Socket::getOption	rainbow/socket.cpp	/^bool Socket::getOption(int level, int option, void* result, size_t* len) {$/;"	f	class:rainbow::Socket	signature:(int level, int option, void* result, size_t* len)
 rainbow::Socket::getOption	rainbow/socket.h	/^    bool getOption(int level, int option, T& result) {$/;"	f	class:rainbow::Socket	access:public	signature:(int level, int option, T& result)
@@ -2082,7 +2237,7 @@ rainbow::Socket::getOption	rainbow/socket.h	/^    bool getOption(int level, int 
 rainbow::Socket::getProtocol	rainbow/socket.h	/^    int getProtocol() const { return m_protocol; }$/;"	f	class:rainbow::Socket	access:public	signature:() const
 rainbow::Socket::getRecvTimeout	rainbow/socket.cpp	/^int64_t Socket::getRecvTimeout() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::getRecvTimeout	rainbow/socket.h	/^    int64_t getRecvTimeout();$/;"	p	class:rainbow::Socket	access:public	signature:()
-rainbow::Socket::getRemoteAddress	rainbow/socket.cpp	/^Address::ptr Socket::getRemoteAddress();$/;"	p	class:rainbow::Socket	file:	signature:()
+rainbow::Socket::getRemoteAddress	rainbow/socket.cpp	/^Address::ptr Socket::getRemoteAddress() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::getRemoteAddress	rainbow/socket.h	/^    Address::ptr getRemoteAddress();$/;"	p	class:rainbow::Socket	access:public	signature:()
 rainbow::Socket::getSendTimeout	rainbow/socket.cpp	/^int64_t Socket::getSendTimeout() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::getSendTimeout	rainbow/socket.h	/^    int64_t getSendTimeout();$/;"	p	class:rainbow::Socket	access:public	signature:()
@@ -2093,9 +2248,9 @@ rainbow::Socket::init	rainbow/socket.h	/^    bool init(int sock);$/;"	p	class:ra
 rainbow::Socket::initSock	rainbow/socket.cpp	/^void Socket::initSock() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::initSock	rainbow/socket.h	/^    void initSock();$/;"	p	class:rainbow::Socket	access:private	signature:()
 rainbow::Socket::isConnected	rainbow/socket.h	/^    bool isConnected() const { return m_isConnected; }$/;"	f	class:rainbow::Socket	access:public	signature:() const
-rainbow::Socket::isValid	rainbow/socket.cpp	/^bool Socket::isValid() const;$/;"	p	class:rainbow::Socket	file:	signature:() const
+rainbow::Socket::isValid	rainbow/socket.cpp	/^bool Socket::isValid() const {$/;"	f	class:rainbow::Socket	signature:() const
 rainbow::Socket::isValid	rainbow/socket.h	/^    bool isValid() const;$/;"	p	class:rainbow::Socket	access:public	signature:() const
-rainbow::Socket::listen	rainbow/socket.cpp	/^bool Socket::listen(int backlog = SOMAXCONN);$/;"	p	class:rainbow::Socket	file:	signature:(int backlog = SOMAXCONN)
+rainbow::Socket::listen	rainbow/socket.cpp	/^bool Socket::listen(int backlog) {$/;"	f	class:rainbow::Socket	signature:(int backlog)
 rainbow::Socket::listen	rainbow/socket.h	/^    bool listen(int backlog = SOMAXCONN);$/;"	p	class:rainbow::Socket	access:public	signature:(int backlog = SOMAXCONN)
 rainbow::Socket::m_family	rainbow/socket.h	/^    int m_family;$/;"	m	class:rainbow::Socket	access:private
 rainbow::Socket::m_isConnected	rainbow/socket.h	/^    bool m_isConnected;$/;"	m	class:rainbow::Socket	access:private
@@ -2107,20 +2262,20 @@ rainbow::Socket::m_type	rainbow/socket.h	/^    int m_type;$/;"	m	class:rainbow::
 rainbow::Socket::newSock	rainbow/socket.cpp	/^void Socket::newSock() {$/;"	f	class:rainbow::Socket	signature:()
 rainbow::Socket::newSock	rainbow/socket.h	/^    void newSock();$/;"	p	class:rainbow::Socket	access:private	signature:()
 rainbow::Socket::ptr	rainbow/socket.h	/^    typedef std::shared_ptr<Socket> ptr;$/;"	t	class:rainbow::Socket	access:public
-rainbow::Socket::recv	rainbow/socket.cpp	/^int Socket::recv(iovec* buffers, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(iovec* buffers, size_t length, int flags = 0)
-rainbow::Socket::recv	rainbow/socket.cpp	/^int Socket::recv(void* buffer, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(void* buffer, size_t length, int flags = 0)
+rainbow::Socket::recv	rainbow/socket.cpp	/^int Socket::recv(iovec* buffers, size_t length, int flags) {$/;"	f	class:rainbow::Socket	signature:(iovec* buffers, size_t length, int flags)
+rainbow::Socket::recv	rainbow/socket.cpp	/^int Socket::recv(void* buffer, size_t length, int flags) {$/;"	f	class:rainbow::Socket	signature:(void* buffer, size_t length, int flags)
 rainbow::Socket::recv	rainbow/socket.h	/^    int recv(iovec* buffers, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(iovec* buffers, size_t length, int flags = 0)
 rainbow::Socket::recv	rainbow/socket.h	/^    int recv(void* buffer, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(void* buffer, size_t length, int flags = 0)
-rainbow::Socket::recvFrom	rainbow/socket.cpp	/^int Socket::recvFrom(iovec* buffers, size_t length, Address::ptr from, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(iovec* buffers, size_t length, Address::ptr from, int flags = 0)
-rainbow::Socket::recvFrom	rainbow/socket.cpp	/^int Socket::recvFrom(void* buffer, size_t length, Address::ptr from, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(void* buffer, size_t length, Address::ptr from, int flags = 0)
+rainbow::Socket::recvFrom	rainbow/socket.cpp	/^int Socket::recvFrom(iovec* buffers, size_t length, Address::ptr from, int flags) {$/;"	f	class:rainbow::Socket	signature:(iovec* buffers, size_t length, Address::ptr from, int flags)
+rainbow::Socket::recvFrom	rainbow/socket.cpp	/^int Socket::recvFrom(void* buffer, size_t length, Address::ptr from, int flags) {$/;"	f	class:rainbow::Socket	signature:(void* buffer, size_t length, Address::ptr from, int flags)
 rainbow::Socket::recvFrom	rainbow/socket.h	/^    int recvFrom(iovec* buffers, size_t length, Address::ptr from, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(iovec* buffers, size_t length, Address::ptr from, int flags = 0)
 rainbow::Socket::recvFrom	rainbow/socket.h	/^    int recvFrom(void* buffer, size_t length, Address::ptr from, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(void* buffer, size_t length, Address::ptr from, int flags = 0)
-rainbow::Socket::send	rainbow/socket.cpp	/^int Socket::send(const iovec* buffers, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(const iovec* buffers, size_t length, int flags = 0)
-rainbow::Socket::send	rainbow/socket.cpp	/^int Socket::send(const void* buffer, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(const void* buffer, size_t length, int flags = 0)
+rainbow::Socket::send	rainbow/socket.cpp	/^int Socket::send(const iovec* buffers, size_t length, int flags) {$/;"	f	class:rainbow::Socket	signature:(const iovec* buffers, size_t length, int flags)
+rainbow::Socket::send	rainbow/socket.cpp	/^int Socket::send(const void* buffer, size_t length, int flags) {$/;"	f	class:rainbow::Socket	signature:(const void* buffer, size_t length, int flags)
 rainbow::Socket::send	rainbow/socket.h	/^    int send(const iovec* buffers, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const iovec* buffers, size_t length, int flags = 0)
 rainbow::Socket::send	rainbow/socket.h	/^    int send(const void* buffer, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const void* buffer, size_t length, int flags = 0)
-rainbow::Socket::sendTo	rainbow/socket.cpp	/^int Socket::sendTo(const iovec* buffers, size_t length, const Address::ptr to, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(const iovec* buffers, size_t length, const Address::ptr to, int flags = 0)
-rainbow::Socket::sendTo	rainbow/socket.cpp	/^int Socket::sendTo(const void* buffer, size_t length, const Address::ptr to, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(const void* buffer, size_t length, const Address::ptr to, int flags = 0)
+rainbow::Socket::sendTo	rainbow/socket.cpp	/^int Socket::sendTo(const iovec* buffers, size_t length, const Address::ptr to, int flags) {$/;"	f	class:rainbow::Socket	signature:(const iovec* buffers, size_t length, const Address::ptr to, int flags)
+rainbow::Socket::sendTo	rainbow/socket.cpp	/^int Socket::sendTo(const void* buffer, size_t length, const Address::ptr to, int flags) {$/;"	f	class:rainbow::Socket	signature:(const void* buffer, size_t length, const Address::ptr to, int flags)
 rainbow::Socket::sendTo	rainbow/socket.h	/^    int sendTo(const iovec* buffers, size_t length, const Address::ptr to, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const iovec* buffers, size_t length, const Address::ptr to, int flags = 0)
 rainbow::Socket::sendTo	rainbow/socket.h	/^    int sendTo(const void* buffer, size_t length, const Address::ptr to, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const void* buffer, size_t length, const Address::ptr to, int flags = 0)
 rainbow::Socket::setOption	rainbow/socket.cpp	/^bool Socket::setOption(int level, int option, const void* result, size_t len) {$/;"	f	class:rainbow::Socket	signature:(int level, int option, const void* result, size_t len)
@@ -2233,24 +2388,30 @@ rainbow::UnixAddress::UnixAddress	rainbow/address.cpp	/^UnixAddress::UnixAddress
 rainbow::UnixAddress::UnixAddress	rainbow/address.h	/^    UnixAddress();$/;"	p	class:rainbow::UnixAddress	access:public	signature:()
 rainbow::UnixAddress::UnixAddress	rainbow/address.h	/^    UnixAddress(const std::string& path);$/;"	p	class:rainbow::UnixAddress	access:public	signature:(const std::string& path)
 rainbow::UnixAddress::getAddr	rainbow/address.cpp	/^const sockaddr* UnixAddress::getAddr() const {$/;"	f	class:rainbow::UnixAddress	signature:() const
+rainbow::UnixAddress::getAddr	rainbow/address.cpp	/^sockaddr* UnixAddress::getAddr() {$/;"	f	class:rainbow::UnixAddress	signature:()
 rainbow::UnixAddress::getAddrLen	rainbow/address.cpp	/^socklen_t UnixAddress::getAddrLen() const {$/;"	f	class:rainbow::UnixAddress	signature:() const
 rainbow::UnixAddress::insert	rainbow/address.cpp	/^std::ostream& UnixAddress::insert(std::ostream& os) const {$/;"	f	class:rainbow::UnixAddress	signature:(std::ostream& os) const
 rainbow::UnixAddress::m_addr	rainbow/address.h	/^    sockaddr_un m_addr;$/;"	m	class:rainbow::UnixAddress	access:private
 rainbow::UnixAddress::m_length	rainbow/address.h	/^    socklen_t m_length;$/;"	m	class:rainbow::UnixAddress	access:private
 rainbow::UnixAddress::override	rainbow/address.h	/^    const sockaddr* getAddr() const override;$/;"	m	class:rainbow::UnixAddress	access:public
+rainbow::UnixAddress::override	rainbow/address.h	/^    sockaddr* getAddr() override;$/;"	m	class:rainbow::UnixAddress	access:public
 rainbow::UnixAddress::override	rainbow/address.h	/^    socklen_t getAddrLen() const override;$/;"	m	class:rainbow::UnixAddress	access:public
 rainbow::UnixAddress::override	rainbow/address.h	/^    std::ostream& insert(std::ostream& os) const override;$/;"	m	class:rainbow::UnixAddress	access:public
 rainbow::UnixAddress::ptr	rainbow/address.h	/^    typedef std::shared_ptr<UnixAddress> ptr;$/;"	t	class:rainbow::UnixAddress	access:public
+rainbow::UnixAddress::setAddrLen	rainbow/address.cpp	/^void UnixAddress::setAddrLen(uint32_t v) {$/;"	f	class:rainbow::UnixAddress	signature:(uint32_t v)
+rainbow::UnixAddress::setAddrLen	rainbow/address.h	/^    void setAddrLen(uint32_t v);$/;"	p	class:rainbow::UnixAddress	access:public	signature:(uint32_t v)
 rainbow::UnknownAddress	rainbow/address.h	/^class UnknownAddress : public Address {$/;"	c	namespace:rainbow	inherits:Address
 rainbow::UnknownAddress::UnknownAddress	rainbow/address.cpp	/^UnknownAddress::UnknownAddress(const sockaddr& addr) {$/;"	f	class:rainbow::UnknownAddress	signature:(const sockaddr& addr)
 rainbow::UnknownAddress::UnknownAddress	rainbow/address.cpp	/^UnknownAddress::UnknownAddress(int family) {$/;"	f	class:rainbow::UnknownAddress	signature:(int family)
 rainbow::UnknownAddress::UnknownAddress	rainbow/address.h	/^    UnknownAddress(const sockaddr& addr);$/;"	p	class:rainbow::UnknownAddress	access:public	signature:(const sockaddr& addr)
 rainbow::UnknownAddress::UnknownAddress	rainbow/address.h	/^    UnknownAddress(int family);$/;"	p	class:rainbow::UnknownAddress	access:public	signature:(int family)
 rainbow::UnknownAddress::getAddr	rainbow/address.cpp	/^const sockaddr* UnknownAddress::getAddr() const {$/;"	f	class:rainbow::UnknownAddress	signature:() const
+rainbow::UnknownAddress::getAddr	rainbow/address.cpp	/^sockaddr* UnknownAddress::getAddr() {$/;"	f	class:rainbow::UnknownAddress	signature:()
 rainbow::UnknownAddress::getAddrLen	rainbow/address.cpp	/^socklen_t UnknownAddress::getAddrLen() const {$/;"	f	class:rainbow::UnknownAddress	signature:() const
 rainbow::UnknownAddress::insert	rainbow/address.cpp	/^std::ostream& UnknownAddress::insert(std::ostream& os) const {$/;"	f	class:rainbow::UnknownAddress	signature:(std::ostream& os) const
 rainbow::UnknownAddress::m_addr	rainbow/address.h	/^    sockaddr m_addr;$/;"	m	class:rainbow::UnknownAddress	access:private
 rainbow::UnknownAddress::override	rainbow/address.h	/^    const sockaddr* getAddr() const override;$/;"	m	class:rainbow::UnknownAddress	access:public
+rainbow::UnknownAddress::override	rainbow/address.h	/^    sockaddr* getAddr() override;$/;"	m	class:rainbow::UnknownAddress	access:public
 rainbow::UnknownAddress::override	rainbow/address.h	/^    socklen_t getAddrLen() const override;$/;"	m	class:rainbow::UnknownAddress	access:public
 rainbow::UnknownAddress::override	rainbow/address.h	/^    std::ostream& insert(std::ostream& os) const override;$/;"	m	class:rainbow::UnknownAddress	access:public
 rainbow::UnknownAddress::ptr	rainbow/address.h	/^    typedef std::shared_ptr<UnknownAddress> ptr;$/;"	t	class:rainbow::UnknownAddress	access:public
@@ -2274,9 +2435,9 @@ rainbow::g_logger	rainbow/config.cpp	/^static rainbow::Logger::ptr g_logger = RA
 rainbow::g_logger	rainbow/fiber.cpp	/^static Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 rainbow::g_logger	rainbow/iomanager.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 rainbow::g_logger	rainbow/scheduler.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
-rainbow::g_logger	rainbow/socket.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
+rainbow::g_logger	rainbow/socket.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 rainbow::g_logger	rainbow/thread.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
-rainbow::g_logger	rainbow/util.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
+rainbow::g_logger	rainbow/util.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 rainbow::g_tcp_connect_timeout	rainbow/hook.cpp	/^static rainbow::ConfigVar<int>::ptr g_tcp_connect_timeout = $/;"	m	namespace:rainbow	file:
 rainbow::hook_init	rainbow/hook.cpp	/^void hook_init() {$/;"	f	namespace:rainbow	signature:()
 rainbow::is_hook_enable	rainbow/hook.cpp	/^bool is_hook_enable() {$/;"	f	namespace:rainbow	signature:()
@@ -2292,20 +2453,41 @@ rainbow::t_scheduler	rainbow/scheduler.cpp	/^static thread_local Scheduler* t_sc
 rainbow::t_thread	rainbow/thread.cpp	/^static thread_local Thread* t_thread = nullptr;$/;"	m	namespace:rainbow	file:
 rainbow::t_threadFiber	rainbow/fiber.cpp	/^static thread_local Fiber::ptr t_threadFiber = nullptr;$/;"	m	namespace:rainbow	file:
 rainbow::t_thread_name	rainbow/thread.cpp	/^static thread_local std::string t_thread_name = "UNKNOW";$/;"	m	namespace:rainbow	file:
+rainbow::~Node	rainbow/bytearray.cpp	/^~Node();$/;"	p	namespace:rainbow	file:	signature:()
 rdlock	rainbow/thread.h	/^    void rdlock() {$/;"	f	class:rainbow::RWMutex	access:public	signature:()
 rdlock	rainbow/thread.h	/^    void rdlock() {}$/;"	f	class:rainbow::NullRWMutex	access:public	signature:()
+read	rainbow/bytearray.h	/^    void read(char* buf, size_t size);$/;"	p	class:rainbow::ByteArray	access:public	signature:(char* buf, size_t size)
 read	rainbow/hook.cpp	/^ssize_t read(int fd, void *buf, size_t count) {$/;"	f	signature:(int fd, void *buf, size_t count)
 read	rainbow/iomanager.h	/^        EventContext read;      \/\/ 读事件$/;"	m	struct:rainbow::IOManager::FdContext	access:public
+readDouble	rainbow/bytearray.h	/^    double   readDouble();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readFint16	rainbow/bytearray.h	/^    int16_t  readFint16();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readFint32	rainbow/bytearray.h	/^    int32_t  readFint32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readFint64	rainbow/bytearray.h	/^    int64_t  readFint64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readFint8	rainbow/bytearray.h	/^    int8_t   readFint8();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readFloat	rainbow/bytearray.h	/^    float    readFloat();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readFromFile	rainbow/bytearray.h	/^    void readFromFile(const std::string& name);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& name)
+readFuint16	rainbow/bytearray.h	/^    uint16_t readFuint16();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readFuint32	rainbow/bytearray.h	/^    uint32_t readFuint32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readFuint64	rainbow/bytearray.h	/^    uint64_t readFuint64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readFuint8	rainbow/bytearray.h	/^    uint8_t  readFuint8();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readInt32	rainbow/bytearray.h	/^    int32_t  readInt32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readInt64	rainbow/bytearray.h	/^    int64_t  readInt64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readString16	rainbow/bytearray.h	/^    std::string readString16();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readString32	rainbow/bytearray.h	/^    std::string readString32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readString64	rainbow/bytearray.h	/^    std::string readString64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readStringVint	rainbow/bytearray.h	/^    std::string readStringVint();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readUint32	rainbow/bytearray.h	/^    uint32_t readUint32();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
+readUint64	rainbow/bytearray.h	/^    uint64_t readUint64();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
 read_fun	rainbow/hook.h	/^typedef ssize_t (*read_fun)(int fd, void *buf, size_t count);$/;"	t
 readv	rainbow/hook.cpp	/^ssize_t readv(int fd, const struct iovec *iov, int iovcnt) {$/;"	f	signature:(int fd, const struct iovec *iov, int iovcnt)
 readv_fun	rainbow/hook.h	/^typedef ssize_t (*readv_fun)(int fd, const struct iovec *iov, int iovcnt);$/;"	t
 recv	rainbow/hook.cpp	/^ssize_t recv(int sockfd, void *buf, size_t len, int flags) {$/;"	f	signature:(int sockfd, void *buf, size_t len, int flags)
-recv	rainbow/socket.cpp	/^int Socket::recv(iovec* buffers, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(iovec* buffers, size_t length, int flags = 0)
-recv	rainbow/socket.cpp	/^int Socket::recv(void* buffer, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(void* buffer, size_t length, int flags = 0)
+recv	rainbow/socket.cpp	/^int Socket::recv(iovec* buffers, size_t length, int flags) {$/;"	f	class:rainbow::Socket	signature:(iovec* buffers, size_t length, int flags)
+recv	rainbow/socket.cpp	/^int Socket::recv(void* buffer, size_t length, int flags) {$/;"	f	class:rainbow::Socket	signature:(void* buffer, size_t length, int flags)
 recv	rainbow/socket.h	/^    int recv(iovec* buffers, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(iovec* buffers, size_t length, int flags = 0)
 recv	rainbow/socket.h	/^    int recv(void* buffer, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(void* buffer, size_t length, int flags = 0)
-recvFrom	rainbow/socket.cpp	/^int Socket::recvFrom(iovec* buffers, size_t length, Address::ptr from, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(iovec* buffers, size_t length, Address::ptr from, int flags = 0)
-recvFrom	rainbow/socket.cpp	/^int Socket::recvFrom(void* buffer, size_t length, Address::ptr from, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(void* buffer, size_t length, Address::ptr from, int flags = 0)
+recvFrom	rainbow/socket.cpp	/^int Socket::recvFrom(iovec* buffers, size_t length, Address::ptr from, int flags) {$/;"	f	class:rainbow::Socket	signature:(iovec* buffers, size_t length, Address::ptr from, int flags)
+recvFrom	rainbow/socket.cpp	/^int Socket::recvFrom(void* buffer, size_t length, Address::ptr from, int flags) {$/;"	f	class:rainbow::Socket	signature:(void* buffer, size_t length, Address::ptr from, int flags)
 recvFrom	rainbow/socket.h	/^    int recvFrom(iovec* buffers, size_t length, Address::ptr from, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(iovec* buffers, size_t length, Address::ptr from, int flags = 0)
 recvFrom	rainbow/socket.h	/^    int recvFrom(void* buffer, size_t length, Address::ptr from, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(void* buffer, size_t length, Address::ptr from, int flags = 0)
 recv_fun	rainbow/hook.h	/^typedef ssize_t (*recv_fun)(int sockfd, void *buf, size_t len, int flags);$/;"	t
@@ -2338,12 +2520,12 @@ schedule	rainbow/scheduler.h	/^    void schedule(InputIterator begin, InputItera
 scheduleNoLock	rainbow/scheduler.h	/^    bool scheduleNoLock(FiberOrCb fc, int thread) {$/;"	f	class:rainbow::Scheduler	access:private	signature:(FiberOrCb fc, int thread)
 scheduler	rainbow/iomanager.h	/^            Scheduler* scheduler = nullptr;           \/\/ 事件执行的 scheduler$/;"	m	struct:rainbow::IOManager::FdContext::EventContext	access:public
 send	rainbow/hook.cpp	/^ssize_t send(int sockfd, const void *buf, size_t len, int flags) {$/;"	f	signature:(int sockfd, const void *buf, size_t len, int flags)
-send	rainbow/socket.cpp	/^int Socket::send(const iovec* buffers, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(const iovec* buffers, size_t length, int flags = 0)
-send	rainbow/socket.cpp	/^int Socket::send(const void* buffer, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(const void* buffer, size_t length, int flags = 0)
+send	rainbow/socket.cpp	/^int Socket::send(const iovec* buffers, size_t length, int flags) {$/;"	f	class:rainbow::Socket	signature:(const iovec* buffers, size_t length, int flags)
+send	rainbow/socket.cpp	/^int Socket::send(const void* buffer, size_t length, int flags) {$/;"	f	class:rainbow::Socket	signature:(const void* buffer, size_t length, int flags)
 send	rainbow/socket.h	/^    int send(const iovec* buffers, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const iovec* buffers, size_t length, int flags = 0)
 send	rainbow/socket.h	/^    int send(const void* buffer, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const void* buffer, size_t length, int flags = 0)
-sendTo	rainbow/socket.cpp	/^int Socket::sendTo(const iovec* buffers, size_t length, const Address::ptr to, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(const iovec* buffers, size_t length, const Address::ptr to, int flags = 0)
-sendTo	rainbow/socket.cpp	/^int Socket::sendTo(const void* buffer, size_t length, const Address::ptr to, int flags = 0);$/;"	p	class:rainbow::Socket	file:	signature:(const void* buffer, size_t length, const Address::ptr to, int flags = 0)
+sendTo	rainbow/socket.cpp	/^int Socket::sendTo(const iovec* buffers, size_t length, const Address::ptr to, int flags) {$/;"	f	class:rainbow::Socket	signature:(const iovec* buffers, size_t length, const Address::ptr to, int flags)
+sendTo	rainbow/socket.cpp	/^int Socket::sendTo(const void* buffer, size_t length, const Address::ptr to, int flags) {$/;"	f	class:rainbow::Socket	signature:(const void* buffer, size_t length, const Address::ptr to, int flags)
 sendTo	rainbow/socket.h	/^    int sendTo(const iovec* buffers, size_t length, const Address::ptr to, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const iovec* buffers, size_t length, const Address::ptr to, int flags = 0)
 sendTo	rainbow/socket.h	/^    int sendTo(const void* buffer, size_t length, const Address::ptr to, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const void* buffer, size_t length, const Address::ptr to, int flags = 0)
 send_fun	rainbow/hook.h	/^typedef ssize_t (*send_fun)(int sockfd, const void *buf, size_t len, int flags);$/;"	t
@@ -2351,6 +2533,8 @@ sendmsg	rainbow/hook.cpp	/^ssize_t sendmsg(int sockfd, const struct msghdr *msg,
 sendmsg_fun	rainbow/hook.h	/^typedef ssize_t (*sendmsg_fun)(int sockfd, const struct msghdr *msg, int flags);$/;"	t
 sendto	rainbow/hook.cpp	/^ssize_t sendto(int sockfd, const void *buf, size_t len, int flags, const struct sockaddr *dest_addr, socklen_t addrlen) {$/;"	f	signature:(int sockfd, const void *buf, size_t len, int flags, const struct sockaddr *dest_addr, socklen_t addrlen)
 sendto_fun	rainbow/hook.h	/^typedef ssize_t (*sendto_fun)(int sockfd, const void *buf, size_t len, int flags, const struct sockaddr *dest_addr, socklen_t addrlen);$/;"	t
+setAddrLen	rainbow/address.cpp	/^void UnixAddress::setAddrLen(uint32_t v) {$/;"	f	class:rainbow::UnixAddress	signature:(uint32_t v)
+setAddrLen	rainbow/address.h	/^    void setAddrLen(uint32_t v);$/;"	p	class:rainbow::UnixAddress	access:public	signature:(uint32_t v)
 setAppender	rainbow/log.h	/^    void setAppender(LogLevel::Level val) { m_level = val; }$/;"	f	class:rainbow::Logger	access:public	signature:(LogLevel::Level val)
 setFormatter	rainbow/log.cpp	/^void LogAppender::setFormatter(LogFormatter::ptr val) {$/;"	f	class:rainbow::LogAppender	signature:(LogFormatter::ptr val)
 setFormatter	rainbow/log.cpp	/^void Logger::setFormatter(LogFormatter::ptr val) {$/;"	f	class:rainbow::Logger	signature:(LogFormatter::ptr val)
@@ -2364,9 +2548,10 @@ setLevel	rainbow/log.h	/^    void setLevel(const LogLevel::Level& level);$/;"	p	
 setOption	rainbow/socket.cpp	/^bool Socket::setOption(int level, int option, const void* result, size_t len) {$/;"	f	class:rainbow::Socket	signature:(int level, int option, const void* result, size_t len)
 setOption	rainbow/socket.h	/^    bool setOption(int level, int option, const T result) {$/;"	f	class:rainbow::Socket	access:public	signature:(int level, int option, const T result)
 setOption	rainbow/socket.h	/^    bool setOption(int level, int option, const void* result, size_t len);$/;"	p	class:rainbow::Socket	access:public	signature:(int level, int option, const void* result, size_t len)
-setPort	rainbow/address.cpp	/^void IPv4Address::setPort(uint32_t v) {$/;"	f	class:rainbow::IPv4Address	signature:(uint32_t v)
-setPort	rainbow/address.cpp	/^void IPv6Address::setPort(uint32_t v) {$/;"	f	class:rainbow::IPv6Address	signature:(uint32_t v)
-setPort	rainbow/address.h	/^    virtual void setPort(uint32_t v) = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:(uint32_t v)
+setPort	rainbow/address.cpp	/^void IPv4Address::setPort(uint16_t v) {$/;"	f	class:rainbow::IPv4Address	signature:(uint16_t v)
+setPort	rainbow/address.cpp	/^void IPv6Address::setPort(uint16_t v) {$/;"	f	class:rainbow::IPv6Address	signature:(uint16_t v)
+setPort	rainbow/address.h	/^    virtual void setPort(uint16_t v) = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:(uint16_t v)
+setPosition	rainbow/bytearray.h	/^    void setPosition(size_t v);$/;"	p	class:rainbow::ByteArray	access:public	signature:(size_t v)
 setRecvTimeout	rainbow/socket.cpp	/^void Socket::setRecvTimeout(int64_t v) {$/;"	f	class:rainbow::Socket	signature:(int64_t v)
 setRecvTimeout	rainbow/socket.h	/^    void setRecvTimeout(int64_t v);$/;"	p	class:rainbow::Socket	access:public	signature:(int64_t v)
 setSendTimeout	rainbow/socket.cpp	/^void Socket::setSendTimeout(int64_t v) {$/;"	f	class:rainbow::Socket	signature:(int64_t v)
@@ -2383,6 +2568,7 @@ set_hook_enable	rainbow/hook.cpp	/^void set_hook_enable(bool flag) {$/;"	f	names
 set_hook_enable	rainbow/hook.h	/^    void set_hook_enable(bool flag);$/;"	p	namespace:rainbow	signature:(bool flag)
 setsockopt	rainbow/hook.cpp	/^int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t optlen) {$/;"	f	signature:(int sockfd, int level, int optname, const void *optval, socklen_t optlen)
 setsockopt_fun	rainbow/hook.h	/^typedef int (*setsockopt_fun)(int sockfd, int level, int optname, const void *optval, socklen_t optlen);$/;"	t
+size	rainbow/bytearray.h	/^        size_t size;$/;"	m	struct:rainbow::ByteArray::Node	access:public
 sleep	rainbow/hook.cpp	/^unsigned int sleep(unsigned int seconds) {$/;"	f	signature:(unsigned int seconds)
 sleep_fun	rainbow/hook.h	/^typedef unsigned int (*sleep_fun)(unsigned int seconds);$/;"	t
 socket	rainbow/hook.cpp	/^int socket(int domain, int type, int protocol) {$/;"	f	signature:(int domain, int type, int protocol)
@@ -2422,6 +2608,7 @@ test_ipv4	tests/test_address.cpp	/^void test_ipv4() {$/;"	f	signature:()
 test_log	tests/test_config.cpp	/^void test_log() {$/;"	f	signature:()
 test_sleep	tests/test_hook.cpp	/^void test_sleep() {$/;"	f	signature:()
 test_sock	tests/test_hook.cpp	/^void test_sock() {$/;"	f	signature:()
+test_socket	tests/test_socket.cpp	/^void test_socket() {$/;"	f	signature:()
 test_timer	tests/test_iomanager.cpp	/^void test_timer() {$/;"	f	signature:()
 thread	rainbow/scheduler.h	/^        int thread;$/;"	m	struct:rainbow::Scheduler::FiberAndThread	access:public
 tickle	rainbow/iomanager.cpp	/^void IOManager::tickle() {$/;"	f	class:rainbow::IOManager	signature:()
@@ -2460,14 +2647,36 @@ wait	rainbow/thread.h	/^    void wait();$/;"	p	class:rainbow::Semaphore	access:p
 warn	rainbow/log.cpp	/^void Logger::warn(LogEvent::ptr event) { log(LogLevel::WARN, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
 warn	rainbow/log.h	/^    void warn(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
 weak_ptr	rainbow/socket.h	/^    typedef std::weak_ptr<Socket> weak_ptr;$/;"	t	class:rainbow::Socket	access:public
+write	rainbow/bytearray.h	/^    void write(const void* buf, size_t size);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const void* buf, size_t size)
 write	rainbow/hook.cpp	/^ssize_t write(int fd, const void *buf, size_t count) {$/;"	f	signature:(int fd, const void *buf, size_t count)
 write	rainbow/iomanager.h	/^        EventContext write;     \/\/ 写事件$/;"	m	struct:rainbow::IOManager::FdContext	access:public
+writeDouble	rainbow/bytearray.h	/^    void writeDouble(const double& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const double& value)
+writeFint16	rainbow/bytearray.h	/^    void writeFint16(const int16_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int16_t& value)
+writeFint32	rainbow/bytearray.h	/^    void writeFint32(const int32_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int32_t& value)
+writeFint64	rainbow/bytearray.h	/^    void writeFint64(const int64_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int64_t& value)
+writeFint8	rainbow/bytearray.h	/^    void writeFint8(const int8_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int8_t& value)
+writeFloat	rainbow/bytearray.h	/^    void writeFloat(const float& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const float& value)
+writeFuint16	rainbow/bytearray.h	/^    void writeFuint16(const uint16_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint16_t& value)
+writeFuint32	rainbow/bytearray.h	/^    void writeFuint32(const uint32_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint32_t& value)
+writeFuint64	rainbow/bytearray.h	/^    void writeFuint64(const uint64_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint64_t& value)
+writeFuint8	rainbow/bytearray.h	/^    void writeFuint8(const uint8_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint8_t& value)
+writeInt32	rainbow/bytearray.h	/^    void writeInt32(const int32_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int32_t& value)
+writeInt64	rainbow/bytearray.h	/^    void writeInt64(const int64_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const int64_t& value)
+writeStringF16	rainbow/bytearray.h	/^    void writeStringF16(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+writeStringF32	rainbow/bytearray.h	/^    void writeStringF32(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+writeStringF64	rainbow/bytearray.h	/^    void writeStringF64(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+writeStringVint	rainbow/bytearray.h	/^    void writeStringVint(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+writeStringWithoutLength	rainbow/bytearray.h	/^    void writeStringWithoutLength(const std::string& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& value)
+writeToFile	rainbow/bytearray.h	/^    bool writeToFile(const std::string& name) const;$/;"	p	class:rainbow::ByteArray	access:public	signature:(const std::string& name) const
+writeUint32	rainbow/bytearray.h	/^    void writeUint32(const uint32_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint32_t& value)
+writeUint64	rainbow/bytearray.h	/^    void writeUint64(const uint64_t& value);$/;"	p	class:rainbow::ByteArray	access:public	signature:(const uint64_t& value)
 write_fun	rainbow/hook.h	/^typedef ssize_t (*write_fun)(int fd, const void *buf, size_t count);$/;"	t
 writev	rainbow/hook.cpp	/^ssize_t writev(int fd, const struct iovec *iov, int iovcnt) {$/;"	f	signature:(int fd, const struct iovec *iov, int iovcnt)
 writev_fun	rainbow/hook.h	/^typedef ssize_t (*writev_fun)(int fd, const struct iovec *iov, int iovcnt);$/;"	t
 wrlock	rainbow/thread.h	/^    void wrlock() {$/;"	f	class:rainbow::RWMutex	access:public	signature:()
 wrlock	rainbow/thread.h	/^    void wrlock() {}$/;"	f	class:rainbow::NullRWMutex	access:public	signature:()
 ~Address	rainbow/address.h	/^    virtual ~Address () {};$/;"	f	class:rainbow::Address	access:public	signature:()
+~ByteArray	rainbow/bytearray.h	/^    ~ByteArray();$/;"	p	class:rainbow::ByteArray	access:public	signature:()
 ~CASLock	rainbow/thread.h	/^    ~CASLock() {$/;"	f	class:rainbow::CASLock	access:public	signature:()
 ~ConfigVarBase	rainbow/config.h	/^    virtual ~ConfigVarBase() {}$/;"	f	class:rainbow::ConfigVarBase	access:public	signature:()
 ~FdCtx	rainbow/fd_manager.cpp	/^FdCtx::~FdCtx() {$/;"	f	class:rainbow::FdCtx	signature:()
@@ -2482,6 +2691,8 @@ wrlock	rainbow/thread.h	/^    void wrlock() {}$/;"	f	class:rainbow::NullRWMutex	
 ~LogEventWrap	rainbow/log.cpp	/^LogEventWrap::~LogEventWrap() {$/;"	f	class:rainbow::LogEventWrap	signature:()
 ~LogEventWrap	rainbow/log.h	/^    ~LogEventWrap();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
 ~Mutex	rainbow/thread.h	/^    ~Mutex() {$/;"	f	class:rainbow::Mutex	access:public	signature:()
+~Node	rainbow/bytearray.cpp	/^~Node();$/;"	p	namespace:rainbow	file:	signature:()
+~Node	rainbow/bytearray.h	/^        ~Node();$/;"	p	struct:rainbow::ByteArray::Node	access:public	signature:()
 ~Noncopyable	rainbow/noncopyable.h	/^    ~Noncopyable() = default;$/;"	p	class:rainbow::Noncopyable	access:public	signature:()
 ~NullRWMutex	rainbow/thread.h	/^    ~NullRWMutex() {}$/;"	f	class:rainbow::NullRWMutex	access:public	signature:()
 ~RWMutex	rainbow/thread.h	/^    ~RWMutex() {$/;"	f	class:rainbow::RWMutex	access:public	signature:()

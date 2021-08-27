@@ -159,6 +159,19 @@ test_hook/fast:
 .PHONY : test_hook/fast
 
 #=============================================================================
+# Target rules for targets named test_bytearray
+
+# Build rule for target.
+test_bytearray: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_bytearray
+.PHONY : test_bytearray
+
+# fast build rule for target.
+test_bytearray/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
+.PHONY : test_bytearray/fast
+
+#=============================================================================
 # Target rules for targets named test_address
 
 # Build rule for target.
@@ -207,6 +220,30 @@ rainbow/address.s: rainbow/address.cpp.s
 rainbow/address.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/address.cpp.s
 .PHONY : rainbow/address.cpp.s
+
+rainbow/bytearray.o: rainbow/bytearray.cpp.o
+.PHONY : rainbow/bytearray.o
+
+# target to build an object file
+rainbow/bytearray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/bytearray.cpp.o
+.PHONY : rainbow/bytearray.cpp.o
+
+rainbow/bytearray.i: rainbow/bytearray.cpp.i
+.PHONY : rainbow/bytearray.i
+
+# target to preprocess a source file
+rainbow/bytearray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/bytearray.cpp.i
+.PHONY : rainbow/bytearray.cpp.i
+
+rainbow/bytearray.s: rainbow/bytearray.cpp.s
+.PHONY : rainbow/bytearray.s
+
+# target to generate assembly for a file
+rainbow/bytearray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/bytearray.cpp.s
+.PHONY : rainbow/bytearray.cpp.s
 
 rainbow/config.o: rainbow/config.cpp.o
 .PHONY : rainbow/config.o
@@ -520,6 +557,30 @@ tests/test_address.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/tests/test_address.cpp.s
 .PHONY : tests/test_address.cpp.s
 
+tests/test_bytearray.o: tests/test_bytearray.cpp.o
+.PHONY : tests/test_bytearray.o
+
+# target to build an object file
+tests/test_bytearray.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cpp.o
+.PHONY : tests/test_bytearray.cpp.o
+
+tests/test_bytearray.i: tests/test_bytearray.cpp.i
+.PHONY : tests/test_bytearray.i
+
+# target to preprocess a source file
+tests/test_bytearray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cpp.i
+.PHONY : tests/test_bytearray.cpp.i
+
+tests/test_bytearray.s: tests/test_bytearray.cpp.s
+.PHONY : tests/test_bytearray.s
+
+# target to generate assembly for a file
+tests/test_bytearray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/tests/test_bytearray.cpp.s
+.PHONY : tests/test_bytearray.cpp.s
+
 tests/test_hook.o: tests/test_hook.cpp.o
 .PHONY : tests/test_hook.o
 
@@ -579,11 +640,15 @@ help:
 	@echo "... rainbow"
 	@echo "... test"
 	@echo "... test_address"
+	@echo "... test_bytearray"
 	@echo "... test_hook"
 	@echo "... test_socket"
 	@echo "... rainbow/address.o"
 	@echo "... rainbow/address.i"
 	@echo "... rainbow/address.s"
+	@echo "... rainbow/bytearray.o"
+	@echo "... rainbow/bytearray.i"
+	@echo "... rainbow/bytearray.s"
 	@echo "... rainbow/config.o"
 	@echo "... rainbow/config.i"
 	@echo "... rainbow/config.s"
@@ -623,6 +688,9 @@ help:
 	@echo "... tests/test_address.o"
 	@echo "... tests/test_address.i"
 	@echo "... tests/test_address.s"
+	@echo "... tests/test_bytearray.o"
+	@echo "... tests/test_bytearray.i"
+	@echo "... tests/test_bytearray.s"
 	@echo "... tests/test_hook.o"
 	@echo "... tests/test_hook.i"
 	@echo "... tests/test_hook.s"

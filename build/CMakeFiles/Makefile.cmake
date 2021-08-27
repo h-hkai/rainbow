@@ -47,6 +47,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/test_socket.dir/DependInfo.cmake"
   "CMakeFiles/rainbow.dir/DependInfo.cmake"
   "CMakeFiles/test_hook.dir/DependInfo.cmake"
+  "CMakeFiles/test_bytearray.dir/DependInfo.cmake"
   "CMakeFiles/test_address.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
   )

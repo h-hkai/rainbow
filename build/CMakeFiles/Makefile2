@@ -69,6 +69,7 @@ CMAKE_BINARY_DIR = /home/ubuntu/rainbow/build
 all: CMakeFiles/test_socket.dir/all
 all: CMakeFiles/rainbow.dir/all
 all: CMakeFiles/test_hook.dir/all
+all: CMakeFiles/test_bytearray.dir/all
 all: CMakeFiles/test_address.dir/all
 all: CMakeFiles/test.dir/all
 .PHONY : all
@@ -81,6 +82,7 @@ preinstall:
 clean: CMakeFiles/test_socket.dir/clean
 clean: CMakeFiles/rainbow.dir/clean
 clean: CMakeFiles/test_hook.dir/clean
+clean: CMakeFiles/test_bytearray.dir/clean
 clean: CMakeFiles/test_address.dir/clean
 clean: CMakeFiles/test.dir/clean
 .PHONY : clean
@@ -92,12 +94,12 @@ clean: CMakeFiles/test.dir/clean
 CMakeFiles/test_socket.dir/all: CMakeFiles/rainbow.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=20,21 "Built target test_socket"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=23,24 "Built target test_socket"
 .PHONY : CMakeFiles/test_socket.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_socket.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_socket.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_socket.dir/rule
@@ -118,12 +120,12 @@ CMakeFiles/test_socket.dir/clean:
 CMakeFiles/rainbow.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target rainbow"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14 "Built target rainbow"
 .PHONY : CMakeFiles/rainbow.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/rainbow.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 13
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/rainbow.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 0
 .PHONY : CMakeFiles/rainbow.dir/rule
@@ -144,12 +146,12 @@ CMakeFiles/rainbow.dir/clean:
 CMakeFiles/test_hook.dir/all: CMakeFiles/rainbow.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=18,19 "Built target test_hook"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=21,22 "Built target test_hook"
 .PHONY : CMakeFiles/test_hook.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_hook.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_hook.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_hook.dir/rule
@@ -164,18 +166,44 @@ CMakeFiles/test_hook.dir/clean:
 .PHONY : CMakeFiles/test_hook.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/test_bytearray.dir
+
+# All Build rule for target.
+CMakeFiles/test_bytearray.dir/all: CMakeFiles/rainbow.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=19,20 "Built target test_bytearray"
+.PHONY : CMakeFiles/test_bytearray.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_bytearray.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 16
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_bytearray.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_bytearray.dir/rule
+
+# Convenience name for target.
+test_bytearray: CMakeFiles/test_bytearray.dir/rule
+.PHONY : test_bytearray
+
+# clean rule for target.
+CMakeFiles/test_bytearray.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_bytearray.dir/build.make CMakeFiles/test_bytearray.dir/clean
+.PHONY : CMakeFiles/test_bytearray.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test_address.dir
 
 # All Build rule for target.
 CMakeFiles/test_address.dir/all: CMakeFiles/rainbow.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=16,17 "Built target test_address"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=17,18 "Built target test_address"
 .PHONY : CMakeFiles/test_address.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_address.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_address.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_address.dir/rule
@@ -196,12 +224,12 @@ CMakeFiles/test_address.dir/clean:
 CMakeFiles/test.dir/all: CMakeFiles/rainbow.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=14,15 "Built target test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=15,16 "Built target test"
 .PHONY : CMakeFiles/test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 16
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/rainbow/build/CMakeFiles 0
 .PHONY : CMakeFiles/test.dir/rule
