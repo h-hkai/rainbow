@@ -18,6 +18,20 @@ CXX_FLAGS =  -rdynamic -O0 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror 
 
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/fiber.cpp.o_DEFINES = __FILE__="rainbow/fiber.cpp"
 
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o_DEFINES = __FILE__="rainbow/http/http.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o_DEFINES = __FILE__="rainbow/http/http_parser.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o_DEFINES = __FILE__="rainbow/http/http_session.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o_DEFINES = __FILE__="rainbow/http/http_server.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o_DEFINES = __FILE__="rainbow/http/servlet.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o_DEFINES = __FILE__="rainbow/http/http11_parser.rl.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o_DEFINES = __FILE__="rainbow/http/httpclient_parser.rl.cpp"
+
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/hook.cpp.o_DEFINES = __FILE__="rainbow/hook.cpp"
 
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.o_DEFINES = __FILE__="rainbow/iomanager.cpp"
@@ -27,6 +41,12 @@ CXX_FLAGS =  -rdynamic -O0 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror 
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.o_DEFINES = __FILE__="rainbow/scheduler.cpp"
 
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/socket.cpp.o_DEFINES = __FILE__="rainbow/socket.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o_DEFINES = __FILE__="rainbow/socket_stream.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/stream.cpp.o_DEFINES = __FILE__="rainbow/stream.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o_DEFINES = __FILE__="rainbow/tcp_server.cpp"
 
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/timer.cpp.o_DEFINES = __FILE__="rainbow/timer.cpp"
 

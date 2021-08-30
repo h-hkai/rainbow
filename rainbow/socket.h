@@ -51,7 +51,7 @@ public:
         return getOption(level, option, &result, &length);
     }
 
-    bool setOption(int level, int option, const void* result, size_t len);
+    bool setOption(int level, int option, const void* result, socklen_t len);
     template<class T>
     bool setOption(int level, int option, const T result) {
         return setOption(level, option, &result, sizeof(T));
@@ -109,6 +109,8 @@ private:
     Address::ptr m_localAddress;
     Address::ptr m_remoteAddress;
 };
+
+std::ostream& operator<<(std::ostream& os, const Socket& addr);
 
 }
 

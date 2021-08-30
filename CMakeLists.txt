@@ -16,11 +16,21 @@ set(LIB_SRC
     rainbow/config.cpp
     rainbow/fd_manager.cpp
     rainbow/fiber.cpp
+    rainbow/http/http.cpp
+    rainbow/http/http_parser.cpp
+    rainbow/http/http_session.cpp
+    rainbow/http/http_server.cpp
+    rainbow/http/servlet.cpp
+    rainbow/http/http11_parser.rl.cpp
+    rainbow/http/httpclient_parser.rl.cpp
     rainbow/hook.cpp
     rainbow/iomanager.cpp
     rainbow/log.cpp
     rainbow/scheduler.cpp
     rainbow/socket.cpp
+    rainbow/socket_stream.cpp
+    rainbow/stream.cpp
+    rainbow/tcp_server.cpp
     rainbow/timer.cpp
     rainbow/thread.cpp
     rainbow/util.cpp
@@ -70,6 +80,31 @@ add_executable(test_bytearray tests/test_bytearray.cpp)
 add_dependencies(test_bytearray rainbow)
 force_redefine_file_macro_for_sources(test_bytearray) #__FILE__
 target_link_libraries(test_bytearray ${LIBS})
+
+add_executable(test_http tests/test_http.cpp)
+add_dependencies(test_http rainbow)
+force_redefine_file_macro_for_sources(test_http) #__FILE__
+target_link_libraries(test_http ${LIBS})
+
+add_executable(test_http_parser tests/test_http_parser.cpp)
+add_dependencies(test_http_parser rainbow)
+force_redefine_file_macro_for_sources(test_http_parser) #__FILE__
+target_link_libraries(test_http_parser ${LIBS})
+
+add_executable(test_tcp_server tests/test_tcp_server.cpp)
+add_dependencies(test_tcp_server rainbow)
+force_redefine_file_macro_for_sources(test_tcp_server) #__FILE__
+target_link_libraries(test_tcp_server ${LIBS})
+
+add_executable(echo_server examples/echo_server.cpp)
+add_dependencies(echo_server rainbow)
+force_redefine_file_macro_for_sources(echo_server) #__FILE__
+target_link_libraries(echo_server ${LIBS})
+
+add_executable(test_http_server tests/test_http_server.cpp)
+add_dependencies(test_http_server rainbow)
+force_redefine_file_macro_for_sources(test_http_server) #__FILE__
+target_link_libraries(test_http_server ${LIBS})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

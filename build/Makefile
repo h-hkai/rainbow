@@ -120,43 +120,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_socket
+# Target rules for targets named test_address
 
 # Build rule for target.
-test_socket: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_socket
-.PHONY : test_socket
+test_address: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_address
+.PHONY : test_address
 
 # fast build rule for target.
-test_socket/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
-.PHONY : test_socket/fast
-
-#=============================================================================
-# Target rules for targets named rainbow
-
-# Build rule for target.
-rainbow: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rainbow
-.PHONY : rainbow
-
-# fast build rule for target.
-rainbow/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/build
-.PHONY : rainbow/fast
-
-#=============================================================================
-# Target rules for targets named test_hook
-
-# Build rule for target.
-test_hook: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hook
-.PHONY : test_hook
-
-# fast build rule for target.
-test_hook/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
-.PHONY : test_hook/fast
+test_address/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/build
+.PHONY : test_address/fast
 
 #=============================================================================
 # Target rules for targets named test_bytearray
@@ -172,17 +146,43 @@ test_bytearray/fast:
 .PHONY : test_bytearray/fast
 
 #=============================================================================
-# Target rules for targets named test_address
+# Target rules for targets named test_hook
 
 # Build rule for target.
-test_address: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_address
-.PHONY : test_address
+test_hook: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_hook
+.PHONY : test_hook
 
 # fast build rule for target.
-test_address/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/build
-.PHONY : test_address/fast
+test_hook/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
+.PHONY : test_hook/fast
+
+#=============================================================================
+# Target rules for targets named rainbow
+
+# Build rule for target.
+rainbow: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 rainbow
+.PHONY : rainbow
+
+# fast build rule for target.
+rainbow/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/build
+.PHONY : rainbow/fast
+
+#=============================================================================
+# Target rules for targets named test_socket
+
+# Build rule for target.
+test_socket: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_socket
+.PHONY : test_socket
+
+# fast build rule for target.
+test_socket/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
+.PHONY : test_socket/fast
 
 #=============================================================================
 # Target rules for targets named test
@@ -196,6 +196,95 @@ test: cmake_check_build_system
 test/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
+
+#=============================================================================
+# Target rules for targets named test_http
+
+# Build rule for target.
+test_http: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_http
+.PHONY : test_http
+
+# fast build rule for target.
+test_http/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/build
+.PHONY : test_http/fast
+
+#=============================================================================
+# Target rules for targets named test_http_parser
+
+# Build rule for target.
+test_http_parser: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_http_parser
+.PHONY : test_http_parser
+
+# fast build rule for target.
+test_http_parser/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/build
+.PHONY : test_http_parser/fast
+
+#=============================================================================
+# Target rules for targets named test_tcp_server
+
+# Build rule for target.
+test_tcp_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_tcp_server
+.PHONY : test_tcp_server
+
+# fast build rule for target.
+test_tcp_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/build
+.PHONY : test_tcp_server/fast
+
+#=============================================================================
+# Target rules for targets named test_http_server
+
+# Build rule for target.
+test_http_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_http_server
+.PHONY : test_http_server
+
+# fast build rule for target.
+test_http_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/build
+.PHONY : test_http_server/fast
+
+#=============================================================================
+# Target rules for targets named echo_server
+
+# Build rule for target.
+echo_server: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 echo_server
+.PHONY : echo_server
+
+# fast build rule for target.
+echo_server/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
+.PHONY : echo_server/fast
+
+examples/echo_server.o: examples/echo_server.cpp.o
+.PHONY : examples/echo_server.o
+
+# target to build an object file
+examples/echo_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cpp.o
+.PHONY : examples/echo_server.cpp.o
+
+examples/echo_server.i: examples/echo_server.cpp.i
+.PHONY : examples/echo_server.i
+
+# target to preprocess a source file
+examples/echo_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cpp.i
+.PHONY : examples/echo_server.cpp.i
+
+examples/echo_server.s: examples/echo_server.cpp.s
+.PHONY : examples/echo_server.s
+
+# target to generate assembly for a file
+examples/echo_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cpp.s
+.PHONY : examples/echo_server.cpp.s
 
 rainbow/address.o: rainbow/address.cpp.o
 .PHONY : rainbow/address.o
@@ -341,6 +430,174 @@ rainbow/hook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/hook.cpp.s
 .PHONY : rainbow/hook.cpp.s
 
+rainbow/http/http.o: rainbow/http/http.cpp.o
+.PHONY : rainbow/http/http.o
+
+# target to build an object file
+rainbow/http/http.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o
+.PHONY : rainbow/http/http.cpp.o
+
+rainbow/http/http.i: rainbow/http/http.cpp.i
+.PHONY : rainbow/http/http.i
+
+# target to preprocess a source file
+rainbow/http/http.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http.cpp.i
+.PHONY : rainbow/http/http.cpp.i
+
+rainbow/http/http.s: rainbow/http/http.cpp.s
+.PHONY : rainbow/http/http.s
+
+# target to generate assembly for a file
+rainbow/http/http.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http.cpp.s
+.PHONY : rainbow/http/http.cpp.s
+
+rainbow/http/http11_parser.rl.o: rainbow/http/http11_parser.rl.cpp.o
+.PHONY : rainbow/http/http11_parser.rl.o
+
+# target to build an object file
+rainbow/http/http11_parser.rl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o
+.PHONY : rainbow/http/http11_parser.rl.cpp.o
+
+rainbow/http/http11_parser.rl.i: rainbow/http/http11_parser.rl.cpp.i
+.PHONY : rainbow/http/http11_parser.rl.i
+
+# target to preprocess a source file
+rainbow/http/http11_parser.rl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.i
+.PHONY : rainbow/http/http11_parser.rl.cpp.i
+
+rainbow/http/http11_parser.rl.s: rainbow/http/http11_parser.rl.cpp.s
+.PHONY : rainbow/http/http11_parser.rl.s
+
+# target to generate assembly for a file
+rainbow/http/http11_parser.rl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.s
+.PHONY : rainbow/http/http11_parser.rl.cpp.s
+
+rainbow/http/http_parser.o: rainbow/http/http_parser.cpp.o
+.PHONY : rainbow/http/http_parser.o
+
+# target to build an object file
+rainbow/http/http_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o
+.PHONY : rainbow/http/http_parser.cpp.o
+
+rainbow/http/http_parser.i: rainbow/http/http_parser.cpp.i
+.PHONY : rainbow/http/http_parser.i
+
+# target to preprocess a source file
+rainbow/http/http_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.i
+.PHONY : rainbow/http/http_parser.cpp.i
+
+rainbow/http/http_parser.s: rainbow/http/http_parser.cpp.s
+.PHONY : rainbow/http/http_parser.s
+
+# target to generate assembly for a file
+rainbow/http/http_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.s
+.PHONY : rainbow/http/http_parser.cpp.s
+
+rainbow/http/http_server.o: rainbow/http/http_server.cpp.o
+.PHONY : rainbow/http/http_server.o
+
+# target to build an object file
+rainbow/http/http_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o
+.PHONY : rainbow/http/http_server.cpp.o
+
+rainbow/http/http_server.i: rainbow/http/http_server.cpp.i
+.PHONY : rainbow/http/http_server.i
+
+# target to preprocess a source file
+rainbow/http/http_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.i
+.PHONY : rainbow/http/http_server.cpp.i
+
+rainbow/http/http_server.s: rainbow/http/http_server.cpp.s
+.PHONY : rainbow/http/http_server.s
+
+# target to generate assembly for a file
+rainbow/http/http_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.s
+.PHONY : rainbow/http/http_server.cpp.s
+
+rainbow/http/http_session.o: rainbow/http/http_session.cpp.o
+.PHONY : rainbow/http/http_session.o
+
+# target to build an object file
+rainbow/http/http_session.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o
+.PHONY : rainbow/http/http_session.cpp.o
+
+rainbow/http/http_session.i: rainbow/http/http_session.cpp.i
+.PHONY : rainbow/http/http_session.i
+
+# target to preprocess a source file
+rainbow/http/http_session.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.i
+.PHONY : rainbow/http/http_session.cpp.i
+
+rainbow/http/http_session.s: rainbow/http/http_session.cpp.s
+.PHONY : rainbow/http/http_session.s
+
+# target to generate assembly for a file
+rainbow/http/http_session.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.s
+.PHONY : rainbow/http/http_session.cpp.s
+
+rainbow/http/httpclient_parser.rl.o: rainbow/http/httpclient_parser.rl.cpp.o
+.PHONY : rainbow/http/httpclient_parser.rl.o
+
+# target to build an object file
+rainbow/http/httpclient_parser.rl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o
+.PHONY : rainbow/http/httpclient_parser.rl.cpp.o
+
+rainbow/http/httpclient_parser.rl.i: rainbow/http/httpclient_parser.rl.cpp.i
+.PHONY : rainbow/http/httpclient_parser.rl.i
+
+# target to preprocess a source file
+rainbow/http/httpclient_parser.rl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.i
+.PHONY : rainbow/http/httpclient_parser.rl.cpp.i
+
+rainbow/http/httpclient_parser.rl.s: rainbow/http/httpclient_parser.rl.cpp.s
+.PHONY : rainbow/http/httpclient_parser.rl.s
+
+# target to generate assembly for a file
+rainbow/http/httpclient_parser.rl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.s
+.PHONY : rainbow/http/httpclient_parser.rl.cpp.s
+
+rainbow/http/servlet.o: rainbow/http/servlet.cpp.o
+.PHONY : rainbow/http/servlet.o
+
+# target to build an object file
+rainbow/http/servlet.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o
+.PHONY : rainbow/http/servlet.cpp.o
+
+rainbow/http/servlet.i: rainbow/http/servlet.cpp.i
+.PHONY : rainbow/http/servlet.i
+
+# target to preprocess a source file
+rainbow/http/servlet.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.i
+.PHONY : rainbow/http/servlet.cpp.i
+
+rainbow/http/servlet.s: rainbow/http/servlet.cpp.s
+.PHONY : rainbow/http/servlet.s
+
+# target to generate assembly for a file
+rainbow/http/servlet.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.s
+.PHONY : rainbow/http/servlet.cpp.s
+
 rainbow/iomanager.o: rainbow/iomanager.cpp.o
 .PHONY : rainbow/iomanager.o
 
@@ -436,6 +693,78 @@ rainbow/socket.s: rainbow/socket.cpp.s
 rainbow/socket.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/socket.cpp.s
 .PHONY : rainbow/socket.cpp.s
+
+rainbow/socket_stream.o: rainbow/socket_stream.cpp.o
+.PHONY : rainbow/socket_stream.o
+
+# target to build an object file
+rainbow/socket_stream.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o
+.PHONY : rainbow/socket_stream.cpp.o
+
+rainbow/socket_stream.i: rainbow/socket_stream.cpp.i
+.PHONY : rainbow/socket_stream.i
+
+# target to preprocess a source file
+rainbow/socket_stream.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.i
+.PHONY : rainbow/socket_stream.cpp.i
+
+rainbow/socket_stream.s: rainbow/socket_stream.cpp.s
+.PHONY : rainbow/socket_stream.s
+
+# target to generate assembly for a file
+rainbow/socket_stream.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.s
+.PHONY : rainbow/socket_stream.cpp.s
+
+rainbow/stream.o: rainbow/stream.cpp.o
+.PHONY : rainbow/stream.o
+
+# target to build an object file
+rainbow/stream.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/stream.cpp.o
+.PHONY : rainbow/stream.cpp.o
+
+rainbow/stream.i: rainbow/stream.cpp.i
+.PHONY : rainbow/stream.i
+
+# target to preprocess a source file
+rainbow/stream.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/stream.cpp.i
+.PHONY : rainbow/stream.cpp.i
+
+rainbow/stream.s: rainbow/stream.cpp.s
+.PHONY : rainbow/stream.s
+
+# target to generate assembly for a file
+rainbow/stream.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/stream.cpp.s
+.PHONY : rainbow/stream.cpp.s
+
+rainbow/tcp_server.o: rainbow/tcp_server.cpp.o
+.PHONY : rainbow/tcp_server.o
+
+# target to build an object file
+rainbow/tcp_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o
+.PHONY : rainbow/tcp_server.cpp.o
+
+rainbow/tcp_server.i: rainbow/tcp_server.cpp.i
+.PHONY : rainbow/tcp_server.i
+
+# target to preprocess a source file
+rainbow/tcp_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.i
+.PHONY : rainbow/tcp_server.cpp.i
+
+rainbow/tcp_server.s: rainbow/tcp_server.cpp.s
+.PHONY : rainbow/tcp_server.s
+
+# target to generate assembly for a file
+rainbow/tcp_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.s
+.PHONY : rainbow/tcp_server.cpp.s
 
 rainbow/thread.o: rainbow/thread.cpp.o
 .PHONY : rainbow/thread.o
@@ -605,6 +934,78 @@ tests/test_hook.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cpp.s
 .PHONY : tests/test_hook.cpp.s
 
+tests/test_http.o: tests/test_http.cpp.o
+.PHONY : tests/test_http.o
+
+# target to build an object file
+tests/test_http.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cpp.o
+.PHONY : tests/test_http.cpp.o
+
+tests/test_http.i: tests/test_http.cpp.i
+.PHONY : tests/test_http.i
+
+# target to preprocess a source file
+tests/test_http.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cpp.i
+.PHONY : tests/test_http.cpp.i
+
+tests/test_http.s: tests/test_http.cpp.s
+.PHONY : tests/test_http.s
+
+# target to generate assembly for a file
+tests/test_http.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cpp.s
+.PHONY : tests/test_http.cpp.s
+
+tests/test_http_parser.o: tests/test_http_parser.cpp.o
+.PHONY : tests/test_http_parser.o
+
+# target to build an object file
+tests/test_http_parser.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.o
+.PHONY : tests/test_http_parser.cpp.o
+
+tests/test_http_parser.i: tests/test_http_parser.cpp.i
+.PHONY : tests/test_http_parser.i
+
+# target to preprocess a source file
+tests/test_http_parser.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.i
+.PHONY : tests/test_http_parser.cpp.i
+
+tests/test_http_parser.s: tests/test_http_parser.cpp.s
+.PHONY : tests/test_http_parser.s
+
+# target to generate assembly for a file
+tests/test_http_parser.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.s
+.PHONY : tests/test_http_parser.cpp.s
+
+tests/test_http_server.o: tests/test_http_server.cpp.o
+.PHONY : tests/test_http_server.o
+
+# target to build an object file
+tests/test_http_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/tests/test_http_server.cpp.o
+.PHONY : tests/test_http_server.cpp.o
+
+tests/test_http_server.i: tests/test_http_server.cpp.i
+.PHONY : tests/test_http_server.i
+
+# target to preprocess a source file
+tests/test_http_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/tests/test_http_server.cpp.i
+.PHONY : tests/test_http_server.cpp.i
+
+tests/test_http_server.s: tests/test_http_server.cpp.s
+.PHONY : tests/test_http_server.s
+
+# target to generate assembly for a file
+tests/test_http_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/tests/test_http_server.cpp.s
+.PHONY : tests/test_http_server.cpp.s
+
 tests/test_socket.o: tests/test_socket.cpp.o
 .PHONY : tests/test_socket.o
 
@@ -629,6 +1030,30 @@ tests/test_socket.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/tests/test_socket.cpp.s
 .PHONY : tests/test_socket.cpp.s
 
+tests/test_tcp_server.o: tests/test_tcp_server.cpp.o
+.PHONY : tests/test_tcp_server.o
+
+# target to build an object file
+tests/test_tcp_server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.o
+.PHONY : tests/test_tcp_server.cpp.o
+
+tests/test_tcp_server.i: tests/test_tcp_server.cpp.i
+.PHONY : tests/test_tcp_server.i
+
+# target to preprocess a source file
+tests/test_tcp_server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.i
+.PHONY : tests/test_tcp_server.cpp.i
+
+tests/test_tcp_server.s: tests/test_tcp_server.cpp.s
+.PHONY : tests/test_tcp_server.s
+
+# target to generate assembly for a file
+tests/test_tcp_server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.s
+.PHONY : tests/test_tcp_server.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -637,12 +1062,20 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... echo_server"
 	@echo "... rainbow"
 	@echo "... test"
 	@echo "... test_address"
 	@echo "... test_bytearray"
 	@echo "... test_hook"
+	@echo "... test_http"
+	@echo "... test_http_parser"
+	@echo "... test_http_server"
 	@echo "... test_socket"
+	@echo "... test_tcp_server"
+	@echo "... examples/echo_server.o"
+	@echo "... examples/echo_server.i"
+	@echo "... examples/echo_server.s"
 	@echo "... rainbow/address.o"
 	@echo "... rainbow/address.i"
 	@echo "... rainbow/address.s"
@@ -661,6 +1094,27 @@ help:
 	@echo "... rainbow/hook.o"
 	@echo "... rainbow/hook.i"
 	@echo "... rainbow/hook.s"
+	@echo "... rainbow/http/http.o"
+	@echo "... rainbow/http/http.i"
+	@echo "... rainbow/http/http.s"
+	@echo "... rainbow/http/http11_parser.rl.o"
+	@echo "... rainbow/http/http11_parser.rl.i"
+	@echo "... rainbow/http/http11_parser.rl.s"
+	@echo "... rainbow/http/http_parser.o"
+	@echo "... rainbow/http/http_parser.i"
+	@echo "... rainbow/http/http_parser.s"
+	@echo "... rainbow/http/http_server.o"
+	@echo "... rainbow/http/http_server.i"
+	@echo "... rainbow/http/http_server.s"
+	@echo "... rainbow/http/http_session.o"
+	@echo "... rainbow/http/http_session.i"
+	@echo "... rainbow/http/http_session.s"
+	@echo "... rainbow/http/httpclient_parser.rl.o"
+	@echo "... rainbow/http/httpclient_parser.rl.i"
+	@echo "... rainbow/http/httpclient_parser.rl.s"
+	@echo "... rainbow/http/servlet.o"
+	@echo "... rainbow/http/servlet.i"
+	@echo "... rainbow/http/servlet.s"
 	@echo "... rainbow/iomanager.o"
 	@echo "... rainbow/iomanager.i"
 	@echo "... rainbow/iomanager.s"
@@ -673,6 +1127,15 @@ help:
 	@echo "... rainbow/socket.o"
 	@echo "... rainbow/socket.i"
 	@echo "... rainbow/socket.s"
+	@echo "... rainbow/socket_stream.o"
+	@echo "... rainbow/socket_stream.i"
+	@echo "... rainbow/socket_stream.s"
+	@echo "... rainbow/stream.o"
+	@echo "... rainbow/stream.i"
+	@echo "... rainbow/stream.s"
+	@echo "... rainbow/tcp_server.o"
+	@echo "... rainbow/tcp_server.i"
+	@echo "... rainbow/tcp_server.s"
 	@echo "... rainbow/thread.o"
 	@echo "... rainbow/thread.i"
 	@echo "... rainbow/thread.s"
@@ -694,9 +1157,21 @@ help:
 	@echo "... tests/test_hook.o"
 	@echo "... tests/test_hook.i"
 	@echo "... tests/test_hook.s"
+	@echo "... tests/test_http.o"
+	@echo "... tests/test_http.i"
+	@echo "... tests/test_http.s"
+	@echo "... tests/test_http_parser.o"
+	@echo "... tests/test_http_parser.i"
+	@echo "... tests/test_http_parser.s"
+	@echo "... tests/test_http_server.o"
+	@echo "... tests/test_http_server.i"
+	@echo "... tests/test_http_server.s"
 	@echo "... tests/test_socket.o"
 	@echo "... tests/test_socket.i"
 	@echo "... tests/test_socket.s"
+	@echo "... tests/test_tcp_server.o"
+	@echo "... tests/test_tcp_server.i"
+	@echo "... tests/test_tcp_server.s"
 .PHONY : help
 
 

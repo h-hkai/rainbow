@@ -87,7 +87,7 @@ static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,
         return fun(fd, std::forward<Args>(args)...);
     }
 
-    RAINBOW_LOG_DEBUG(g_logger) << "do_io<" << hook_fun_name << ">";
+    //RAINBOW_LOG_DEBUG(g_logger) << "do_io<" << hook_fun_name << ">";
 
     rainbow::FdCtx::ptr ctx = rainbow::FdMgr::GetInstance()->get(fd);
     if (!ctx) {
@@ -136,9 +136,9 @@ retry:
             }
             return -1;
         } else {
-            RAINBOW_LOG_DEBUG(g_logger) << "do_io retry <" << hook_fun_name << ">";
+            //RAINBOW_LOG_DEBUG(g_logger) << "do_io retry <" << hook_fun_name << ">";
             rainbow::Fiber::YieldToHold();
-            RAINBOW_LOG_DEBUG(g_logger) << "do_io retry <" << hook_fun_name << ">";
+            //RAINBOW_LOG_DEBUG(g_logger) << "do_io retry <" << hook_fun_name << ">";
             if (timer) {
                 timer->cancel();
             }
@@ -476,6 +476,5 @@ int setsockopt(int sockfd, int level, int optname, const void *optval, socklen_t
 }
 
 }
-
 
 

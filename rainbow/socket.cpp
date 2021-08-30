@@ -103,7 +103,7 @@ bool Socket::getOption(int level, int option, void* result, size_t* len) {
     return true;
 }
 
-bool Socket::setOption(int level, int option, const void* result, size_t len) {
+bool Socket::setOption(int level, int option, const void* result, socklen_t len) {
     if (setsockopt(m_sock, level, option, result, (socklen_t)len)) {
         RAINBOW_LOG_DEBUG(g_logger) << "setOption sock = " << m_sock
             << " level = " << level << " option = " << option
@@ -436,6 +436,10 @@ void Socket::newSock() {
             << ", " << m_type << ", " << m_protocol << ") errno = "
             << errno << " errstr = " << strerror(errno);
     }
+}
+
+std::ostream& operator<<(std::ostream& os, const Socket& sock) {
+    return sock.dump(os);
 }
 
 }

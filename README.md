@@ -306,3 +306,79 @@ socket 封装的时候有 sendmsg 和 readmsg 用的是 iovec 结构体
 
 将 ByteArray 中分配的内存也转成 iovec 方式供 socket 往里面填充
 
+
+## HTTP 协议开发
+
+HTTP/1.1 - API
+
+HttpRequest
+
+HttpResponse
+
+```
+GET /dashboard/ HTTP/1.1
+host: 192.168.80.1
+
+HTTP/1.1 200 OK
+Date: Fri, 27 Aug 2021 06:57:05 GMT
+Server: Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/7.4.20
+Last-Modified: Thu, 27 Aug 2015 09:52:42 GMT
+ETag: "1af0-51e47eda3ce80"
+Accept-Ranges: bytes
+Content-Length: 6896
+Content-Type: text/html
+-----------------------------------------
+
+utl: http://www.xxxx.top:80/page/xxx?id=10&v=20#fr
+
+http,           协议
+www.xxxx.top,   host
+80,             端口
+/page/xxx,      path
+id=10&v=20,     param
+fr,             fragment
+
+```
+
+封装了 HTTP request 相关的方法
+
+封装了 HTTP response 相关的方法
+
+协议解析
+
+ragel mongerl2
+
+TcpServer封装,
+
+基于TcpServer实现了一个EchoServer
+
+### Stream 封装
+
+针对文件/socket封装
+
+read/write/readFixSize/writeFixSize
+
+### HttpSession 封装
+
+HttpSession / HttpConnection
+
+接收端
+
+Server.accept, socket -> session
+
+请求端
+
+client connect socket -> Connection
+
+HttpServer : TcpServer
+
+### Servlet
+
+```
+        Servlet <---- FunctionServlet
+          |
+          |
+          V
+     ServletDispatch
+```
+
