@@ -1,3 +1,5 @@
+/home/ubuntu/rainbow/build/CMakeFiles/test_uri.dir
+/home/ubuntu/rainbow/build/CMakeFiles/test_http_connection.dir
 /home/ubuntu/rainbow/build/CMakeFiles/test_address.dir
 /home/ubuntu/rainbow/build/CMakeFiles/test_bytearray.dir
 /home/ubuntu/rainbow/build/CMakeFiles/test_hook.dir

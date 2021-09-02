@@ -95,6 +95,12 @@ int httpclient_parser_init(httpclient_parser *parser)  {
 /** exec **/
 int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, size_t len, size_t off)  
 {
+    parser->nread = 0;
+    parser->mark = 0;
+    parser->field_len = 0;
+    parser->field_start = 0;
+
+
     const char *p, *pe;
     int cs = parser->cs;
 
@@ -108,7 +114,7 @@ int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, siz
 
 
     
-#line 112 "httpclient_parser.rl.cpp"
+#line 118 "httpclient_parser.rl.cpp"
 	{
 	if ( p == pe )
 		goto _test_eof;
@@ -137,7 +143,7 @@ st2:
 	if ( ++p == pe )
 		goto _test_eof2;
 case 2:
-#line 141 "httpclient_parser.rl.cpp"
+#line 147 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr3;
 		case 13: goto tr4;
@@ -235,7 +241,7 @@ st120:
 	if ( ++p == pe )
 		goto _test_eof120;
 case 120:
-#line 239 "httpclient_parser.rl.cpp"
+#line 245 "httpclient_parser.rl.cpp"
 	goto st0;
 tr4:
 #line 95 "httpclient_parser.rl"
@@ -283,7 +289,7 @@ st3:
 	if ( ++p == pe )
 		goto _test_eof3;
 case 3:
-#line 287 "httpclient_parser.rl.cpp"
+#line 293 "httpclient_parser.rl.cpp"
 	if ( (*p) == 10 )
 		goto tr7;
 	goto st0;
@@ -327,7 +333,7 @@ st4:
 	if ( ++p == pe )
 		goto _test_eof4;
 case 4:
-#line 331 "httpclient_parser.rl.cpp"
+#line 337 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 33: goto tr8;
 		case 124: goto tr8;
@@ -359,7 +365,7 @@ st5:
 	if ( ++p == pe )
 		goto _test_eof5;
 case 5:
-#line 363 "httpclient_parser.rl.cpp"
+#line 369 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr9;
 		case 13: goto tr10;
@@ -399,7 +405,7 @@ st6:
 	if ( ++p == pe )
 		goto _test_eof6;
 case 6:
-#line 403 "httpclient_parser.rl.cpp"
+#line 409 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 33: goto tr14;
 		case 124: goto tr14;
@@ -431,7 +437,7 @@ st7:
 	if ( ++p == pe )
 		goto _test_eof7;
 case 7:
-#line 435 "httpclient_parser.rl.cpp"
+#line 441 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr15;
 		case 13: goto tr16;
@@ -466,7 +472,7 @@ st8:
 	if ( ++p == pe )
 		goto _test_eof8;
 case 8:
-#line 470 "httpclient_parser.rl.cpp"
+#line 476 "httpclient_parser.rl.cpp"
 	if ( (*p) == 84 )
 		goto st9;
 	goto st0;
@@ -534,7 +540,7 @@ st16:
 	if ( ++p == pe )
 		goto _test_eof16;
 case 16:
-#line 538 "httpclient_parser.rl.cpp"
+#line 544 "httpclient_parser.rl.cpp"
 	if ( 48 <= (*p) && (*p) <= 57 )
 		goto tr27;
 	goto st0;
@@ -546,7 +552,7 @@ st17:
 	if ( ++p == pe )
 		goto _test_eof17;
 case 17:
-#line 550 "httpclient_parser.rl.cpp"
+#line 556 "httpclient_parser.rl.cpp"
 	if ( (*p) == 32 )
 		goto tr28;
 	if ( 48 <= (*p) && (*p) <= 57 )
@@ -565,7 +571,7 @@ st18:
 	if ( ++p == pe )
 		goto _test_eof18;
 case 18:
-#line 569 "httpclient_parser.rl.cpp"
+#line 575 "httpclient_parser.rl.cpp"
 	if ( (*p) == 10 )
 		goto st0;
 	goto tr30;
@@ -577,7 +583,7 @@ st19:
 	if ( ++p == pe )
 		goto _test_eof19;
 case 19:
-#line 581 "httpclient_parser.rl.cpp"
+#line 587 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr32;
 		case 13: goto tr33;
@@ -642,7 +648,7 @@ st20:
 	if ( ++p == pe )
 		goto _test_eof20;
 case 20:
-#line 646 "httpclient_parser.rl.cpp"
+#line 652 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr7;
 		case 13: goto st3;
@@ -688,7 +694,7 @@ st21:
 	if ( ++p == pe )
 		goto _test_eof21;
 case 21:
-#line 692 "httpclient_parser.rl.cpp"
+#line 698 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 33: goto st21;
 		case 58: goto tr39;
@@ -727,7 +733,7 @@ st22:
 	if ( ++p == pe )
 		goto _test_eof22;
 case 22:
-#line 731 "httpclient_parser.rl.cpp"
+#line 737 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr42;
 		case 13: goto tr43;
@@ -744,7 +750,7 @@ st23:
 	if ( ++p == pe )
 		goto _test_eof23;
 case 23:
-#line 748 "httpclient_parser.rl.cpp"
+#line 754 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr45;
 		case 13: goto tr46;
@@ -791,7 +797,7 @@ st24:
 	if ( ++p == pe )
 		goto _test_eof24;
 case 24:
-#line 795 "httpclient_parser.rl.cpp"
+#line 801 "httpclient_parser.rl.cpp"
 	if ( (*p) == 10 )
 		goto st20;
 	goto st0;
@@ -811,7 +817,7 @@ st25:
 	if ( ++p == pe )
 		goto _test_eof25;
 case 25:
-#line 815 "httpclient_parser.rl.cpp"
+#line 821 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 33: goto st21;
 		case 58: goto tr39;
@@ -1122,7 +1128,7 @@ st35:
 	if ( ++p == pe )
 		goto _test_eof35;
 case 35:
-#line 1126 "httpclient_parser.rl.cpp"
+#line 1132 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr60;
 		case 13: goto tr61;
@@ -1147,7 +1153,7 @@ st36:
 	if ( ++p == pe )
 		goto _test_eof36;
 case 36:
-#line 1151 "httpclient_parser.rl.cpp"
+#line 1157 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr64;
 		case 13: goto st89;
@@ -1250,7 +1256,7 @@ st43:
 	if ( ++p == pe )
 		goto _test_eof43;
 case 43:
-#line 1254 "httpclient_parser.rl.cpp"
+#line 1260 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr74;
 		case 13: goto tr75;
@@ -1296,7 +1302,7 @@ st44:
 	if ( ++p == pe )
 		goto _test_eof44;
 case 44:
-#line 1300 "httpclient_parser.rl.cpp"
+#line 1306 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 33: goto st21;
 		case 58: goto tr39;
@@ -1812,7 +1818,7 @@ st61:
 	if ( ++p == pe )
 		goto _test_eof61;
 case 61:
-#line 1816 "httpclient_parser.rl.cpp"
+#line 1822 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr97;
 		case 13: goto tr98;
@@ -1837,7 +1843,7 @@ st62:
 	if ( ++p == pe )
 		goto _test_eof62;
 case 62:
-#line 1841 "httpclient_parser.rl.cpp"
+#line 1847 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr101;
 		case 13: goto st72;
@@ -1891,7 +1897,7 @@ st64:
 	if ( ++p == pe )
 		goto _test_eof64;
 case 64:
-#line 1895 "httpclient_parser.rl.cpp"
+#line 1901 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 72: goto st65;
 		case 104: goto st65;
@@ -1963,7 +1969,7 @@ st71:
 	if ( ++p == pe )
 		goto _test_eof71;
 case 71:
-#line 1967 "httpclient_parser.rl.cpp"
+#line 1973 "httpclient_parser.rl.cpp"
 	if ( (*p) == 10 )
 		goto tr113;
 	goto st0;
@@ -1980,7 +1986,7 @@ st121:
 	if ( ++p == pe )
 		goto _test_eof121;
 case 121:
-#line 1984 "httpclient_parser.rl.cpp"
+#line 1990 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 32: goto st63;
 		case 67: goto tr104;
@@ -2012,7 +2018,7 @@ st73:
 	if ( ++p == pe )
 		goto _test_eof73;
 case 73:
-#line 2016 "httpclient_parser.rl.cpp"
+#line 2022 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 33: goto st21;
 		case 58: goto tr39;
@@ -2235,7 +2241,7 @@ st80:
 	if ( ++p == pe )
 		goto _test_eof80;
 case 80:
-#line 2239 "httpclient_parser.rl.cpp"
+#line 2245 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto st62;
 		case 32: goto st63;
@@ -2253,7 +2259,7 @@ st81:
 	if ( ++p == pe )
 		goto _test_eof81;
 case 81:
-#line 2257 "httpclient_parser.rl.cpp"
+#line 2263 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr45;
 		case 13: goto tr46;
@@ -2337,7 +2343,7 @@ st88:
 	if ( ++p == pe )
 		goto _test_eof88;
 case 88:
-#line 2341 "httpclient_parser.rl.cpp"
+#line 2347 "httpclient_parser.rl.cpp"
 	if ( (*p) == 10 )
 		goto st43;
 	goto st0;
@@ -2354,7 +2360,7 @@ st122:
 	if ( ++p == pe )
 		goto _test_eof122;
 case 122:
-#line 2358 "httpclient_parser.rl.cpp"
+#line 2364 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 32: goto st37;
 		case 67: goto st38;
@@ -2384,7 +2390,7 @@ st90:
 	if ( ++p == pe )
 		goto _test_eof90;
 case 90:
-#line 2388 "httpclient_parser.rl.cpp"
+#line 2394 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 33: goto st21;
 		case 58: goto tr39;
@@ -2547,7 +2553,7 @@ st95:
 	if ( ++p == pe )
 		goto _test_eof95;
 case 95:
-#line 2551 "httpclient_parser.rl.cpp"
+#line 2557 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto st36;
 		case 32: goto st37;
@@ -2565,7 +2571,7 @@ st96:
 	if ( ++p == pe )
 		goto _test_eof96;
 case 96:
-#line 2569 "httpclient_parser.rl.cpp"
+#line 2575 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr45;
 		case 13: goto tr46;
@@ -2954,7 +2960,7 @@ st112:
 	if ( ++p == pe )
 		goto _test_eof112;
 case 112:
-#line 2958 "httpclient_parser.rl.cpp"
+#line 2964 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr150;
 		case 13: goto tr151;
@@ -2980,7 +2986,7 @@ st113:
 	if ( ++p == pe )
 		goto _test_eof113;
 case 113:
-#line 2984 "httpclient_parser.rl.cpp"
+#line 2990 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr154;
 		case 13: goto st116;
@@ -3034,7 +3040,7 @@ st115:
 	if ( ++p == pe )
 		goto _test_eof115;
 case 115:
-#line 3038 "httpclient_parser.rl.cpp"
+#line 3044 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr158;
 		case 13: goto tr159;
@@ -3055,7 +3061,7 @@ st123:
 	if ( ++p == pe )
 		goto _test_eof123;
 case 123:
-#line 3059 "httpclient_parser.rl.cpp"
+#line 3065 "httpclient_parser.rl.cpp"
 	if ( (*p) == 32 )
 		goto st114;
 	if ( (*p) > 13 ) {
@@ -3088,7 +3094,7 @@ st117:
 	if ( ++p == pe )
 		goto _test_eof117;
 case 117:
-#line 3092 "httpclient_parser.rl.cpp"
+#line 3098 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr158;
 		case 13: goto tr159;
@@ -3129,7 +3135,7 @@ st118:
 	if ( ++p == pe )
 		goto _test_eof118;
 case 118:
-#line 3133 "httpclient_parser.rl.cpp"
+#line 3139 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto st113;
 		case 32: goto st114;
@@ -3148,7 +3154,7 @@ st119:
 	if ( ++p == pe )
 		goto _test_eof119;
 case 119:
-#line 3152 "httpclient_parser.rl.cpp"
+#line 3158 "httpclient_parser.rl.cpp"
 	switch( (*p) ) {
 		case 10: goto tr158;
 		case 13: goto tr159;
@@ -3284,7 +3290,7 @@ case 119:
 	_out: {}
 	}
 
-#line 198 "httpclient_parser.rl"
+#line 204 "httpclient_parser.rl"
 
     parser->cs = cs;
     parser->nread += p - (buffer + off);
@@ -3296,10 +3302,10 @@ case 119:
     check(parser->field_len <= len, "field has length longer than whole buffer");
     check(parser->field_start < len, "field starts after buffer end");
 
-    if(parser->body_start) {
-        /* final \r\n combo encountered so stop right here */
-        parser->nread++;
-    }
+    //if(parser->body_start) {
+    //    /* final \r\n combo encountered so stop right here */
+    //    parser->nread++;
+    //}
 
     return(parser->nread);
 

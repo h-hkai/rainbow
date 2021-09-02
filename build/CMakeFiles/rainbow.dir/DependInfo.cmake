@@ -16,6 +16,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ubuntu/rainbow/rainbow/hook.cpp" "CMakeFiles/rainbow.dir/rainbow/hook.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/hook.cpp.o.d"
   "/home/ubuntu/rainbow/rainbow/http/http.cpp" "CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o.d"
   "/home/ubuntu/rainbow/rainbow/http/http11_parser.rl.cpp" "CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o.d"
+  "/home/ubuntu/rainbow/rainbow/http/http_connection.cpp" "CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o.d"
   "/home/ubuntu/rainbow/rainbow/http/http_parser.cpp" "CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o.d"
   "/home/ubuntu/rainbow/rainbow/http/http_server.cpp" "CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o.d"
   "/home/ubuntu/rainbow/rainbow/http/http_session.cpp" "CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o.d"
@@ -30,6 +31,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ubuntu/rainbow/rainbow/tcp_server.cpp" "CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o.d"
   "/home/ubuntu/rainbow/rainbow/thread.cpp" "CMakeFiles/rainbow.dir/rainbow/thread.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/thread.cpp.o.d"
   "/home/ubuntu/rainbow/rainbow/timer.cpp" "CMakeFiles/rainbow.dir/rainbow/timer.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/timer.cpp.o.d"
+  "/home/ubuntu/rainbow/rainbow/uri.rl.cpp" "CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o.d"
   "/home/ubuntu/rainbow/rainbow/util.cpp" "CMakeFiles/rainbow.dir/rainbow/util.cpp.o" "gcc" "CMakeFiles/rainbow.dir/rainbow/util.cpp.o.d"
   )
 

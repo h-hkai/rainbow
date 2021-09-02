@@ -16,7 +16,9 @@ set(LIB_SRC
     rainbow/config.cpp
     rainbow/fd_manager.cpp
     rainbow/fiber.cpp
+    rainbow/uri.rl.cpp
     rainbow/http/http.cpp
+    rainbow/http/http_connection.cpp
     rainbow/http/http_parser.cpp
     rainbow/http/http_session.cpp
     rainbow/http/http_server.cpp
@@ -105,6 +107,16 @@ add_executable(test_http_server tests/test_http_server.cpp)
 add_dependencies(test_http_server rainbow)
 force_redefine_file_macro_for_sources(test_http_server) #__FILE__
 target_link_libraries(test_http_server ${LIBS})
+
+add_executable(test_http_connection tests/test_http_connection.cpp)
+add_dependencies(test_http_connection rainbow)
+force_redefine_file_macro_for_sources(test_http_connection) #__FILE__
+target_link_libraries(test_http_connection ${LIBS})
+
+add_executable(test_uri tests/test_uri.cpp)
+add_dependencies(test_uri rainbow)
+force_redefine_file_macro_for_sources(test_uri) #__FILE__
+target_link_libraries(test_uri ${LIBS})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 #SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

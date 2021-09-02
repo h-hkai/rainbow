@@ -17,6 +17,7 @@ public:
               ,rainbow::IOManager* accept_worker = rainbow::IOManager::GetThis());
 
     ServletDispatch::ptr getServletDispatch() const { return m_dispatch; }
+    void setServletDispatch(ServletDispatch::ptr v) { m_dispatch = v; }
 protected:
     virtual void handleClient(Socket::ptr client) override;
 

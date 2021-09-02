@@ -120,6 +120,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_uri
+
+# Build rule for target.
+test_uri: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_uri
+.PHONY : test_uri
+
+# fast build rule for target.
+test_uri/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/build
+.PHONY : test_uri/fast
+
+#=============================================================================
+# Target rules for targets named test_http_connection
+
+# Build rule for target.
+test_http_connection: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_http_connection
+.PHONY : test_http_connection
+
+# fast build rule for target.
+test_http_connection/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/build
+.PHONY : test_http_connection/fast
+
+#=============================================================================
 # Target rules for targets named test_address
 
 # Build rule for target.
@@ -478,6 +504,30 @@ rainbow/http/http11_parser.rl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.s
 .PHONY : rainbow/http/http11_parser.rl.cpp.s
 
+rainbow/http/http_connection.o: rainbow/http/http_connection.cpp.o
+.PHONY : rainbow/http/http_connection.o
+
+# target to build an object file
+rainbow/http/http_connection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o
+.PHONY : rainbow/http/http_connection.cpp.o
+
+rainbow/http/http_connection.i: rainbow/http/http_connection.cpp.i
+.PHONY : rainbow/http/http_connection.i
+
+# target to preprocess a source file
+rainbow/http/http_connection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.i
+.PHONY : rainbow/http/http_connection.cpp.i
+
+rainbow/http/http_connection.s: rainbow/http/http_connection.cpp.s
+.PHONY : rainbow/http/http_connection.s
+
+# target to generate assembly for a file
+rainbow/http/http_connection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.s
+.PHONY : rainbow/http/http_connection.cpp.s
+
 rainbow/http/http_parser.o: rainbow/http/http_parser.cpp.o
 .PHONY : rainbow/http/http_parser.o
 
@@ -814,6 +864,30 @@ rainbow/timer.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/timer.cpp.s
 .PHONY : rainbow/timer.cpp.s
 
+rainbow/uri.rl.o: rainbow/uri.rl.cpp.o
+.PHONY : rainbow/uri.rl.o
+
+# target to build an object file
+rainbow/uri.rl.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o
+.PHONY : rainbow/uri.rl.cpp.o
+
+rainbow/uri.rl.i: rainbow/uri.rl.cpp.i
+.PHONY : rainbow/uri.rl.i
+
+# target to preprocess a source file
+rainbow/uri.rl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.i
+.PHONY : rainbow/uri.rl.cpp.i
+
+rainbow/uri.rl.s: rainbow/uri.rl.cpp.s
+.PHONY : rainbow/uri.rl.s
+
+# target to generate assembly for a file
+rainbow/uri.rl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/rainbow.dir/build.make CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.s
+.PHONY : rainbow/uri.rl.cpp.s
+
 rainbow/util.o: rainbow/util.cpp.o
 .PHONY : rainbow/util.o
 
@@ -958,6 +1032,30 @@ tests/test_http.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cpp.s
 .PHONY : tests/test_http.cpp.s
 
+tests/test_http_connection.o: tests/test_http_connection.cpp.o
+.PHONY : tests/test_http_connection.o
+
+# target to build an object file
+tests/test_http_connection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_http_connection.cpp.o
+.PHONY : tests/test_http_connection.cpp.o
+
+tests/test_http_connection.i: tests/test_http_connection.cpp.i
+.PHONY : tests/test_http_connection.i
+
+# target to preprocess a source file
+tests/test_http_connection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_http_connection.cpp.i
+.PHONY : tests/test_http_connection.cpp.i
+
+tests/test_http_connection.s: tests/test_http_connection.cpp.s
+.PHONY : tests/test_http_connection.s
+
+# target to generate assembly for a file
+tests/test_http_connection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_http_connection.cpp.s
+.PHONY : tests/test_http_connection.cpp.s
+
 tests/test_http_parser.o: tests/test_http_parser.cpp.o
 .PHONY : tests/test_http_parser.o
 
@@ -1054,6 +1152,30 @@ tests/test_tcp_server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cpp.s
 .PHONY : tests/test_tcp_server.cpp.s
 
+tests/test_uri.o: tests/test_uri.cpp.o
+.PHONY : tests/test_uri.o
+
+# target to build an object file
+tests/test_uri.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/tests/test_uri.cpp.o
+.PHONY : tests/test_uri.cpp.o
+
+tests/test_uri.i: tests/test_uri.cpp.i
+.PHONY : tests/test_uri.i
+
+# target to preprocess a source file
+tests/test_uri.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/tests/test_uri.cpp.i
+.PHONY : tests/test_uri.cpp.i
+
+tests/test_uri.s: tests/test_uri.cpp.s
+.PHONY : tests/test_uri.s
+
+# target to generate assembly for a file
+tests/test_uri.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_uri.dir/build.make CMakeFiles/test_uri.dir/tests/test_uri.cpp.s
+.PHONY : tests/test_uri.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1069,10 +1191,12 @@ help:
 	@echo "... test_bytearray"
 	@echo "... test_hook"
 	@echo "... test_http"
+	@echo "... test_http_connection"
 	@echo "... test_http_parser"
 	@echo "... test_http_server"
 	@echo "... test_socket"
 	@echo "... test_tcp_server"
+	@echo "... test_uri"
 	@echo "... examples/echo_server.o"
 	@echo "... examples/echo_server.i"
 	@echo "... examples/echo_server.s"
@@ -1100,6 +1224,9 @@ help:
 	@echo "... rainbow/http/http11_parser.rl.o"
 	@echo "... rainbow/http/http11_parser.rl.i"
 	@echo "... rainbow/http/http11_parser.rl.s"
+	@echo "... rainbow/http/http_connection.o"
+	@echo "... rainbow/http/http_connection.i"
+	@echo "... rainbow/http/http_connection.s"
 	@echo "... rainbow/http/http_parser.o"
 	@echo "... rainbow/http/http_parser.i"
 	@echo "... rainbow/http/http_parser.s"
@@ -1142,6 +1269,9 @@ help:
 	@echo "... rainbow/timer.o"
 	@echo "... rainbow/timer.i"
 	@echo "... rainbow/timer.s"
+	@echo "... rainbow/uri.rl.o"
+	@echo "... rainbow/uri.rl.i"
+	@echo "... rainbow/uri.rl.s"
 	@echo "... rainbow/util.o"
 	@echo "... rainbow/util.i"
 	@echo "... rainbow/util.s"
@@ -1160,6 +1290,9 @@ help:
 	@echo "... tests/test_http.o"
 	@echo "... tests/test_http.i"
 	@echo "... tests/test_http.s"
+	@echo "... tests/test_http_connection.o"
+	@echo "... tests/test_http_connection.i"
+	@echo "... tests/test_http_connection.s"
 	@echo "... tests/test_http_parser.o"
 	@echo "... tests/test_http_parser.i"
 	@echo "... tests/test_http_parser.s"
@@ -1172,6 +1305,9 @@ help:
 	@echo "... tests/test_tcp_server.o"
 	@echo "... tests/test_tcp_server.i"
 	@echo "... tests/test_tcp_server.s"
+	@echo "... tests/test_uri.o"
+	@echo "... tests/test_uri.i"
+	@echo "... tests/test_uri.s"
 .PHONY : help
 
 

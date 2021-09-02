@@ -18,7 +18,11 @@ CXX_FLAGS =  -rdynamic -O0 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror 
 
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/fiber.cpp.o_DEFINES = __FILE__="rainbow/fiber.cpp"
 
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o_DEFINES = __FILE__="rainbow/uri.rl.cpp"
+
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o_DEFINES = __FILE__="rainbow/http/http.cpp"
+
+# Custom defines: CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o_DEFINES = __FILE__="rainbow/http/http_connection.cpp"
 
 # Custom defines: CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o_DEFINES = __FILE__="rainbow/http/http_parser.cpp"
 

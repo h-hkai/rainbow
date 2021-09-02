@@ -403,6 +403,8 @@ COMPILER_VERSION_TWEAK	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.
 COMPILER_VERSION_TWEAK	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	295;"	d	file:
 COMPILER_VERSION_TWEAK	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	363;"	d	file:
 COMPILER_VERSION_TWEAK	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	51;"	d	file:
+CONNECT_FAIL	rainbow/http/http_connection.h	/^        CONNECT_FAIL = 3,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+CREATE_SOCKET_ERROR	rainbow/http/http_connection.h	/^        CREATE_SOCKET_ERROR = 7,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
 CXX_STD	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	741;"	d	file:
 CXX_STD	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	743;"	d	file:
 CXX_STD	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	746;"	d	file:
@@ -436,6 +438,8 @@ Create	rainbow/address.h	/^    static Address::ptr Create(const sockaddr* addr, 
 Create	rainbow/address.h	/^    static IPAddress::ptr Create(const char* address, uint16_t port = 0);$/;"	p	class:rainbow::IPAddress	access:public	signature:(const char* address, uint16_t port = 0)
 Create	rainbow/address.h	/^    static IPv4Address::ptr Create(const char* address, uint16_t port = 0);$/;"	p	class:rainbow::IPv4Address	access:public	signature:(const char* address, uint16_t port = 0)
 Create	rainbow/address.h	/^    static IPv6Address::ptr Create(const char* address, uint16_t port = 0);$/;"	p	class:rainbow::IPv6Address	access:public	signature:(const char* address, uint16_t port = 0)
+Create	rainbow/uri.h	/^    static Uri::ptr Create(const std::string& uri);$/;"	p	class:rainbow::Uri	access:public	signature:(const std::string& uri)
+Create	rainbow/uri.rl.cpp	/^Uri::ptr Uri::Create(const std::string& uristr) {$/;"	f	class:rainbow::Uri	signature:(const std::string& uristr)
 CreateMask	rainbow/address.cpp	/^static T CreateMask(uint32_t bits) {$/;"	f	namespace:rainbow	signature:(uint32_t bits)
 CreateTCP	rainbow/socket.cpp	/^Socket::ptr Socket::CreateTCP(rainbow::Address::ptr address) {$/;"	f	class:rainbow::Socket	signature:(rainbow::Address::ptr address)
 CreateTCP	rainbow/socket.h	/^    static Socket::ptr CreateTCP(rainbow::Address::ptr address);$/;"	p	class:rainbow::Socket	access:public	signature:(rainbow::Address::ptr address)
@@ -461,6 +465,20 @@ DateTimeFormatItem	rainbow/log.cpp	/^class DateTimeFormatItem : public LogFormat
 Dealloc	rainbow/fiber.cpp	/^    static void Dealloc(void* vp, size_t size) {$/;"	f	class:rainbow::MallocStackAllocator	access:public	signature:(void* vp, size_t size)
 DecodeZigzag32	rainbow/bytearray.cpp	/^static int32_t DecodeZigzag32(const uint32_t& v) {$/;"	f	namespace:rainbow	signature:(const uint32_t& v)
 DecodeZigzag64	rainbow/bytearray.cpp	/^static int64_t DecodeZigzag64(const uint64_t& v) {$/;"	f	namespace:rainbow	signature:(const uint64_t& v)
+DoGet	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoGet(Uri::ptr uri$/;"	f	class:rainbow::http::HttpConnection	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+DoGet	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoGet(const std::string& url$/;"	f	class:rainbow::http::HttpConnection	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+DoGet	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoGet(Uri::ptr uri$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+DoGet	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoGet(const std::string& url$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+DoPost	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoPost(Uri::ptr uri$/;"	f	class:rainbow::http::HttpConnection	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+DoPost	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoPost(const std::string& url$/;"	f	class:rainbow::http::HttpConnection	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+DoPost	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoPost(Uri::ptr uri$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+DoPost	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoPost(const std::string& url$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+DoRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoRequest(HttpMethod method$/;"	f	class:rainbow::http::HttpConnection	signature:(HttpMethod method , Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+DoRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoRequest(HttpMethod method$/;"	f	class:rainbow::http::HttpConnection	signature:(HttpMethod method , const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+DoRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoRequest(HttpRequest::ptr req$/;"	f	class:rainbow::http::HttpConnection	signature:(HttpRequest::ptr req , Uri::ptr uri , uint64_t timeout_ms)
+DoRequest	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoRequest(HttpMethod method$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(HttpMethod method , Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+DoRequest	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoRequest(HttpMethod method$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(HttpMethod method , const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+DoRequest	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoRequest(HttpRequest::ptr req$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(HttpRequest::ptr req , Uri::ptr uri , uint64_t timeout_ms)
 EQUALS	build/Makefile	/^EQUALS = =$/;"	m
 ERROR	rainbow/log.h	/^        ERROR = 4,$/;"	e	enum:rainbow::LogLevel::Level
 EXCEPT	rainbow/fiber.h	/^        EXCEPT$/;"	e	enum:rainbow::Fiber::State
@@ -477,6 +495,7 @@ ElapseFormatItem	rainbow/log.cpp	/^    ElapseFormatItem(const std::string str = 
 ElapseFormatItem	rainbow/log.cpp	/^class ElapseFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 EncodeZigzag32	rainbow/bytearray.cpp	/^static uint32_t EncodeZigzag32(const int32_t& v) {$/;"	f	namespace:rainbow	signature:(const int32_t& v)
 EncodeZigzag64	rainbow/bytearray.cpp	/^static uint64_t EncodeZigzag64(const int64_t& v) {$/;"	f	namespace:rainbow	signature:(const int64_t& v)
+Error	rainbow/http/http_connection.h	/^    enum class Error {$/;"	c	struct:rainbow::http::HttpResult	access:public
 Event	rainbow/iomanager.h	/^    enum Event {$/;"	g	class:rainbow::IOManager	access:public
 EventContext	rainbow/iomanager.h	/^        struct EventContext {$/;"	s	struct:rainbow::IOManager::FdContext	access:public
 FATAL	rainbow/log.h	/^        FATAL = 5$/;"	e	enum:rainbow::LogLevel::Level
@@ -527,6 +546,10 @@ GetHttpRequestBufferSize	rainbow/http/http_parser.cpp	/^uint64_t HttpRequestPars
 GetHttpRequestBufferSize	rainbow/http/http_parser.h	/^    static uint64_t GetHttpRequestBufferSize();$/;"	p	class:rainbow::http::HttpRequestParser	access:public	signature:()
 GetHttpRequestMaxBodySize	rainbow/http/http_parser.cpp	/^uint64_t HttpRequestParser::GetHttpRequestMaxBodySize() {$/;"	f	class:rainbow::http::HttpRequestParser	signature:()
 GetHttpRequestMaxBodySize	rainbow/http/http_parser.h	/^    static uint64_t GetHttpRequestMaxBodySize();$/;"	p	class:rainbow::http::HttpRequestParser	access:public	signature:()
+GetHttpResponseBufferSize	rainbow/http/http_parser.cpp	/^uint64_t HttpResponseParser::GetHttpResponseBufferSize() {$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
+GetHttpResponseBufferSize	rainbow/http/http_parser.h	/^    static uint64_t GetHttpResponseBufferSize();$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:()
+GetHttpResponseMaxBodySize	rainbow/http/http_parser.cpp	/^uint64_t HttpResponseParser::GetHttpResponseMaxBodySize() {$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
+GetHttpResponseMaxBodySize	rainbow/http/http_parser.h	/^    static uint64_t GetHttpResponseMaxBodySize();$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:()
 GetId	rainbow/fiber.h	/^    uint64_t GetId() const { return m_id; }$/;"	f	class:rainbow::Fiber	access:public	signature:() const
 GetInstance	rainbow/singleton.h	/^    static T* GetInstance() {$/;"	f	class:rainbow::Singleton	access:public	signature:()
 GetInstance	rainbow/singleton.h	/^    static std::shared_ptr<T> GetInstance() {$/;"	f	class:rainbow::Singletonptr	access:public	signature:()
@@ -555,6 +578,12 @@ HOLD	rainbow/fiber.h	/^        HOLD,$/;"	e	enum:rainbow::Fiber::State
 HOOK_FUN	rainbow/hook.cpp	20;"	d	file:
 HTTP_METHOD_MAP	rainbow/http/http.h	15;"	d
 HTTP_STATUS_MAP	rainbow/http/http.h	61;"	d
+HttpConnection	rainbow/http/http_connection.cpp	/^HttpConnection::HttpConnection(Socket::ptr sock, bool owner) $/;"	f	class:rainbow::http::HttpConnection	signature:(Socket::ptr sock, bool owner)
+HttpConnection	rainbow/http/http_connection.h	/^    HttpConnection(Socket::ptr sock, bool owner = true);$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(Socket::ptr sock, bool owner = true)
+HttpConnection	rainbow/http/http_connection.h	/^class HttpConnection : public SocketStream {$/;"	c	namespace:rainbow::http	inherits:SocketStream
+HttpConnectionPool	rainbow/http/http_connection.cpp	/^HttpConnectionPool::HttpConnectionPool(const std::string& host$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(const std::string& host ,const std::string& vhost ,uint32_t port ,uint32_t max_size ,uint32_t max_alive_time ,uint32_t max_request)
+HttpConnectionPool	rainbow/http/http_connection.h	/^    HttpConnectionPool(const std::string& host$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(const std::string& host ,const std::string& vhost ,uint32_t port ,uint32_t max_size ,uint32_t max_alive_time ,uint32_t max_request)
+HttpConnectionPool	rainbow/http/http_connection.h	/^class HttpConnectionPool {$/;"	c	namespace:rainbow::http
 HttpMethod	rainbow/http/http.h	/^enum class HttpMethod {$/;"	c	namespace:rainbow::http
 HttpMethodToString	rainbow/http/http.cpp	/^const char* HttpMethodToString(const HttpMethod& m) {$/;"	f	namespace:rainbow::http	signature:(const HttpMethod& m)
 HttpMethodToString	rainbow/http/http.h	/^const char* HttpMethodToString(const HttpMethod& m);$/;"	p	namespace:rainbow::http	signature:(const HttpMethod& m)
@@ -570,6 +599,8 @@ HttpResponse	rainbow/http/http.h	/^class HttpResponse {$/;"	c	namespace:rainbow:
 HttpResponseParser	rainbow/http/http_parser.cpp	/^HttpResponseParser::HttpResponseParser ()$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
 HttpResponseParser	rainbow/http/http_parser.h	/^    HttpResponseParser ();$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:()
 HttpResponseParser	rainbow/http/http_parser.h	/^class HttpResponseParser {$/;"	c	namespace:rainbow::http
+HttpResult	rainbow/http/http_connection.h	/^    HttpResult(int _result$/;"	f	struct:rainbow::http::HttpResult	access:public	signature:(int _result ,HttpResponse::ptr _response ,const std::string& _error)
+HttpResult	rainbow/http/http_connection.h	/^struct HttpResult {$/;"	s	namespace:rainbow::http
 HttpServer	rainbow/http/http_server.cpp	/^HttpServer::HttpServer(bool keepalive$/;"	f	class:rainbow::http::HttpServer	signature:(bool keepalive ,rainbow::IOManager* worker ,rainbow::IOManager* accept_worker)
 HttpServer	rainbow/http/http_server.h	/^    HttpServer(bool keepalive = false$/;"	p	class:rainbow::http::HttpServer	access:public	signature:(bool keepalive = false ,rainbow::IOManager* worker = rainbow::IOManager::GetThis() ,rainbow::IOManager* accept_worker = rainbow::IOManager::GetThis())
 HttpServer	rainbow/http/http_server.h	/^class HttpServer : public TcpServer {$/;"	c	namespace:rainbow::http	inherits:TcpServer
@@ -582,6 +613,8 @@ HttpStatusToString	rainbow/http/http.h	/^const char* HttpStatusToString(const Ht
 ID_VOID_MAIN	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	6;"	d	file:
 INFO	rainbow/log.h	/^        INFO = 2,$/;"	e	enum:rainbow::LogLevel::Level
 INIT	rainbow/fiber.h	/^        INIT,$/;"	e	enum:rainbow::Fiber::State
+INVALID_HOST	rainbow/http/http_connection.h	/^        INVALID_HOST = 2,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+INVALID_URL	rainbow/http/http_connection.h	/^        INVALID_URL = 1,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
 IOManager	rainbow/iomanager.cpp	/^IOManager::IOManager(size_t threads, bool use_caller, const std::string& name)$/;"	f	class:rainbow::IOManager	signature:(size_t threads, bool use_caller, const std::string& name)
 IOManager	rainbow/iomanager.h	/^    IOManager(size_t threads = 1, bool use_caller = true, const std::string& name = "");$/;"	p	class:rainbow::IOManager	access:public	signature:(size_t threads = 1, bool use_caller = true, const std::string& name = ”)
 IOManager	rainbow/iomanager.h	/^class IOManager : public Scheduler, public TimerManager{$/;"	c	namespace:rainbow	inherits:Scheduler,TimerManager
@@ -677,6 +710,7 @@ MessageFormatItem	rainbow/log.cpp	/^    MessageFormatItem(const std::string& str
 MessageFormatItem	rainbow/log.cpp	/^class MessageFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 Mutex	rainbow/thread.h	/^    Mutex() {$/;"	f	class:rainbow::Mutex	access:public	signature:()
 Mutex	rainbow/thread.h	/^class Mutex : Noncopyable {$/;"	c	namespace:rainbow	inherits:Noncopyable
+MutexType	rainbow/http/http_connection.h	/^    typedef Mutex MutexType;$/;"	t	class:rainbow::http::HttpConnectionPool	access:public
 MutexType	rainbow/iomanager.h	/^        typedef Mutex MutexType;$/;"	t	struct:rainbow::IOManager::FdContext	access:public
 MutexType	rainbow/log.h	/^    typedef Spinlock MutexType;$/;"	t	class:rainbow::LogAppender	access:public
 MutexType	rainbow/log.h	/^    typedef Spinlock MutexType;$/;"	t	class:rainbow::Logger	access:public
@@ -695,10 +729,14 @@ Node	rainbow/bytearray.h	/^    struct Node {$/;"	s	class:rainbow::ByteArray	acce
 Noncopyable	rainbow/noncopyable.h	/^    Noncopyable() = default;$/;"	p	class:rainbow::Noncopyable	access:public	signature:()
 Noncopyable	rainbow/noncopyable.h	/^    Noncopyable(const Noncopyable&) = delete;$/;"	p	class:rainbow::Noncopyable	access:public	signature:(const Noncopyable&)
 Noncopyable	rainbow/noncopyable.h	/^class Noncopyable {$/;"	c	namespace:rainbow
+NotFoundServlet	rainbow/http/servlet.cpp	/^NotFoundServlet::NotFoundServlet() $/;"	f	class:rainbow::http::NotFoundServlet	signature:()
+NotFoundServlet	rainbow/http/servlet.h	/^    NotFoundServlet();$/;"	p	class:rainbow::http::NotFoundServlet	access:public	signature:()
+NotFoundServlet	rainbow/http/servlet.h	/^class NotFoundServlet : public Servlet {$/;"	c	namespace:rainbow::http	inherits:Servlet
 NullMutex	rainbow/thread.h	/^    NullMutex() {}$/;"	f	class:rainbow::NullMutex	access:public	signature:()
 NullMutex	rainbow/thread.h	/^class NullMutex : Noncopyable {$/;"	c	namespace:rainbow	inherits:Noncopyable
 NullRWMutex	rainbow/thread.h	/^    NullRWMutex() {}$/;"	f	class:rainbow::NullRWMutex	access:public	signature:()
 NullRWMutex	rainbow/thread.h	/^class NullRWMutex : Noncopyable {$/;"	c	namespace:rainbow	inherits:Noncopyable
+OK	rainbow/http/http_connection.h	/^        OK = 0,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
 OnTimer	rainbow/timer.cpp	/^static void OnTimer(std::weak_ptr<void> weak_cond, std::function<void()> cb) {$/;"	f	namespace:rainbow	signature:(std::weak_ptr<void> weak_cond, std::function<void()> cb)
 PLATFORM_ID	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	437;"	d	file:
 PLATFORM_ID	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	440;"	d	file:
@@ -768,6 +806,8 @@ PLATFORM_ID	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	513;"	d
 PLATFORM_ID	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	518;"	d	file:
 PLATFORM_ID	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	521;"	d	file:
 PLATFORM_ID	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	525;"	d	file:
+POOL_GET_CONNECTION	rainbow/http/http_connection.h	/^        POOL_GET_CONNECTION = 8,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+POOL_INVALID_CONNECTION	rainbow/http/http_connection.h	/^        POOL_INVALID_CONNECTION = 9,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
 PTR_TO	rainbow/http/http11_parser.rl.cpp	47;"	d	file:
 PTR_TO	rainbow/http/httpclient_parser.rl.cpp	48;"	d	file:
 Person	tests/test_config.cpp	/^    Person() {}$/;"	f	class:Person	access:public	signature:()
@@ -817,6 +857,10 @@ ReadLock	rainbow/thread.h	/^    typedef ReadScopedLockImpl<NullMutex> ReadLock;$
 ReadLock	rainbow/thread.h	/^    typedef ReadScopedLockImpl<RWMutex> ReadLock;$/;"	t	class:rainbow::RWMutex	access:public
 ReadScopedLockImpl	rainbow/thread.h	/^    ReadScopedLockImpl(T& mutex)$/;"	f	struct:rainbow::ReadScopedLockImpl	access:public	signature:(T& mutex)
 ReadScopedLockImpl	rainbow/thread.h	/^struct ReadScopedLockImpl {$/;"	s	namespace:rainbow
+ReleasePtr	rainbow/http/http_connection.cpp	/^void HttpConnectionPool::ReleasePtr(HttpConnection* ptr, HttpConnectionPool* pool) {$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(HttpConnection* ptr, HttpConnectionPool* pool)
+ReleasePtr	rainbow/http/http_connection.h	/^    static void ReleasePtr(HttpConnection* ptr, HttpConnectionPool* pool);$/;"	p	class:rainbow::http::HttpConnectionPool	access:private	signature:(HttpConnection* ptr, HttpConnectionPool* pool)
+SEND_CLOSE_BY_PEER	rainbow/http/http_connection.h	/^        SEND_CLOSE_BY_PEER = 4,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+SEND_SOCKET_ERROR	rainbow/http/http_connection.h	/^        SEND_SOCKET_ERROR = 5,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
 SHELL	build/Makefile	/^SHELL = \/bin\/sh$/;"	m
 SIMULATE_ID	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	27;"	d	file:
 SIMULATE_ID	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	291;"	d	file:
@@ -908,6 +952,7 @@ StringToHttpMethod	rainbow/http/http.cpp	/^HttpMethod StringToHttpMethod(const s
 StringToHttpMethod	rainbow/http/http.h	/^HttpMethod StringToHttpMethod(const std::string& m);$/;"	p	namespace:rainbow::http	signature:(const std::string& m)
 TCP	rainbow/socket.h	/^        TCP = SOCK_STREAM,$/;"	e	enum:rainbow::Socket::Type
 TERM	rainbow/fiber.h	/^        TERM,$/;"	e	enum:rainbow::Fiber::State
+TIMEOUT	rainbow/http/http_connection.h	/^        TIMEOUT = 6,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
 TabFormatItem	rainbow/log.cpp	/^     TabFormatItem(const std::string& str = "") {}$/;"	f	class:rainbow::TabFormatItem	access:public	signature:(const std::string& str = ”)
 TabFormatItem	rainbow/log.cpp	/^class TabFormatItem : public LogFormatter::FormatItem {$/;"	c	namespace:rainbow	file:	inherits:LogFormatter::FormatItem
 TcpServer	rainbow/tcp_server.cpp	/^TcpServer::TcpServer(rainbow::IOManager* worker, rainbow::IOManager* accept_worker)$/;"	f	class:rainbow::TcpServer	signature:(rainbow::IOManager* worker, rainbow::IOManager* accept_worker)
@@ -948,6 +993,9 @@ UnknownAddress	rainbow/address.cpp	/^UnknownAddress::UnknownAddress(int family) 
 UnknownAddress	rainbow/address.h	/^    UnknownAddress(const sockaddr& addr);$/;"	p	class:rainbow::UnknownAddress	access:public	signature:(const sockaddr& addr)
 UnknownAddress	rainbow/address.h	/^    UnknownAddress(int family);$/;"	p	class:rainbow::UnknownAddress	access:public	signature:(int family)
 UnknownAddress	rainbow/address.h	/^class UnknownAddress : public Address {$/;"	c	namespace:rainbow	inherits:Address
+Uri	rainbow/uri.h	/^    Uri();$/;"	p	class:rainbow::Uri	access:public	signature:()
+Uri	rainbow/uri.h	/^class Uri {$/;"	c	namespace:rainbow
+Uri	rainbow/uri.rl.cpp	/^Uri::Uri()$/;"	f	class:rainbow::Uri	signature:()
 VERBOSE	build/Makefile	/^VERBOSE = 1$/;"	m
 Visit	rainbow/config.cpp	/^void Config::Visit(std::function<void(ConfigVarBase::ptr)> cb) {$/;"	f	class:rainbow::Config	signature:(std::function<void(ConfigVarBase::ptr)> cb)
 Visit	rainbow/config.h	/^    static void Visit(std::function<void(ConfigVarBase::ptr cb)>);$/;"	p	class:rainbow::Config	access:public	signature:(std::function<void(ConfigVarBase::ptr cb)>)
@@ -1001,6 +1049,7 @@ __RAINBOW_ADDRESS_H__	rainbow/address.h	2;"	d
 __RAINBOW_CONFIG_H__	rainbow/config.h	2;"	d
 __RAINBOW_ENDIAN_H__	rainbow/endian.h	2;"	d
 __RAINBOW_HOOK_H__	rainbow/hook.h	2;"	d
+__RAINBOW_HTTP_CONNECTION_H__	rainbow/http/http_connection.h	2;"	d
 __RAINBOW_HTTP_HTTP_H__	rainbow/http/http.h	2;"	d
 __RAINBOW_HTTP_HTTP_SERVER_H	rainbow/http/http_server.h	2;"	d
 __RAINBOW_HTTP_PARSER_H__	rainbow/http/http_parser.h	2;"	d
@@ -1018,6 +1067,7 @@ __RAINBOW_STREAM_H__	rainbow/stream.h	2;"	d
 __RAINBOW_TCP_SERVER_H__	rainbow/tcp_server.h	2;"	d
 __RAINBOW_THREAD_H__	rainbow/thread.h	2;"	d
 __RAINBOW_TIMER_H__	rainbow/timer.h	2;"	d
+__RAINBOW_URI_H__	rainbow/uri.h	2;"	d
 __RAINBOW_UTIL_H_	rainbow/util.h	2;"	d
 __RAINBOW__BYTEARRAY_H__	rainbow/bytearray.h	2;"	d
 __SCHEDULER_H__	rainbow/scheduler.h	2;"	d
@@ -1122,6 +1172,8 @@ content_len	rainbow/http/httpclient_parser.h	/^  int content_len;$/;"	m	struct:h
 contextResize	rainbow/iomanager.cpp	/^void IOManager::contextResize(size_t size) {$/;"	f	class:rainbow::IOManager	signature:(size_t size)
 contextResize	rainbow/iomanager.h	/^    void contextResize(size_t size);$/;"	p	class:rainbow::IOManager	access:protected	signature:(size_t size)
 count	tests/test_thread.cpp	/^int count = 0;$/;"	v
+createAddress	rainbow/uri.h	/^    Address::ptr createAddress() const;$/;"	p	class:rainbow::Uri	access:public	signature:() const
+createAddress	rainbow/uri.rl.cpp	/^Address::ptr Uri::createAddress() const {$/;"	f	class:rainbow::Uri	signature:() const
 cs	rainbow/http/http11_parser.h	/^  int cs;$/;"	m	struct:http_parser	access:public
 cs	rainbow/http/httpclient_parser.h	/^  int cs;$/;"	m	struct:httpclient_parser	access:public
 data	rainbow/http/http11_parser.h	/^  void *data;$/;"	m	struct:http_parser	access:public
@@ -1149,6 +1201,20 @@ delServlet	rainbow/http/servlet.cpp	/^void ServletDispatch::ServletDispatch::del
 delServlet	rainbow/http/servlet.h	/^    void delServlet(const std::string& uri);$/;"	p	class:rainbow::http::ServletDispatch	access:public	signature:(const std::string& uri)
 detectClockRollover	rainbow/timer.cpp	/^bool TimerManager::detectClockRollover(uint64_t now_ms) {$/;"	f	class:rainbow::TimerManager	signature:(uint64_t now_ms)
 detectClockRollover	rainbow/timer.h	/^    bool detectClockRollover(uint64_t now_ms);$/;"	p	class:rainbow::TimerManager	access:private	signature:(uint64_t now_ms)
+doGet	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doGet(Uri::ptr uri$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+doGet	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doGet(const std::string& url$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+doGet	rainbow/http/http_connection.h	/^    HttpResult::ptr doGet(Uri::ptr uri$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+doGet	rainbow/http/http_connection.h	/^    HttpResult::ptr doGet(const std::string& url$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+doPost	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doPost(Uri::ptr uri$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+doPost	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doPost(const std::string& url$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+doPost	rainbow/http/http_connection.h	/^    HttpResult::ptr doPost(Uri::ptr uri$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+doPost	rainbow/http/http_connection.h	/^    HttpResult::ptr doPost(const std::string& url$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+doRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doRequest(HttpMethod method$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(HttpMethod method , Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+doRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doRequest(HttpMethod method$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(HttpMethod method , const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+doRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doRequest(HttpRequest::ptr req$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(HttpRequest::ptr req , uint64_t timeout_ms)
+doRequest	rainbow/http/http_connection.h	/^    HttpResult::ptr doRequest(HttpMethod method$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(HttpMethod method , Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+doRequest	rainbow/http/http_connection.h	/^    HttpResult::ptr doRequest(HttpMethod method$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(HttpMethod method , const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+doRequest	rainbow/http/http_connection.h	/^    HttpResult::ptr doRequest(HttpRequest::ptr req$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(HttpRequest::ptr req , uint64_t timeout_ms)
 do_io	rainbow/hook.cpp	/^static ssize_t do_io(int fd, OriginFun fun, const char* hook_fun_name,$/;"	f	file:	signature:(int fd, OriginFun fun, const char* hook_fun_name, uint32_t event, int timeout_so, Args&&... args)
 dump	rainbow/http/http.cpp	/^std::ostream& HttpRequest::dump(std::ostream& os) const {$/;"	f	class:rainbow::http::HttpRequest	signature:(std::ostream& os) const
 dump	rainbow/http/http.cpp	/^std::ostream& HttpResponse::dump(std::ostream& os) const {$/;"	f	class:rainbow::http::HttpResponse	signature:(std::ostream& os) const
@@ -1156,14 +1222,17 @@ dump	rainbow/http/http.h	/^    std::ostream& dump(std::ostream& os) const;$/;"	p
 dump	rainbow/http/http.h	/^    std::ostream& dump(std::ostream& os) const;$/;"	p	class:rainbow::http::HttpResponse	access:public	signature:(std::ostream& os) const
 dump	rainbow/socket.cpp	/^std::ostream& Socket::dump(std::ostream& os) const {$/;"	f	class:rainbow::Socket	signature:(std::ostream& os) const
 dump	rainbow/socket.h	/^    std::ostream& dump(std::ostream& os) const;$/;"	p	class:rainbow::Socket	access:public	signature:(std::ostream& os) const
+dump	rainbow/uri.h	/^    std::ostream& dump(std::ostream& os) const;$/;"	p	class:rainbow::Uri	access:public	signature:(std::ostream& os) const
+dump	rainbow/uri.rl.cpp	/^std::ostream& Uri::dump(std::ostream& os) const {$/;"	f	class:rainbow::Uri	signature:(std::ostream& os) const
 element_cb	rainbow/http/http11_common.h	/^typedef void (*element_cb)(void *data, const char *at, size_t length);$/;"	t
+error	rainbow/http/http_connection.h	/^    std::string error;$/;"	m	struct:rainbow::http::HttpResult	access:public
 error	rainbow/log.cpp	/^void Logger::error(LogEvent::ptr event) { log(LogLevel::ERROR, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
 error	rainbow/log.h	/^    void error(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
 events	rainbow/iomanager.h	/^        Event events = NONE;    \/\/ Â∑≤ÁªèÊ≥®ÂÜåÁöÑ‰∫ã‰ª∂$/;"	m	struct:rainbow::IOManager::FdContext	access:public
 execute	rainbow/http/http_parser.cpp	/^size_t HttpRequestParser::execute(char* data, size_t len) {$/;"	f	class:rainbow::http::HttpRequestParser	signature:(char* data, size_t len)
-execute	rainbow/http/http_parser.cpp	/^size_t HttpResponseParser::execute(char* data, size_t len) {$/;"	f	class:rainbow::http::HttpResponseParser	signature:(char* data, size_t len)
+execute	rainbow/http/http_parser.cpp	/^size_t HttpResponseParser::execute(char* data, size_t len, bool chunck) {$/;"	f	class:rainbow::http::HttpResponseParser	signature:(char* data, size_t len, bool chunck)
 execute	rainbow/http/http_parser.h	/^    size_t execute(char* data, size_t len);$/;"	p	class:rainbow::http::HttpRequestParser	access:public	signature:(char* data, size_t len)
-execute	rainbow/http/http_parser.h	/^    size_t execute(char* data, size_t len);$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:(char* data, size_t len)
+execute	rainbow/http/http_parser.h	/^    size_t execute(char* data, size_t len, bool chunck);$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:(char* data, size_t len, bool chunck)
 fatal	rainbow/log.cpp	/^void Logger::fatal(LogEvent::ptr event) { log(LogLevel::FATAL, event); }$/;"	f	class:rainbow::Logger	signature:(LogEvent::ptr event)
 fatal	rainbow/log.h	/^    void fatal(LogEvent::ptr event);$/;"	p	class:rainbow::Logger	access:public	signature:(LogEvent::ptr event)
 fcntl	rainbow/hook.cpp	/^int fcntl(int fd, int cmd, ... \/* arg *\/ ) {$/;"	f	signature:(int fd, int cmd, ... )
@@ -1196,6 +1265,8 @@ fun3	tests/test_thread.cpp	/^void fun3() {$/;"	f	signature:()
 g_fiber_stack_size	rainbow/fiber.cpp	/^static ConfigVar<uint32_t>::ptr g_fiber_stack_size = $/;"	m	namespace:rainbow	file:
 g_http_request_buffer_size	rainbow/http/http_parser.cpp	/^static rainbow::ConfigVar<uint64_t>::ptr g_http_request_buffer_size = $/;"	m	namespace:rainbow::http	file:
 g_http_request_max_body_size	rainbow/http/http_parser.cpp	/^static rainbow::ConfigVar<uint64_t>::ptr g_http_request_max_body_size = $/;"	m	namespace:rainbow::http	file:
+g_http_response_buffer_size	rainbow/http/http_parser.cpp	/^static rainbow::ConfigVar<uint64_t>::ptr g_http_response_buffer_size = $/;"	m	namespace:rainbow::http	file:
+g_http_response_max_body_size	rainbow/http/http_parser.cpp	/^static rainbow::ConfigVar<uint64_t>::ptr g_http_response_max_body_size = $/;"	m	namespace:rainbow::http	file:
 g_log_define	rainbow/log.cpp	/^rainbow::ConfigVar<std::set<LogDefine>>::ptr g_log_define = $/;"	m	namespace:rainbow	file:
 g_logger	examples/echo_server.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v	file:
 g_logger	rainbow/address.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
@@ -1203,6 +1274,7 @@ g_logger	rainbow/bytearray.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_
 g_logger	rainbow/config.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	rainbow/fiber.cpp	/^static Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
 g_logger	rainbow/hook.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	v
+g_logger	rainbow/http/http_connection.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow::http	file:
 g_logger	rainbow/http/http_parser.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow::http	file:
 g_logger	rainbow/http/http_server.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow::http	file:
 g_logger	rainbow/iomanager.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow	file:
@@ -1214,6 +1286,7 @@ g_logger	rainbow/util.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_N
 g_logger	tests/test_address.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
 g_logger	tests/test_bytearray.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v	file:
 g_logger	tests/test_fiber.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
+g_logger	tests/test_http_connection.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v	file:
 g_logger	tests/test_http_parser.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v	file:
 g_logger	tests/test_http_server.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v	file:
 g_logger	tests/test_iomanager.cpp	/^rainbow::Logger::ptr g_logger = RAINBOW_LOG_ROOT();$/;"	v
@@ -1249,6 +1322,8 @@ getBaseSize	rainbow/bytearray.h	/^    size_t getBaseSize() const { return m_base
 getBody	rainbow/http/http.h	/^    const std::string& getBody() const { return m_body; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:() const
 getBody	rainbow/http/http.h	/^    const std::string& getBody() const { return m_body; }$/;"	f	class:rainbow::http::HttpResponse	access:public	signature:() const
 getCapacity	rainbow/bytearray.h	/^    size_t getCapacity() const { return m_capacity - m_position; }$/;"	f	class:rainbow::ByteArray	access:private	signature:() const
+getConnection	rainbow/http/http_connection.cpp	/^HttpConnection::ptr HttpConnectionPool::getConnection() {$/;"	f	class:rainbow::http::HttpConnectionPool	signature:()
+getConnection	rainbow/http/http_connection.h	/^    HttpConnection::ptr getConnection();$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:()
 getContent	rainbow/log.h	/^    std::string getContent() const { return m_ss.str(); }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
 getContentLength	rainbow/http/http_parser.cpp	/^uint64_t HttpRequestParser::getContentLength() {$/;"	f	class:rainbow::http::HttpRequestParser	signature:()
 getContentLength	rainbow/http/http_parser.cpp	/^uint64_t HttpResponseParser::getContentLength() {$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
@@ -1277,6 +1352,7 @@ getFormatter	rainbow/log.cpp	/^LogFormatter::ptr LogAppender::getFormatter() {$/
 getFormatter	rainbow/log.cpp	/^LogFormatter::ptr Logger::getFormatter() {$/;"	f	class:rainbow::Logger	signature:()
 getFormatter	rainbow/log.h	/^    LogFormatter::ptr getFormatter(); $/;"	p	class:rainbow::LogAppender	access:public	signature:()
 getFormatter	rainbow/log.h	/^    LogFormatter::ptr getFormatter();$/;"	p	class:rainbow::Logger	access:public	signature:()
+getFragment	rainbow/uri.h	/^    const std::string& getFragment() const { return m_fragment; }$/;"	f	class:rainbow::Uri	access:public	signature:() const
 getGlobServlet	rainbow/http/servlet.cpp	/^Servlet::ptr ServletDispatch::getGlobServlet(const std::string& uri) {$/;"	f	class:rainbow::http::ServletDispatch	signature:(const std::string& uri)
 getGlobServlet	rainbow/http/servlet.h	/^    Servlet::ptr getGlobServlet(const std::string& uri);$/;"	p	class:rainbow::http::ServletDispatch	access:public	signature:(const std::string& uri)
 getHeader	rainbow/http/http.cpp	/^std::string HttpRequest::getHeader(const std::string& key, const std::string& def) const {$/;"	f	class:rainbow::http::HttpRequest	signature:(const std::string& key, const std::string& def) const
@@ -1287,6 +1363,7 @@ getHeaderAs	rainbow/http/http.h	/^    T getHeaderAs(const std::string& key, cons
 getHeaderAs	rainbow/http/http.h	/^    T getHeaderAs(const std::string& key, const T& def = T()) {$/;"	f	class:rainbow::http::HttpResponse	access:public	signature:(const std::string& key, const T& def = T())
 getHeaders	rainbow/http/http.h	/^    const MapType& getHeaders() const { return m_headers; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:() const
 getHeaders	rainbow/http/http.h	/^    const MapType& getHeaders() const { return m_headers; }$/;"	f	class:rainbow::http::HttpResponse	access:public	signature:() const
+getHost	rainbow/uri.h	/^    const std::string& getHost() const { return m_host; }$/;"	f	class:rainbow::Uri	access:public	signature:() const
 getId	rainbow/thread.h	/^    pid_t getId() const { return m_id; }$/;"	f	class:rainbow::Thread	access:public	signature:() const
 getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::LogAppender	access:public	signature:() const
 getLevel	rainbow/log.h	/^    LogLevel::Level getLevel() const { return m_level; }$/;"	f	class:rainbow::LogEvent	access:public	signature:() const
@@ -1316,14 +1393,21 @@ getParam	rainbow/http/http.cpp	/^std::string HttpRequest::getParam(const std::st
 getParam	rainbow/http/http.h	/^    std::string getParam(const std::string& key, const std::string& def = "") const;$/;"	p	class:rainbow::http::HttpRequest	access:public	signature:(const std::string& key, const std::string& def = ”) const
 getParamAs	rainbow/http/http.h	/^    T getParamAs(const std::string& key, const T& def = T()) {$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:(const std::string& key, const T& def = T())
 getParams	rainbow/http/http.h	/^    const MapType& getParams() const { return m_params; } $/;"	f	class:rainbow::http::HttpRequest	access:public	signature:() const
+getParser	rainbow/http/http_parser.h	/^    const http_parser& getParser() const { return m_parser; }$/;"	f	class:rainbow::http::HttpRequestParser	access:public	signature:() const
+getParser	rainbow/http/http_parser.h	/^    const httpclient_parser& getParser() const { return m_parser; }$/;"	f	class:rainbow::http::HttpResponseParser	access:public	signature:() const
 getPath	rainbow/http/http.h	/^    const std::string& getPath() const { return m_path; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:() const
+getPath	rainbow/uri.h	/^    const std::string& getPath() const;$/;"	p	class:rainbow::Uri	access:public	signature:() const
+getPath	rainbow/uri.rl.cpp	/^const std::string& Uri::getPath() const {$/;"	f	class:rainbow::Uri	signature:() const
 getPattern	rainbow/log.h	/^    const std::string getPattern() const { return m_pattern; }$/;"	f	class:rainbow::LogFormatter	access:public	signature:() const
 getPort	rainbow/address.cpp	/^uint32_t IPv4Address::getPort() const {$/;"	f	class:rainbow::IPv4Address	signature:() const
 getPort	rainbow/address.cpp	/^uint32_t IPv6Address::getPort() const {$/;"	f	class:rainbow::IPv6Address	signature:() const
 getPort	rainbow/address.h	/^    virtual uint32_t getPort() const = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:() const
+getPort	rainbow/uri.h	/^    int32_t getPort() const;$/;"	p	class:rainbow::Uri	access:public	signature:() const
+getPort	rainbow/uri.rl.cpp	/^int32_t Uri::getPort() const {$/;"	f	class:rainbow::Uri	signature:() const
 getPosition	rainbow/bytearray.h	/^    size_t getPosition() const { return m_position; }$/;"	f	class:rainbow::ByteArray	access:public	signature:() const
 getProtocol	rainbow/socket.h	/^    int getProtocol() const { return m_protocol; }$/;"	f	class:rainbow::Socket	access:public	signature:() const
 getQuery	rainbow/http/http.h	/^    const std::string& getQuery() const { return m_query; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:() const
+getQuery	rainbow/uri.h	/^    const std::string& getQuery() const { return m_query; }$/;"	f	class:rainbow::Uri	access:public	signature:() const
 getReadBuffers	rainbow/bytearray.cpp	/^uint64_t ByteArray::getReadBuffers(std::vector<iovec>& buffers, uint64_t len) const {$/;"	f	class:rainbow::ByteArray	signature:(std::vector<iovec>& buffers, uint64_t len) const
 getReadBuffers	rainbow/bytearray.cpp	/^uint64_t ByteArray::getReadBuffers(std::vector<iovec>& buffers, uint64_t len, uint64_t position) const {$/;"	f	class:rainbow::ByteArray	signature:(std::vector<iovec>& buffers, uint64_t len, uint64_t position) const
 getReadBuffers	rainbow/bytearray.h	/^    uint64_t getReadBuffers(std::vector<iovec>& buffers, uint64_t len = ~0ull) const;$/;"	p	class:rainbow::ByteArray	access:public	signature:(std::vector<iovec>& buffers, uint64_t len = ~0ull) const
@@ -1339,10 +1423,12 @@ getRoot	rainbow/log.h	/^    Logger::ptr getRoot() const { return m_root; }$/;"	f
 getSS	rainbow/log.cpp	/^std::stringstream& LogEventWrap::getSS() {$/;"	f	class:rainbow::LogEventWrap	signature:()
 getSS	rainbow/log.h	/^    std::stringstream& getSS() { return m_ss; }$/;"	f	class:rainbow::LogEvent	access:public	signature:()
 getSS	rainbow/log.h	/^    std::stringstream& getSS();$/;"	p	class:rainbow::LogEventWrap	access:public	signature:()
+getScheme	rainbow/uri.h	/^    const std::string& getScheme() const { return m_scheme; }$/;"	f	class:rainbow::Uri	access:public	signature:() const
 getSendTimeout	rainbow/socket.cpp	/^int64_t Socket::getSendTimeout() {$/;"	f	class:rainbow::Socket	signature:()
 getSendTimeout	rainbow/socket.h	/^    int64_t getSendTimeout();$/;"	p	class:rainbow::Socket	access:public	signature:()
 getServlet	rainbow/http/servlet.cpp	/^Servlet::ptr ServletDispatch::getServlet(const std::string& uri) {$/;"	f	class:rainbow::http::ServletDispatch	signature:(const std::string& uri)
 getServlet	rainbow/http/servlet.h	/^    Servlet::ptr getServlet(const std::string& uri);$/;"	p	class:rainbow::http::ServletDispatch	access:public	signature:(const std::string& uri)
+getServletDispatch	rainbow/http/http_server.h	/^    ServletDispatch::ptr getServletDispatch() const { return m_dispatch; }$/;"	f	class:rainbow::http::HttpServer	access:public	signature:() const
 getSize	rainbow/bytearray.h	/^    size_t getSize() const { return m_size; }$/;"	f	class:rainbow::ByteArray	access:public	signature:() const
 getSocket	rainbow/socket.h	/^    int getSocket() const { return m_sock; }$/;"	f	class:rainbow::Socket	access:public	signature:() const
 getSocket	rainbow/socket_stream.h	/^    Socket::ptr getSocket() const { return m_socket; }$/;"	f	class:rainbow::SocketStream	access:public	signature:() const
@@ -1359,6 +1445,7 @@ getTimeout	rainbow/fd_manager.h	/^    uint64_t getTimeout(int type);$/;"	p	class
 getType	rainbow/socket.h	/^    int getType() const { return m_type; }$/;"	f	class:rainbow::Socket	access:public	signature:() const
 getTypeName	rainbow/config.h	/^    virtual std::string getTypeName() const = 0;$/;"	p	class:rainbow::ConfigVarBase	access:public	signature:() const
 getUserNonblock	rainbow/fd_manager.h	/^    bool getUserNonblock() const { return m_userNonblock; }$/;"	f	class:rainbow::FdCtx	access:public	signature:() const
+getUserinfo	rainbow/uri.h	/^    const std::string& getUserinfo() const { return m_userinfo; } $/;"	f	class:rainbow::Uri	access:public	signature:() const
 getValue	rainbow/config.h	/^    const T getValue() { $/;"	f	class:rainbow::ConfigVar	access:public	signature:()
 getVersion	rainbow/http/http.h	/^    uint8_t getVersion() const { return m_version; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:() const
 getVersion	rainbow/http/http.h	/^    uint8_t getVersion() const { return m_version; }$/;"	f	class:rainbow::http::HttpResponse	access:public	signature:() const
@@ -1367,6 +1454,7 @@ getWriteBuffers	rainbow/bytearray.h	/^    uint64_t getWriteBuffers(std::vector<i
 getsockopt	rainbow/hook.cpp	/^int getsockopt(int sockfd, int level, int optname, void *optval, socklen_t *optlen) {$/;"	f	signature:(int sockfd, int level, int optname, void *optval, socklen_t *optlen)
 getsockopt_fun	rainbow/hook.h	/^typedef int (*getsockopt_fun)(int sockfd, int level, int optname, void *optval, socklen_t *optlen);$/;"	t
 handle	rainbow/http/servlet.cpp	/^int32_t FunctionServlet::handle(rainbow::http::HttpRequest::ptr request$/;"	f	class:rainbow::http::FunctionServlet	signature:(rainbow::http::HttpRequest::ptr request ,rainbow::http::HttpResponse::ptr response ,rainbow::http::HttpSession::ptr session)
+handle	rainbow/http/servlet.cpp	/^int32_t NotFoundServlet::handle(rainbow::http::HttpRequest::ptr request$/;"	f	class:rainbow::http::NotFoundServlet	signature:(rainbow::http::HttpRequest::ptr request ,rainbow::http::HttpResponse::ptr response ,rainbow::http::HttpSession::ptr session)
 handle	rainbow/http/servlet.cpp	/^int32_t ServletDispatch::handle(rainbow::http::HttpRequest::ptr request$/;"	f	class:rainbow::http::ServletDispatch	signature:(rainbow::http::HttpRequest::ptr request ,rainbow::http::HttpResponse::ptr response ,rainbow::http::HttpSession::ptr session)
 handle	rainbow/http/servlet.h	/^    virtual int32_t handle(rainbow::http::HttpRequest::ptr request$/;"	p	class:rainbow::http::Servlet	access:public	signature:(rainbow::http::HttpRequest::ptr request ,rainbow::http::HttpResponse::ptr response ,rainbow::http::HttpSession::ptr session)
 handleClient	examples/echo_server.cpp	/^    void handleClient(rainbow::Socket::ptr client);$/;"	p	class:EchoServer	file:	access:public	signature:(rainbow::Socket::ptr client)
@@ -1392,6 +1480,8 @@ header_done	rainbow/http/httpclient_parser.h	/^  element_cb header_done;$/;"	m	s
 hook_init	rainbow/hook.cpp	/^void hook_init() {$/;"	f	namespace:rainbow	signature:()
 http	rainbow/http/http.cpp	/^namespace http {$/;"	n	namespace:rainbow	file:
 http	rainbow/http/http.h	/^namespace http {$/;"	n	namespace:rainbow
+http	rainbow/http/http_connection.cpp	/^namespace http {$/;"	n	namespace:rainbow	file:
+http	rainbow/http/http_connection.h	/^namespace http {$/;"	n	namespace:rainbow
 http	rainbow/http/http_parser.cpp	/^namespace http {$/;"	n	namespace:rainbow	file:
 http	rainbow/http/http_parser.h	/^namespace http {$/;"	n	namespace:rainbow
 http	rainbow/http/http_server.cpp	/^namespace http {$/;"	n	namespace:rainbow	file:
@@ -1529,6 +1619,8 @@ isClose	rainbow/http/http.h	/^    bool isClose() const { return m_close; }$/;"	f
 isConnected	rainbow/socket.h	/^    bool isConnected() const { return m_isConnected; }$/;"	f	class:rainbow::Socket	access:public	signature:() const
 isConnected	rainbow/socket_stream.cpp	/^bool SocketStream::isConnected() const {$/;"	f	class:rainbow::SocketStream	signature:() const
 isConnected	rainbow/socket_stream.h	/^    bool isConnected() const;$/;"	p	class:rainbow::SocketStream	access:public	signature:() const
+isDefaultPort	rainbow/uri.h	/^    bool isDefaultPort() const;$/;"	p	class:rainbow::Uri	access:private	signature:() const
+isDefaultPort	rainbow/uri.rl.cpp	/^bool Uri::isDefaultPort() const {$/;"	f	class:rainbow::Uri	signature:() const
 isError	rainbow/log.h	/^    bool isError() const {$/;"	f	class:rainbow::LogFormatter	access:public	signature:() const
 isFinished	rainbow/http/http_parser.cpp	/^int HttpRequestParser::isFinished() {$/;"	f	class:rainbow::http::HttpRequestParser	signature:()
 isFinished	rainbow/http/http_parser.cpp	/^int HttpResponseParser::isFinished() {$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
@@ -1585,7 +1677,9 @@ m_cb	rainbow/timer.h	/^    std::function<void()> m_cb;$/;"	m	class:rainbow::Time
 m_cbs	rainbow/config.h	/^    std::map<uint64_t, on_change_cb> m_cbs;$/;"	m	class:rainbow::ConfigVar	access:private
 m_close	rainbow/http/http.h	/^    bool m_close;$/;"	m	class:rainbow::http::HttpRequest	access:private
 m_close	rainbow/http/http.h	/^    bool m_close;$/;"	m	class:rainbow::http::HttpResponse	access:private
+m_conns	rainbow/http/http_connection.h	/^    std::list<HttpConnection*> m_conns;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
 m_cookies	rainbow/http/http.h	/^    MapType m_cookies;$/;"	m	class:rainbow::http::HttpRequest	access:private
+m_createTime	rainbow/http/http_connection.h	/^    uint64_t m_createTime = 0;$/;"	m	class:rainbow::http::HttpConnection	access:private
 m_ctx	rainbow/fiber.h	/^    ucontext_t m_ctx;$/;"	m	class:rainbow::Fiber	access:private
 m_cur	rainbow/bytearray.h	/^    Node* m_cur;$/;"	m	class:rainbow::ByteArray	access:private
 m_data	rainbow/http/http_parser.h	/^    HttpRequest::ptr m_data;$/;"	m	class:rainbow::http::HttpRequestParser	access:private
@@ -1594,6 +1688,7 @@ m_datas	rainbow/fd_manager.h	/^    std::vector<FdCtx::ptr> m_datas;$/;"	m	class:
 m_datas	rainbow/http/servlet.h	/^    std::unordered_map<std::string, Servlet::ptr> m_datas;$/;"	m	class:rainbow::http::ServletDispatch	access:private
 m_default	rainbow/http/servlet.h	/^    Servlet::ptr m_default;$/;"	m	class:rainbow::http::ServletDispatch	access:private
 m_description	rainbow/config.h	/^    std::string m_description;$/;"	m	class:rainbow::ConfigVarBase	access:protected
+m_dispatch	rainbow/http/http_server.h	/^    ServletDispatch::ptr m_dispatch;$/;"	m	class:rainbow::http::HttpServer	access:private
 m_elapse	rainbow/log.h	/^    uint32_t m_elapse = 0;         \/\/ Á®ãÂ∫èÂêØÂä®ÂºÄÂßãÂà∞Áé∞Âú®ÁöÑÊØ´ÁßíÊï∞$/;"	m	class:rainbow::LogEvent	access:private
 m_endian	rainbow/bytearray.h	/^    int8_t m_endian;$/;"	m	class:rainbow::ByteArray	access:private
 m_epfd	rainbow/iomanager.h	/^    int m_epfd = 0;$/;"	m	class:rainbow::IOManager	access:private
@@ -1613,10 +1708,13 @@ m_format	rainbow/log.cpp	/^    std::string m_format;$/;"	m	class:rainbow::DateTi
 m_formatter	rainbow/log.h	/^    LogFormatter::ptr m_formatter;            \/\/ Êó•ÂøóÊ†ºÂºè$/;"	m	class:rainbow::Logger	access:private
 m_formatter	rainbow/log.h	/^    LogFormatter::ptr m_formatter;$/;"	m	class:rainbow::LogAppender	access:protected
 m_fragment	rainbow/http/http.h	/^    std::string m_fragment;$/;"	m	class:rainbow::http::HttpRequest	access:private
+m_fragment	rainbow/uri.h	/^    std::string m_fragment;$/;"	m	class:rainbow::Uri	access:private
 m_globs	rainbow/http/servlet.h	/^    std::vector<std::pair<std::string, Servlet::ptr>> m_globs;$/;"	m	class:rainbow::http::ServletDispatch	access:private
 m_hasFormatter	rainbow/log.h	/^    bool m_hasFormatter = false;$/;"	m	class:rainbow::LogAppender	access:protected
 m_headers	rainbow/http/http.h	/^    MapType m_headers;$/;"	m	class:rainbow::http::HttpRequest	access:private
 m_headers	rainbow/http/http.h	/^    MapType m_headers;$/;"	m	class:rainbow::http::HttpResponse	access:private
+m_host	rainbow/http/http_connection.h	/^    std::string m_host;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+m_host	rainbow/uri.h	/^    std::string m_host;$/;"	m	class:rainbow::Uri	access:private
 m_id	rainbow/fiber.h	/^    uint64_t m_id = 0;$/;"	m	class:rainbow::Fiber	access:private
 m_id	rainbow/thread.h	/^    pid_t m_id;$/;"	m	class:rainbow::Thread	access:private
 m_idleThreadCount	rainbow/scheduler.h	/^    std::atomic<size_t> m_idleThreadCount = {0};$/;"	m	class:rainbow::Scheduler	access:protected
@@ -1638,10 +1736,14 @@ m_locked	rainbow/thread.h	/^    bool m_locked;$/;"	m	struct:rainbow::WriteScoped
 m_logger	rainbow/log.h	/^    std::shared_ptr<Logger> m_logger;   \/\/ ÊåáÂêë Logger Á±ªÁöÑÊåáÈíà$/;"	m	class:rainbow::LogEvent	access:private
 m_loggers	rainbow/log.h	/^    std::map<std::string, Logger::ptr> m_loggers;$/;"	m	class:rainbow::LoggerManager	access:private
 m_manager	rainbow/timer.h	/^    TimerManager* m_manager = nullptr;$/;"	m	class:rainbow::Timer	access:private
+m_maxAliveTime	rainbow/http/http_connection.h	/^    int32_t m_maxAliveTime;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+m_maxRequest	rainbow/http/http_connection.h	/^    int32_t m_maxRequest;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+m_maxSize	rainbow/http/http_connection.h	/^    int32_t m_maxSize;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
 m_method	rainbow/http/http.h	/^    HttpMethod m_method;$/;"	m	class:rainbow::http::HttpRequest	access:private
 m_ms	rainbow/timer.h	/^    uint64_t m_ms = 0; $/;"	m	class:rainbow::Timer	access:private
 m_mutex	rainbow/config.h	/^    RWMutexType m_mutex;$/;"	m	class:rainbow::ConfigVar	access:private
 m_mutex	rainbow/fd_manager.h	/^    RWMutexType m_mutex;$/;"	m	class:rainbow::FdManager	access:private
+m_mutex	rainbow/http/http_connection.h	/^    MutexType m_mutex;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
 m_mutex	rainbow/http/servlet.h	/^    RWMutexType m_mutex;$/;"	m	class:rainbow::http::ServletDispatch	access:private
 m_mutex	rainbow/iomanager.h	/^    RWMutexType m_mutex;$/;"	m	class:rainbow::IOManager	access:private
 m_mutex	rainbow/log.h	/^    MutexType m_mutex;$/;"	m	class:rainbow::LogAppender	access:protected
@@ -1668,12 +1770,16 @@ m_params	rainbow/http/http.h	/^    MapType m_params;$/;"	m	class:rainbow::http::
 m_parser	rainbow/http/http_parser.h	/^    http_parser m_parser;$/;"	m	class:rainbow::http::HttpRequestParser	access:private
 m_parser	rainbow/http/http_parser.h	/^    httpclient_parser m_parser;$/;"	m	class:rainbow::http::HttpResponseParser	access:private
 m_path	rainbow/http/http.h	/^    std::string m_path;$/;"	m	class:rainbow::http::HttpRequest	access:private
+m_path	rainbow/uri.h	/^    std::string m_path;$/;"	m	class:rainbow::Uri	access:private
 m_pattern	rainbow/log.h	/^    std::string m_pattern;$/;"	m	class:rainbow::LogFormatter	access:private
 m_pendingEventCount	rainbow/iomanager.h	/^    std::atomic<size_t> m_pendingEventCount = {0};$/;"	m	class:rainbow::IOManager	access:private
+m_port	rainbow/http/http_connection.h	/^    int32_t m_port;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+m_port	rainbow/uri.h	/^    int32_t m_port;$/;"	m	class:rainbow::Uri	access:private
 m_position	rainbow/bytearray.h	/^    size_t m_position;$/;"	m	class:rainbow::ByteArray	access:private
 m_previouseTime	rainbow/timer.h	/^    uint64_t m_previouseTime = 0;$/;"	m	class:rainbow::TimerManager	access:private
 m_protocol	rainbow/socket.h	/^    int m_protocol;$/;"	m	class:rainbow::Socket	access:private
 m_query	rainbow/http/http.h	/^    std::string m_query;$/;"	m	class:rainbow::http::HttpRequest	access:private
+m_query	rainbow/uri.h	/^    std::string m_query;$/;"	m	class:rainbow::Uri	access:private
 m_reason	rainbow/http/http.h	/^    std::string m_reason;$/;"	m	class:rainbow::http::HttpResponse	access:private
 m_recurring	rainbow/timer.h	/^    bool m_recurring = false;$/;"	m	class:rainbow::Timer	access:private
 m_recvTimeout	rainbow/fd_manager.h	/^    uint64_t m_recvTimeout;$/;"	m	class:rainbow::FdCtx	access:private
@@ -1684,6 +1790,7 @@ m_root	rainbow/log.h	/^    Logger::ptr m_root;$/;"	m	class:rainbow::Logger	acces
 m_root	rainbow/log.h	/^    Logger::ptr m_root;$/;"	m	class:rainbow::LoggerManager	access:private
 m_rootFiber	rainbow/scheduler.h	/^    Fiber::ptr m_rootFiber;$/;"	m	class:rainbow::Scheduler	access:private
 m_rootThread	rainbow/scheduler.h	/^    int m_rootThread = 0;$/;"	m	class:rainbow::Scheduler	access:protected
+m_scheme	rainbow/uri.h	/^    std::string m_scheme;$/;"	m	class:rainbow::Uri	access:private
 m_semaphore	rainbow/thread.h	/^    Semaphore m_semaphore;$/;"	m	class:rainbow::Thread	access:private
 m_semaphore	rainbow/thread.h	/^    sem_t m_semaphore;$/;"	m	class:rainbow::Semaphore	access:private
 m_sendTimeout	rainbow/fd_manager.h	/^    uint64_t m_sendTimeout;$/;"	m	class:rainbow::FdCtx	access:private
@@ -1710,11 +1817,14 @@ m_tickleFds	rainbow/iomanager.h	/^    int m_tickleFds[2];$/;"	m	class:rainbow::I
 m_tickled	rainbow/timer.h	/^    bool m_tickled = false;$/;"	m	class:rainbow::TimerManager	access:private
 m_time	rainbow/log.h	/^    uint64_t m_time;               \/\/ Êó∂Èó¥Êà≥$/;"	m	class:rainbow::LogEvent	access:private
 m_timers	rainbow/timer.h	/^    std::set<Timer::ptr, Timer::Comparator> m_timers;$/;"	m	class:rainbow::TimerManager	access:private
+m_total	rainbow/http/http_connection.h	/^    std::atomic<int32_t> m_total = {0};$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
 m_type	examples/echo_server.cpp	/^    int m_type = 0;$/;"	m	class:EchoServer	file:	access:private
 m_type	rainbow/socket.h	/^    int m_type;$/;"	m	class:rainbow::Socket	access:private
+m_userinfo	rainbow/uri.h	/^    std::string m_userinfo; $/;"	m	class:rainbow::Uri	access:private
 m_val	rainbow/config.h	/^    T m_val;$/;"	m	class:rainbow::ConfigVar	access:private
 m_version	rainbow/http/http.h	/^    uint8_t m_version;$/;"	m	class:rainbow::http::HttpRequest	access:private
 m_version	rainbow/http/http.h	/^    uint8_t m_version;$/;"	m	class:rainbow::http::HttpResponse	access:private
+m_vhost	rainbow/http/http_connection.h	/^    std::string m_vhost;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
 m_worker	rainbow/tcp_server.h	/^    IOManager* m_worker;$/;"	m	class:rainbow::TcpServer	access:private
 main	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	/^int main(argc, argv) int argc; char *argv[];$/;"	f
 main	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	/^void main() {}$/;"	f
@@ -1727,6 +1837,7 @@ main	tests/test_config.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(
 main	tests/test_fiber.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_hook.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_http.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
+main	tests/test_http_connection.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_http_parser.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_http_server.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_iomanager.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
@@ -1734,6 +1845,7 @@ main	tests/test_scheduler.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signatu
 main	tests/test_socket.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_tcp_server.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_thread.cpp	/^int main(int argc, char** argv) {$/;"	f	signature:(int argc, char** argv)
+main	tests/test_uri.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 main	tests/test_util.cpp	/^int main(int argc, char *argv[]) {$/;"	f	signature:(int argc, char *argv[])
 mark	rainbow/http/http11_parser.h	/^  size_t mark;$/;"	m	struct:http_parser	access:public
 mark	rainbow/http/httpclient_parser.h	/^  size_t mark;$/;"	m	struct:httpclient_parser	access:public
@@ -1838,6 +1950,7 @@ override	rainbow/address.h	/^    void setPort(uint16_t v) override;$/;"	m	class:
 override	rainbow/address.h	/^    void setPort(uint16_t v) override;$/;"	m	class:rainbow::IPv6Address	access:public
 override	rainbow/http/http_server.h	/^    virtual void handleClient(Socket::ptr client) override;$/;"	m	class:rainbow::http::HttpServer	access:protected
 override	rainbow/http/servlet.h	/^                    ,rainbow::http::HttpSession::ptr session) override;$/;"	m	class:rainbow::http::FunctionServlet	access:public
+override	rainbow/http/servlet.h	/^                    ,rainbow::http::HttpSession::ptr session) override;$/;"	m	class:rainbow::http::NotFoundServlet	access:public
 override	rainbow/http/servlet.h	/^                    ,rainbow::http::HttpSession::ptr session) override;$/;"	m	class:rainbow::http::ServletDispatch	access:public
 override	rainbow/iomanager.h	/^    bool stopping() override;$/;"	m	class:rainbow::IOManager	access:protected
 override	rainbow/iomanager.h	/^    void idle() override;$/;"	m	class:rainbow::IOManager	access:protected
@@ -1866,11 +1979,15 @@ ptr	rainbow/fd_manager.h	/^    typedef std::shared_ptr<FdCtx> ptr;$/;"	t	class:r
 ptr	rainbow/fiber.h	/^    typedef std::shared_ptr<Fiber> ptr;$/;"	t	class:rainbow::Fiber	access:public
 ptr	rainbow/http/http.h	/^    typedef std::shared_ptr<HttpRequest> ptr;$/;"	t	class:rainbow::http::HttpRequest	access:public
 ptr	rainbow/http/http.h	/^    typedef std::shared_ptr<HttpResponse> ptr;$/;"	t	class:rainbow::http::HttpResponse	access:public
+ptr	rainbow/http/http_connection.h	/^    typedef std::shared_ptr<HttpConnection> ptr;$/;"	t	class:rainbow::http::HttpConnection	access:public
+ptr	rainbow/http/http_connection.h	/^    typedef std::shared_ptr<HttpConnectionPool> ptr;$/;"	t	class:rainbow::http::HttpConnectionPool	access:public
+ptr	rainbow/http/http_connection.h	/^    typedef std::shared_ptr<HttpResult> ptr;$/;"	t	struct:rainbow::http::HttpResult	access:public
 ptr	rainbow/http/http_parser.h	/^    typedef std::shared_ptr<HttpRequestParser> ptr;$/;"	t	class:rainbow::http::HttpRequestParser	access:public
 ptr	rainbow/http/http_parser.h	/^    typedef std::shared_ptr<HttpResponseParser> ptr;$/;"	t	class:rainbow::http::HttpResponseParser	access:public
 ptr	rainbow/http/http_server.h	/^    typedef std::shared_ptr<HttpServer> ptr;$/;"	t	class:rainbow::http::HttpServer	access:public
 ptr	rainbow/http/http_session.h	/^    typedef std::shared_ptr<HttpSession> ptr;$/;"	t	class:rainbow::http::HttpSession	access:public
 ptr	rainbow/http/servlet.h	/^    typedef std::shared_ptr<FunctionServlet> ptr;$/;"	t	class:rainbow::http::FunctionServlet	access:public
+ptr	rainbow/http/servlet.h	/^    typedef std::shared_ptr<NotFoundServlet> ptr;$/;"	t	class:rainbow::http::NotFoundServlet	access:public
 ptr	rainbow/http/servlet.h	/^    typedef std::shared_ptr<Servlet> ptr;$/;"	t	class:rainbow::http::Servlet	access:public
 ptr	rainbow/http/servlet.h	/^    typedef std::shared_ptr<ServletDispatch> ptr;$/;"	t	class:rainbow::http::ServletDispatch	access:public
 ptr	rainbow/iomanager.h	/^    typedef std::shared_ptr<IOManager> ptr;$/;"	t	class:rainbow::IOManager	access:public
@@ -1888,6 +2005,7 @@ ptr	rainbow/stream.h	/^    typedef std::shared_ptr<Stream> ptr;$/;"	t	class:rain
 ptr	rainbow/tcp_server.h	/^    typedef std::shared_ptr<TcpServer> ptr;$/;"	t	class:rainbow::TcpServer	access:public
 ptr	rainbow/thread.h	/^    typedef std::shared_ptr<Thread> ptr;$/;"	t	class:rainbow::Thread	access:public
 ptr	rainbow/timer.h	/^    typedef std::shared_ptr<Timer> ptr;$/;"	t	class:rainbow::Timer	access:public
+ptr	rainbow/uri.h	/^    typedef std::shared_ptr<Uri> ptr;$/;"	t	class:rainbow::Uri	access:public
 qnxnto	build/CMakeFiles/3.21.1/CompilerIdC/CMakeCCompilerId.c	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
 qnxnto	build/CMakeFiles/3.21.1/CompilerIdCXX/CMakeCXXCompilerId.cpp	/^char const* qnxnto = "INFO" ":" "qnxnto[]";$/;"	v
 query_start	rainbow/http/http11_parser.h	/^  size_t query_start;$/;"	m	struct:http_parser	access:public
@@ -1907,6 +2025,8 @@ rainbow	rainbow/hook.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/hook.h	/^namespace rainbow {$/;"	n
 rainbow	rainbow/http/http.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/http/http.h	/^namespace rainbow {$/;"	n
+rainbow	rainbow/http/http_connection.cpp	/^namespace rainbow {$/;"	n	file:
+rainbow	rainbow/http/http_connection.h	/^namespace rainbow {$/;"	n
 rainbow	rainbow/http/http_parser.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/http/http_parser.h	/^namespace rainbow {$/;"	n
 rainbow	rainbow/http/http_server.cpp	/^namespace rainbow {$/;"	n	file:
@@ -1935,6 +2055,8 @@ rainbow	rainbow/thread.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/thread.h	/^namespace rainbow {$/;"	n
 rainbow	rainbow/timer.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/timer.h	/^namespace rainbow {$/;"	n
+rainbow	rainbow/uri.h	/^namespace rainbow {$/;"	n
+rainbow	rainbow/uri.rl.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/util.cpp	/^namespace rainbow {$/;"	n	file:
 rainbow	rainbow/util.h	/^namespace rainbow {$/;"	n
 rainbow	tests/test_config.cpp	/^namespace rainbow {$/;"	n	file:
@@ -3012,6 +3134,43 @@ rainbow::UnknownAddress::override	rainbow/address.h	/^    sockaddr* getAddr() ov
 rainbow::UnknownAddress::override	rainbow/address.h	/^    socklen_t getAddrLen() const override;$/;"	m	class:rainbow::UnknownAddress	access:public
 rainbow::UnknownAddress::override	rainbow/address.h	/^    std::ostream& insert(std::ostream& os) const override;$/;"	m	class:rainbow::UnknownAddress	access:public
 rainbow::UnknownAddress::ptr	rainbow/address.h	/^    typedef std::shared_ptr<UnknownAddress> ptr;$/;"	t	class:rainbow::UnknownAddress	access:public
+rainbow::Uri	rainbow/uri.h	/^class Uri {$/;"	c	namespace:rainbow
+rainbow::Uri::Create	rainbow/uri.h	/^    static Uri::ptr Create(const std::string& uri);$/;"	p	class:rainbow::Uri	access:public	signature:(const std::string& uri)
+rainbow::Uri::Create	rainbow/uri.rl.cpp	/^Uri::ptr Uri::Create(const std::string& uristr) {$/;"	f	class:rainbow::Uri	signature:(const std::string& uristr)
+rainbow::Uri::Uri	rainbow/uri.h	/^    Uri();$/;"	p	class:rainbow::Uri	access:public	signature:()
+rainbow::Uri::Uri	rainbow/uri.rl.cpp	/^Uri::Uri()$/;"	f	class:rainbow::Uri	signature:()
+rainbow::Uri::createAddress	rainbow/uri.h	/^    Address::ptr createAddress() const;$/;"	p	class:rainbow::Uri	access:public	signature:() const
+rainbow::Uri::createAddress	rainbow/uri.rl.cpp	/^Address::ptr Uri::createAddress() const {$/;"	f	class:rainbow::Uri	signature:() const
+rainbow::Uri::dump	rainbow/uri.h	/^    std::ostream& dump(std::ostream& os) const;$/;"	p	class:rainbow::Uri	access:public	signature:(std::ostream& os) const
+rainbow::Uri::dump	rainbow/uri.rl.cpp	/^std::ostream& Uri::dump(std::ostream& os) const {$/;"	f	class:rainbow::Uri	signature:(std::ostream& os) const
+rainbow::Uri::getFragment	rainbow/uri.h	/^    const std::string& getFragment() const { return m_fragment; }$/;"	f	class:rainbow::Uri	access:public	signature:() const
+rainbow::Uri::getHost	rainbow/uri.h	/^    const std::string& getHost() const { return m_host; }$/;"	f	class:rainbow::Uri	access:public	signature:() const
+rainbow::Uri::getPath	rainbow/uri.h	/^    const std::string& getPath() const;$/;"	p	class:rainbow::Uri	access:public	signature:() const
+rainbow::Uri::getPath	rainbow/uri.rl.cpp	/^const std::string& Uri::getPath() const {$/;"	f	class:rainbow::Uri	signature:() const
+rainbow::Uri::getPort	rainbow/uri.h	/^    int32_t getPort() const;$/;"	p	class:rainbow::Uri	access:public	signature:() const
+rainbow::Uri::getPort	rainbow/uri.rl.cpp	/^int32_t Uri::getPort() const {$/;"	f	class:rainbow::Uri	signature:() const
+rainbow::Uri::getQuery	rainbow/uri.h	/^    const std::string& getQuery() const { return m_query; }$/;"	f	class:rainbow::Uri	access:public	signature:() const
+rainbow::Uri::getScheme	rainbow/uri.h	/^    const std::string& getScheme() const { return m_scheme; }$/;"	f	class:rainbow::Uri	access:public	signature:() const
+rainbow::Uri::getUserinfo	rainbow/uri.h	/^    const std::string& getUserinfo() const { return m_userinfo; } $/;"	f	class:rainbow::Uri	access:public	signature:() const
+rainbow::Uri::isDefaultPort	rainbow/uri.h	/^    bool isDefaultPort() const;$/;"	p	class:rainbow::Uri	access:private	signature:() const
+rainbow::Uri::isDefaultPort	rainbow/uri.rl.cpp	/^bool Uri::isDefaultPort() const {$/;"	f	class:rainbow::Uri	signature:() const
+rainbow::Uri::m_fragment	rainbow/uri.h	/^    std::string m_fragment;$/;"	m	class:rainbow::Uri	access:private
+rainbow::Uri::m_host	rainbow/uri.h	/^    std::string m_host;$/;"	m	class:rainbow::Uri	access:private
+rainbow::Uri::m_path	rainbow/uri.h	/^    std::string m_path;$/;"	m	class:rainbow::Uri	access:private
+rainbow::Uri::m_port	rainbow/uri.h	/^    int32_t m_port;$/;"	m	class:rainbow::Uri	access:private
+rainbow::Uri::m_query	rainbow/uri.h	/^    std::string m_query;$/;"	m	class:rainbow::Uri	access:private
+rainbow::Uri::m_scheme	rainbow/uri.h	/^    std::string m_scheme;$/;"	m	class:rainbow::Uri	access:private
+rainbow::Uri::m_userinfo	rainbow/uri.h	/^    std::string m_userinfo; $/;"	m	class:rainbow::Uri	access:private
+rainbow::Uri::ptr	rainbow/uri.h	/^    typedef std::shared_ptr<Uri> ptr;$/;"	t	class:rainbow::Uri	access:public
+rainbow::Uri::setFragment	rainbow/uri.h	/^    void setFragment(const std::string& v) { m_fragment = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
+rainbow::Uri::setHost	rainbow/uri.h	/^    void setHost(const std::string& v) { m_host = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
+rainbow::Uri::setPath	rainbow/uri.h	/^    void setPath(const std::string& v) { m_path = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
+rainbow::Uri::setPort	rainbow/uri.h	/^    void setPort(int32_t v) { m_port = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(int32_t v)
+rainbow::Uri::setQuery	rainbow/uri.h	/^    void setQuery(const std::string& v) { m_query = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
+rainbow::Uri::setScheme	rainbow/uri.h	/^    void setScheme(const std::string& v) { m_scheme = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
+rainbow::Uri::setUserinfo	rainbow/uri.h	/^    void setUserinfo(const std::string& v) { m_userinfo = v; } $/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
+rainbow::Uri::toString	rainbow/uri.h	/^    std::string toString() const;$/;"	p	class:rainbow::Uri	access:public	signature:() const
+rainbow::Uri::toString	rainbow/uri.rl.cpp	/^std::string Uri::toString() const {$/;"	f	class:rainbow::Uri	signature:() const
 rainbow::WriteScopedLockImpl	rainbow/thread.h	/^struct WriteScopedLockImpl {$/;"	s	namespace:rainbow
 rainbow::WriteScopedLockImpl::WriteScopedLockImpl	rainbow/thread.h	/^    WriteScopedLockImpl(T& mutex)$/;"	f	struct:rainbow::WriteScopedLockImpl	access:public	signature:(T& mutex)
 rainbow::WriteScopedLockImpl::lock	rainbow/thread.h	/^    void lock() {$/;"	f	struct:rainbow::WriteScopedLockImpl	access:public	signature:()
@@ -3042,6 +3201,8 @@ rainbow::g_tcp_server_read_timeout	rainbow/tcp_server.cpp	/^static rainbow::Conf
 rainbow::hook_init	rainbow/hook.cpp	/^void hook_init() {$/;"	f	namespace:rainbow	signature:()
 rainbow::http	rainbow/http/http.cpp	/^namespace http {$/;"	n	namespace:rainbow	file:
 rainbow::http	rainbow/http/http.h	/^namespace http {$/;"	n	namespace:rainbow
+rainbow::http	rainbow/http/http_connection.cpp	/^namespace http {$/;"	n	namespace:rainbow	file:
+rainbow::http	rainbow/http/http_connection.h	/^namespace http {$/;"	n	namespace:rainbow
 rainbow::http	rainbow/http/http_parser.cpp	/^namespace http {$/;"	n	namespace:rainbow	file:
 rainbow::http	rainbow/http/http_parser.h	/^namespace http {$/;"	n	namespace:rainbow
 rainbow::http	rainbow/http/http_server.cpp	/^namespace http {$/;"	n	namespace:rainbow	file:
@@ -3063,6 +3224,61 @@ rainbow::http::FunctionServlet::handle	rainbow/http/servlet.cpp	/^int32_t Functi
 rainbow::http::FunctionServlet::m_cb	rainbow/http/servlet.h	/^    callback m_cb;$/;"	m	class:rainbow::http::FunctionServlet	access:private
 rainbow::http::FunctionServlet::override	rainbow/http/servlet.h	/^                    ,rainbow::http::HttpSession::ptr session) override;$/;"	m	class:rainbow::http::FunctionServlet	access:public
 rainbow::http::FunctionServlet::ptr	rainbow/http/servlet.h	/^    typedef std::shared_ptr<FunctionServlet> ptr;$/;"	t	class:rainbow::http::FunctionServlet	access:public
+rainbow::http::HttpConnection	rainbow/http/http_connection.h	/^class HttpConnection : public SocketStream {$/;"	c	namespace:rainbow::http	inherits:SocketStream
+rainbow::http::HttpConnection::DoGet	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoGet(Uri::ptr uri$/;"	f	class:rainbow::http::HttpConnection	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnection::DoGet	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoGet(const std::string& url$/;"	f	class:rainbow::http::HttpConnection	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnection::DoGet	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoGet(Uri::ptr uri$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnection::DoGet	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoGet(const std::string& url$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnection::DoPost	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoPost(Uri::ptr uri$/;"	f	class:rainbow::http::HttpConnection	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnection::DoPost	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoPost(const std::string& url$/;"	f	class:rainbow::http::HttpConnection	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnection::DoPost	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoPost(Uri::ptr uri$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnection::DoPost	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoPost(const std::string& url$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnection::DoRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoRequest(HttpMethod method$/;"	f	class:rainbow::http::HttpConnection	signature:(HttpMethod method , Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnection::DoRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoRequest(HttpMethod method$/;"	f	class:rainbow::http::HttpConnection	signature:(HttpMethod method , const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnection::DoRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnection::DoRequest(HttpRequest::ptr req$/;"	f	class:rainbow::http::HttpConnection	signature:(HttpRequest::ptr req , Uri::ptr uri , uint64_t timeout_ms)
+rainbow::http::HttpConnection::DoRequest	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoRequest(HttpMethod method$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(HttpMethod method , Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnection::DoRequest	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoRequest(HttpMethod method$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(HttpMethod method , const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnection::DoRequest	rainbow/http/http_connection.h	/^    static HttpResult::ptr DoRequest(HttpRequest::ptr req$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(HttpRequest::ptr req , Uri::ptr uri , uint64_t timeout_ms)
+rainbow::http::HttpConnection::HttpConnection	rainbow/http/http_connection.cpp	/^HttpConnection::HttpConnection(Socket::ptr sock, bool owner) $/;"	f	class:rainbow::http::HttpConnection	signature:(Socket::ptr sock, bool owner)
+rainbow::http::HttpConnection::HttpConnection	rainbow/http/http_connection.h	/^    HttpConnection(Socket::ptr sock, bool owner = true);$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(Socket::ptr sock, bool owner = true)
+rainbow::http::HttpConnection::m_createTime	rainbow/http/http_connection.h	/^    uint64_t m_createTime = 0;$/;"	m	class:rainbow::http::HttpConnection	access:private
+rainbow::http::HttpConnection::ptr	rainbow/http/http_connection.h	/^    typedef std::shared_ptr<HttpConnection> ptr;$/;"	t	class:rainbow::http::HttpConnection	access:public
+rainbow::http::HttpConnection::recvResponse	rainbow/http/http_connection.cpp	/^HttpResponse::ptr HttpConnection::recvResponse() {$/;"	f	class:rainbow::http::HttpConnection	signature:()
+rainbow::http::HttpConnection::recvResponse	rainbow/http/http_connection.h	/^    HttpResponse::ptr recvResponse();$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:()
+rainbow::http::HttpConnection::sendRequest	rainbow/http/http_connection.cpp	/^int HttpConnection::sendRequest(HttpRequest::ptr req) {$/;"	f	class:rainbow::http::HttpConnection	signature:(HttpRequest::ptr req)
+rainbow::http::HttpConnection::sendRequest	rainbow/http/http_connection.h	/^    int sendRequest(HttpRequest::ptr req);$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(HttpRequest::ptr req)
+rainbow::http::HttpConnectionPool	rainbow/http/http_connection.h	/^class HttpConnectionPool {$/;"	c	namespace:rainbow::http
+rainbow::http::HttpConnectionPool::HttpConnectionPool	rainbow/http/http_connection.cpp	/^HttpConnectionPool::HttpConnectionPool(const std::string& host$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(const std::string& host ,const std::string& vhost ,uint32_t port ,uint32_t max_size ,uint32_t max_alive_time ,uint32_t max_request)
+rainbow::http::HttpConnectionPool::HttpConnectionPool	rainbow/http/http_connection.h	/^    HttpConnectionPool(const std::string& host$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(const std::string& host ,const std::string& vhost ,uint32_t port ,uint32_t max_size ,uint32_t max_alive_time ,uint32_t max_request)
+rainbow::http::HttpConnectionPool::MutexType	rainbow/http/http_connection.h	/^    typedef Mutex MutexType;$/;"	t	class:rainbow::http::HttpConnectionPool	access:public
+rainbow::http::HttpConnectionPool::ReleasePtr	rainbow/http/http_connection.cpp	/^void HttpConnectionPool::ReleasePtr(HttpConnection* ptr, HttpConnectionPool* pool) {$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(HttpConnection* ptr, HttpConnectionPool* pool)
+rainbow::http::HttpConnectionPool::ReleasePtr	rainbow/http/http_connection.h	/^    static void ReleasePtr(HttpConnection* ptr, HttpConnectionPool* pool);$/;"	p	class:rainbow::http::HttpConnectionPool	access:private	signature:(HttpConnection* ptr, HttpConnectionPool* pool)
+rainbow::http::HttpConnectionPool::doGet	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doGet(Uri::ptr uri$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnectionPool::doGet	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doGet(const std::string& url$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnectionPool::doGet	rainbow/http/http_connection.h	/^    HttpResult::ptr doGet(Uri::ptr uri$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnectionPool::doGet	rainbow/http/http_connection.h	/^    HttpResult::ptr doGet(const std::string& url$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnectionPool::doPost	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doPost(Uri::ptr uri$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnectionPool::doPost	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doPost(const std::string& url$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnectionPool::doPost	rainbow/http/http_connection.h	/^    HttpResult::ptr doPost(Uri::ptr uri$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnectionPool::doPost	rainbow/http/http_connection.h	/^    HttpResult::ptr doPost(const std::string& url$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnectionPool::doRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doRequest(HttpMethod method$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(HttpMethod method , Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnectionPool::doRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doRequest(HttpMethod method$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(HttpMethod method , const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers , const std::string& body)
+rainbow::http::HttpConnectionPool::doRequest	rainbow/http/http_connection.cpp	/^HttpResult::ptr HttpConnectionPool::doRequest(HttpRequest::ptr req$/;"	f	class:rainbow::http::HttpConnectionPool	signature:(HttpRequest::ptr req , uint64_t timeout_ms)
+rainbow::http::HttpConnectionPool::doRequest	rainbow/http/http_connection.h	/^    HttpResult::ptr doRequest(HttpMethod method$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(HttpMethod method , Uri::ptr uri , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnectionPool::doRequest	rainbow/http/http_connection.h	/^    HttpResult::ptr doRequest(HttpMethod method$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(HttpMethod method , const std::string& url , uint64_t timeout_ms , const std::map<std::string, std::string>& headers = {} , const std::string& body = ”)
+rainbow::http::HttpConnectionPool::doRequest	rainbow/http/http_connection.h	/^    HttpResult::ptr doRequest(HttpRequest::ptr req$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:(HttpRequest::ptr req , uint64_t timeout_ms)
+rainbow::http::HttpConnectionPool::getConnection	rainbow/http/http_connection.cpp	/^HttpConnection::ptr HttpConnectionPool::getConnection() {$/;"	f	class:rainbow::http::HttpConnectionPool	signature:()
+rainbow::http::HttpConnectionPool::getConnection	rainbow/http/http_connection.h	/^    HttpConnection::ptr getConnection();$/;"	p	class:rainbow::http::HttpConnectionPool	access:public	signature:()
+rainbow::http::HttpConnectionPool::m_conns	rainbow/http/http_connection.h	/^    std::list<HttpConnection*> m_conns;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+rainbow::http::HttpConnectionPool::m_host	rainbow/http/http_connection.h	/^    std::string m_host;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+rainbow::http::HttpConnectionPool::m_maxAliveTime	rainbow/http/http_connection.h	/^    int32_t m_maxAliveTime;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+rainbow::http::HttpConnectionPool::m_maxRequest	rainbow/http/http_connection.h	/^    int32_t m_maxRequest;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+rainbow::http::HttpConnectionPool::m_maxSize	rainbow/http/http_connection.h	/^    int32_t m_maxSize;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+rainbow::http::HttpConnectionPool::m_mutex	rainbow/http/http_connection.h	/^    MutexType m_mutex;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+rainbow::http::HttpConnectionPool::m_port	rainbow/http/http_connection.h	/^    int32_t m_port;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+rainbow::http::HttpConnectionPool::m_total	rainbow/http/http_connection.h	/^    std::atomic<int32_t> m_total = {0};$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+rainbow::http::HttpConnectionPool::m_vhost	rainbow/http/http_connection.h	/^    std::string m_vhost;$/;"	m	class:rainbow::http::HttpConnectionPool	access:private
+rainbow::http::HttpConnectionPool::ptr	rainbow/http/http_connection.h	/^    typedef std::shared_ptr<HttpConnectionPool> ptr;$/;"	t	class:rainbow::http::HttpConnectionPool	access:public
 rainbow::http::HttpMethod	rainbow/http/http.h	/^enum class HttpMethod {$/;"	c	namespace:rainbow::http
 rainbow::http::HttpMethodToString	rainbow/http/http.cpp	/^const char* HttpMethodToString(const HttpMethod& m) {$/;"	f	namespace:rainbow::http	signature:(const HttpMethod& m)
 rainbow::http::HttpMethodToString	rainbow/http/http.h	/^const char* HttpMethodToString(const HttpMethod& m);$/;"	p	namespace:rainbow::http	signature:(const HttpMethod& m)
@@ -3149,6 +3365,7 @@ rainbow::http::HttpRequestParser::execute	rainbow/http/http_parser.h	/^    size_
 rainbow::http::HttpRequestParser::getContentLength	rainbow/http/http_parser.cpp	/^uint64_t HttpRequestParser::getContentLength() {$/;"	f	class:rainbow::http::HttpRequestParser	signature:()
 rainbow::http::HttpRequestParser::getContentLength	rainbow/http/http_parser.h	/^    uint64_t getContentLength();$/;"	p	class:rainbow::http::HttpRequestParser	access:public	signature:()
 rainbow::http::HttpRequestParser::getData	rainbow/http/http_parser.h	/^    HttpRequest::ptr getData() const { return m_data; }$/;"	f	class:rainbow::http::HttpRequestParser	access:public	signature:() const
+rainbow::http::HttpRequestParser::getParser	rainbow/http/http_parser.h	/^    const http_parser& getParser() const { return m_parser; }$/;"	f	class:rainbow::http::HttpRequestParser	access:public	signature:() const
 rainbow::http::HttpRequestParser::hasError	rainbow/http/http_parser.cpp	/^int HttpRequestParser::hasError() {$/;"	f	class:rainbow::http::HttpRequestParser	signature:()
 rainbow::http::HttpRequestParser::hasError	rainbow/http/http_parser.h	/^    int hasError();$/;"	p	class:rainbow::http::HttpRequestParser	access:public	signature:()
 rainbow::http::HttpRequestParser::isFinished	rainbow/http/http_parser.cpp	/^int HttpRequestParser::isFinished() {$/;"	f	class:rainbow::http::HttpRequestParser	signature:()
@@ -3194,13 +3411,18 @@ rainbow::http::HttpResponse::setVersion	rainbow/http/http.h	/^    void setVersio
 rainbow::http::HttpResponse::toString	rainbow/http/http.cpp	/^std::string HttpResponse::toString() const {$/;"	f	class:rainbow::http::HttpResponse	signature:() const
 rainbow::http::HttpResponse::toString	rainbow/http/http.h	/^    std::string toString() const;$/;"	p	class:rainbow::http::HttpResponse	access:public	signature:() const
 rainbow::http::HttpResponseParser	rainbow/http/http_parser.h	/^class HttpResponseParser {$/;"	c	namespace:rainbow::http
+rainbow::http::HttpResponseParser::GetHttpResponseBufferSize	rainbow/http/http_parser.cpp	/^uint64_t HttpResponseParser::GetHttpResponseBufferSize() {$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
+rainbow::http::HttpResponseParser::GetHttpResponseBufferSize	rainbow/http/http_parser.h	/^    static uint64_t GetHttpResponseBufferSize();$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:()
+rainbow::http::HttpResponseParser::GetHttpResponseMaxBodySize	rainbow/http/http_parser.cpp	/^uint64_t HttpResponseParser::GetHttpResponseMaxBodySize() {$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
+rainbow::http::HttpResponseParser::GetHttpResponseMaxBodySize	rainbow/http/http_parser.h	/^    static uint64_t GetHttpResponseMaxBodySize();$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:()
 rainbow::http::HttpResponseParser::HttpResponseParser	rainbow/http/http_parser.cpp	/^HttpResponseParser::HttpResponseParser ()$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
 rainbow::http::HttpResponseParser::HttpResponseParser	rainbow/http/http_parser.h	/^    HttpResponseParser ();$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:()
-rainbow::http::HttpResponseParser::execute	rainbow/http/http_parser.cpp	/^size_t HttpResponseParser::execute(char* data, size_t len) {$/;"	f	class:rainbow::http::HttpResponseParser	signature:(char* data, size_t len)
-rainbow::http::HttpResponseParser::execute	rainbow/http/http_parser.h	/^    size_t execute(char* data, size_t len);$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:(char* data, size_t len)
+rainbow::http::HttpResponseParser::execute	rainbow/http/http_parser.cpp	/^size_t HttpResponseParser::execute(char* data, size_t len, bool chunck) {$/;"	f	class:rainbow::http::HttpResponseParser	signature:(char* data, size_t len, bool chunck)
+rainbow::http::HttpResponseParser::execute	rainbow/http/http_parser.h	/^    size_t execute(char* data, size_t len, bool chunck);$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:(char* data, size_t len, bool chunck)
 rainbow::http::HttpResponseParser::getContentLength	rainbow/http/http_parser.cpp	/^uint64_t HttpResponseParser::getContentLength() {$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
 rainbow::http::HttpResponseParser::getContentLength	rainbow/http/http_parser.h	/^    uint64_t getContentLength();$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:()
 rainbow::http::HttpResponseParser::getData	rainbow/http/http_parser.h	/^    HttpResponse::ptr getData() const { return m_data; }$/;"	f	class:rainbow::http::HttpResponseParser	access:public	signature:() const
+rainbow::http::HttpResponseParser::getParser	rainbow/http/http_parser.h	/^    const httpclient_parser& getParser() const { return m_parser; }$/;"	f	class:rainbow::http::HttpResponseParser	access:public	signature:() const
 rainbow::http::HttpResponseParser::hasError	rainbow/http/http_parser.cpp	/^int HttpResponseParser::hasError() {$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
 rainbow::http::HttpResponseParser::hasError	rainbow/http/http_parser.h	/^    int hasError();$/;"	p	class:rainbow::http::HttpResponseParser	access:public	signature:()
 rainbow::http::HttpResponseParser::isFinished	rainbow/http/http_parser.cpp	/^int HttpResponseParser::isFinished() {$/;"	f	class:rainbow::http::HttpResponseParser	signature:()
@@ -3210,13 +3432,33 @@ rainbow::http::HttpResponseParser::m_error	rainbow/http/http_parser.h	/^    int 
 rainbow::http::HttpResponseParser::m_parser	rainbow/http/http_parser.h	/^    httpclient_parser m_parser;$/;"	m	class:rainbow::http::HttpResponseParser	access:private
 rainbow::http::HttpResponseParser::ptr	rainbow/http/http_parser.h	/^    typedef std::shared_ptr<HttpResponseParser> ptr;$/;"	t	class:rainbow::http::HttpResponseParser	access:public
 rainbow::http::HttpResponseParser::setError	rainbow/http/http_parser.h	/^    void setError(int v) { m_error  =v; }$/;"	f	class:rainbow::http::HttpResponseParser	access:public	signature:(int v)
+rainbow::http::HttpResult	rainbow/http/http_connection.h	/^struct HttpResult {$/;"	s	namespace:rainbow::http
+rainbow::http::HttpResult::Error	rainbow/http/http_connection.h	/^    enum class Error {$/;"	c	struct:rainbow::http::HttpResult	access:public
+rainbow::http::HttpResult::Error::CONNECT_FAIL	rainbow/http/http_connection.h	/^        CONNECT_FAIL = 3,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::Error::CREATE_SOCKET_ERROR	rainbow/http/http_connection.h	/^        CREATE_SOCKET_ERROR = 7,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::Error::INVALID_HOST	rainbow/http/http_connection.h	/^        INVALID_HOST = 2,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::Error::INVALID_URL	rainbow/http/http_connection.h	/^        INVALID_URL = 1,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::Error::OK	rainbow/http/http_connection.h	/^        OK = 0,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::Error::POOL_GET_CONNECTION	rainbow/http/http_connection.h	/^        POOL_GET_CONNECTION = 8,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::Error::POOL_INVALID_CONNECTION	rainbow/http/http_connection.h	/^        POOL_INVALID_CONNECTION = 9,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::Error::SEND_CLOSE_BY_PEER	rainbow/http/http_connection.h	/^        SEND_CLOSE_BY_PEER = 4,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::Error::SEND_SOCKET_ERROR	rainbow/http/http_connection.h	/^        SEND_SOCKET_ERROR = 5,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::Error::TIMEOUT	rainbow/http/http_connection.h	/^        TIMEOUT = 6,$/;"	m	class:rainbow::http::HttpResult::Error	access:private
+rainbow::http::HttpResult::HttpResult	rainbow/http/http_connection.h	/^    HttpResult(int _result$/;"	f	struct:rainbow::http::HttpResult	access:public	signature:(int _result ,HttpResponse::ptr _response ,const std::string& _error)
+rainbow::http::HttpResult::error	rainbow/http/http_connection.h	/^    std::string error;$/;"	m	struct:rainbow::http::HttpResult	access:public
+rainbow::http::HttpResult::ptr	rainbow/http/http_connection.h	/^    typedef std::shared_ptr<HttpResult> ptr;$/;"	t	struct:rainbow::http::HttpResult	access:public
+rainbow::http::HttpResult::response	rainbow/http/http_connection.h	/^    HttpResponse::ptr response;$/;"	m	struct:rainbow::http::HttpResult	access:public
+rainbow::http::HttpResult::result	rainbow/http/http_connection.h	/^    int result;$/;"	m	struct:rainbow::http::HttpResult	access:public
 rainbow::http::HttpServer	rainbow/http/http_server.h	/^class HttpServer : public TcpServer {$/;"	c	namespace:rainbow::http	inherits:TcpServer
 rainbow::http::HttpServer::HttpServer	rainbow/http/http_server.cpp	/^HttpServer::HttpServer(bool keepalive$/;"	f	class:rainbow::http::HttpServer	signature:(bool keepalive ,rainbow::IOManager* worker ,rainbow::IOManager* accept_worker)
 rainbow::http::HttpServer::HttpServer	rainbow/http/http_server.h	/^    HttpServer(bool keepalive = false$/;"	p	class:rainbow::http::HttpServer	access:public	signature:(bool keepalive = false ,rainbow::IOManager* worker = rainbow::IOManager::GetThis() ,rainbow::IOManager* accept_worker = rainbow::IOManager::GetThis())
+rainbow::http::HttpServer::getServletDispatch	rainbow/http/http_server.h	/^    ServletDispatch::ptr getServletDispatch() const { return m_dispatch; }$/;"	f	class:rainbow::http::HttpServer	access:public	signature:() const
 rainbow::http::HttpServer::handleClient	rainbow/http/http_server.cpp	/^void HttpServer::handleClient(Socket::ptr client) {$/;"	f	class:rainbow::http::HttpServer	signature:(Socket::ptr client)
+rainbow::http::HttpServer::m_dispatch	rainbow/http/http_server.h	/^    ServletDispatch::ptr m_dispatch;$/;"	m	class:rainbow::http::HttpServer	access:private
 rainbow::http::HttpServer::m_isKeepalive	rainbow/http/http_server.h	/^    bool m_isKeepalive;$/;"	m	class:rainbow::http::HttpServer	access:private
 rainbow::http::HttpServer::override	rainbow/http/http_server.h	/^    virtual void handleClient(Socket::ptr client) override;$/;"	m	class:rainbow::http::HttpServer	access:protected
 rainbow::http::HttpServer::ptr	rainbow/http/http_server.h	/^    typedef std::shared_ptr<HttpServer> ptr;$/;"	t	class:rainbow::http::HttpServer	access:public
+rainbow::http::HttpServer::setServletDispatch	rainbow/http/http_server.h	/^    void setServletDispatch(ServletDispatch::ptr v) { m_dispatch = v; }$/;"	f	class:rainbow::http::HttpServer	access:public	signature:(ServletDispatch::ptr v)
 rainbow::http::HttpSession	rainbow/http/http_session.h	/^class HttpSession : public SocketStream {$/;"	c	namespace:rainbow::http	inherits:SocketStream
 rainbow::http::HttpSession::HttpSession	rainbow/http/http_session.cpp	/^HttpSession::HttpSession(Socket::ptr sock, bool owner) $/;"	f	class:rainbow::http::HttpSession	signature:(Socket::ptr sock, bool owner)
 rainbow::http::HttpSession::HttpSession	rainbow/http/http_session.h	/^    HttpSession(Socket::ptr sock, bool owner = true);$/;"	p	class:rainbow::http::HttpSession	access:public	signature:(Socket::ptr sock, bool owner = true)
@@ -3228,6 +3470,12 @@ rainbow::http::HttpSession::sendResponse	rainbow/http/http_session.h	/^    int s
 rainbow::http::HttpStatus	rainbow/http/http.h	/^enum class HttpStatus {$/;"	c	namespace:rainbow::http
 rainbow::http::HttpStatusToString	rainbow/http/http.cpp	/^const char* HttpStatusToString(const HttpStatus& s) {$/;"	f	namespace:rainbow::http	signature:(const HttpStatus& s)
 rainbow::http::HttpStatusToString	rainbow/http/http.h	/^const char* HttpStatusToString(const HttpStatus& s);$/;"	p	namespace:rainbow::http	signature:(const HttpStatus& s)
+rainbow::http::NotFoundServlet	rainbow/http/servlet.h	/^class NotFoundServlet : public Servlet {$/;"	c	namespace:rainbow::http	inherits:Servlet
+rainbow::http::NotFoundServlet::NotFoundServlet	rainbow/http/servlet.cpp	/^NotFoundServlet::NotFoundServlet() $/;"	f	class:rainbow::http::NotFoundServlet	signature:()
+rainbow::http::NotFoundServlet::NotFoundServlet	rainbow/http/servlet.h	/^    NotFoundServlet();$/;"	p	class:rainbow::http::NotFoundServlet	access:public	signature:()
+rainbow::http::NotFoundServlet::handle	rainbow/http/servlet.cpp	/^int32_t NotFoundServlet::handle(rainbow::http::HttpRequest::ptr request$/;"	f	class:rainbow::http::NotFoundServlet	signature:(rainbow::http::HttpRequest::ptr request ,rainbow::http::HttpResponse::ptr response ,rainbow::http::HttpSession::ptr session)
+rainbow::http::NotFoundServlet::override	rainbow/http/servlet.h	/^                    ,rainbow::http::HttpSession::ptr session) override;$/;"	m	class:rainbow::http::NotFoundServlet	access:public
+rainbow::http::NotFoundServlet::ptr	rainbow/http/servlet.h	/^    typedef std::shared_ptr<NotFoundServlet> ptr;$/;"	t	class:rainbow::http::NotFoundServlet	access:public
 rainbow::http::Servlet	rainbow/http/servlet.h	/^class Servlet {$/;"	c	namespace:rainbow::http
 rainbow::http::Servlet::Servlet	rainbow/http/servlet.h	/^    Servlet(const std::string& name)$/;"	f	class:rainbow::http::Servlet	access:public	signature:(const std::string& name)
 rainbow::http::Servlet::getName	rainbow/http/servlet.h	/^    const std::string& getName() const { return m_name; }$/;"	f	class:rainbow::http::Servlet	access:public	signature:() const
@@ -3274,6 +3522,9 @@ rainbow::http::__anon1::_init	rainbow/http/http_parser.cpp	/^static _RequestSize
 rainbow::http::checkGetAs	rainbow/http/http.h	/^bool checkGetAs(const MapType& m, const std::string& key, T& val, const T& def = T()) {$/;"	f	namespace:rainbow::http	signature:(const MapType& m, const std::string& key, T& val, const T& def = T())
 rainbow::http::g_http_request_buffer_size	rainbow/http/http_parser.cpp	/^static rainbow::ConfigVar<uint64_t>::ptr g_http_request_buffer_size = $/;"	m	namespace:rainbow::http	file:
 rainbow::http::g_http_request_max_body_size	rainbow/http/http_parser.cpp	/^static rainbow::ConfigVar<uint64_t>::ptr g_http_request_max_body_size = $/;"	m	namespace:rainbow::http	file:
+rainbow::http::g_http_response_buffer_size	rainbow/http/http_parser.cpp	/^static rainbow::ConfigVar<uint64_t>::ptr g_http_response_buffer_size = $/;"	m	namespace:rainbow::http	file:
+rainbow::http::g_http_response_max_body_size	rainbow/http/http_parser.cpp	/^static rainbow::ConfigVar<uint64_t>::ptr g_http_response_max_body_size = $/;"	m	namespace:rainbow::http	file:
+rainbow::http::g_logger	rainbow/http/http_connection.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow::http	file:
 rainbow::http::g_logger	rainbow/http/http_parser.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow::http	file:
 rainbow::http::g_logger	rainbow/http/http_server.cpp	/^static rainbow::Logger::ptr g_logger = RAINBOW_LOG_NAME("system");$/;"	m	namespace:rainbow::http	file:
 rainbow::http::getAs	rainbow/http/http.h	/^T getAs(const MapType& m, const std::string& key, const T& def = T()) {$/;"	f	namespace:rainbow::http	signature:(const MapType& m, const std::string& key, const T& def = T())
@@ -3298,6 +3549,8 @@ rainbow::http::operator <<	rainbow/http/http.h	/^std::ostream& operator<<(std::o
 rainbow::http::operator <<	rainbow/http/http.h	/^std::ostream& operator<<(std::ostream& os, const HttpResponse& rsp);$/;"	p	namespace:rainbow::http	signature:(std::ostream& os, const HttpResponse& rsp)
 rainbow::http::s_http_request_buffer_size	rainbow/http/http_parser.cpp	/^static uint64_t s_http_request_buffer_size = 0;$/;"	m	namespace:rainbow::http	file:
 rainbow::http::s_http_request_max_body_size	rainbow/http/http_parser.cpp	/^static uint64_t s_http_request_max_body_size = 0;$/;"	m	namespace:rainbow::http	file:
+rainbow::http::s_http_response_buffer_size	rainbow/http/http_parser.cpp	/^static uint64_t s_http_response_buffer_size = 0;$/;"	m	namespace:rainbow::http	file:
+rainbow::http::s_http_response_max_body_size	rainbow/http/http_parser.cpp	/^static uint64_t s_http_response_max_body_size = 0;$/;"	m	namespace:rainbow::http	file:
 rainbow::http::s_method_string	rainbow/http/http.cpp	/^static const char* s_method_string[] = {$/;"	m	namespace:rainbow::http	file:
 rainbow::is_hook_enable	rainbow/hook.cpp	/^bool is_hook_enable() {$/;"	f	namespace:rainbow	signature:()
 rainbow::is_hook_enable	rainbow/hook.h	/^    bool is_hook_enable();$/;"	p	namespace:rainbow	signature:()
@@ -3316,6 +3569,10 @@ rainbow::t_scheduler	rainbow/scheduler.cpp	/^static thread_local Scheduler* t_sc
 rainbow::t_thread	rainbow/thread.cpp	/^static thread_local Thread* t_thread = nullptr;$/;"	m	namespace:rainbow	file:
 rainbow::t_threadFiber	rainbow/fiber.cpp	/^static thread_local Fiber::ptr t_threadFiber = nullptr;$/;"	m	namespace:rainbow	file:
 rainbow::t_thread_name	rainbow/thread.cpp	/^static thread_local std::string t_thread_name = "UNKNOW";$/;"	m	namespace:rainbow	file:
+rainbow::uri_parser_en_main	rainbow/uri.rl.cpp	/^static const int uri_parser_en_main = 451;$/;"	m	namespace:rainbow	file:
+rainbow::uri_parser_error	rainbow/uri.rl.cpp	/^static const int uri_parser_error = 0;$/;"	m	namespace:rainbow	file:
+rainbow::uri_parser_first_final	rainbow/uri.rl.cpp	/^static const int uri_parser_first_final = 451;$/;"	m	namespace:rainbow	file:
+rainbow::uri_parser_start	rainbow/uri.rl.cpp	/^static const int uri_parser_start = 451;$/;"	m	namespace:rainbow	file:
 rdlock	rainbow/thread.h	/^    void rdlock() {$/;"	f	class:rainbow::RWMutex	access:public	signature:()
 rdlock	rainbow/thread.h	/^    void rdlock() {}$/;"	f	class:rainbow::NullRWMutex	access:public	signature:()
 read	rainbow/bytearray.cpp	/^void ByteArray::read(void* buf, size_t size) {$/;"	f	class:rainbow::ByteArray	signature:(void* buf, size_t size)
@@ -3385,6 +3642,8 @@ recvFrom	rainbow/socket.h	/^    int recvFrom(iovec* buffers, size_t length, Addr
 recvFrom	rainbow/socket.h	/^    int recvFrom(void* buffer, size_t length, Address::ptr from, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(void* buffer, size_t length, Address::ptr from, int flags = 0)
 recvRequest	rainbow/http/http_session.cpp	/^HttpRequest::ptr HttpSession::recvRequest() {$/;"	f	class:rainbow::http::HttpSession	signature:()
 recvRequest	rainbow/http/http_session.h	/^    HttpRequest::ptr recvRequest();$/;"	p	class:rainbow::http::HttpSession	access:public	signature:()
+recvResponse	rainbow/http/http_connection.cpp	/^HttpResponse::ptr HttpConnection::recvResponse() {$/;"	f	class:rainbow::http::HttpConnection	signature:()
+recvResponse	rainbow/http/http_connection.h	/^    HttpResponse::ptr recvResponse();$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:()
 recv_fun	rainbow/hook.h	/^typedef ssize_t (*recv_fun)(int sockfd, void *buf, size_t len, int flags);$/;"	t
 recvfrom	rainbow/hook.cpp	/^ssize_t recvfrom(int sockfd, void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen) {$/;"	f	signature:(int sockfd, void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen)
 recvfrom_fun	rainbow/hook.h	/^typedef ssize_t (*recvfrom_fun)(int sockfd, void *buf, size_t len, int flags, struct sockaddr *src_addr, socklen_t *addrlen);$/;"	t
@@ -3404,11 +3663,14 @@ reset	rainbow/timer.cpp	/^bool Timer::reset(uint64_t ms, bool from_now) {$/;"	f	
 reset	rainbow/timer.h	/^    bool reset(uint64_t ms, bool from_now);$/;"	p	class:rainbow::Timer	access:public	signature:(uint64_t ms, bool from_now)
 resetContext	rainbow/iomanager.cpp	/^void IOManager::FdContext::resetContext(EventContext& ctx) {$/;"	f	class:rainbow::IOManager::FdContext	signature:(EventContext& ctx)
 resetContext	rainbow/iomanager.h	/^        void resetContext(EventContext& ctx);$/;"	p	struct:rainbow::IOManager::FdContext	access:public	signature:(EventContext& ctx)
+response	rainbow/http/http_connection.h	/^    HttpResponse::ptr response;$/;"	m	struct:rainbow::http::HttpResult	access:public
+result	rainbow/http/http_connection.h	/^    int result;$/;"	m	struct:rainbow::http::HttpResult	access:public
 run	examples/echo_server.cpp	/^void run() {$/;"	f	signature:()
 run	rainbow/scheduler.cpp	/^void Scheduler::run() {$/;"	f	class:rainbow::Scheduler	signature:()
 run	rainbow/scheduler.h	/^    void run();$/;"	p	class:rainbow::Scheduler	access:protected	signature:()
 run	rainbow/thread.cpp	/^void* Thread::run(void* arg) {$/;"	f	class:rainbow::Thread	signature:(void* arg)
 run	rainbow/thread.h	/^    static void* run(void* arg);$/;"	p	class:rainbow::Thread	access:private	signature:(void* arg)
+run	tests/test_http_connection.cpp	/^void run() {$/;"	f	signature:()
 run	tests/test_http_server.cpp	/^void run() {$/;"	f	signature:()
 run	tests/test_tcp_server.cpp	/^void run() {$/;"	f	signature:()
 run_in_fiber	tests/test_fiber.cpp	/^void run_in_fiber() {$/;"	f	signature:()
@@ -3416,6 +3678,8 @@ s_connect_timeout	rainbow/hook.cpp	/^static uint64_t s_connect_timeout = -1;$/;"
 s_hook_initer	rainbow/hook.cpp	/^static _HookIniter s_hook_initer;$/;"	m	namespace:rainbow	file:
 s_http_request_buffer_size	rainbow/http/http_parser.cpp	/^static uint64_t s_http_request_buffer_size = 0;$/;"	m	namespace:rainbow::http	file:
 s_http_request_max_body_size	rainbow/http/http_parser.cpp	/^static uint64_t s_http_request_max_body_size = 0;$/;"	m	namespace:rainbow::http	file:
+s_http_response_buffer_size	rainbow/http/http_parser.cpp	/^static uint64_t s_http_response_buffer_size = 0;$/;"	m	namespace:rainbow::http	file:
+s_http_response_max_body_size	rainbow/http/http_parser.cpp	/^static uint64_t s_http_response_max_body_size = 0;$/;"	m	namespace:rainbow::http	file:
 s_method_string	rainbow/http/http.cpp	/^static const char* s_method_string[] = {$/;"	m	namespace:rainbow::http	file:
 s_mutex	tests/test_thread.cpp	/^rainbow::Mutex s_mutex;$/;"	v
 s_timer	tests/test_iomanager.cpp	/^rainbow::Timer::ptr s_timer;$/;"	v
@@ -3428,6 +3692,8 @@ send	rainbow/socket.cpp	/^int Socket::send(const iovec* buffers, size_t length, 
 send	rainbow/socket.cpp	/^int Socket::send(const void* buffer, size_t length, int flags) {$/;"	f	class:rainbow::Socket	signature:(const void* buffer, size_t length, int flags)
 send	rainbow/socket.h	/^    int send(const iovec* buffers, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const iovec* buffers, size_t length, int flags = 0)
 send	rainbow/socket.h	/^    int send(const void* buffer, size_t length, int flags = 0);$/;"	p	class:rainbow::Socket	access:public	signature:(const void* buffer, size_t length, int flags = 0)
+sendRequest	rainbow/http/http_connection.cpp	/^int HttpConnection::sendRequest(HttpRequest::ptr req) {$/;"	f	class:rainbow::http::HttpConnection	signature:(HttpRequest::ptr req)
+sendRequest	rainbow/http/http_connection.h	/^    int sendRequest(HttpRequest::ptr req);$/;"	p	class:rainbow::http::HttpConnection	access:public	signature:(HttpRequest::ptr req)
 sendResponse	rainbow/http/http_session.cpp	/^int HttpSession::sendResponse(HttpResponse::ptr rsp) {$/;"	f	class:rainbow::http::HttpSession	signature:(HttpResponse::ptr rsp)
 sendResponse	rainbow/http/http_session.h	/^    int sendResponse(HttpResponse::ptr rsp);$/;"	p	class:rainbow::http::HttpSession	access:public	signature:(HttpResponse::ptr rsp)
 sendTo	rainbow/socket.cpp	/^int Socket::sendTo(const iovec* buffers, size_t length, const Address::ptr to, int flags) {$/;"	f	class:rainbow::Socket	signature:(const iovec* buffers, size_t length, const Address::ptr to, int flags)
@@ -3459,12 +3725,14 @@ setFormatter	rainbow/log.h	/^    void setFormatter(LogFormatter::ptr val);$/;"	p
 setFormatter	rainbow/log.h	/^    void setFormatter(LogFormatter::ptr val);$/;"	p	class:rainbow::Logger	access:public	signature:(LogFormatter::ptr val)
 setFormatter	rainbow/log.h	/^    void setFormatter(const std::string& val);$/;"	p	class:rainbow::Logger	access:public	signature:(const std::string& val)
 setFragment	rainbow/http/http.h	/^    void setFragment(const std::string& v) { m_fragment = v; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:(const std::string& v)
+setFragment	rainbow/uri.h	/^    void setFragment(const std::string& v) { m_fragment = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
 setHeader	rainbow/http/http.cpp	/^void HttpRequest::setHeader(const std::string& key, const std::string& val) {$/;"	f	class:rainbow::http::HttpRequest	signature:(const std::string& key, const std::string& val)
 setHeader	rainbow/http/http.cpp	/^void HttpResponse::setHeader(const std::string& key, const std::string& val) {$/;"	f	class:rainbow::http::HttpResponse	signature:(const std::string& key, const std::string& val)
 setHeader	rainbow/http/http.h	/^    void setHeader(const std::string& key, const std::string& val);$/;"	p	class:rainbow::http::HttpRequest	access:public	signature:(const std::string& key, const std::string& val)
 setHeader	rainbow/http/http.h	/^    void setHeader(const std::string& key, const std::string& val);$/;"	p	class:rainbow::http::HttpResponse	access:public	signature:(const std::string& key, const std::string& val)
 setHeaders	rainbow/http/http.h	/^    void setHeaders(const MapType& v) { m_headers = v; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:(const MapType& v)
 setHeaders	rainbow/http/http.h	/^    void setHeaders(const MapType& v) { m_headers = v; }$/;"	f	class:rainbow::http::HttpResponse	access:public	signature:(const MapType& v)
+setHost	rainbow/uri.h	/^    void setHost(const std::string& v) { m_host = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
 setIsLittleEndian	rainbow/bytearray.cpp	/^void ByteArray::setIsLittleEndian(bool val) {$/;"	f	class:rainbow::ByteArray	signature:(bool val)
 setIsLittleEndian	rainbow/bytearray.h	/^    void setIsLittleEndian(bool val);$/;"	p	class:rainbow::ByteArray	access:public	signature:(bool val)
 setLevel	rainbow/log.cpp	/^void LogAppender::setLevel(const LogLevel::Level& level) {$/;"	f	class:rainbow::LogAppender	signature:(const LogLevel::Level& level)
@@ -3479,18 +3747,23 @@ setParam	rainbow/http/http.cpp	/^void HttpRequest::setParam(const std::string& k
 setParam	rainbow/http/http.h	/^    void setParam(const std::string& key, const std::string& val);$/;"	p	class:rainbow::http::HttpRequest	access:public	signature:(const std::string& key, const std::string& val)
 setParams	rainbow/http/http.h	/^    void setParams(const MapType& v) { m_params = v; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:(const MapType& v)
 setPath	rainbow/http/http.h	/^    void setPath(const std::string& v) { m_path = v; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:(const std::string& v)
+setPath	rainbow/uri.h	/^    void setPath(const std::string& v) { m_path = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
 setPort	rainbow/address.cpp	/^void IPv4Address::setPort(uint16_t v) {$/;"	f	class:rainbow::IPv4Address	signature:(uint16_t v)
 setPort	rainbow/address.cpp	/^void IPv6Address::setPort(uint16_t v) {$/;"	f	class:rainbow::IPv6Address	signature:(uint16_t v)
 setPort	rainbow/address.h	/^    virtual void setPort(uint16_t v) = 0;$/;"	p	class:rainbow::IPAddress	access:public	signature:(uint16_t v)
+setPort	rainbow/uri.h	/^    void setPort(int32_t v) { m_port = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(int32_t v)
 setPosition	rainbow/bytearray.cpp	/^void ByteArray::setPosition(size_t v) {$/;"	f	class:rainbow::ByteArray	signature:(size_t v)
 setPosition	rainbow/bytearray.h	/^    void setPosition(size_t v);$/;"	p	class:rainbow::ByteArray	access:public	signature:(size_t v)
 setQuery	rainbow/http/http.h	/^    void setQuery(const std::string& v) { m_query = v; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:(const std::string& v)
+setQuery	rainbow/uri.h	/^    void setQuery(const std::string& v) { m_query = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
 setReason	rainbow/http/http.h	/^    void setReason(const std::string& v) { m_reason = v; }$/;"	f	class:rainbow::http::HttpResponse	access:public	signature:(const std::string& v)
 setRecvTimeout	rainbow/socket.cpp	/^void Socket::setRecvTimeout(int64_t v) {$/;"	f	class:rainbow::Socket	signature:(int64_t v)
 setRecvTimeout	rainbow/socket.h	/^    void setRecvTimeout(int64_t v);$/;"	p	class:rainbow::Socket	access:public	signature:(int64_t v)
 setRecvTimeout	rainbow/tcp_server.h	/^    void setRecvTimeout(uint64_t v) { m_recvTimeout = v; }$/;"	f	class:rainbow::TcpServer	access:public	signature:(uint64_t v)
+setScheme	rainbow/uri.h	/^    void setScheme(const std::string& v) { m_scheme = v; }$/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
 setSendTimeout	rainbow/socket.cpp	/^void Socket::setSendTimeout(int64_t v) {$/;"	f	class:rainbow::Socket	signature:(int64_t v)
 setSendTimeout	rainbow/socket.h	/^    void setSendTimeout(int64_t v);$/;"	p	class:rainbow::Socket	access:public	signature:(int64_t v)
+setServletDispatch	rainbow/http/http_server.h	/^    void setServletDispatch(ServletDispatch::ptr v) { m_dispatch = v; }$/;"	f	class:rainbow::http::HttpServer	access:public	signature:(ServletDispatch::ptr v)
 setState	rainbow/fiber.h	/^    void setState(const State state) { m_state = state; }$/;"	f	class:rainbow::Fiber	access:public	signature:(const State state)
 setStatus	rainbow/http/http.h	/^    void setStatus(HttpStatus v) { m_status = v; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:(HttpStatus v)
 setStatus	rainbow/http/http.h	/^    void setStatus(HttpStatus v) { m_status = v; }$/;"	f	class:rainbow::http::HttpResponse	access:public	signature:(HttpStatus v)
@@ -3500,6 +3773,7 @@ setThis	rainbow/scheduler.h	/^    void setThis();$/;"	p	class:rainbow::Scheduler
 setTimeout	rainbow/fd_manager.cpp	/^void FdCtx::setTimeout(int type, uint64_t v) {$/;"	f	class:rainbow::FdCtx	signature:(int type, uint64_t v)
 setTimeout	rainbow/fd_manager.h	/^    void setTimeout(int type, uint64_t v);$/;"	p	class:rainbow::FdCtx	access:public	signature:(int type, uint64_t v)
 setUserNonblock	rainbow/fd_manager.h	/^    void setUserNonblock(bool v) { m_userNonblock = v; }$/;"	f	class:rainbow::FdCtx	access:public	signature:(bool v)
+setUserinfo	rainbow/uri.h	/^    void setUserinfo(const std::string& v) { m_userinfo = v; } $/;"	f	class:rainbow::Uri	access:public	signature:(const std::string& v)
 setValue	rainbow/config.h	/^    void setValue(const T& v) { $/;"	f	class:rainbow::ConfigVar	access:public	signature:(const T& v)
 setVersion	rainbow/http/http.h	/^    void setVersion(uint8_t v) { m_version = v; }$/;"	f	class:rainbow::http::HttpRequest	access:public	signature:(uint8_t v)
 setVersion	rainbow/http/http.h	/^    void setVersion(uint8_t v) { m_version = v; }$/;"	f	class:rainbow::http::HttpResponse	access:public	signature:(uint8_t v)
@@ -3581,6 +3855,8 @@ toString	rainbow/http/http.cpp	/^std::string HttpRequest::toString() const {$/;"
 toString	rainbow/http/http.cpp	/^std::string HttpResponse::toString() const {$/;"	f	class:rainbow::http::HttpResponse	signature:() const
 toString	rainbow/http/http.h	/^    std::string toString() const;$/;"	p	class:rainbow::http::HttpRequest	access:public	signature:() const
 toString	rainbow/http/http.h	/^    std::string toString() const;$/;"	p	class:rainbow::http::HttpResponse	access:public	signature:() const
+toString	rainbow/uri.h	/^    std::string toString() const;$/;"	p	class:rainbow::Uri	access:public	signature:() const
+toString	rainbow/uri.rl.cpp	/^std::string Uri::toString() const {$/;"	f	class:rainbow::Uri	signature:() const
 toString	tests/test_config.cpp	/^    std::string toString() const {$/;"	f	class:Person	access:public	signature:() const
 toYamlString	rainbow/log.cpp	/^std::string FileLogAppender::toYamlString() {$/;"	f	class:rainbow::FileLogAppender	signature:()
 toYamlString	rainbow/log.cpp	/^std::string Logger::toYamlString() {$/;"	f	class:rainbow::Logger	signature:()
@@ -3602,6 +3878,10 @@ unlock	rainbow/thread.h	/^    void unlock() {$/;"	f	struct:rainbow::ScopedLockIm
 unlock	rainbow/thread.h	/^    void unlock() {$/;"	f	struct:rainbow::WriteScopedLockImpl	access:public	signature:()
 unlock	rainbow/thread.h	/^    void unlock() {}$/;"	f	class:rainbow::NullMutex	access:public	signature:()
 unlock	rainbow/thread.h	/^    void unlock() {}$/;"	f	class:rainbow::NullRWMutex	access:public	signature:()
+uri_parser_en_main	rainbow/uri.rl.cpp	/^static const int uri_parser_en_main = 451;$/;"	m	namespace:rainbow	file:
+uri_parser_error	rainbow/uri.rl.cpp	/^static const int uri_parser_error = 0;$/;"	m	namespace:rainbow	file:
+uri_parser_first_final	rainbow/uri.rl.cpp	/^static const int uri_parser_first_final = 451;$/;"	m	namespace:rainbow	file:
+uri_parser_start	rainbow/uri.rl.cpp	/^static const int uri_parser_start = 451;$/;"	m	namespace:rainbow	file:
 uri_relaxed	rainbow/http/http11_parser.h	/^  int uri_relaxed;$/;"	m	struct:http_parser	access:public
 usleep	rainbow/hook.cpp	/^int usleep(useconds_t usec) {$/;"	f	signature:(useconds_t usec)
 usleep_fun	rainbow/hook.h	/^typedef int (*usleep_fun)(unsigned int usec);$/;"	t

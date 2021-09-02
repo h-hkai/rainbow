@@ -142,10 +142,24 @@ CMakeFiles/rainbow.dir/rainbow/fiber.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rainbow.dir/rainbow/fiber.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/fiber.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/rainbow/rainbow/fiber.cpp -o CMakeFiles/rainbow.dir/rainbow/fiber.cpp.s
 
+CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o: CMakeFiles/rainbow.dir/flags.make
+CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o: ../rainbow/uri.rl.cpp
+CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/uri.rl.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o -c /home/ubuntu/rainbow/rainbow/uri.rl.cpp
+
+CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/uri.rl.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/rainbow/rainbow/uri.rl.cpp > CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.i
+
+CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/uri.rl.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/rainbow/rainbow/uri.rl.cpp -o CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.s
+
 CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o: ../rainbow/http/http.cpp
 CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/http.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o -c /home/ubuntu/rainbow/rainbow/http/http.cpp
 
 CMakeFiles/rainbow.dir/rainbow/http/http.cpp.i: cmake_force
@@ -156,10 +170,24 @@ CMakeFiles/rainbow.dir/rainbow/http/http.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rainbow.dir/rainbow/http/http.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/http.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/rainbow/rainbow/http/http.cpp -o CMakeFiles/rainbow.dir/rainbow/http/http.cpp.s
 
+CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o: CMakeFiles/rainbow.dir/flags.make
+CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o: ../rainbow/http/http_connection.cpp
+CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/http_connection.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o -c /home/ubuntu/rainbow/rainbow/http/http_connection.cpp
+
+CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/http_connection.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/rainbow/rainbow/http/http_connection.cpp > CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.i
+
+CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/http_connection.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/rainbow/rainbow/http/http_connection.cpp -o CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.s
+
 CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o: ../rainbow/http/http_parser.cpp
 CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/http_parser.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o -c /home/ubuntu/rainbow/rainbow/http/http_parser.cpp
 
 CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.i: cmake_force
@@ -173,7 +201,7 @@ CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o: ../rainbow/http/http_session.cpp
 CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/http_session.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o -c /home/ubuntu/rainbow/rainbow/http/http_session.cpp
 
 CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.i: cmake_force
@@ -187,7 +215,7 @@ CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o: ../rainbow/http/http_server.cpp
 CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/http_server.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o -c /home/ubuntu/rainbow/rainbow/http/http_server.cpp
 
 CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.i: cmake_force
@@ -201,7 +229,7 @@ CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o: ../rainbow/http/servlet.cpp
 CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/servlet.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.o -c /home/ubuntu/rainbow/rainbow/http/servlet.cpp
 
 CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.i: cmake_force
@@ -215,7 +243,7 @@ CMakeFiles/rainbow.dir/rainbow/http/servlet.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o: ../rainbow/http/http11_parser.rl.cpp
 CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/http11_parser.rl.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.o -c /home/ubuntu/rainbow/rainbow/http/http11_parser.rl.cpp
 
 CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.i: cmake_force
@@ -229,7 +257,7 @@ CMakeFiles/rainbow.dir/rainbow/http/http11_parser.rl.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o: ../rainbow/http/httpclient_parser.rl.cpp
 CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/http/httpclient_parser.rl.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.o -c /home/ubuntu/rainbow/rainbow/http/httpclient_parser.rl.cpp
 
 CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.i: cmake_force
@@ -243,7 +271,7 @@ CMakeFiles/rainbow.dir/rainbow/http/httpclient_parser.rl.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/hook.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/hook.cpp.o: ../rainbow/hook.cpp
 CMakeFiles/rainbow.dir/rainbow/hook.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/rainbow.dir/rainbow/hook.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/rainbow.dir/rainbow/hook.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/hook.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/hook.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/hook.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/hook.cpp.o -c /home/ubuntu/rainbow/rainbow/hook.cpp
 
 CMakeFiles/rainbow.dir/rainbow/hook.cpp.i: cmake_force
@@ -257,7 +285,7 @@ CMakeFiles/rainbow.dir/rainbow/hook.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.o: ../rainbow/iomanager.cpp
 CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/iomanager.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.o -c /home/ubuntu/rainbow/rainbow/iomanager.cpp
 
 CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.i: cmake_force
@@ -271,7 +299,7 @@ CMakeFiles/rainbow.dir/rainbow/iomanager.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/log.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/log.cpp.o: ../rainbow/log.cpp
 CMakeFiles/rainbow.dir/rainbow/log.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/rainbow.dir/rainbow/log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/rainbow.dir/rainbow/log.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/log.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/log.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/log.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/log.cpp.o -c /home/ubuntu/rainbow/rainbow/log.cpp
 
 CMakeFiles/rainbow.dir/rainbow/log.cpp.i: cmake_force
@@ -285,7 +313,7 @@ CMakeFiles/rainbow.dir/rainbow/log.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.o: ../rainbow/scheduler.cpp
 CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/scheduler.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.o -c /home/ubuntu/rainbow/rainbow/scheduler.cpp
 
 CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.i: cmake_force
@@ -299,7 +327,7 @@ CMakeFiles/rainbow.dir/rainbow/scheduler.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/socket.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/socket.cpp.o: ../rainbow/socket.cpp
 CMakeFiles/rainbow.dir/rainbow/socket.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/rainbow.dir/rainbow/socket.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/rainbow.dir/rainbow/socket.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/socket.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/socket.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/socket.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/socket.cpp.o -c /home/ubuntu/rainbow/rainbow/socket.cpp
 
 CMakeFiles/rainbow.dir/rainbow/socket.cpp.i: cmake_force
@@ -313,7 +341,7 @@ CMakeFiles/rainbow.dir/rainbow/socket.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o: ../rainbow/socket_stream.cpp
 CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/socket_stream.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.o -c /home/ubuntu/rainbow/rainbow/socket_stream.cpp
 
 CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.i: cmake_force
@@ -327,7 +355,7 @@ CMakeFiles/rainbow.dir/rainbow/socket_stream.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/stream.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/stream.cpp.o: ../rainbow/stream.cpp
 CMakeFiles/rainbow.dir/rainbow/stream.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/rainbow.dir/rainbow/stream.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/rainbow.dir/rainbow/stream.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/stream.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/stream.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/stream.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/stream.cpp.o -c /home/ubuntu/rainbow/rainbow/stream.cpp
 
 CMakeFiles/rainbow.dir/rainbow/stream.cpp.i: cmake_force
@@ -341,7 +369,7 @@ CMakeFiles/rainbow.dir/rainbow/stream.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o: ../rainbow/tcp_server.cpp
 CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/tcp_server.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.o -c /home/ubuntu/rainbow/rainbow/tcp_server.cpp
 
 CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.i: cmake_force
@@ -355,7 +383,7 @@ CMakeFiles/rainbow.dir/rainbow/tcp_server.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/timer.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/timer.cpp.o: ../rainbow/timer.cpp
 CMakeFiles/rainbow.dir/rainbow/timer.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/rainbow.dir/rainbow/timer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/rainbow.dir/rainbow/timer.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/timer.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/timer.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/timer.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/timer.cpp.o -c /home/ubuntu/rainbow/rainbow/timer.cpp
 
 CMakeFiles/rainbow.dir/rainbow/timer.cpp.i: cmake_force
@@ -369,7 +397,7 @@ CMakeFiles/rainbow.dir/rainbow/timer.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/thread.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/thread.cpp.o: ../rainbow/thread.cpp
 CMakeFiles/rainbow.dir/rainbow/thread.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/rainbow.dir/rainbow/thread.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/rainbow.dir/rainbow/thread.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/thread.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/thread.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/thread.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/thread.cpp.o -c /home/ubuntu/rainbow/rainbow/thread.cpp
 
 CMakeFiles/rainbow.dir/rainbow/thread.cpp.i: cmake_force
@@ -383,7 +411,7 @@ CMakeFiles/rainbow.dir/rainbow/thread.cpp.s: cmake_force
 CMakeFiles/rainbow.dir/rainbow/util.cpp.o: CMakeFiles/rainbow.dir/flags.make
 CMakeFiles/rainbow.dir/rainbow/util.cpp.o: ../rainbow/util.cpp
 CMakeFiles/rainbow.dir/rainbow/util.cpp.o: CMakeFiles/rainbow.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/rainbow.dir/rainbow/util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/rainbow.dir/rainbow/util.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"rainbow/util.cpp\" $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/rainbow.dir/rainbow/util.cpp.o -MF CMakeFiles/rainbow.dir/rainbow/util.cpp.o.d -o CMakeFiles/rainbow.dir/rainbow/util.cpp.o -c /home/ubuntu/rainbow/rainbow/util.cpp
 
 CMakeFiles/rainbow.dir/rainbow/util.cpp.i: cmake_force
@@ -401,7 +429,9 @@ rainbow_OBJECTS = \
 "CMakeFiles/rainbow.dir/rainbow/config.cpp.o" \
 "CMakeFiles/rainbow.dir/rainbow/fd_manager.cpp.o" \
 "CMakeFiles/rainbow.dir/rainbow/fiber.cpp.o" \
+"CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o" \
 "CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o" \
+"CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o" \
 "CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o" \
 "CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o" \
 "CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o" \
@@ -428,7 +458,9 @@ librainbow.so: CMakeFiles/rainbow.dir/rainbow/bytearray.cpp.o
 librainbow.so: CMakeFiles/rainbow.dir/rainbow/config.cpp.o
 librainbow.so: CMakeFiles/rainbow.dir/rainbow/fd_manager.cpp.o
 librainbow.so: CMakeFiles/rainbow.dir/rainbow/fiber.cpp.o
+librainbow.so: CMakeFiles/rainbow.dir/rainbow/uri.rl.cpp.o
 librainbow.so: CMakeFiles/rainbow.dir/rainbow/http/http.cpp.o
+librainbow.so: CMakeFiles/rainbow.dir/rainbow/http/http_connection.cpp.o
 librainbow.so: CMakeFiles/rainbow.dir/rainbow/http/http_parser.cpp.o
 librainbow.so: CMakeFiles/rainbow.dir/rainbow/http/http_session.cpp.o
 librainbow.so: CMakeFiles/rainbow.dir/rainbow/http/http_server.cpp.o
@@ -448,7 +480,7 @@ librainbow.so: CMakeFiles/rainbow.dir/rainbow/thread.cpp.o
 librainbow.so: CMakeFiles/rainbow.dir/rainbow/util.cpp.o
 librainbow.so: CMakeFiles/rainbow.dir/build.make
 librainbow.so: CMakeFiles/rainbow.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking CXX shared library librainbow.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/rainbow/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX shared library librainbow.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rainbow.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
