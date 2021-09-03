@@ -1,1 +1,0 @@
-/usr/bin/c++  -rdynamic -O0 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -rdynamic CMakeFiles/echo_server.dir/examples/echo_server.cpp.o -o ../bin/echo_server   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib:/home/ubuntu/rainbow/build librainbow.so -ldl -lpthread -lyaml-cpp 

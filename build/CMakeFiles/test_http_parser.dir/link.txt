@@ -1,1 +1,0 @@
-/usr/bin/c++  -rdynamic -O0 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror -Wno-unused-function -Wno-builtin-macro-redefined -rdynamic CMakeFiles/test_http_parser.dir/tests/test_http_parser.cpp.o -o ../bin/test_http_parser   -L/usr/local/lib  -Wl,-rpath,/usr/local/lib:/home/ubuntu/rainbow/build librainbow.so -ldl -lpthread -lyaml-cpp 

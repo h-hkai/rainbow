@@ -385,3 +385,5 @@ HttpServer : TcpServer
 有限状态机解析 uri
 
 针对 HttpConnect 设计一个连接池
+
+减少链接创建带来的开销
